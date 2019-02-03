@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.SubmissionScore
+==========================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: SubmissionScore
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.sign_up_for_event
+=========================================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: sign_up_for_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

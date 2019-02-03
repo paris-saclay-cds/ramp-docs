@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>frontend.forms.UploadForm &mdash; RAMP 0.1.0.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="frontend.forms.EventUpdateProfileForm" href="frontend.forms.EventUpdateProfileForm.html" />
+    <link rel="prev" title="frontend.forms.SubmitForm" href="frontend.forms.SubmitForm.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install and contribution</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP bundle API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="frontend.create_app.html"><code class="docutils literal notranslate"><span class="pre">frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-frontend.views"><code class="docutils literal notranslate"><span class="pre">frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-frontend.forms"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>: forms used in the website</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.LoginForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.LoginForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.UserUpdateProfileForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.UserUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.UserCreateProfileForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.UserCreateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.CodeForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.CodeForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.SubmitForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.SubmitForm</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.UploadForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.EventUpdateProfileForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.EventUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.MultiCheckboxField.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.MultiCheckboxField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.ImportForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.ImportForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.CreditForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.CreditForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frontend.forms.AskForEventForm.html"><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.AskForEventForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-frontend.testing"><code class="docutils literal notranslate"><span class="pre">frontend.testing</span></code>: functionalities to test the frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-frontend.utils"><code class="docutils literal notranslate"><span class="pre">frontend.utils</span></code>: Utilities to ease sending email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP bundle API</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">frontend.forms</span></code>.UploadForm</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="frontend-forms-uploadform">
+<h1><a class="reference internal" href="../api.html#module-frontend.forms" title="frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">frontend.forms</span></code></a>.UploadForm<a class="headerlink" href="#frontend-forms-uploadform" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="frontend.forms.UploadForm">
+<em class="property">class </em><code class="descclassname">frontend.forms.</code><code class="descname">UploadForm</code><span class="sig-paren">(</span><em>formdata=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submission uploading form.</p>
+<p>This is the form used to upload a file to be loaded during a RAMP
+submission.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file</span></dt>
+<dd><p class="first last">File to be uploaded and loaded into the sandbox code form.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="frontend.forms.UploadForm.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>formdata=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>formdata</strong> – Used to pass data coming from the enduser, usually <cite>request.POST</cite> or
+equivalent. formdata should be some sort of request-data wrapper which
+can get multiple parameters from the form input, and values are unicode
+strings, e.g. a Werkzeug/Django/WebOb MultiDict</li>
+<li><strong>obj</strong> – If <cite>formdata</cite> is empty or not provided, this object is checked for
+attributes matching form field names, which will be used for field
+values.</li>
+<li><strong>prefix</strong> – If provided, all fields will have their name prefixed with the
+value.</li>
+<li><strong>data</strong> – Accept a dictionary of data. This is only used if <cite>formdata</cite> and
+<cite>obj</cite> are not present.</li>
+<li><strong>meta</strong> – If provided, this is a dictionary of values to override attributes
+on this form’s meta instance.</li>
+<li><strong>**kwargs</strong> – If <cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+an attribute named the same as a field, form will assign the value
+of a matching keyword argument to the field, if one exists.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="frontend.forms.UploadForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="headerlink" href="#frontend.forms.UploadForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.bind_field">
+<code class="descname">bind_field</code><span class="sig-paren">(</span><em>form</em>, <em>unbound_field</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.bind_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>bind_field allows potential customization of how fields are bound.</p>
+<p>The default implementation simply passes the options to
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">UnboundField.bind</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>form</strong> – The form.</li>
+<li><strong>unbound_field</strong> – The unbound field.</li>
+<li><strong>options</strong> – A dictionary of options which are typically passed to the field.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A bound field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.build_csrf">
+<code class="descname">build_csrf</code><span class="sig-paren">(</span><em>form</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.build_csrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a CSRF implementation. This is called once per form instance.</p>
+<p>The default implementation builds the class referenced to by
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">csrf_class</span></code> with zero arguments. If <cite>csrf_class</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+will instead use the default implementation
+<code class="xref py py-class docutils literal notranslate"><span class="pre">wtforms.csrf.session.SessionCSRF</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>form</strong> – The form.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A CSRF implementation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.get_translations">
+<code class="descname">get_translations</code><span class="sig-paren">(</span><em>form</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.get_translations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override in subclasses to provide alternate translations factory.
+See the i18n documentation for more.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>form</strong> – The form.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An object that provides gettext() and ngettext() methods.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.render_field">
+<code class="descname">render_field</code><span class="sig-paren">(</span><em>field</em>, <em>render_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.render_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>render_field allows customization of how widget rendering is done.</p>
+<p>The default implementation calls <code class="docutils literal notranslate"><span class="pre">field.widget(field,</span> <span class="pre">**render_kw)</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.update_values">
+<code class="descname">update_values</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.update_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dictionary of values, update values on this <cite>Meta</cite> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.Meta.wrap_formdata">
+<code class="descname">wrap_formdata</code><span class="sig-paren">(</span><em>form</em>, <em>formdata</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.Meta.wrap_formdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>wrap_formdata allows doing custom wrappers of WTForms formdata.</p>
+<p>The default implementation detects webob-style multidicts and wraps
+them, otherwise passes formdata back un-changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>form</strong> – The form.</li>
+<li><strong>formdata</strong> – Form data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A form-input wrapper compatible with WTForms.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.hidden_tag">
+<code class="descname">hidden_tag</code><span class="sig-paren">(</span><em>*fields</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.hidden_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render the form’s hidden fields in one call.</p>
+<p>A field is considered hidden if it uses the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">HiddenInput</span></code> widget.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fields</span></code> are given, only render the given fields that
+are hidden.  If a string is passed, render the field with that
+name if it exists.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.13: </span>No longer wraps inputs in hidden div.
+This is valid HTML 5.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.13: </span>Skip passed fields that aren’t hidden.
+Skip passed names that don’t exist.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.is_submitted">
+<code class="descname">is_submitted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.is_submitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Consider the form submitted if there is an active request and
+the method is <code class="docutils literal notranslate"><span class="pre">POST</span></code>, <code class="docutils literal notranslate"><span class="pre">PUT</span></code>, <code class="docutils literal notranslate"><span class="pre">PATCH</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.populate_obj">
+<code class="descname">populate_obj</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.populate_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates the attributes of the passed <cite>obj</cite> with data from the form’s
+fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body">This is a destructive operation; Any attribute with the same name
+as a field will be overridden. Use with caution.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>formdata=None</em>, <em>obj=None</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take form, object data, and keyword arg input and have the fields
+process them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>formdata</strong> – Used to pass data coming from the enduser, usually <cite>request.POST</cite> or
+equivalent.</li>
+<li><strong>obj</strong> – If <cite>formdata</cite> is empty or not provided, this object is checked for
+attributes matching form field names, which will be used for field
+values.</li>
+<li><strong>data</strong> – If provided, must be a dictionary of data. This is only used if
+<cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+an attribute named the same as the field.</li>
+<li><strong>**kwargs</strong> – If <cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+an attribute named the same as a field, form will assign the value
+of a matching keyword argument to the field, if one exists.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the form by calling <cite>validate</cite> on each field, passing any
+extra <cite>Form.validate_&lt;fieldname&gt;</cite> validators to the field validator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="frontend.forms.UploadForm.validate_on_submit">
+<code class="descname">validate_on_submit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frontend.forms.UploadForm.validate_on_submit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <a class="reference internal" href="#frontend.forms.UploadForm.validate" title="frontend.forms.UploadForm.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate</span></code></a> only if the form is submitted.
+This is a shortcut for <code class="docutils literal notranslate"><span class="pre">form.is_submitted()</span> <span class="pre">and</span> <span class="pre">form.validate()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="frontend.forms.EventUpdateProfileForm.html" class="btn btn-neutral float-right" title="frontend.forms.EventUpdateProfileForm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="frontend.forms.SubmitForm.html" class="btn btn-neutral" title="frontend.forms.SubmitForm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

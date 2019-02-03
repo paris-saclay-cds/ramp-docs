@@ -1,0 +1,10 @@
+:mod:`ramputils`.generate_worker_config
+====================================================
+
+.. currentmodule:: ramputils
+
+.. autofunction:: generate_worker_config
+
+.. raw:: html
+
+    <div style='clear:both'></div>

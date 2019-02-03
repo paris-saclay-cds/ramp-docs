@@ -1,0 +1,14 @@
+:mod:`rampdb.exceptions`.MergeTeamError
+==============================================
+
+.. currentmodule:: rampdb.exceptions
+
+.. autoclass:: MergeTeamError
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`rampdb.testing`.add_events
+=============================================
+
+.. currentmodule:: rampdb.testing
+
+.. autofunction:: add_events
+
+.. raw:: html
+
+    <div style='clear:both'></div>

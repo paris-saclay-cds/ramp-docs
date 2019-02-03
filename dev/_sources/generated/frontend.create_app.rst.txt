@@ -1,0 +1,10 @@
+:mod:`frontend`.create_app
+=======================================
+
+.. currentmodule:: frontend
+
+.. autofunction:: create_app
+
+.. raw:: html
+
+    <div style='clear:both'></div>

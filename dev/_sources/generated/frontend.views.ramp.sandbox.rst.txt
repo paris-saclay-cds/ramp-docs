@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.sandbox
+===============================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: sandbox
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.get_source_submissions
+==================================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: get_source_submissions
+
+.. raw:: html
+
+    <div style='clear:both'></div>

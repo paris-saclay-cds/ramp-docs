@@ -1,0 +1,10 @@
+:mod:`frontend.views.general`.ramp
+===============================================
+
+.. currentmodule:: frontend.views.general
+
+.. autofunction:: ramp
+
+.. raw:: html
+
+    <div style='clear:both'></div>

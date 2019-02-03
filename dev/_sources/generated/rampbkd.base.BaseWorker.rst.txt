@@ -1,0 +1,14 @@
+:mod:`rampbkd.base`.BaseWorker
+=====================================
+
+.. currentmodule:: rampbkd.base
+
+.. autoclass:: BaseWorker
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

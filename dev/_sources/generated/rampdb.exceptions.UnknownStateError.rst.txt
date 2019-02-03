@@ -1,0 +1,14 @@
+:mod:`rampdb.exceptions`.UnknownStateError
+=================================================
+
+.. currentmodule:: rampdb.exceptions
+
+.. autoclass:: UnknownStateError
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

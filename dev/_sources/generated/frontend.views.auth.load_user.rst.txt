@@ -1,0 +1,10 @@
+:mod:`frontend.views.auth`.load_user
+=================================================
+
+.. currentmodule:: frontend.views.auth
+
+.. autofunction:: load_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`frontend.views.auth`.update_profile
+======================================================
+
+.. currentmodule:: frontend.views.auth
+
+.. autofunction:: update_profile
+
+.. raw:: html
+
+    <div style='clear:both'></div>

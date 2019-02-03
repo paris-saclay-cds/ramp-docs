@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.EventUpdateProfileForm
+===================================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: EventUpdateProfileForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`rampdb.testing`.setup_ramp_kits_ramp_data
+============================================================
+
+.. currentmodule:: rampdb.testing
+
+.. autofunction:: setup_ramp_kits_ramp_data
+
+.. raw:: html
+
+    <div style='clear:both'></div>

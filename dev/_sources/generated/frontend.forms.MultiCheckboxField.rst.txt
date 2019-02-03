@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.MultiCheckboxField
+===============================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: MultiCheckboxField
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

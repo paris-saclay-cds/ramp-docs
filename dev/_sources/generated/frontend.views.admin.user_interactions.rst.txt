@@ -1,0 +1,10 @@
+:mod:`frontend.views.admin`.user_interactions
+==========================================================
+
+.. currentmodule:: frontend.views.admin
+
+.. autofunction:: user_interactions
+
+.. raw:: html
+
+    <div style='clear:both'></div>

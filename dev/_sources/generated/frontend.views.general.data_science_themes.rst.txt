@@ -1,0 +1,10 @@
+:mod:`frontend.views.general`.data_science_themes
+==============================================================
+
+.. currentmodule:: frontend.views.general
+
+.. autofunction:: data_science_themes
+
+.. raw:: html
+
+    <div style='clear:both'></div>

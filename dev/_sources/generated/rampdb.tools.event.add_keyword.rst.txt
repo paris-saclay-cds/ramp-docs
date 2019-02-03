@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.event`.add_keyword
+==================================================
+
+.. currentmodule:: rampdb.tools.event
+
+.. autofunction:: add_keyword
+
+.. raw:: html
+
+    <div style='clear:both'></div>

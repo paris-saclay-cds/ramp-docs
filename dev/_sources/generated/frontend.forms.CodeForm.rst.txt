@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.CodeForm
+=====================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: CodeForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

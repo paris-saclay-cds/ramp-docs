@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.SubmissionFileTypeExtension
+======================================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: SubmissionFileTypeExtension
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

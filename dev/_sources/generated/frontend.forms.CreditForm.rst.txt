@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.CreditForm
+=======================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: CreditForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

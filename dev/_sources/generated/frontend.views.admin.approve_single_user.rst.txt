@@ -1,0 +1,10 @@
+:mod:`frontend.views.admin`.approve_single_user
+============================================================
+
+.. currentmodule:: frontend.views.admin
+
+.. autofunction:: approve_single_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

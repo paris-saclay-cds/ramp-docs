@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.user_event
+==================================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: user_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

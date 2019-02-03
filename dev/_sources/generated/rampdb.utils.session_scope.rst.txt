@@ -1,0 +1,10 @@
+:mod:`rampdb.utils`.session_scope
+==============================================
+
+.. currentmodule:: rampdb.utils
+
+.. autofunction:: session_scope
+
+.. raw:: html
+
+    <div style='clear:both'></div>

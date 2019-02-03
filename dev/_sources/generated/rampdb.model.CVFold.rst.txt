@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.CVFold
+=================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: CVFold
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`frontend.testing`.login_scope
+================================================
+
+.. currentmodule:: frontend.testing
+
+.. autofunction:: login_scope
+
+.. raw:: html
+
+    <div style='clear:both'></div>

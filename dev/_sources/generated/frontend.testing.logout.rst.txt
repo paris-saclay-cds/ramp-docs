@@ -1,0 +1,10 @@
+:mod:`frontend.testing`.logout
+===========================================
+
+.. currentmodule:: frontend.testing
+
+.. autofunction:: logout
+
+.. raw:: html
+
+    <div style='clear:both'></div>

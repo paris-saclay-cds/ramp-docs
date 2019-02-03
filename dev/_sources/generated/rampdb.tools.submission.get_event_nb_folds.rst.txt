@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.get_event_nb_folds
+==============================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: get_event_nb_folds
+
+.. raw:: html
+
+    <div style='clear:both'></div>

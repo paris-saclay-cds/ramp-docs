@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.event`.get_event
+================================================
+
+.. currentmodule:: rampdb.tools.event
+
+.. autofunction:: get_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

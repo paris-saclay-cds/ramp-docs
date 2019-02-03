@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.view_model
+==================================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: view_model
+
+.. raw:: html
+
+    <div style='clear:both'></div>

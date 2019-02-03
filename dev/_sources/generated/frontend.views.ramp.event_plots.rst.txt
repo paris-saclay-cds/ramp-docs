@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.event_plots
+===================================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: event_plots
+
+.. raw:: html
+
+    <div style='clear:both'></div>

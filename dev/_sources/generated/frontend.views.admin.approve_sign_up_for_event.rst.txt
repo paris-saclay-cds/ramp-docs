@@ -1,0 +1,10 @@
+:mod:`frontend.views.admin`.approve_sign_up_for_event
+==================================================================
+
+.. currentmodule:: frontend.views.admin
+
+.. autofunction:: approve_sign_up_for_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

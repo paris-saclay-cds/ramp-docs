@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.UploadForm
+=======================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: UploadForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

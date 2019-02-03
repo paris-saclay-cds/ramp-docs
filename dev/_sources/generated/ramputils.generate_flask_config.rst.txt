@@ -1,0 +1,10 @@
+:mod:`ramputils`.generate_flask_config
+===================================================
+
+.. currentmodule:: ramputils
+
+.. autofunction:: generate_flask_config
+
+.. raw:: html
+
+    <div style='clear:both'></div>

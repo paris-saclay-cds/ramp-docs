@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.user`.get_team_by_name
+======================================================
+
+.. currentmodule:: rampdb.tools.user
+
+.. autofunction:: get_team_by_name
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.set_submission_state
+================================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: set_submission_state
+
+.. raw:: html
+
+    <div style='clear:both'></div>

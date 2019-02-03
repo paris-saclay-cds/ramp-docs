@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.UserCreateProfileForm
+==================================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: UserCreateProfileForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

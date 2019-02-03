@@ -1,0 +1,10 @@
+:mod:`rampdb.testing`.create_toy_db
+================================================
+
+.. currentmodule:: rampdb.testing
+
+.. autofunction:: create_toy_db
+
+.. raw:: html
+
+    <div style='clear:both'></div>

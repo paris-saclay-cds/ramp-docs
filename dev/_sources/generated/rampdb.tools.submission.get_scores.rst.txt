@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.get_scores
+======================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: get_scores
+
+.. raw:: html
+
+    <div style='clear:both'></div>

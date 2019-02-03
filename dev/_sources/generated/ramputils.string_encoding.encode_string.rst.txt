@@ -1,0 +1,10 @@
+:mod:`ramputils.string_encoding`.encode_string
+===========================================================
+
+.. currentmodule:: ramputils.string_encoding
+
+.. autofunction:: encode_string
+
+.. raw:: html
+
+    <div style='clear:both'></div>

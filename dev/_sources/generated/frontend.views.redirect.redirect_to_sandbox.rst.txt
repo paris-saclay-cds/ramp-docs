@@ -1,0 +1,10 @@
+:mod:`frontend.views.redirect`.redirect_to_sandbox
+===============================================================
+
+.. currentmodule:: frontend.views.redirect
+
+.. autofunction:: redirect_to_sandbox
+
+.. raw:: html
+
+    <div style='clear:both'></div>

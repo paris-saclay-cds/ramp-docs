@@ -1,0 +1,10 @@
+:mod:`frontend.testing`.login
+==========================================
+
+.. currentmodule:: frontend.testing
+
+.. autofunction:: login
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`frontend.views.general`.keywords
+===================================================
+
+.. currentmodule:: frontend.views.general
+
+.. autofunction:: keywords
+
+.. raw:: html
+
+    <div style='clear:both'></div>

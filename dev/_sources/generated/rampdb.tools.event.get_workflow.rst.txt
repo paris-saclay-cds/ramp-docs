@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.event`.get_workflow
+===================================================
+
+.. currentmodule:: rampdb.tools.event
+
+.. autofunction:: get_workflow
+
+.. raw:: html
+
+    <div style='clear:both'></div>

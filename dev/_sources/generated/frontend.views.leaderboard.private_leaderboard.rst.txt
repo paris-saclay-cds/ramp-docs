@@ -1,0 +1,10 @@
+:mod:`frontend.views.leaderboard`.private_leaderboard
+==================================================================
+
+.. currentmodule:: frontend.views.leaderboard
+
+.. autofunction:: private_leaderboard
+
+.. raw:: html
+
+    <div style='clear:both'></div>

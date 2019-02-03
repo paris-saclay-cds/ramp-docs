@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.Team
+===============================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: Team
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

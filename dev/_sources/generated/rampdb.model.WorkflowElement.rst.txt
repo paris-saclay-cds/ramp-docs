@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.WorkflowElement
+==========================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: WorkflowElement
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

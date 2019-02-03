@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.add_submission
+==========================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: add_submission
+
+.. raw:: html
+
+    <div style='clear:both'></div>

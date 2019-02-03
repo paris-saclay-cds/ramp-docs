@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.event`.add_event_admin
+======================================================
+
+.. currentmodule:: rampdb.tools.event
+
+.. autofunction:: add_event_admin
+
+.. raw:: html
+
+    <div style='clear:both'></div>

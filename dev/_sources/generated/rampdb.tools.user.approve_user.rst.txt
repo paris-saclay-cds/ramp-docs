@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.user`.approve_user
+==================================================
+
+.. currentmodule:: rampdb.tools.user
+
+.. autofunction:: approve_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`frontend.views.ramp`.problem
+===============================================
+
+.. currentmodule:: frontend.views.ramp
+
+.. autofunction:: problem
+
+.. raw:: html
+
+    <div style='clear:both'></div>

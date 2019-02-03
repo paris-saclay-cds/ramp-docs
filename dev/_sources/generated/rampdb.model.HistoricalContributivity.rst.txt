@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.HistoricalContributivity
+===================================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: HistoricalContributivity
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

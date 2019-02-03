@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.team`.ask_sign_up_team
+======================================================
+
+.. currentmodule:: rampdb.tools.team
+
+.. autofunction:: ask_sign_up_team
+
+.. raw:: html
+
+    <div style='clear:both'></div>

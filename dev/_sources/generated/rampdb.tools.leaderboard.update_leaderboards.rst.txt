@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.leaderboard`.update_leaderboards
+================================================================
+
+.. currentmodule:: rampdb.tools.leaderboard
+
+.. autofunction:: update_leaderboards
+
+.. raw:: html
+
+    <div style='clear:both'></div>

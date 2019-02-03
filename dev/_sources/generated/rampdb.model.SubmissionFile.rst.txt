@@ -1,0 +1,14 @@
+:mod:`rampdb.model`.SubmissionFile
+=========================================
+
+.. currentmodule:: rampdb.model
+
+.. autoclass:: SubmissionFile
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

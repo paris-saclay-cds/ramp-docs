@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.get_submission_error_msg
+====================================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: get_submission_error_msg
+
+.. raw:: html
+
+    <div style='clear:both'></div>

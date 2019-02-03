@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.add_submission_similarity
+=====================================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: add_submission_similarity
+
+.. raw:: html
+
+    <div style='clear:both'></div>

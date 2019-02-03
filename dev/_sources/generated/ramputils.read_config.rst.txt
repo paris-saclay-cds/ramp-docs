@@ -1,0 +1,10 @@
+:mod:`ramputils`.read_config
+=========================================
+
+.. currentmodule:: ramputils
+
+.. autofunction:: read_config
+
+.. raw:: html
+
+    <div style='clear:both'></div>

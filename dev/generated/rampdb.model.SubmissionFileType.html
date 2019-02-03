@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rampdb.model.SubmissionFileType &mdash; RAMP 0.1.0.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rampdb.model.SubmissionOnCVFold" href="rampdb.model.SubmissionOnCVFold.html" />
+    <link rel="prev" title="rampdb.model.SubmissionFile" href="rampdb.model.SubmissionFile.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install and contribution</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP bundle API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-rampdb.model"><code class="docutils literal notranslate"><span class="pre">rampdb.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#submission-related-tables">Submission-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-rampdb.tools"><code class="docutils literal notranslate"><span class="pre">rampdb.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-rampdb.exceptions"><code class="docutils literal notranslate"><span class="pre">rampdb.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-rampdb.testing"><code class="docutils literal notranslate"><span class="pre">rampdb.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-rampdb.utils"><code class="docutils literal notranslate"><span class="pre">rampdb.utils</span></code>: setup and connect RAMP database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP bundle API</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">rampdb.model</span></code>.SubmissionFileType</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rampdb-model-submissionfiletype">
+<h1><a class="reference internal" href="../api.html#module-rampdb.model" title="rampdb.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rampdb.model</span></code></a>.SubmissionFileType<a class="headerlink" href="#rampdb-model-submissionfiletype" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="rampdb.model.SubmissionFileType">
+<em class="property">class </em><code class="descclassname">rampdb.model.</code><code class="descname">SubmissionFileType</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rampdb.model.SubmissionFileType" title="Permalink to this definition">¶</a></dt>
+<dd><p>SubmissionFileType table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The ID of the table row.</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the submission file type.</p>
+</dd>
+<dt><strong>is_editable</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether or not this type of file is editable.</p>
+</dd>
+<dt><strong>max_size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum size of this file type.</p>
+</dd>
+<dt><strong>workflow_element_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of <a class="reference internal" href="rampdb.model.WorkflowElementType.html#rampdb.model.WorkflowElementType" title="rampdb.model.WorkflowElementType"><code class="xref py py-class docutils literal notranslate"><span class="pre">rampdb.model.WorkflowElementType</span></code></a></span></dt>
+<dd><p class="first last">A back-reference to the workflow element type for this submission file
+type.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rampdb.model.SubmissionFileType.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rampdb.model.SubmissionFileType.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple constructor that allows initialization from kwargs.</p>
+<p>Sets attributes on the constructed instance using the names and
+values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
+<p>Only keys that are present as
+attributes of the instance’s class are allowed. These could be,
+for example, any mapped columns or relationships.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rampdb.model.SubmissionFileType.query_class">
+<code class="descname">query_class</code><a class="headerlink" href="#rampdb.model.SubmissionFileType.query_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">rampdb.model.base.BaseQuery</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rampdb.model.SubmissionOnCVFold.html" class="btn btn-neutral float-right" title="rampdb.model.SubmissionOnCVFold" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rampdb.model.SubmissionFile.html" class="btn btn-neutral" title="rampdb.model.SubmissionFile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

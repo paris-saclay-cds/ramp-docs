@@ -1,0 +1,10 @@
+:mod:`frontend.utils`.body_formatter_user
+======================================================
+
+.. currentmodule:: frontend.utils
+
+.. autofunction:: body_formatter_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

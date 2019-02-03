@@ -1,0 +1,10 @@
+:mod:`frontend.views.auth`.logout
+==============================================
+
+.. currentmodule:: frontend.views.auth
+
+.. autofunction:: logout
+
+.. raw:: html
+
+    <div style='clear:both'></div>

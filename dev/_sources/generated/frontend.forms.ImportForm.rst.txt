@@ -1,0 +1,14 @@
+:mod:`frontend.forms`.ImportForm
+=======================================
+
+.. currentmodule:: frontend.forms
+
+.. autoclass:: ImportForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramputils.testing`.ramp_config_template
+==========================================================
+
+.. currentmodule:: ramputils.testing
+
+.. autofunction:: ramp_config_template
+
+.. raw:: html
+
+    <div style='clear:both'></div>

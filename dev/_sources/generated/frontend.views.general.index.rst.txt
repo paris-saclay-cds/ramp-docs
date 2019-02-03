@@ -1,0 +1,10 @@
+:mod:`frontend.views.general`.index
+================================================
+
+.. currentmodule:: frontend.views.general
+
+.. autofunction:: index
+
+.. raw:: html
+
+    <div style='clear:both'></div>

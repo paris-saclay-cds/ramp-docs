@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.submission`.get_predictions
+===========================================================
+
+.. currentmodule:: rampdb.tools.submission
+
+.. autofunction:: get_predictions
+
+.. raw:: html
+
+    <div style='clear:both'></div>

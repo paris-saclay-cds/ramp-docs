@@ -1,0 +1,14 @@
+:mod:`rampbkd.dispatcher`.Dispatcher
+===========================================
+
+.. currentmodule:: rampbkd.dispatcher
+
+.. autoclass:: Dispatcher
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

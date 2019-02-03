@@ -1,0 +1,10 @@
+:mod:`rampdb.tools.event`.delete_event
+===================================================
+
+.. currentmodule:: rampdb.tools.event
+
+.. autofunction:: delete_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>
