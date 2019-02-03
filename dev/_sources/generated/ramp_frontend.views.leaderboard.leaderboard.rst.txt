@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.leaderboard`.leaderboard
+===============================================================
+
+.. currentmodule:: ramp_frontend.views.leaderboard
+
+.. autofunction:: leaderboard
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.auth`.login
+==================================================
+
+.. currentmodule:: ramp_frontend.views.auth
+
+.. autofunction:: login
+
+.. raw:: html
+
+    <div style='clear:both'></div>

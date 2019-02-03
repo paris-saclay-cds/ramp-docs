@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.ramp`.ask_for_event
+==========================================================
+
+.. currentmodule:: ramp_frontend.views.ramp
+
+.. autofunction:: ask_for_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

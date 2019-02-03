@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.submission`.set_submission_max_ram
+=========================================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: set_submission_max_ram
+
+.. raw:: html
+
+    <div style='clear:both'></div>

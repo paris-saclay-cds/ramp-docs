@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.auth`.sign_up
+====================================================
+
+.. currentmodule:: ramp_frontend.views.auth
+
+.. autofunction:: sign_up
+
+.. raw:: html
+
+    <div style='clear:both'></div>

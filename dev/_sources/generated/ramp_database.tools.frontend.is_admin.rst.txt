@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.frontend`.is_admin
+=========================================================
+
+.. currentmodule:: ramp_database.tools.frontend
+
+.. autofunction:: is_admin
+
+.. raw:: html
+
+    <div style='clear:both'></div>
