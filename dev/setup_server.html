@@ -181,23 +181,18 @@ advise you to install it using the following command:</p>
 </pre></div>
 </div>
 <p>FIXME: I think that we can automatized this part.
-Once <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> install, we need to create a directory where to store the
-Postgres databases:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">postgres_dbs</span>
+Once <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> is installed, we initialize a Postgres database cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initdb</span> <span class="n">postgres_dbs</span>
 </pre></div>
 </div>
-<p>Then, initialize the Postgre databases:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initdb</span> <span class="n">prosgres_db</span>
-</pre></div>
-</div>
-<p>Once the databases have been initialized, we need to create an admin user and
+<p>Once the cluster has been initialized, we need to create an admin user and
 create the database which will be used for RAMP:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">createuser</span> <span class="o">--</span><span class="n">pwprompt</span> <span class="o">&lt;</span><span class="n">db_user</span><span class="o">&gt;</span>
 <span class="n">createdb</span> <span class="o">--</span><span class="n">owner</span><span class="o">=&lt;</span><span class="n">db_user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">db_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>You will need to use &lt;db_user&gt;, &lt;user_password&gt;, and &lt;db_name&gt;. We will use
-these information in the RAMP configuration files.</p>
+<p>where &lt;db_user&gt;, &lt;db_password&gt; and &lt;db_name&gt; should be replaced with actual
+values. Those values should match with the RAMP configuration file.</p>
 </div>
 <div class="section" id="set-up-the-ramp-deployment-for-kits-data-and-submissions">
 <h2>1.2. Set up the RAMP deployment for kits, data, and submissions<a class="headerlink" href="#set-up-the-ramp-deployment-for-kits-data-and-submissions" title="Permalink to this headline">¶</a></h2>
