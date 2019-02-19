@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Design your own RAMP worker &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>3. Notes regarding the RAMP workers &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="RAMP bundle API" href="api.html" />
-    <link rel="prev" title="3. Notes regarding the available RAMP workers" href="note_on_workers.html" /> 
+    <link rel="prev" title="2. Set up a new RAMP event" href="create_ramp_event.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -92,8 +92,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">2. Set up a new RAMP event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="note_on_workers.html">3. Notes regarding the available RAMP workers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Design your own RAMP worker</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Notes regarding the RAMP workers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP bundle API</a></li>
@@ -149,7 +148,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li>4. Design your own RAMP worker</li>
+      <li>3. Notes regarding the RAMP workers</li>
     
     
 
@@ -161,8 +160,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="design-your-own-ramp-worker">
-<h1>4. Design your own RAMP worker<a class="headerlink" href="#design-your-own-ramp-worker" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="notes-regarding-the-ramp-workers">
+<h1>3. Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
+<p>The RAMP “worker” is the object responsible of actually running (training and
+evaluating) a submission and returning back the results (predictions and
+scores).
+The workers are typically launched from a loop set up for a specific event on
+the server. The worker can then run the submission either locally on the server
+or on a remote machine.</p>
+<p>The type of worker used in a certain event is specified in the <code class="docutils literal notranslate"><span class="pre">worker</span></code>
+section of the yml configuration file, using the <code class="docutils literal notranslate"><span class="pre">worker_type</span></code> key (see
+<a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>). Additional keys can be required depending on
+the worker type.</p>
+<p>Available workers:</p>
+<ul class="simple">
+<li>The <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> will run the submission in
+a specific isolated conda environment. This worker is specified as
+<code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">conda</span></code> and requires an additional key <code class="docutils literal notranslate"><span class="pre">conda_env</span></code>
+specifying the name of the conda environment.</li>
+</ul>
 </div>
 
 
@@ -176,7 +192,7 @@
         <a href="api.html" class="btn btn-neutral float-right" title="RAMP bundle API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="note_on_workers.html" class="btn btn-neutral" title="3. Notes regarding the available RAMP workers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="create_ramp_event.html" class="btn btn-neutral" title="2. Set up a new RAMP event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
