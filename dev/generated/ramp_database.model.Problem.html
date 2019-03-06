@@ -179,7 +179,7 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.Problem<a class="headerlink" href="#ramp-database-model-problem" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_database.model.Problem">
-<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">Problem</code><span class="sig-paren">(</span><em>name</em>, <em>path_ramp_kits</em>, <em>path_ramp_data</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">Problem</code><span class="sig-paren">(</span><em>name</em>, <em>path_ramp_kit</em>, <em>path_ramp_data</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Problem table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -189,9 +189,9 @@
 <dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">The name of the problem.</p>
 </dd>
-<dt><strong>path_ramp_kits</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The path where the kits are located. It will corresponds to
-the key <cite>ramp_kits_dir</cite> of the dictionary created with
+<dt><strong>path_ramp_kit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The path where the kit is located. It will corresponds to
+the key <cite>ramp_kit_dir</cite> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
 <dt><strong>path_ramp_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
@@ -218,8 +218,8 @@ the key <cite>ramp_data_dir</cite> of the dictionary created with
 <dt><strong>workflow</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Worflow</span></code></span></dt>
 <dd><p class="first last">The workflow instance.</p>
 </dd>
-<dt><strong>path_ramp_kits</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The path where the kits are located.</p>
+<dt><strong>path_ramp_kit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The path where the kit are located.</p>
 </dd>
 <dt><strong>path_ramp_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">The path where the data are located.</p>
@@ -237,7 +237,7 @@ the key <cite>ramp_data_dir</cite> of the dictionary created with
 </table>
 <dl class="method">
 <dt id="ramp_database.model.Problem.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>path_ramp_kits</em>, <em>path_ramp_data</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>path_ramp_kit</em>, <em>path_ramp_data</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
