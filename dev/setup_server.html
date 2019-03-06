@@ -201,17 +201,18 @@ and submissions:</p>
 <span class="n">cd</span> <span class="n">ramp_deployment</span>
 </pre></div>
 </div>
-<p>FIXME: we should not copy the configuration file. You need to copy the
-<code class="docutils literal notranslate"><span class="pre">database_config.yml</span></code> file located in <code class="docutils literal notranslate"><span class="pre">ramp-utils/ramp_utils/template</span></code> and
-rename it <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>.</p>
+<p>Next, you need to create a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file in the directory, which holds
+the configuration for the database and the flask server. A generic template
+can be created using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>which will create a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file inside the deployment directory. Now,
+you can edit this file filling in the correct database name, user name and
+password, and filling in a flask secret key.</p>
 <p>This config file should look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flask</span><span class="p">:</span>
     <span class="n">secret_key</span><span class="p">:</span> <span class="n">abcdefghijkl</span>
-    <span class="n">wtf_csrf_enabled</span><span class="p">:</span> <span class="n">true</span>
-    <span class="n">log_filename</span><span class="p">:</span> <span class="kc">None</span>
-    <span class="n">max_content_length</span><span class="p">:</span> <span class="mi">1073741824</span>
-    <span class="n">debug</span><span class="p">:</span> <span class="n">true</span>
-    <span class="n">testing</span><span class="p">:</span> <span class="n">false</span>
     <span class="n">mail_server</span><span class="p">:</span> <span class="n">smtp</span><span class="o">.</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
     <span class="n">mail_port</span><span class="p">:</span> <span class="mi">587</span>
     <span class="n">mail_default_sender</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;RAMP admin&#39;</span><span class="p">,</span> <span class="s1">&#39;rampmailer@gmail.com&#39;</span><span class="p">]</span>
@@ -221,7 +222,6 @@ rename it <code class="docutils literal notranslate"><span class="pre">config.ym
     <span class="n">mail_use_tls</span><span class="p">:</span> <span class="n">false</span>
     <span class="n">mail_use_ssl</span><span class="p">:</span> <span class="n">true</span>
     <span class="n">mail_debug</span><span class="p">:</span> <span class="n">false</span>
-    <span class="n">sqlalchemy_track_modifications</span><span class="p">:</span> <span class="n">true</span>
 <span class="n">sqlalchemy</span><span class="p">:</span>
     <span class="n">drivername</span><span class="p">:</span> <span class="n">postgresql</span>
     <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">db_user</span><span class="o">&gt;</span>
