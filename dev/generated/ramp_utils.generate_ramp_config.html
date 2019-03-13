@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="About these documents" href="../about.html" />
@@ -31,21 +39,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ramp_utils.generate_worker_config" href="ramp_utils.generate_worker_config.html" />
     <link rel="prev" title="ramp_utils.generate_flask_config" href="ramp_utils.generate_flask_config.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -178,15 +181,21 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config<a class="headerlink" href="#ramp-utils-generate-ramp-config" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_utils.generate_ramp_config">
-<code class="descclassname">ramp_utils.</code><code class="descname">generate_ramp_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.generate_ramp_config" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ramp_utils.</code><code class="descname">generate_ramp_config</code><span class="sig-paren">(</span><em>event_config</em>, <em>database_config=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.generate_ramp_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the configuration to deploy RAMP.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or str</span></dt>
-<dd><p class="first last">Either the loaded configuration or the configuration YAML file.</p>
+<dt><strong>event_config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or str</span></dt>
+<dd><p class="first last">Either the loaded configuration or the configuration YAML file. When
+the configuration filename is given, <code class="docutils literal notranslate"><span class="pre">database_config</span></code> need to be
+given as well. When a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is provided, all paths should be given.</p>
+</dd>
+<dt><strong>database_config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">The database configuration filename. It is required when
+<code class="docutils literal notranslate"><span class="pre">event_config</span></code> is a <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 </dd>
 </dl>
 </td>
@@ -215,7 +224,7 @@
         <a href="ramp_utils.generate_worker_config.html" class="btn btn-neutral float-right" title="ramp_utils.generate_worker_config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_utils.generate_flask_config.html" class="btn btn-neutral" title="ramp_utils.generate_flask_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_utils.generate_flask_config.html" class="btn btn-neutral float-left" title="ramp_utils.generate_flask_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -241,27 +250,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
