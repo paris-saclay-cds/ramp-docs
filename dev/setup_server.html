@@ -182,9 +182,12 @@ advise you to install it using the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">postgresql</span>
 </pre></div>
 </div>
-<p>FIXME: I think that we can automatized this part.
-Once <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> is installed, we initialize a Postgres database cluster:</p>
+<p>Once <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> is installed, we initialize a Postgres database cluster:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initdb</span> <span class="n">postgres_dbs</span>
+</pre></div>
+</div>
+<p>To start the database, you need to execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pg_ctl</span> <span class="o">-</span><span class="n">D</span> <span class="n">postgres_dbs</span> <span class="o">-</span><span class="n">l</span> <span class="n">logfile</span> <span class="n">start</span>
 </pre></div>
 </div>
 <p>Once the cluster has been initialized, we need to create an admin user and
