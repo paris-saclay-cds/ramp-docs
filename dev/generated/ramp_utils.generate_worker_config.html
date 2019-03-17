@@ -182,7 +182,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config<a class="headerlink" href="#ramp-utils-generate-worker-config" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_utils.generate_worker_config">
-<code class="descclassname">ramp_utils.</code><code class="descname">generate_worker_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.generate_worker_config" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ramp_utils.</code><code class="descname">generate_worker_config</code><span class="sig-paren">(</span><em>event_config</em>, <em>database_config=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.generate_worker_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the configuration for RAMP worker from a configuration
 file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -190,8 +190,14 @@ file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or str</span></dt>
-<dd><p class="first last">Either the loaded configuration or the configuration YAML file.</p>
+<dt><strong>event_config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or str</span></dt>
+<dd><p class="first last">Either the loaded configuration or the configuration YAML file. When
+the configuration filename is given, <code class="docutils literal notranslate"><span class="pre">database_config</span></code> need to be
+given as well. When a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is provided, all paths should be given.</p>
+</dd>
+<dt><strong>database_config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">The database configuration filename. It is required when
+<code class="docutils literal notranslate"><span class="pre">event_config</span></code> is a <code class="docutils literal notranslate"><span class="pre">str</span></code>..</p>
 </dd>
 </dl>
 </td>
