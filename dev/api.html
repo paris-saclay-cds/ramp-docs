@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RAMP bundle API &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>RAMP API &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -93,9 +93,9 @@
 <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP bundle API</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ramp-database">RAMP database</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-database-model-the-database-model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#general-tables">General tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#user-related-tables">User-related tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#event-related-tables">Event-related tables</a></li>
@@ -103,14 +103,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#relationship-tables">Relationship tables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-database-tools-the-tools-to-communicate-with-the-database"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#user-related-database-tools">User-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-database-exceptions-type-of-errors-raise-by-the-database"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.DuplicateSubmissionError.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.DuplicateSubmissionError</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.MergeTeamError.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.MergeTeamError</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.MissingSubmissionFileError.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.MissingSubmissionFileError</a></li>
@@ -120,7 +120,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.UnknownStateError.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.UnknownStateError</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-database-testing-functionalities-to-test-database-model-and-tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_events.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_events</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_users.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_users</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_problems.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_problems</a></li>
@@ -133,7 +133,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.submit_all_starting_kits.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.submit_all_starting_kits</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-database-utils-setup-and-connect-ramp-database"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.setup_db.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.setup_db</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.session_scope.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.session_scope</a></li>
 </ul>
@@ -155,7 +155,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ramp-frontend">RAMP frontend</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="generated/ramp_frontend.create_app.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.views"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#general-views">General views</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#authentication-views">Authentication views</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#admin-views">Admin views</a></li>
@@ -164,7 +164,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#utilities">Utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-frontend-forms-forms-used-in-the-website"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.forms"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.LoginForm.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.LoginForm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.UserUpdateProfileForm.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserUpdateProfileForm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.UserCreateProfileForm.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserCreateProfileForm</a></li>
@@ -178,13 +178,13 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.AskForEventForm.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-frontend-testing-functionalities-to-test-the-frontend"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.testing"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.login.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.logout.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.login_scope.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login_scope</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-frontend-utils-utilities-to-ease-sending-email"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.utils"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.utils.body_formatter_user.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>.body_formatter_user</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.utils.send_mail.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>.send_mail</a></li>
 </ul>
@@ -216,6 +216,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Addtional Information</span></p>
 <ul>
@@ -266,7 +267,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>RAMP bundle API</li>
+      <li>RAMP API</li>
     
     
 
@@ -278,14 +279,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-bundle-api">
-<h1>RAMP bundle API<a class="headerlink" href="#ramp-bundle-api" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-api">
+<h1>RAMP API<a class="headerlink" href="#ramp-api" title="Permalink to this headline">¶</a></h1>
 <p>This is the full API documentation of the different RAMP packages.</p>
 <div class="section" id="ramp-database">
 <h2>RAMP database<a class="headerlink" href="#ramp-database" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ramp-database-model-the-database-model">
-<h3><a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>: the database model<a class="headerlink" href="#ramp-database-model-the-database-model" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_database.model"></span><p>The <a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a> defines the database structure which is used for the
+<div class="section" id="module-ramp_database.model">
+<span id="ramp-database-model-the-database-model"></span><h3><a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>: the database model<a class="headerlink" href="#module-ramp_database.model" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a> defines the database structure which is used for the
 RAMP events.</p>
 <p>The database schema is summarized in the figure below:</p>
 <a class="reference external image-reference" href="_static/img/schema_db.png"><img alt="_images/schema_db.png" src="_images/schema_db.png" /></a>
@@ -417,9 +418,9 @@ RAMP events.</p>
 </table>
 </div>
 </div>
-<div class="section" id="ramp-database-tools-the-tools-to-communicate-with-the-database">
-<h3><a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a>: the tools to communicate with the database<a class="headerlink" href="#ramp-database-tools-the-tools-to-communicate-with-the-database" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_database.tools"></span><p>The <a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a> provides some routine to get and set information from
+<div class="section" id="module-ramp_database.tools">
+<span id="ramp-database-tools-the-tools-to-communicate-with-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a>: the tools to communicate with the database<a class="headerlink" href="#module-ramp_database.tools" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a> provides some routine to get and set information from
 and in the database.</p>
 <div class="section" id="user-related-database-tools">
 <h4>User-related database tools<a class="headerlink" href="#user-related-database-tools" title="Permalink to this headline">¶</a></h4>
@@ -733,9 +734,9 @@ and in the database.</p>
 </table>
 </div>
 </div>
-<div class="section" id="ramp-database-exceptions-type-of-errors-raise-by-the-database">
-<h3><a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a>: type of errors raise by the database<a class="headerlink" href="#ramp-database-exceptions-type-of-errors-raise-by-the-database" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_database.exceptions"></span><p>The <a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a> module include all custom warnings and errors
+<div class="section" id="module-ramp_database.exceptions">
+<span id="ramp-database-exceptions-type-of-errors-raise-by-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a>: type of errors raise by the database<a class="headerlink" href="#module-ramp_database.exceptions" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a> module include all custom warnings and errors
 used in <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -767,9 +768,9 @@ used in <code class="docutils literal notranslate"><span class="pre">ramp-databa
 </tbody>
 </table>
 </div>
-<div class="section" id="ramp-database-testing-functionalities-to-test-database-model-and-tools">
-<h3><a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a>: functionalities to test database model and tools<a class="headerlink" href="#ramp-database-testing-functionalities-to-test-database-model-and-tools" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_database.testing"></span><p>The <a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a> module create facility functions to test the
+<div class="section" id="module-ramp_database.testing">
+<span id="ramp-database-testing-functionalities-to-test-database-model-and-tools"></span><h3><a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a>: functionalities to test database model and tools<a class="headerlink" href="#module-ramp_database.testing" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a> module create facility functions to test the
 tools and model of <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -810,9 +811,9 @@ tools and model of <code class="docutils literal notranslate"><span class="pre">
 </tbody>
 </table>
 </div>
-<div class="section" id="ramp-database-utils-setup-and-connect-ramp-database">
-<h3><a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a>: setup and connect RAMP database<a class="headerlink" href="#ramp-database-utils-setup-and-connect-ramp-database" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_database.utils"></span><p>The <a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a> module provides tools to setup and connect to the
+<div class="section" id="module-ramp_database.utils">
+<span id="ramp-database-utils-setup-and-connect-ramp-database"></span><h3><a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a>: setup and connect RAMP database<a class="headerlink" href="#module-ramp_database.utils" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a> module provides tools to setup and connect to the
 RAMP database.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -883,9 +884,9 @@ evaluation of submissions which are processed using workers.</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user">
-<h3><a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a>: views used on the frontend to interact with the user<a class="headerlink" href="#ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_frontend.views"></span><p>The <a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a> defines all operations a user can need to deal
+<div class="section" id="module-ramp_frontend.views">
+<span id="ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user"></span><h3><a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a>: views used on the frontend to interact with the user<a class="headerlink" href="#module-ramp_frontend.views" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a> defines all operations a user can need to deal
 with the RAMP backend.</p>
 <div class="section" id="general-views">
 <h4>General views<a class="headerlink" href="#general-views" title="Permalink to this headline">¶</a></h4>
@@ -1059,9 +1060,9 @@ with the RAMP backend.</p>
 </table>
 </div>
 </div>
-<div class="section" id="ramp-frontend-forms-forms-used-in-the-website">
-<h3><a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>: forms used in the website<a class="headerlink" href="#ramp-frontend-forms-forms-used-in-the-website" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_frontend.forms"></span><p>The <a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a> module defines the different forms used on the
+<div class="section" id="module-ramp_frontend.forms">
+<span id="ramp-frontend-forms-forms-used-in-the-website"></span><h3><a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>: forms used in the website<a class="headerlink" href="#module-ramp_frontend.forms" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a> module defines the different forms used on the
 website.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -1105,9 +1106,9 @@ website.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="ramp-frontend-testing-functionalities-to-test-the-frontend">
-<h3><a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a>: functionalities to test the frontend<a class="headerlink" href="#ramp-frontend-testing-functionalities-to-test-the-frontend" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_frontend.testing"></span><p>The <a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a> module contains all functions used to easily
+<div class="section" id="module-ramp_frontend.testing">
+<span id="ramp-frontend-testing-functionalities-to-test-the-frontend"></span><h3><a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a>: functionalities to test the frontend<a class="headerlink" href="#module-ramp_frontend.testing" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a> module contains all functions used to easily
 test the frontend.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -1127,9 +1128,9 @@ test the frontend.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="ramp-frontend-utils-utilities-to-ease-sending-email">
-<h3><a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a>: Utilities to ease sending email<a class="headerlink" href="#ramp-frontend-utils-utilities-to-ease-sending-email" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-ramp_frontend.utils"></span><p>The <a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a> provides utilities to ease sending email.</p>
+<div class="section" id="module-ramp_frontend.utils">
+<span id="ramp-frontend-utils-utilities-to-ease-sending-email"></span><h3><a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a>: Utilities to ease sending email<a class="headerlink" href="#module-ramp_frontend.utils" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a> provides utilities to ease sending email.</p>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
