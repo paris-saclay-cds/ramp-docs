@@ -181,7 +181,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.leaderboard</span></code>.update_user_leaderboards<a class="headerlink" href="#ramp-database-tools-leaderboard-update-user-leaderboards" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.leaderboard.update_user_leaderboards">
-<code class="descclassname">ramp_database.tools.leaderboard.</code><code class="descname">update_user_leaderboards</code><span class="sig-paren">(</span><em>session</em>, <em>event_name</em>, <em>user_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.leaderboard.update_user_leaderboards" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ramp_database.tools.leaderboard.</code><code class="descname">update_user_leaderboards</code><span class="sig-paren">(</span><em>session</em>, <em>event_name</em>, <em>user_name</em>, <em>pending_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.leaderboard.update_user_leaderboards" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the of a user leaderboards for a given event.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -196,6 +196,11 @@
 </dd>
 <dt><strong>user_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">The user name. If None, scores from all users will be queried.</p>
+</dd>
+<dt><strong>pending_only</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, default is False</span></dt>
+<dd><p class="first last">Whether or not to update the whole leaderboards or only the pending
+submissions. You can turn this option to True when adding a new
+submission in the database.</p>
 </dd>
 </dl>
 </td>
