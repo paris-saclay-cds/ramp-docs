@@ -173,8 +173,8 @@
 <h1>2. Set up a new RAMP event<a class="headerlink" href="#set-up-a-new-ramp-event" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deploy-a-specific-ramp-event">
 <span id="deploy-ramp-event"></span><h2>2.1. Deploy a specific RAMP event<a class="headerlink" href="#deploy-a-specific-ramp-event" title="Permalink to this headline">¶</a></h2>
-<p>Now we will want to deploy a specific problem and event. We will take an example by
-deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
+<p>Now we will want to deploy a specific problem and event. We will take an
+example by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
 <p>First, you need to get the starting kit and the data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">ramp</span><span class="o">-</span><span class="n">kits</span>
 <span class="n">mkdir</span> <span class="n">ramp</span><span class="o">-</span><span class="n">data</span>
@@ -190,8 +190,9 @@ create this with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">setup</span> <span class="n">init</span><span class="o">-</span><span class="n">event</span> <span class="o">--</span><span class="n">name</span> <span class="n">iris_test</span>
 </pre></div>
 </div>
-<p>The above creates a <code class="docutils literal notranslate"><span class="pre">events/iris_test</span></code> directory inside the deployment directory,
-and populates it with a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> with the configuration specific to the event.</p>
+<p>The above creates a <code class="docutils literal notranslate"><span class="pre">events/iris_test</span></code> directory inside the deployment
+directory, and populates it with a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> with the configuration
+specific to the event.</p>
 <p>This config file should look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
     <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
@@ -203,6 +204,13 @@ and populates it with a <code class="docutils literal notranslate"><span class="
     <span class="n">conda_env</span><span class="p">:</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the previous configuration example, we are using a conda worker. You can
+refer to the documentation about the <a class="reference internal" href="workers.html#all-workers"><span class="std std-ref">workers</span></a> and
+more precisely the <a class="reference internal" href="workers.html#conda-env-worker"><span class="std std-ref">conda workers</span></a> to have more
+information.</p>
+</div>
 <p>Finally, you can easily deploy the event (adding both problem and event to the
 database) by calling from the deployment directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">setup</span> <span class="n">deploy</span><span class="o">-</span><span class="n">event</span> <span class="o">--</span><span class="n">event</span><span class="o">-</span><span class="n">config</span> <span class="n">events</span><span class="o">/</span><span class="n">iris_test</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cloning</span>
@@ -211,8 +219,8 @@ database) by calling from the deployment directory:</p>
 <p>Without passing <code class="docutils literal notranslate"><span class="pre">--no-cloning</span></code>, it will try to clone the starting kit and
 data from the <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a> github organization. If the
 starting kit is located there, you can skip the first step of above of manually
-cloning the kit and data and preparing the data, and let <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span> <span class="pre">deploy-event</span></code>
-do that for you.</p>
+cloning the kit and data and preparing the data, and let <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span>
+<span class="pre">deploy-event</span></code> do that for you.</p>
 </div>
 <div class="section" id="launch-the-dispatcher-to-train-and-evaluate-submissions">
 <h2>2.2. Launch the dispatcher to train and evaluate submissions<a class="headerlink" href="#launch-the-dispatcher-to-train-and-evaluate-submissions" title="Permalink to this headline">¶</a></h2>
