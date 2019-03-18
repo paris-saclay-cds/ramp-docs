@@ -174,8 +174,7 @@
 <dd><ul class="first last">
 <li>click</li>
 <li>gitpython</li>
-<li>ipykernel</li>
-<li>jupyter</li>
+<li>nbconvert</li>
 <li>numpy</li>
 <li>pandas</li>
 <li>psycopg2</li>
@@ -233,12 +232,11 @@ repository:</p>
 </pre></div>
 </div>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">conda</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pip</span></code> using the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">update</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">update</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">your_env</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>The above command updates the base environment or the environment in which you
-ran the command. If you want to keep the code to run ramp in a separate
-environment, you can also do:</p>
+<p>The above command updates the &lt;your_env&gt; environment. If you want to keep the
+code to run ramp in a separate environment, you can also do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
