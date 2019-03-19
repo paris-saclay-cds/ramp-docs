@@ -328,7 +328,7 @@ function should look like:</p>
       <span class="c1"># Openstack instance</span>
       <span class="k">assert</span> <span class="kc">True</span>
       <span class="c1"># call the base class to update the status and log</span>
-      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Similarly, you might need to make some operation to release the worker. Then,
@@ -338,7 +338,7 @@ to the <code class="docutils literal notranslate"><span class="pre">setup</span>
       <span class="c1"># clean some jobs done by the worker</span>
       <span class="c1"># ...</span>
       <span class="c1"># call the base class to update the status and log</span>
-      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">teardown</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -354,7 +354,7 @@ update the status of the worker:</p>
       <span class="c1"># instance</span>
       <span class="o">...</span>
       <span class="c1"># call the base class to update the status and log</span>
-      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">launch_submission</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">launch_submission</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Once a submission is trained, the <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">test</span></code> command line would store the
@@ -363,7 +363,7 @@ dispatcher:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="c1"># the base class will be in charge of checking that the state of</span>
       <span class="c1"># the worker is fine</span>
-      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">collect_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">collect_results</span><span class="p">()</span>
       <span class="c1"># write the prediction and logs at the location indicated by the</span>
       <span class="c1"># dispatcher (given by the config file)</span>
       <span class="n">log_output</span> <span class="o">=</span> <span class="n">stdout</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">stderr</span>
