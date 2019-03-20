@@ -467,7 +467,7 @@ for the submissions.</p>
 
 <dl class="method">
 <dt id="ramp_database.model.Submission.set_contributivity">
-<code class="descname">set_contributivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_contributivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_contributivity</code><span class="sig-paren">(</span><em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_contributivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the contributivity of a submission.</p>
 <p class="rubric">Notes</p>
 <p>The contributivity is computed only id the submission is public and
@@ -476,7 +476,7 @@ valid and this is not the sandbox submission.</p>
 
 <dl class="method">
 <dt id="ramp_database.model.Submission.set_error">
-<code class="descname">set_error</code><span class="sig-paren">(</span><em>error</em>, <em>error_msg</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_error" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_error</code><span class="sig-paren">(</span><em>error</em>, <em>error_msg</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fail the submission as well as the CV folds.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -500,7 +500,7 @@ valid and this is not the sandbox submission.</p>
 
 <dl class="method">
 <dt id="ramp_database.model.Submission.set_state">
-<code class="descname">set_state</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_state</code><span class="sig-paren">(</span><em>state</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the state of the submission and of each CV fold.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -519,7 +519,7 @@ valid and this is not the sandbox submission.</p>
 
 <dl class="method">
 <dt id="ramp_database.model.Submission.set_state_after_training">
-<code class="descname">set_state_after_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_state_after_training" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_state_after_training</code><span class="sig-paren">(</span><em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Submission.set_state_after_training" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the state of a submission depending of the state of the fold
 after training.</p>
 </dd></dl>
