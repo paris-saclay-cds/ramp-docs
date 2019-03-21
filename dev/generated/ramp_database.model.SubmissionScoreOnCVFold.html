@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.model.SubmissionSimilarity &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>ramp_database.model.SubmissionScoreOnCVFold &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_database.model.EventTeam" href="ramp_database.model.EventTeam.html" />
-    <link rel="prev" title="ramp_database.model.SubmissionScoreOnCVFold" href="ramp_database.model.SubmissionScoreOnCVFold.html" /> 
+    <link rel="next" title="ramp_database.model.SubmissionSimilarity" href="ramp_database.model.SubmissionSimilarity.html" />
+    <link rel="prev" title="ramp_database.model.SubmissionOnCVFold" href="ramp_database.model.SubmissionOnCVFold.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.SubmissionSimilarity</li>
+      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.SubmissionScoreOnCVFold</li>
     
     
 
@@ -179,12 +179,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-database-model-submissionsimilarity">
-<h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.SubmissionSimilarity<a class="headerlink" href="#ramp-database-model-submissionsimilarity" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-database-model-submissionscoreoncvfold">
+<h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.SubmissionScoreOnCVFold<a class="headerlink" href="#ramp-database-model-submissionscoreoncvfold" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="ramp_database.model.SubmissionSimilarity">
-<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">SubmissionSimilarity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionSimilarity" title="Permalink to this definition">¶</a></dt>
-<dd><p>SubmissionSimilarity table.</p>
+<dt id="ramp_database.model.SubmissionScoreOnCVFold">
+<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">SubmissionScoreOnCVFold</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold" title="Permalink to this definition">¶</a></dt>
+<dd><p>SubmissionScoreOnCVFold table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -193,35 +193,26 @@
 <dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">The ID of the table row.</p>
 </dd>
-<dt><strong>type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The type of similarity.</p>
+<dt><strong>submission_on_cv_fold_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The ID of the CV fold.</p>
 </dd>
-<dt><strong>note</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Note about the similarity.</p>
+<dt><strong>submission_on_cv_fold</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold" title="ramp_database.model.SubmissionOnCVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionOnCVFold</span></code></a></span></dt>
+<dd><p class="first last">The submission on CV fold instance.</p>
 </dd>
-<dt><strong>timestamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datetime</span></dt>
-<dd><p class="first last">The date and time of the submission.</p>
+<dt><strong>submission_score_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The ID of the submission score.</p>
 </dd>
-<dt><strong>similarity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The similarity index.</p>
+<dt><strong>submission_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore" title="ramp_database.model.SubmissionScore"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionScore</span></code></a></span></dt>
+<dd><p class="first last">The submission score instance.</p>
 </dd>
-<dt><strong>user_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the user.</p>
+<dt><strong>train_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The training score on the fold.</p>
 </dd>
-<dt><strong>user</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.User</span></code></a></span></dt>
-<dd><p class="first last">The user instance.</p>
+<dt><strong>valid_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The validation score on the fold.</p>
 </dd>
-<dt><strong>source_submission_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the submission used as source.</p>
-</dd>
-<dt><strong>source_submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt>
-<dd><p class="first last">The source submission instance.</p>
-</dd>
-<dt><strong>target_submission_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the submission used as target.</p>
-</dd>
-<dt><strong>target_submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt>
-<dd><p class="first last">The target submission instance.</p>
+<dt><strong>test_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The testing score on the fold.</p>
 </dd>
 </dl>
 </td>
@@ -229,8 +220,8 @@
 </tbody>
 </table>
 <dl class="method">
-<dt id="ramp_database.model.SubmissionSimilarity.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionSimilarity.__init__" title="Permalink to this definition">¶</a></dt>
+<dt id="ramp_database.model.SubmissionScoreOnCVFold.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple constructor that allows initialization from kwargs.</p>
 <p>Sets attributes on the constructed instance using the names and
 values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
@@ -240,9 +231,27 @@ for example, any mapped columns or relationships.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="ramp_database.model.SubmissionSimilarity.query_class">
-<code class="descname">query_class</code><a class="headerlink" href="#ramp_database.model.SubmissionSimilarity.query_class" title="Permalink to this definition">¶</a></dt>
+<dt id="ramp_database.model.SubmissionScoreOnCVFold.event_score_type">
+<code class="descname">event_score_type</code><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold.event_score_type" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventScoreType</span></code></a>: The event/score type instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionScoreOnCVFold.name">
+<code class="descname">name</code><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>str: The name of the score.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionScoreOnCVFold.query_class">
+<code class="descname">query_class</code><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold.query_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionScoreOnCVFold.score_function">
+<code class="descname">score_function</code><a class="headerlink" href="#ramp_database.model.SubmissionScoreOnCVFold.score_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>callable: the scoring function.</p>
 </dd></dl>
 
 </dd></dl>
@@ -257,10 +266,10 @@ for example, any mapped columns or relationships.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_database.model.EventTeam.html" class="btn btn-neutral float-right" title="ramp_database.model.EventTeam" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_database.model.SubmissionSimilarity.html" class="btn btn-neutral float-right" title="ramp_database.model.SubmissionSimilarity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_database.model.SubmissionScoreOnCVFold.html" class="btn btn-neutral float-left" title="ramp_database.model.SubmissionScoreOnCVFold" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_database.model.SubmissionOnCVFold.html" class="btn btn-neutral float-left" title="ramp_database.model.SubmissionOnCVFold" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -134,6 +134,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.check_password.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.check_password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.hash_password.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.hash_password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.setup_db.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.setup_db</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.session_scope.html"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.session_scope</a></li>
 </ul>
@@ -207,8 +209,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ramp-shared-utilities">RAMP shared utilities</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.import_module_from_source.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.import_module_from_source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.utils.check_password.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils.utils</span></code>.check_password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.utils.hash_password.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils.utils</span></code>.hash_password</a></li>
 </ul>
 </li>
 </ul>
@@ -378,7 +378,10 @@ the RAMP events.</p>
 <tr class="row-even"><td><a class="reference internal" href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold" title="ramp_database.model.SubmissionOnCVFold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionOnCVFold</span></code></a>(submission,&nbsp;cv_fold)</td>
 <td>SubmissionOnCVFold.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/ramp_database.model.SubmissionSimilarity.html#ramp_database.model.SubmissionSimilarity" title="ramp_database.model.SubmissionSimilarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionSimilarity</span></code></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold" title="ramp_database.model.SubmissionScoreOnCVFold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionScoreOnCVFold</span></code></a>(**kwargs)</td>
+<td>SubmissionScoreOnCVFold table.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ramp_database.model.SubmissionSimilarity.html#ramp_database.model.SubmissionSimilarity" title="ramp_database.model.SubmissionSimilarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionSimilarity</span></code></a>(**kwargs)</td>
 <td>SubmissionSimilarity table.</td>
 </tr>
 </tbody>
@@ -820,6 +823,12 @@ the RAMP database.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/ramp_database.utils.check_password.html#ramp_database.utils.check_password" title="ramp_database.utils.check_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.check_password</span></code></a>(password,&nbsp;hashed_password)</td>
+<td>Check if a password is the same than the hashed password.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ramp_database.utils.hash_password.html#ramp_database.utils.hash_password" title="ramp_database.utils.hash_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.hash_password</span></code></a>(password)</td>
+<td>Hash a password.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/ramp_database.utils.setup_db.html#ramp_database.utils.setup_db" title="ramp_database.utils.setup_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.setup_db</span></code></a>(config)</td>
 <td>Create a sqlalchemy engine and session to interact with the database.</td>
 </tr>
@@ -1204,12 +1213,6 @@ packages.</p>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/ramp_utils.import_module_from_source.html#ramp_utils.import_module_from_source" title="ramp_utils.import_module_from_source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_module_from_source</span></code></a>(source,&nbsp;name)</td>
 <td>Load a module from a Python source file.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/ramp_utils.utils.check_password.html#ramp_utils.utils.check_password" title="ramp_utils.utils.check_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.check_password</span></code></a>(password,&nbsp;hashed_password)</td>
-<td>Check if a password is the same than the hashed password.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/ramp_utils.utils.hash_password.html#ramp_utils.utils.hash_password" title="ramp_utils.utils.hash_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.hash_password</span></code></a>(password)</td>
-<td>Hash a password.</td>
 </tr>
 </tbody>
 </table>
