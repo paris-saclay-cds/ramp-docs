@@ -175,19 +175,21 @@
 <span id="deploy-ramp-event"></span><h2>2.1. Deploy a specific RAMP event<a class="headerlink" href="#deploy-a-specific-ramp-event" title="Permalink to this headline">¶</a></h2>
 <p>Now we will want to deploy a specific problem and event. We will take an
 example by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
-<p>First, you need to get the starting kit and the data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">ramp</span><span class="o">-</span><span class="n">kits</span>
-<span class="n">mkdir</span> <span class="n">ramp</span><span class="o">-</span><span class="n">data</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span> <span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">iris</span> <span class="n">ramp</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">iris</span>
-<span class="n">cd</span> <span class="n">ramp</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">iris</span>
-<span class="n">python</span> <span class="n">prepare_data</span><span class="o">.</span><span class="n">py</span>
-<span class="n">cd</span> <span class="o">../..</span>
+<p>First, you need to get the starting kit and the data within the
+<code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ mkdir ramp-kits
+~/ramp_deployment $ mkdir ramp-data
+~/ramp_deployment $ git clone https://github.com/ramp-kits/iris ramp-kits/iris
+~/ramp_deployment $ git clone https://github.com/ramp-data/iris ramp-data/iris
+~/ramp_deployment $ cd ramp-data/iris
+~/ramp_deployment/ramp-kits/iris $ python prepare_data.py
+~/ramp_deployment/ramp-kits/iris $ cd ../..
 </pre></div>
 </div>
 <p>Next, you need to create a configuration file for a specific event. You can
-create this with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">setup</span> <span class="n">init</span><span class="o">-</span><span class="n">event</span> <span class="o">--</span><span class="n">name</span> <span class="n">iris_test</span>
+create this configuration file by executing the following command line from
+the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup init-event --name iris_test
 </pre></div>
 </div>
 <p>The above creates a <code class="docutils literal notranslate"><span class="pre">events/iris_test</span></code> directory inside the deployment
@@ -224,11 +226,16 @@ cloning the kit and data and preparing the data, and let <code class="docutils l
 </div>
 <div class="section" id="launch-the-dispatcher-to-train-and-evaluate-submissions">
 <h2>2.2. Launch the dispatcher to train and evaluate submissions<a class="headerlink" href="#launch-the-dispatcher-to-train-and-evaluate-submissions" title="Permalink to this headline">¶</a></h2>
-<p>At this stage, you can launch the RAMP dispatcher which will be in charge of
-training, evaluating submissions, and updating the database:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">launch</span> <span class="n">dispatcher</span> <span class="o">--</span><span class="n">event</span><span class="o">-</span><span class="n">config</span> <span class="n">events</span><span class="o">/</span><span class="n">iris_test</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">hunger</span><span class="o">-</span><span class="n">policy</span> <span class="n">sleep</span> <span class="o">-</span><span class="n">vv</span>
+<p>At this stage, you can launch the RAMP dispatcher from the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code>
+directory, which will be in charge of training, evaluating submissions, and
+updating the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp launch dispatcher --event-config events/iris_test/config.yml --hunger-policy sleep -vv
 </pre></div>
 </div>
+<p>If you are running the dispatcher on a remote server, you want to launch it
+within a terminal multiplexer as <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code>. It will allow you
+to detach the process and let it run. Refer to the documentation of <code class="docutils literal notranslate"><span class="pre">screen</span></code>
+or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> to use them.</p>
 </div>
 </div>
 

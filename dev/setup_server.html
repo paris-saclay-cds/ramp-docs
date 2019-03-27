@@ -184,21 +184,21 @@ Refer to <a class="reference internal" href="install.html#install"><span class="
 <p>We advise to use <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> for managing the database. You can install
 <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> using the system packages. If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we
 advise you to install it using the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">postgresql</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ conda install postgresql
 </pre></div>
 </div>
 <p>Once <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> is installed, we initialize a Postgres database cluster:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initdb</span> <span class="n">postgres_dbs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ initdb postgres_dbs
 </pre></div>
 </div>
 <p>To start the database, you need to execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pg_ctl</span> <span class="o">-</span><span class="n">D</span> <span class="n">postgres_dbs</span> <span class="o">-</span><span class="n">l</span> <span class="n">logfile</span> <span class="n">start</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
 </pre></div>
 </div>
 <p>Once the cluster has been initialized, we need to create an admin user and
 create the database which will be used for RAMP:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">createuser</span> <span class="o">--</span><span class="n">pwprompt</span> <span class="o">&lt;</span><span class="n">db_user</span><span class="o">&gt;</span>
-<span class="n">createdb</span> <span class="o">--</span><span class="n">owner</span><span class="o">=&lt;</span><span class="n">db_user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">db_name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ createuser --pwprompt &lt;db_user&gt;
+~ $ createdb --owner=&lt;db_user&gt; &lt;db_name&gt;
 </pre></div>
 </div>
 <p>where &lt;db_user&gt;, &lt;db_password&gt; and &lt;db_name&gt; should be replaced with actual
@@ -208,14 +208,14 @@ values. Those values should match with the RAMP configuration file.</p>
 <h2>1.2. Set up the RAMP deployment for kits, data, and submissions<a class="headerlink" href="#set-up-the-ramp-deployment-for-kits-data-and-submissions" title="Permalink to this headline">¶</a></h2>
 <p>You need to create a directory in which you will deploy the RAMP kits, data,
 and submissions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">ramp_deployment</span>
-<span class="n">cd</span> <span class="n">ramp_deployment</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ mkdir ramp_deployment
+~ $ cd ramp_deployment
 </pre></div>
 </div>
 <p>Next, you need to create a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file in the directory, which holds
 the configuration for the database and the flask server. A generic template
 can be created using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">setup</span> <span class="n">init</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup init
 </pre></div>
 </div>
 <p>which will create a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file inside the deployment directory. Now,
@@ -247,15 +247,17 @@ information.</p>
 </div>
 <div class="section" id="create-an-admin-user">
 <h2>1.3. Create an admin user<a class="headerlink" href="#create-an-admin-user" title="Permalink to this headline">¶</a></h2>
-<p>To operate the event, it is useful to first create an admin user:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">database</span> <span class="n">add</span><span class="o">-</span><span class="n">user</span> <span class="o">--</span><span class="n">login</span> <span class="n">admin_user</span> <span class="o">--</span><span class="n">password</span> <span class="n">password</span> <span class="o">--</span><span class="n">firstname</span> <span class="n">firstname</span> <span class="o">--</span><span class="n">lastname</span> <span class="n">lastname</span> <span class="o">--</span><span class="n">email</span> <span class="n">admin</span><span class="nd">@email</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">access</span><span class="o">-</span><span class="n">level</span> <span class="n">admin</span>
+<p>To operate the event, it is useful to first create an admin user. From the
+<code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp database add-user --login admin_user --password password --firstname firstname --lastname lastname --email admin@email.com --access-level admin
 </pre></div>
 </div>
 </div>
 <div class="section" id="launching-a-test-instance-of-the-ramp-website">
 <h2>1.4. Launching a test instance of the  RAMP website<a class="headerlink" href="#launching-a-test-instance-of-the-ramp-website" title="Permalink to this headline">¶</a></h2>
-<p>At this stage, you will be able to test the RAMP website:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">frontend</span> <span class="n">test</span><span class="o">-</span><span class="n">launch</span>
+<p>At this stage, you will be able to test the RAMP website. From the
+<code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp frontend test-launch
 </pre></div>
 </div>
 <p>This uses the built-in server of Flask suitable for testing. To deploy it
@@ -265,11 +267,11 @@ Flask documentation (<a class="reference external" href="http://flask.pocoo.org/
 <h3>1.4.1. Using Gunicorn<a class="headerlink" href="#using-gunicorn" title="Permalink to this headline">¶</a></h3>
 <p>If you are using a UNIX server, you can use Gunicorn as a webserver. You can
 install directly from <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">gunicorn</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ conda install gunicorn
 </pre></div>
 </div>
 <p>To launch the RAMP website, you can execute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gunicorn</span> <span class="o">-</span><span class="n">w</span> <span class="mi">8</span> <span class="o">--</span><span class="n">bind</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">8080</span> <span class="o">--</span><span class="n">access</span><span class="o">-</span><span class="n">logfile</span> <span class="o">./</span><span class="n">frontend</span><span class="o">.</span><span class="n">log</span> <span class="s1">&#39;ramp_frontend.wsgi:make_app(&quot;config.yml&quot;)&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ gunicorn -w 8 --bind 0.0.0.0:8080 --access-logfile ./frontend.log &#39;ramp_frontend.wsgi:make_app(&quot;config.yml&quot;)&#39;
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> is the path to the configuration fle created in the
