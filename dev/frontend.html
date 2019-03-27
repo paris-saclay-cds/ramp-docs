@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>User guide: contents &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>4. Interactions with the RAMP website &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Set up your own server to run RAMP" href="setup_server.html" />
-    <link rel="prev" title="Install and contribution" href="install.html" /> 
+    <link rel="next" title="5. Useful tips when running a RAMP" href="running_challenge.html" />
+    <link rel="prev" title="3. Notes regarding the RAMP workers" href="workers.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,11 +92,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">2. Set up a new RAMP event</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workers.html">3. Notes regarding the RAMP workers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend.html">4. Interactions with the RAMP website</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Interactions with the RAMP website</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interactions-as-an-administrator">4.1. Interactions as an administrator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#approve-users-access">4.1.1. Approve users’ access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-menu">4.1.2. Event menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interactions-as-a-user">4.2. Interactions as a user</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="running_challenge.html">5. Useful tips when running a RAMP</a></li>
 </ul>
 </li>
@@ -152,7 +160,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>User guide: contents</li>
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+        
+      <li>4. Interactions with the RAMP website</li>
     
     
 
@@ -164,50 +174,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="user-guide">
-<span id="id1"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup_server.html#set-up-the-ramp-database">1.1. Set up the RAMP database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_server.html#set-up-the-ramp-deployment-for-kits-data-and-submissions">1.2. Set up the RAMP deployment for kits, data, and submissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_server.html#create-an-admin-user">1.3. Create an admin user</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_server.html#launching-a-test-instance-of-the-ramp-website">1.4. Launching a test instance of the  RAMP website</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup_server.html#using-gunicorn">1.4.1. Using Gunicorn</a></li>
+  <div class="section" id="interactions-with-the-ramp-website">
+<h1>4. Interactions with the RAMP website<a class="headerlink" href="#interactions-with-the-ramp-website" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interactions-as-an-administrator">
+<h2>4.1. Interactions as an administrator<a class="headerlink" href="#interactions-as-an-administrator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="approve-users-access">
+<h3>4.1.1. Approve users’ access<a class="headerlink" href="#approve-users-access" title="Permalink to this headline">¶</a></h3>
+<p>As an administrator, you will be able to authorize user to access the RAMP
+website and to participate to private event. Once logged in, you will find on
+the right-hand side panel, an “Approve users” menu.</p>
+<img alt="_images/approve_users_menu.png" src="_images/approve_users_menu.png" />
+<p>Once you clicked on the menu, you will be able to approve several users to
+access the RAMP website or a particular RAMP event.</p>
+</div>
+<div class="section" id="event-menu">
+<h3>4.1.2. Event menu<a class="headerlink" href="#event-menu" title="Permalink to this headline">¶</a></h3>
+<p>When you are an administrator, you will have access to additional information
+regarding the event:</p>
+<ul class="simple">
+<li>“dashboard admin”: the admin dashboard will give you a big picture regarding
+the submissions done by the participants (new, failed, or scored);</li>
+<li>“private leaderboard”: the private leaderboard will contain all information
+about all the submissions of all users. It will display all the different
+scores used for the event, on the public data (via cross-validation) and on
+the private data;</li>
+<li>“private competition leaderboard”: the private competition leaderboard is
+similar to the private leaderboard. However, it contains only a single
+submission per user, graded on the official score used for the challenge. The
+score is only computed on the private set and should be used as a final
+challenge classification;</li>
+<li>“update event”: you can change some settings linked with an event (e.g. time
+between two submissions, name of events, etc.).</li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="create_ramp_event.html">2. Set up a new RAMP event</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html#deploy-a-specific-ramp-event">2.1. Deploy a specific RAMP event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html#launch-the-dispatcher-to-train-and-evaluate-submissions">2.2. Launch the dispatcher to train and evaluate submissions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="workers.html">3. Notes regarding the RAMP workers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="workers.html#running-submissions-in-a-conda-environment">3.1. Running submissions in a Conda environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workers.html#running-submissions-on-amazon-web-services-aws">3.2. Running submissions on Amazon Web Services (AWS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workers.html#create-your-own-worker">3.3. Create your own worker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="workers.html#the-setup-and-teardown-functions">3.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="workers.html#the-launch-submission-and-collect-results-functions">3.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="workers.html#the-is-submission-finished-function">3.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="frontend.html">4. Interactions with the RAMP website</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="frontend.html#interactions-as-an-administrator">4.1. Interactions as an administrator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html#approve-users-access">4.1.1. Approve users’ access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html#event-menu">4.1.2. Event menu</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="frontend.html#interactions-as-a-user">4.2. Interactions as a user</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="running_challenge.html">5. Useful tips when running a RAMP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="running_challenge.html#how-to-restart-a-failed-submission-manually">5.1. How to restart a failed submission manually</a></li>
-</ul>
-</li>
-</ul>
+</div>
+</div>
+<div class="section" id="interactions-as-a-user">
+<h2>4.2. Interactions as a user<a class="headerlink" href="#interactions-as-a-user" title="Permalink to this headline">¶</a></h2>
+<p>TODO: write the documentation</p>
 </div>
 </div>
 
@@ -219,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup_server.html" class="btn btn-neutral float-right" title="1. Set up your own server to run RAMP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running_challenge.html" class="btn btn-neutral float-right" title="5. Useful tips when running a RAMP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral float-left" title="Install and contribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="workers.html" class="btn btn-neutral float-left" title="3. Notes regarding the RAMP workers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
