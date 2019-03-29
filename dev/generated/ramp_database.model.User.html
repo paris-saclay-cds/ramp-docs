@@ -260,8 +260,15 @@
 <dt><strong>email</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">The user’s email</p>
 </dd>
-<dt><strong>access_level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘admin’, ‘user’, ‘asked’}</span></dt>
-<dd><p class="first last">The user’s admin level.</p>
+<dt><strong>access_level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘admin’, ‘user’, ‘asked’, ‘not_confirmed’}</span></dt>
+<dd><p class="first">The user’s admin level. The possible access level are:</p>
+<ul class="last simple">
+<li>‘admin’ : RAMP administrator;</li>
+<li>‘user’: RAMP user;</li>
+<li>‘asked’: asked to be a RAMP user and confirmed via emails;</li>
+<li>‘not_confirmed’: signed-up through the frontend but did not confirm
+yet by email.</li>
+</ul>
 </dd>
 <dt><strong>hidden_notes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Some hidden notes.</p>
