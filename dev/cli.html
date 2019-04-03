@@ -129,14 +129,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#commands-to-interact-with-the-ramp-engine">Commands to interact with the RAMP engine</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-launch">ramp-launch</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ramp-launch-dispatcher">dispatcher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ramp-launch-worker">worker</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#commands-to-interact-with-the-ramp-engine">Commands to interact with the RAMP engine</a></li>
 </ul>
 </li>
 </ul>
@@ -745,91 +738,6 @@ kit and data)</p>
 </div>
 <div class="section" id="commands-to-interact-with-the-ramp-engine">
 <h2>Commands to interact with the RAMP engine<a class="headerlink" href="#commands-to-interact-with-the-ramp-engine" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ramp-launch">
-<h3>ramp-launch<a class="headerlink" href="#ramp-launch" title="Permalink to this headline">¶</a></h3>
-<p>Command-line to launch engine to process RAMP submission.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-launch <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
-</pre></div>
-</div>
-<div class="section" id="ramp-launch-dispatcher">
-<h4>dispatcher<a class="headerlink" href="#ramp-launch-dispatcher" title="Permalink to this headline">¶</a></h4>
-<p>Launch the RAMP dispatcher.</p>
-<p>The RAMP dispatcher is in charge of starting RAMP workers, collecting
-results from them, and update the database.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-launch dispatcher <span class="o">[</span>OPTIONS<span class="o">]</span>
-</pre></div>
-</div>
-<p class="rubric">Options</p>
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-config">
-<code class="descname">--config</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration file in YAML format containing the database information.  [default: config.yml]</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-event-config">
-<code class="descname">--event-config</code><code class="descclassname"> &lt;event_config&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-event-config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration file in YAML format containing the RAMP event information.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-n-workers">
-<code class="descname">--n-workers</code><code class="descclassname"> &lt;n_workers&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-n-workers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of worker to start in parallel.  [default: -1]</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-n-threads">
-<code class="descname">--n-threads</code><code class="descclassname"> &lt;n_threads&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-n-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of threads used by each worker.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-hunger-policy">
-<code class="descname">--hunger-policy</code><code class="descclassname"> &lt;hunger_policy&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-hunger-policy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Policy to apply in case that there is no anymore workersto be processed.  [default: exit]</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-dispatcher-v">
-<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ramp-launch-dispatcher-v" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="ramp-launch-worker">
-<h4>worker<a class="headerlink" href="#ramp-launch-worker" title="Permalink to this headline">¶</a></h4>
-<p>Launch a standalone RAMP worker.</p>
-<p>The RAMP worker is in charger of processing a single submission by
-specifying the different locations (kit, data, logs, predictions)</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-launch worker <span class="o">[</span>OPTIONS<span class="o">]</span>
-</pre></div>
-</div>
-<p class="rubric">Options</p>
-<dl class="option">
-<dt id="cmdoption-ramp-launch-worker-config">
-<code class="descname">--config</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-worker-config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration file in YAML format  [default: config.yml]</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-worker-event-config">
-<code class="descname">--event-config</code><code class="descclassname"> &lt;event_config&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-worker-event-config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration file in YAML format containing the RAMP event information.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-worker-submission">
-<code class="descname">--submission</code><code class="descclassname"> &lt;submission&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-worker-submission" title="Permalink to this definition">¶</a></dt>
-<dd><p>The submission name</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ramp-launch-worker-v">
-<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ramp-launch-worker-v" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-</div>
 </div>
 </div>
 
