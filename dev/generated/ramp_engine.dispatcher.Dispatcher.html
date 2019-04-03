@@ -176,7 +176,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher<a class="headerlink" href="#ramp-engine-dispatcher-dispatcher" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_engine.dispatcher.Dispatcher">
-<em class="property">class </em><code class="descclassname">ramp_engine.dispatcher.</code><code class="descname">Dispatcher</code><span class="sig-paren">(</span><em>config</em>, <em>event_config</em>, <em>worker=None</em>, <em>n_worker=1</em>, <em>hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ramp_engine.dispatcher.</code><code class="descname">Dispatcher</code><span class="sig-paren">(</span><em>config</em>, <em>event_config</em>, <em>worker=None</em>, <em>n_workers=1</em>, <em>n_threads=None</em>, <em>hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dispatcher which schedule workers and communicate with the database.</p>
 <p>The dispatcher uses two queues: a queue containing containing the workers
 which should be launched and a queue containing the workers which are being
@@ -201,6 +201,10 @@ uses <code class="docutils literal notranslate"><span class="pre">conda</span></
 <dt><strong>n_workers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, default=1</span></dt>
 <dd><p class="first last">Maximum number of workers which can run submissions simultaneously.</p>
 </dd>
+<dt><strong>n_threads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or int</span></dt>
+<dd><p class="first last">The number of threads that each worker can use. By default, there is no
+limit imposed.</p>
+</dd>
 <dt><strong>hunger_policy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{None, ‘sleep’, ‘exit’}</span></dt>
 <dd><p class="first">Policy to apply in case that there is no anymore workers to be
 processed:</p>
@@ -219,7 +223,7 @@ the last submissions.</li>
 </table>
 <dl class="method">
 <dt id="ramp_engine.dispatcher.Dispatcher.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>config</em>, <em>event_config</em>, <em>worker=None</em>, <em>n_worker=1</em>, <em>hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>config</em>, <em>event_config</em>, <em>worker=None</em>, <em>n_workers=1</em>, <em>n_threads=None</em>, <em>hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
