@@ -95,17 +95,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.tools.event</span></code>.add_event</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.event</span></code>.add_event</li>
     
     
 
@@ -182,58 +182,45 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.event</span></code>.add_event<a class="headerlink" href="#ramp-database-tools-event-add-event" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.event.add_event">
-<code class="descclassname">ramp_database.tools.event.</code><code class="descname">add_event</code><span class="sig-paren">(</span><em>session</em>, <em>problem_name</em>, <em>event_name</em>, <em>event_title</em>, <em>ramp_sandbox_name</em>, <em>ramp_submissions_path</em>, <em>is_public=False</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.event.add_event" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.tools.event.</code><code class="sig-name descname">add_event</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">problem_name</em>, <em class="sig-param">event_name</em>, <em class="sig-param">event_title</em>, <em class="sig-param">ramp_sandbox_name</em>, <em class="sig-param">ramp_submissions_path</em>, <em class="sig-param">is_public=False</em>, <em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.event.add_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a RAMP event in the database.</p>
 <p>Event file should be set up in <code class="docutils literal notranslate"><span class="pre">databoard/specific/events/&lt;event_name&gt;</span></code>.
 Should be preceded by adding a problem (cf., <a class="reference internal" href="ramp_database.tools.event.add_problem.html#ramp_database.tools.event.add_problem" title="ramp_database.tools.event.add_problem"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_problem</span></code></a>), then
 <code class="docutils literal notranslate"><span class="pre">problem_name</span></code> imported in the event file (<code class="docutils literal notranslate"><span class="pre">problem_name</span></code> is acting as
 a pointer for the join). Also adds CV folds.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt>
-<dd><p class="first last">The session to directly perform the operation on the database.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>problem_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The problem name associated with the event.</p>
+<dt><strong>problem_name</strong><span class="classifier">str</span></dt><dd><p>The problem name associated with the event.</p>
 </dd>
-<dt><strong>event_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The event name.</p>
+<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
 </dd>
-<dt><strong>event_title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The even title.</p>
+<dt><strong>event_title</strong><span class="classifier">str</span></dt><dd><p>The even title.</p>
 </dd>
-<dt><strong>ramp_sandbox_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the submission which will be considered the sandbox. It will
+<dt><strong>ramp_sandbox_name</strong><span class="classifier">str</span></dt><dd><p>Name of the submission which will be considered the sandbox. It will
 correspond to the key <code class="docutils literal notranslate"><span class="pre">sandbox_name</span></code> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
-<dt><strong>ramp_submissions_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Path to the deployment RAMP submissions directory. It will corresponds
+<dt><strong>ramp_submissions_path</strong><span class="classifier">str</span></dt><dd><p>Path to the deployment RAMP submissions directory. It will corresponds
 to the key <cite>ramp_submissions_dir</cite> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
-<dt><strong>is_public</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, default is False</span></dt>
-<dd><p class="first last">Whether the event is made public or not.</p>
+<dt><strong>is_public</strong><span class="classifier">bool, default is False</span></dt><dd><p>Whether the event is made public or not.</p>
 </dd>
-<dt><strong>force</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, default is False</span></dt>
-<dd><p class="first last">Whether to overwrite an existing event. If <code class="docutils literal notranslate"><span class="pre">false=False</span></code>, an error
+<dt><strong>force</strong><span class="classifier">bool, default is False</span></dt><dd><p>Whether to overwrite an existing event. If <code class="docutils literal notranslate"><span class="pre">false=False</span></code>, an error
 will be raised.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Event</span></dt>
-<dd><p class="first last">The event which has been registered in the database.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">Event</span></dt><dd><p>The event which has been registered in the database.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

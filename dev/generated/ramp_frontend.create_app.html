@@ -97,11 +97,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
@@ -160,7 +160,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</li>
     
     
 
@@ -176,29 +176,23 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app<a class="headerlink" href="#ramp-frontend-create-app" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_frontend.create_app">
-<code class="descclassname">ramp_frontend.</code><code class="descname">create_app</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.create_app" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_frontend.</code><code class="sig-name descname">create_app</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.create_app" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the RAMP Flask app and register the views.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">The Flask configuration generated with
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>The Flask configuration generated with
 <a class="reference internal" href="ramp_utils.generate_flask_config.html#ramp_utils.generate_flask_config" title="ramp_utils.generate_flask_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_flask_config</span></code></a>.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>app</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Flask</span></dt>
-<dd><p class="first last">The Flask app created.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>app</strong><span class="classifier">Flask</span></dt><dd><p>The Flask app created.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

@@ -190,14 +190,14 @@ section of the yml configuration file, using the <code class="docutils literal n
 the worker type.</p>
 <p>Available workers:</p>
 <ul class="simple">
-<li>The <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> will run the submission in
+<li><p>The <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> will run the submission in
 a specific isolated conda environment. This worker is specified as
 <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">conda</span></code> and requires an additional key <code class="docutils literal notranslate"><span class="pre">conda_env</span></code>
-specifying the name of the conda environment.</li>
-<li>The <a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.aws.AWSWorker</span></code></a> will send the submission to an AWS
+specifying the name of the conda environment.</p></li>
+<li><p>The <a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.aws.AWSWorker</span></code></a> will send the submission to an AWS
 instance and copy back the results. This worker is specified as
 <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">aws</span></code>, and for more details on the setup and configuration,
-see below.</li>
+see below.</p></li>
 </ul>
 <div class="section" id="running-submissions-in-a-conda-environment">
 <span id="conda-env-worker"></span><h2>3.1. Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
@@ -230,13 +230,11 @@ data, and the needed packages to run submissions. This AMI will then be used
 to launch instances to run submissions.</p>
 <p>A very short how-to for creating such an AMI manually:</p>
 <ul>
-<li><p class="first">launch an Amazon instance</p>
-</li>
-<li><p class="first">connect to it</p>
-</li>
-<li><p class="first">prepare the instance:</p>
+<li><p>launch an Amazon instance</p></li>
+<li><p>connect to it</p></li>
+<li><p>prepare the instance:</p>
 <ul>
-<li><p class="first">Install miniconda:</p>
+<li><p>Install miniconda:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LATEST_MINICONDA=&quot;http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh&quot;
 wget -q $LATEST_MINICONDA -O ~/miniconda.sh
 bash ~/miniconda.sh -b
@@ -248,7 +246,7 @@ conda update --yes --quiet conda pip
 </pre></div>
 </div>
 </li>
-<li><p class="first">Get the starting kit material (example here for Iris):</p>
+<li><p>Get the starting kit material (example here for Iris):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>RAMPKIT_DIR=&quot;$HOME/ramp-kits&quot;
 project_name=&quot;iris&quot;
 kit_url=&quot;https://github.com/ramp-kits/$project_name&quot;
@@ -257,14 +255,14 @@ git clone $kit_url $kit_dir
 </pre></div>
 </div>
 </li>
-<li><p class="first">Update the base conda environment for the needs of the challenge:</p>
+<li><p>Update the base conda environment for the needs of the challenge:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ami_environment=&quot;$kit_dir/ami_environment.yml&quot;
 conda env update --name base --file $ami_environment
 conda list
 </pre></div>
 </div>
 </li>
-<li><p class="first">Get the data:</p>
+<li><p>Get the data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;$kit_dir/data&quot;
 rm -rf $data_dir &amp;&amp; mkdir $data_dir
 git clone https://github.com/ramp-data/iris ramp-data/iris
@@ -275,7 +273,7 @@ cd ..
 </div>
 <p>TODO: figure out this data (in ramp-kits/data or in ramp-data?)</p>
 </li>
-<li><p class="first">Test the kit:</p>
+<li><p>Test the kit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span>
 <span class="n">ramp</span><span class="o">-</span><span class="n">test</span>
 </pre></div>
@@ -283,9 +281,8 @@ cd ..
 </li>
 </ul>
 </li>
-<li><p class="first">Save the instance as an AMI: from the instance -&gt; Actions -&gt; Image -&gt; Create image</p>
-</li>
-<li><p class="first">Create an event config.yml, which should look something like:</p>
+<li><p>Save the instance as an AMI: from the instance -&gt; Actions -&gt; Image -&gt; Create image</p></li>
+<li><p>Create an event config.yml, which should look something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
     <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
     <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_ramp_aws_test</span>

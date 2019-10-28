@@ -95,7 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
@@ -103,10 +103,10 @@
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.WorkflowElementType</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.WorkflowElementType</li>
     
     
 
@@ -183,36 +183,27 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.WorkflowElementType<a class="headerlink" href="#ramp-database-model-workflowelementtype" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_database.model.WorkflowElementType">
-<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">WorkflowElementType</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElementType" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">WorkflowElementType</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElementType" title="Permalink to this definition">¶</a></dt>
 <dd><p>WorkflowElementType table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the table row.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The ID of the table row.</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the workflow element type.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the workflow element type.</p>
 </dd>
-<dt><strong>type_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the submission file type.</p>
+<dt><strong>type_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the submission file type.</p>
 </dd>
-<dt><strong>type</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionFileType.html#ramp_database.model.SubmissionFileType" title="ramp_database.model.SubmissionFileType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFileType</span></code></a></span></dt>
-<dd><p class="first last">The submission file type instance.</p>
+<dt><strong>type</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionFileType.html#ramp_database.model.SubmissionFileType" title="ramp_database.model.SubmissionFileType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFileType</span></code></a></span></dt><dd><p>The submission file type instance.</p>
 </dd>
-<dt><strong>workflows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of <a class="reference internal" href="ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement" title="ramp_database.model.WorkflowElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElement</span></code></a></span></dt>
-<dd><p class="first last">A back-reference to the workflows linked with the workflow element.</p>
+<dt><strong>workflows</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement" title="ramp_database.model.WorkflowElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElement</span></code></a></span></dt><dd><p>A back-reference to the workflows linked with the workflow element.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="ramp_database.model.WorkflowElementType.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElementType.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElementType.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple constructor that allows initialization from kwargs.</p>
 <p>Sets attributes on the constructed instance using the names and
 values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
@@ -221,27 +212,27 @@ attributes of the instance’s class are allowed. These could be,
 for example, any mapped columns or relationships.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.WorkflowElementType.file_type">
-<code class="descname">file_type</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.file_type" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">file_type</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.file_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Name of the submission file type.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.WorkflowElementType.is_editable">
-<code class="descname">is_editable</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.is_editable" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_editable</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.is_editable" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool: Whether or not the submission file is an editable type.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.WorkflowElementType.max_size">
-<code class="descname">max_size</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.max_size" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">max_size</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.max_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>int: The maximum size of supported by the submission file type.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ramp_database.model.WorkflowElementType.query_class">
-<code class="descname">query_class</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.query_class" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.WorkflowElementType.query_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
 </dd></dl>
 

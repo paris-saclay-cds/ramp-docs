@@ -95,7 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
@@ -103,10 +103,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.Event</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.Event</li>
     
     
 
@@ -183,275 +183,222 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.Event<a class="headerlink" href="#ramp-database-model-event" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_database.model.Event">
-<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">Event</code><span class="sig-paren">(</span><em>problem_name</em>, <em>name</em>, <em>event_title</em>, <em>ramp_sandbox_name</em>, <em>path_ramp_submissions</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param">problem_name</em>, <em class="sig-param">name</em>, <em class="sig-param">event_title</em>, <em class="sig-param">ramp_sandbox_name</em>, <em class="sig-param">path_ramp_submissions</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event table.</p>
 <p>This table contains all information of a RAMP event.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>problem_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the problem.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>problem_name</strong><span class="classifier">str</span></dt><dd><p>The name of the problem.</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the event.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the event.</p>
 </dd>
-<dt><strong>event_title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The title to give for the event (used in the frontend, can contain
+<dt><strong>event_title</strong><span class="classifier">str</span></dt><dd><p>The title to give for the event (used in the frontend, can contain
 spaces).</p>
 </dd>
-<dt><strong>ramp_sandbox_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the submission which will be considered the sandbox. It will
+<dt><strong>ramp_sandbox_name</strong><span class="classifier">str</span></dt><dd><p>Name of the submission which will be considered the sandbox. It will
 correspond to the key <code class="docutils literal notranslate"><span class="pre">sandbox_name</span></code> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
-<dt><strong>path_ramp_submissions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Path to the deployment RAMP submissions directory. It will corresponds
+<dt><strong>path_ramp_submissions</strong><span class="classifier">str</span></dt><dd><p>Path to the deployment RAMP submissions directory. It will corresponds
 to the key <code class="docutils literal notranslate"><span class="pre">ramp_submissions_dir</span></code> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code>, optional</span></dt>
-<dd><p class="first last">The session used to perform some required queries. It is a required
+<dt><strong>session</strong><span class="classifier">None or <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code>, optional</span></dt><dd><p>The session used to perform some required queries. It is a required
 argument when interacting with the database outside of Flask.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">ID of the table row.</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Event name.</p>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>ID of the table row.</p>
 </dd>
-<dt><strong>title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Event title.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Event name.</p>
 </dd>
-<dt><strong>problem_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The problem ID associated with this event.</p>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>Event title.</p>
 </dd>
-<dt><strong>problem</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a></span></dt>
-<dd><p class="first last">The <a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a> instance.</p>
+<dt><strong>problem_id</strong><span class="classifier">int</span></dt><dd><p>The problem ID associated with this event.</p>
 </dd>
-<dt><strong>max_members_per_team</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The maximum number of members per team.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a></span></dt><dd><p>The <a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a> instance.</p>
 </dd>
-<dt><strong>max_n_ensemble</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The maximum number of models in the ensemble.</p>
+<dt><strong>max_members_per_team</strong><span class="classifier">int</span></dt><dd><p>The maximum number of members per team.</p>
 </dd>
-<dt><strong>is_send_trained_mails</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether or not to send an email when a model is trained.</p>
+<dt><strong>max_n_ensemble</strong><span class="classifier">int</span></dt><dd><p>The maximum number of models in the ensemble.</p>
 </dd>
-<dt><strong>is_public</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether or not the event is public.</p>
+<dt><strong>is_send_trained_mails</strong><span class="classifier">bool</span></dt><dd><p>Whether or not to send an email when a model is trained.</p>
 </dd>
-<dt><strong>is_controled_signup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether or not the sign-up to the event is moderated.</p>
+<dt><strong>is_public</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the event is public.</p>
 </dd>
-<dt><strong>is_competitive</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether or not the challenge is in the competitive phase.</p>
+<dt><strong>is_controled_signup</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the sign-up to the event is moderated.</p>
 </dd>
-<dt><strong>min_duration_between_submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The amount of time to wait between two submissions.</p>
+<dt><strong>is_competitive</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the challenge is in the competitive phase.</p>
 </dd>
-<dt><strong>opening_timestamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datetime</span></dt>
-<dd><p class="first last">The date and time of the event opening.</p>
+<dt><strong>min_duration_between_submission</strong><span class="classifier">int</span></dt><dd><p>The amount of time to wait between two submissions.</p>
 </dd>
-<dt><strong>public_opening_timestamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datetime</span></dt>
-<dd><p class="first last">The date and time of the publicly event opening.</p>
+<dt><strong>opening_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time of the event opening.</p>
 </dd>
-<dt><strong>closing_timestamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datetime</span></dt>
-<dd><p class="first last">The date and time of the event closure.</p>
+<dt><strong>public_opening_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time of the publicly event opening.</p>
 </dd>
-<dt><strong>official_score_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the official score used to evaluate the submissions.</p>
+<dt><strong>closing_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time of the event closure.</p>
 </dd>
-<dt><strong>combined_combined_valid_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The combined public score for all folds.</p>
+<dt><strong>official_score_name</strong><span class="classifier">str</span></dt><dd><p>The name of the official score used to evaluate the submissions.</p>
 </dd>
-<dt><strong>combine_combined_test_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The combined private score for all folds.</p>
+<dt><strong>combined_combined_valid_score</strong><span class="classifier">float</span></dt><dd><p>The combined public score for all folds.</p>
 </dd>
-<dt><strong>combined_foldwise_valid_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The combined public scores for each fold.</p>
+<dt><strong>combine_combined_test_score</strong><span class="classifier">float</span></dt><dd><p>The combined private score for all folds.</p>
 </dd>
-<dt><strong>combined_foldwise_test_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The combined public scores for each fold.</p>
+<dt><strong>combined_foldwise_valid_score</strong><span class="classifier">float</span></dt><dd><p>The combined public scores for each fold.</p>
 </dd>
-<dt><strong>n_submissions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of submissions for an event.</p>
+<dt><strong>combined_foldwise_test_score</strong><span class="classifier">float</span></dt><dd><p>The combined public scores for each fold.</p>
 </dd>
-<dt><strong>public_leaderboard_html_no_links</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The public leaderboard in HTML format with links to the submissions.</p>
+<dt><strong>n_submissions</strong><span class="classifier">int</span></dt><dd><p>The number of submissions for an event.</p>
 </dd>
-<dt><strong>public_leaderboard_html_with_links</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The public leaderboard in HTML format.</p>
+<dt><strong>public_leaderboard_html_no_links</strong><span class="classifier">str</span></dt><dd><p>The public leaderboard in HTML format with links to the submissions.</p>
 </dd>
-<dt><strong>private_leaderboard_html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The private leaderboard in HTML.</p>
+<dt><strong>public_leaderboard_html_with_links</strong><span class="classifier">str</span></dt><dd><p>The public leaderboard in HTML format.</p>
 </dd>
-<dt><strong>failed_leaderboard_html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The leaderboard with the failed submissions.</p>
+<dt><strong>private_leaderboard_html</strong><span class="classifier">str</span></dt><dd><p>The private leaderboard in HTML.</p>
 </dd>
-<dt><strong>new_leaderboard_html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The leaderboard with the new submitted submissions.</p>
+<dt><strong>failed_leaderboard_html</strong><span class="classifier">str</span></dt><dd><p>The leaderboard with the failed submissions.</p>
 </dd>
-<dt><strong>public_competition_leaderboard_html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The public leaderboard of the competition in HTML.</p>
+<dt><strong>new_leaderboard_html</strong><span class="classifier">str</span></dt><dd><p>The leaderboard with the new submitted submissions.</p>
 </dd>
-<dt><strong>private_competition_leaderboard_html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The private leaderboard of the competition in HTML.</p>
+<dt><strong>public_competition_leaderboard_html</strong><span class="classifier">str</span></dt><dd><p>The public leaderboard of the competition in HTML.</p>
 </dd>
-<dt><strong>path_ramp_kit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The path where the kit are located.</p>
+<dt><strong>private_competition_leaderboard_html</strong><span class="classifier">str</span></dt><dd><p>The private leaderboard of the competition in HTML.</p>
 </dd>
-<dt><strong>ramp_sandbox_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the submission which will be considered the sandbox.</p>
+<dt><strong>path_ramp_kit</strong><span class="classifier">str</span></dt><dd><p>The path where the kit are located.</p>
 </dd>
-<dt><strong>path_ramp_submissions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Path to the deployment RAMP submissions directory. It will correspond
+<dt><strong>ramp_sandbox_name</strong><span class="classifier">str</span></dt><dd><p>Name of the submission which will be considered the sandbox.</p>
+</dd>
+<dt><strong>path_ramp_submissions</strong><span class="classifier">str</span></dt><dd><p>Path to the deployment RAMP submissions directory. It will correspond
 to the key <cite>ramp_submissions_dir</cite> of the dictionary created with
 <a class="reference internal" href="ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">ramp_utils.generate_ramp_config</span></code></a>.</p>
 </dd>
-<dt><strong>score_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of <a class="reference internal" href="ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventScoreType</span></code></a></span></dt>
-<dd><p class="first last">A back-reference to the score type used in the event.</p>
+<dt><strong>score_types</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventScoreType</span></code></a></span></dt><dd><p>A back-reference to the score type used in the event.</p>
 </dd>
-<dt><strong>event_admins</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of <a class="reference internal" href="ramp_database.model.EventAdmin.html#ramp_database.model.EventAdmin" title="ramp_database.model.EventAdmin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventAdmin</span></code></a></span></dt>
-<dd><p class="first last">A back-reference to the admin for the event.</p>
+<dt><strong>event_admins</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.EventAdmin.html#ramp_database.model.EventAdmin" title="ramp_database.model.EventAdmin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventAdmin</span></code></a></span></dt><dd><p>A back-reference to the admin for the event.</p>
 </dd>
-<dt><strong>event_teams: list of :class:`ramp_database.model.EventTeam`</strong></dt>
-<dd><p class="first last">A back-reference to the teams enrolled in the event.</p>
+<dt><strong>event_teams: list of :class:`ramp_database.model.EventTeam`</strong></dt><dd><p>A back-reference to the teams enrolled in the event.</p>
 </dd>
-<dt><strong>cv_folds</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of <a class="reference internal" href="ramp_database.model.CVFold.html#ramp_database.model.CVFold" title="ramp_database.model.CVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.CVFold</span></code></a></span></dt>
-<dd><p class="first last">A back-reference to the CV folds for the event.</p>
+<dt><strong>cv_folds</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.CVFold.html#ramp_database.model.CVFold" title="ramp_database.model.CVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.CVFold</span></code></a></span></dt><dd><p>A back-reference to the CV folds for the event.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="ramp_database.model.Event.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>problem_name</em>, <em>name</em>, <em>event_title</em>, <em>ramp_sandbox_name</em>, <em>path_ramp_submissions</em>, <em>session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">problem_name</em>, <em class="sig-param">name</em>, <em class="sig-param">event_title</em>, <em class="sig-param">ramp_sandbox_name</em>, <em class="sig-param">path_ramp_submissions</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.Predictions">
-<code class="descname">Predictions</code><a class="headerlink" href="#ramp_database.model.Event.Predictions" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">Predictions</code><a class="headerlink" href="#ramp_database.model.Event.Predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.base.BasePrediction</span></code>: Predictions
 for the given event.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.combined_combined_test_score_str">
-<code class="descname">combined_combined_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_test_score_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">combined_combined_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_test_score_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Convert to string the combined private score for all folds.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.combined_combined_valid_score_str">
-<code class="descname">combined_combined_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_valid_score_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">combined_combined_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_valid_score_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Convert to string the combined public score for all folds.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.combined_foldwise_test_score_str">
-<code class="descname">combined_foldwise_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_test_score_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">combined_foldwise_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_test_score_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Convert to string the combined public score for each fold.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.combined_foldwise_valid_score_str">
-<code class="descname">combined_foldwise_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_valid_score_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">combined_foldwise_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_valid_score_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Convert to string the combined public score for each fold.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_database.model.Event.get_official_score_type">
-<code class="descname">get_official_score_type</code><span class="sig-paren">(</span><em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.get_official_score_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_official_score_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.get_official_score_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the type of the default score used for the current event.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt>
-<dd><p class="first last">The session used to make the query.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session used to make the query.</p>
 </dd>
-<dt><strong>Returns</strong></dt>
-<dd></dd>
-<dt><strong>——-</strong></dt>
-<dd></dd>
-<dt><strong>event_type_score</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventTypeScore</span></code></span></dt>
-<dd><p class="first last">The default type score for the current event.</p>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+<dt><strong>event_type_score</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventTypeScore</span></code></span></dt><dd><p>The default type score for the current event.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.is_closed">
-<code class="descname">is_closed</code><a class="headerlink" href="#ramp_database.model.Event.is_closed" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_closed</code><a class="headerlink" href="#ramp_database.model.Event.is_closed" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool: Whether or not the event is closed.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.is_open">
-<code class="descname">is_open</code><a class="headerlink" href="#ramp_database.model.Event.is_open" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_open</code><a class="headerlink" href="#ramp_database.model.Event.is_open" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool: Whether or not the event is opened.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.is_public_open">
-<code class="descname">is_public_open</code><a class="headerlink" href="#ramp_database.model.Event.is_public_open" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_public_open</code><a class="headerlink" href="#ramp_database.model.Event.is_public_open" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool: Whether or not the public phase of the event is opened.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.n_jobs">
-<code class="descname">n_jobs</code><a class="headerlink" href="#ramp_database.model.Event.n_jobs" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">n_jobs</code><a class="headerlink" href="#ramp_database.model.Event.n_jobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>int: The number of cv fold which can be used as number of jobs.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.n_participants">
-<code class="descname">n_participants</code><a class="headerlink" href="#ramp_database.model.Event.n_participants" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">n_participants</code><a class="headerlink" href="#ramp_database.model.Event.n_participants" title="Permalink to this definition">¶</a></dt>
 <dd><p>int: The number of participants to the event.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.official_score_function">
-<code class="descname">official_score_function</code><a class="headerlink" href="#ramp_database.model.Event.official_score_function" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">official_score_function</code><a class="headerlink" href="#ramp_database.model.Event.official_score_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>callable: The default function used for scoring in the event.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.official_score_type">
-<code class="descname">official_score_type</code><a class="headerlink" href="#ramp_database.model.Event.official_score_type" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">official_score_type</code><a class="headerlink" href="#ramp_database.model.Event.official_score_type" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventScoreType</span></code></a>: The score type for the
 current event.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ramp_database.model.Event.query_class">
-<code class="descname">query_class</code><a class="headerlink" href="#ramp_database.model.Event.query_class" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.Event.query_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_database.model.Event.set_n_submissions">
-<code class="descname">set_n_submissions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.set_n_submissions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_n_submissions</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.set_n_submissions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of submissions for the current event by checking
 each team.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.Event.workflow">
-<code class="descname">workflow</code><a class="headerlink" href="#ramp_database.model.Event.workflow" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">workflow</code><a class="headerlink" href="#ramp_database.model.Event.workflow" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="ramp_database.model.Workflow.html#ramp_database.model.Workflow" title="ramp_database.model.Workflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Workflow</span></code></a>: The workflow used for the
 event.</p>
 </dd></dl>

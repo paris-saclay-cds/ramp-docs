@@ -97,16 +97,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ramp_frontend.create_app.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.testing.login.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.testing.login_scope.html"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login_scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramp_frontend.create_app.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.testing.login.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.testing.login_scope.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login_scope</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
@@ -165,7 +165,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</li>
     
     
 
@@ -181,30 +181,24 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a>.logout<a class="headerlink" href="#ramp-frontend-testing-logout" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_frontend.testing.logout">
-<code class="descclassname">ramp_frontend.testing.</code><code class="descname">logout</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.testing.logout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_frontend.testing.</code><code class="sig-name descname">logout</code><span class="sig-paren">(</span><em class="sig-param">client</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.testing.logout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate a log-out.</p>
 <p>After the log-out request, the client will be redirected to the expected
 page.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>client</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">flask.testing.FlaskClient</span></code></span></dt>
-<dd><p class="first last">The testing client used for unit testing.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>client</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">flask.testing.FlaskClient</span></code></span></dt><dd><p>The testing client used for unit testing.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>response</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">flask.wrappers.Response</span></code></span></dt>
-<dd><p class="first last">The response of the client.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>response</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">flask.wrappers.Response</span></code></span></dt><dd><p>The response of the client.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

@@ -95,17 +95,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.tools.user</span></code>.add_user_interaction</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.user</span></code>.add_user_interaction</li>
     
     
 
@@ -182,51 +182,36 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.user</span></code>.add_user_interaction<a class="headerlink" href="#ramp-database-tools-user-add-user-interaction" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.user.add_user_interaction">
-<code class="descclassname">ramp_database.tools.user.</code><code class="descname">add_user_interaction</code><span class="sig-paren">(</span><em>session</em>, <em>interaction=None</em>, <em>user=None</em>, <em>problem=None</em>, <em>event=None</em>, <em>ip=None</em>, <em>note=None</em>, <em>submission=None</em>, <em>submission_file=None</em>, <em>diff=None</em>, <em>similarity=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.user.add_user_interaction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.tools.user.</code><code class="sig-name descname">add_user_interaction</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">interaction=None</em>, <em class="sig-param">user=None</em>, <em class="sig-param">problem=None</em>, <em class="sig-param">event=None</em>, <em class="sig-param">ip=None</em>, <em class="sig-param">note=None</em>, <em class="sig-param">submission=None</em>, <em class="sig-param">submission_file=None</em>, <em class="sig-param">diff=None</em>, <em class="sig-param">similarity=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.user.add_user_interaction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a user interaction in the database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt>
-<dd><p class="first last">The session to directly perform the operation on the database.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>interactions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or str, default is None</span></dt>
-<dd><p class="first last">The type of interaction.</p>
+<dt><strong>interactions</strong><span class="classifier">None or str, default is None</span></dt><dd><p>The type of interaction.</p>
 </dd>
-<dt><strong>user</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <a class="reference internal" href="ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.User</span></code></a>, default is None</span></dt>
-<dd><p class="first last">The user instance.</p>
+<dt><strong>user</strong><span class="classifier">None or <a class="reference internal" href="ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.User</span></code></a>, default is None</span></dt><dd><p>The user instance.</p>
 </dd>
-<dt><strong>problem</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a>, default is None</span></dt>
-<dd><p class="first last">The problem instance.</p>
+<dt><strong>problem</strong><span class="classifier">None or <a class="reference internal" href="ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Problem</span></code></a>, default is None</span></dt><dd><p>The problem instance.</p>
 </dd>
-<dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <a class="reference internal" href="ramp_database.model.Event.html#ramp_database.model.Event" title="ramp_database.model.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Event</span></code></a>, default is None</span></dt>
-<dd><p class="first last">The event instance.</p>
+<dt><strong>event</strong><span class="classifier">None or <a class="reference internal" href="ramp_database.model.Event.html#ramp_database.model.Event" title="ramp_database.model.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Event</span></code></a>, default is None</span></dt><dd><p>The event instance.</p>
 </dd>
-<dt><strong>ip</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or str, default is None</span></dt>
-<dd><p class="first last">The ip address from the server.</p>
+<dt><strong>ip</strong><span class="classifier">None or str, default is None</span></dt><dd><p>The ip address from the server.</p>
 </dd>
-<dt><strong>note</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or str, default is None</span></dt>
-<dd><p class="first last">Some notes.</p>
+<dt><strong>note</strong><span class="classifier">None or str, default is None</span></dt><dd><p>Some notes.</p>
 </dd>
-<dt><strong>submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a>, default is None</span></dt>
-<dd><p class="first last">The submission instance.</p>
+<dt><strong>submission</strong><span class="classifier">None or <a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a>, default is None</span></dt><dd><p>The submission instance.</p>
 </dd>
-<dt><strong>submission_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or <a class="reference internal" href="ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile" title="ramp_database.model.SubmissionFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFile</span></code></a>, default is None</span></dt>
-<dd><p class="first last">The submission file instance.</p>
+<dt><strong>submission_file</strong><span class="classifier">None or <a class="reference internal" href="ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile" title="ramp_database.model.SubmissionFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFile</span></code></a>, default is None</span></dt><dd><p>The submission file instance.</p>
 </dd>
-<dt><strong>diff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or str, default is None</span></dt>
-<dd><p class="first last">The difference between two submissions.</p>
+<dt><strong>diff</strong><span class="classifier">None or str, default is None</span></dt><dd><p>The difference between two submissions.</p>
 </dd>
-<dt><strong>similarity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or float, default is None</span></dt>
-<dd><p class="first last">The similarity of the submission.</p>
+<dt><strong>similarity</strong><span class="classifier">None or float, default is None</span></dt><dd><p>The similarity of the submission.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

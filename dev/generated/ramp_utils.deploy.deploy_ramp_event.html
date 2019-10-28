@@ -100,7 +100,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../api.html#deployment-utilities">Deployment utilities</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#ramp-shared-utilities">RAMP shared utilities</a></li>
@@ -161,7 +161,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event</li>
     
     
 
@@ -177,33 +177,25 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event<a class="headerlink" href="#ramp-utils-deploy-deploy-ramp-event" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_utils.deploy.deploy_ramp_event">
-<code class="descclassname">ramp_utils.deploy.</code><code class="descname">deploy_ramp_event</code><span class="sig-paren">(</span><em>config</em>, <em>event_config</em>, <em>setup_ramp_repo=True</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.deploy.deploy_ramp_event" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_utils.deploy.</code><code class="sig-name descname">deploy_ramp_event</code><span class="sig-paren">(</span><em class="sig-param">config</em>, <em class="sig-param">event_config</em>, <em class="sig-param">setup_ramp_repo=True</em>, <em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.deploy.deploy_ramp_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deploy a RAMP event using a configuration file.</p>
 <p>This utility is in charge of creating the kit and data repository for a
 given RAMP event. It will also setup the database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The path to the YAML file containing the database information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">str</span></dt><dd><p>The path to the YAML file containing the database information.</p>
 </dd>
-<dt><strong>event_config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The path to the YAML file containing the RAMP infomation.</p>
+<dt><strong>event_config</strong><span class="classifier">str</span></dt><dd><p>The path to the YAML file containing the RAMP infomation.</p>
 </dd>
-<dt><strong>setup_ramp_repo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, default is True</span></dt>
-<dd><p class="first last">Whether or not to setup the RAMP kit and data repositories.</p>
+<dt><strong>setup_ramp_repo</strong><span class="classifier">bool, default is True</span></dt><dd><p>Whether or not to setup the RAMP kit and data repositories.</p>
 </dd>
-<dt><strong>force</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, default is False</span></dt>
-<dd><p class="first last">Whether or not to potentially overwrite the repositories, problem and
+<dt><strong>force</strong><span class="classifier">bool, default is False</span></dt><dd><p>Whether or not to potentially overwrite the repositories, problem and
 event in the database.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

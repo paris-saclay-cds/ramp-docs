@@ -99,12 +99,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_flask_config.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_flask_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_ramp_config.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_worker_config.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.database_config_template.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.ramp_config_template.html"><code class="docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.ramp_config_template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_flask_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_flask_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_ramp_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_worker_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.database_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.ramp_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.ramp_config_template</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#deployment-utilities">Deployment utilities</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</li>
     
     
 
@@ -182,40 +182,32 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config<a class="headerlink" href="#ramp-utils-read-config" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_utils.read_config">
-<code class="descclassname">ramp_utils.</code><code class="descname">read_config</code><span class="sig-paren">(</span><em>config_file</em>, <em>filter_section=None</em>, <em>check_requirements=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.read_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_utils.</code><code class="sig-name descname">read_config</code><span class="sig-paren">(</span><em class="sig-param">config_file</em>, <em class="sig-param">filter_section=None</em>, <em class="sig-param">check_requirements=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.read_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read and parse the configuration file for RAMP.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>config_file: str</strong></dt>
-<dd><p class="first last">Path to the YAML configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config_file: str</strong></dt><dd><p>Path to the YAML configuration file.</p>
 </dd>
-<dt><strong>filter_section</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None, str, or list of str, default is None</span></dt>
-<dd><p class="first">To restrict the configuration to particular field. By default all the
+<dt><strong>filter_section</strong><span class="classifier">None, str, or list of str, default is None</span></dt><dd><p>To restrict the configuration to particular field. By default all the
 configuration file is read. The available sections of the configuration
 is:</p>
-<ul class="last simple">
-<li>‘sqlalchemy’: contain the information related to the database;</li>
+<ul class="simple">
+<li><p>‘sqlalchemy’: contain the information related to the database;</p></li>
 </ul>
 </dd>
-<dt><strong>check_requirements: bool, default is True</strong></dt>
-<dd><p class="first last">Whether to check that all minimum configuration parameters were read
+<dt><strong>check_requirements: bool, default is True</strong></dt><dd><p>Whether to check that all minimum configuration parameters were read
 from the configuration file.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Configuration parsed as a dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Configuration parsed as a dictionary.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

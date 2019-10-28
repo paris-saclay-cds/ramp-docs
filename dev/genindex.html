@@ -233,6 +233,10 @@
 </li>
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-config">ramp-frontend-test-launch command line option</a>
 </li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-config">ramp-launch-dispatcher command line option</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-config">ramp-launch-worker command line option</a>
+</li>
         <li><a href="cli.html#cmdoption-ramp-setup-deploy-event-config">ramp-setup-deploy-event command line option</a>
 </li>
       </ul></li>
@@ -284,6 +288,10 @@
     --event-config &lt;event_config&gt;
 
       <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-event-config">ramp-launch-dispatcher command line option</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-event-config">ramp-launch-worker command line option</a>
+</li>
         <li><a href="cli.html#cmdoption-ramp-setup-deploy-event-event-config">ramp-setup-deploy-event command line option</a>
 </li>
       </ul></li>
@@ -314,8 +322,6 @@
         <li><a href="cli.html#cmdoption-ramp-database-add-problem-force">ramp-database-add-problem command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --hidden-notes &lt;hidden_notes&gt;
 
@@ -323,11 +329,20 @@
         <li><a href="cli.html#cmdoption-ramp-database-add-user-hidden-notes">ramp-database-add-user command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --host &lt;host&gt;
 
       <ul>
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-host">ramp-frontend-test-launch command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hunger-policy &lt;hunger_policy&gt;
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-hunger-policy">ramp-launch-dispatcher command line option</a>
 </li>
       </ul></li>
       <li>
@@ -358,6 +373,20 @@
         <li><a href="cli.html#cmdoption-ramp-database-add-user-login">ramp-database-add-user command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-database-approve-user-login">ramp-database-approve-user command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --n-threads &lt;n_threads&gt;
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-n-threads">ramp-launch-dispatcher command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --n-workers &lt;n_workers&gt;
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-n-workers">ramp-launch-dispatcher command line option</a>
 </li>
       </ul></li>
       <li>
@@ -419,6 +448,8 @@
       <ul>
         <li><a href="cli.html#cmdoption-ramp-database-add-submission-submission">ramp-database-add-submission command line option</a>
 </li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-submission">ramp-launch-worker command line option</a>
+</li>
       </ul></li>
       <li>
     --submission-id &lt;submission_id&gt;
@@ -457,6 +488,15 @@
         <li><a href="cli.html#cmdoption-ramp-database-add-event-admin-user">ramp-database-add-event-admin command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-database-update-user-leaderboards-user">ramp-database-update-user-leaderboards command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -v, --verbose
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-v">ramp-launch-dispatcher command line option</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-v">ramp-launch-worker command line option</a>
 </li>
       </ul></li>
   </ul></td>
@@ -625,7 +665,7 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.basename">basename (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.basename">basename() (ramp_database.model.Submission property)</a>
 </li>
       <li><a href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker">BaseWorker (class in ramp_engine.base)</a>
 </li>
@@ -699,13 +739,13 @@
         <li><a href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker.collect_results">(ramp_engine.local.CondaEnvWorker method)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_combined_test_score_str">combined_combined_test_score_str (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_combined_test_score_str">combined_combined_test_score_str() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_combined_valid_score_str">combined_combined_valid_score_str (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_combined_valid_score_str">combined_combined_valid_score_str() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_foldwise_test_score_str">combined_foldwise_test_score_str (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_foldwise_test_score_str">combined_foldwise_test_score_str() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_foldwise_valid_score_str">combined_foldwise_valid_score_str (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.combined_foldwise_valid_score_str">combined_foldwise_valid_score_str() (ramp_database.model.Event property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -768,14 +808,12 @@
       <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event">Event (class in ramp_database.model)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.event">event (ramp_database.model.Submission attribute)</a>
-
-      <ul>
-        <li><a href="generated/ramp_database.model.UserInteraction.html#ramp_database.model.UserInteraction.event">(ramp_database.model.UserInteraction attribute)</a>
 </li>
-      </ul></li>
+      <li><a href="generated/ramp_database.model.UserInteraction.html#ramp_database.model.UserInteraction.event">event() (ramp_database.model.UserInteraction property)</a>
+</li>
       <li><a href="generated/ramp_frontend.views.ramp.event_plots.html#ramp_frontend.views.ramp.event_plots">event_plots() (in module ramp_frontend.views.ramp)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.event_score_type">event_score_type (ramp_database.model.SubmissionScoreOnCVFold attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.event_score_type">event_score_type() (ramp_database.model.SubmissionScoreOnCVFold property)</a>
 </li>
       <li><a href="generated/ramp_database.model.EventAdmin.html#ramp_database.model.EventAdmin">EventAdmin (class in ramp_database.model)</a>
 </li>
@@ -791,9 +829,9 @@
 </li>
       <li><a href="generated/ramp_database.model.Extension.html#ramp_database.model.Extension">Extension (class in ramp_database.model)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.extension">extension (ramp_database.model.SubmissionFile attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.extension">extension() (ramp_database.model.SubmissionFile property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension.extension_name">extension_name (ramp_database.model.SubmissionFileTypeExtension attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension.extension_name">extension_name() (ramp_database.model.SubmissionFileTypeExtension property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -801,25 +839,25 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.f_name">f_name (ramp_database.model.SubmissionFile attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.f_name">f_name() (ramp_database.model.SubmissionFile property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.f_names">f_names (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.f_names">f_names() (ramp_database.model.Submission property)</a>
 </li>
       <li><a href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher.fetch_from_db">fetch_from_db() (ramp_engine.dispatcher.Dispatcher method)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension.file_type">file_type (ramp_database.model.SubmissionFileTypeExtension attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension.file_type">file_type() (ramp_database.model.SubmissionFileTypeExtension property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.file_type">(ramp_database.model.WorkflowElement attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.file_type">(ramp_database.model.WorkflowElement property)</a>
 </li>
-        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.file_type">(ramp_database.model.WorkflowElementType attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.file_type">(ramp_database.model.WorkflowElementType property)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.full_name_with_link">full_name_with_link (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.full_name_with_link">full_name_with_link() (ramp_database.model.Submission property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.full_train_predictions">full_train_predictions (ramp_database.model.SubmissionOnCVFold attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.full_train_predictions">full_train_predictions() (ramp_database.model.SubmissionOnCVFold property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -977,20 +1015,20 @@
 </li>
       <li><a href="generated/ramp_database.tools.frontend.is_accessible_leaderboard.html#ramp_database.tools.frontend.is_accessible_leaderboard">is_accessible_leaderboard() (in module ramp_database.tools.frontend)</a>
 </li>
-      <li><a href="generated/ramp_database.model.User.html#ramp_database.model.User.is_active">is_active (ramp_database.model.User attribute)</a>
+      <li><a href="generated/ramp_database.model.User.html#ramp_database.model.User.is_active">is_active() (ramp_database.model.User property)</a>
 </li>
       <li><a href="generated/ramp_database.tools.frontend.is_admin.html#ramp_database.tools.frontend.is_admin">is_admin() (in module ramp_database.tools.frontend)</a>
 </li>
-      <li><a href="generated/ramp_database.model.User.html#ramp_database.model.User.is_anonymous">is_anonymous (ramp_database.model.User attribute)</a>
+      <li><a href="generated/ramp_database.model.User.html#ramp_database.model.User.is_anonymous">is_anonymous() (ramp_database.model.User property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_closed">is_closed (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_closed">is_closed() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.is_editable">is_editable (ramp_database.model.SubmissionFile attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.is_editable">is_editable() (ramp_database.model.SubmissionFile property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.is_editable">(ramp_database.model.WorkflowElement attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.is_editable">(ramp_database.model.WorkflowElement property)</a>
 </li>
-        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.is_editable">(ramp_database.model.WorkflowElementType attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.is_editable">(ramp_database.model.WorkflowElementType property)</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.is_error">is_error (ramp_database.model.Submission attribute)</a>
@@ -999,7 +1037,7 @@
         <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.is_error">(ramp_database.model.SubmissionOnCVFold attribute)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.is_lower_the_better">is_lower_the_better (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.is_lower_the_better">is_lower_the_better() (ramp_database.model.EventScoreType property)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.is_new">is_new (ramp_database.model.Submission attribute)</a>
 </li>
@@ -1007,7 +1045,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_open">is_open (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_open">is_open() (ramp_database.model.Event property)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.is_private_leaderboard">is_private_leaderboard (ramp_database.model.Submission attribute)</a>
 </li>
@@ -1017,7 +1055,7 @@
         <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.is_public_leaderboard">(ramp_database.model.SubmissionOnCVFold attribute)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_public_open">is_public_open (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.is_public_open">is_public_open() (ramp_database.model.Event property)</a>
 </li>
       <li><a href="generated/ramp_frontend.forms.AskForEventForm.html#ramp_frontend.forms.AskForEventForm.is_submitted">is_submitted() (ramp_frontend.forms.AskForEventForm method)</a>
 
@@ -1093,10 +1131,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="generated/ramp_frontend.views.leaderboard.leaderboard.html#ramp_frontend.views.leaderboard.leaderboard">leaderboard() (in module ramp_frontend.views.leaderboard)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.link">link (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.link">link() (ramp_database.model.Submission property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.link">(ramp_database.model.SubmissionFile attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.link">(ramp_database.model.SubmissionFile property)</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_frontend.testing.login.html#ramp_frontend.testing.login">login() (in module ramp_frontend.testing)</a>
@@ -1115,17 +1153,17 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.max_size">max_size (ramp_database.model.WorkflowElement attribute)</a>
+      <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.max_size">max_size() (ramp_database.model.WorkflowElement property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.max_size">(ramp_database.model.WorkflowElementType attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType.max_size">(ramp_database.model.WorkflowElementType property)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.maximum">maximum (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.maximum">maximum() (ramp_database.model.EventScoreType property)</a>
 </li>
       <li><a href="generated/ramp_database.exceptions.MergeTeamError.html#ramp_database.exceptions.MergeTeamError">MergeTeamError (class in ramp_database.exceptions)</a>
 </li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.minimum">minimum (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.minimum">minimum() (ramp_database.model.EventScoreType property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1133,10 +1171,10 @@
 </li>
       <li><a href="generated/ramp_database.exceptions.MissingSubmissionFileError.html#ramp_database.exceptions.MissingSubmissionFileError">MissingSubmissionFileError (class in ramp_database.exceptions)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.module">module (ramp_database.model.Problem attribute)</a>
+      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.module">module() (ramp_database.model.Problem property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.module">(ramp_database.model.Submission attribute)</a>
+        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.module">(ramp_database.model.Submission property)</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_frontend.forms.MultiCheckboxField.html#ramp_frontend.forms.MultiCheckboxField">MultiCheckboxField (class in ramp_frontend.forms)</a>
@@ -1149,22 +1187,22 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.n_jobs">n_jobs (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.n_jobs">n_jobs() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.n_participants">n_participants (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.n_participants">n_participants() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.name">name (ramp_database.model.SubmissionFile attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.name">name() (ramp_database.model.SubmissionFile property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.name">(ramp_database.model.SubmissionScoreOnCVFold attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.name">(ramp_database.model.SubmissionScoreOnCVFold property)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.name_with_link">name_with_link (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.name_with_link">name_with_link() (ramp_database.model.Submission property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.name_with_link">(ramp_database.model.SubmissionFile attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.name_with_link">(ramp_database.model.SubmissionFile property)</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_database.exceptions.NameClashError.html#ramp_database.exceptions.NameClashError">NameClashError (class in ramp_database.exceptions)</a>
@@ -1177,23 +1215,23 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score">official_score (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score">official_score() (ramp_database.model.Submission property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.official_score">(ramp_database.model.SubmissionOnCVFold attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.official_score">(ramp_database.model.SubmissionOnCVFold property)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.official_score_function">official_score_function (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.official_score_function">official_score_function() (ramp_database.model.Event property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score_function">(ramp_database.model.Submission attribute)</a>
+        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score_function">(ramp_database.model.Submission property)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score_name">official_score_name (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.official_score_name">official_score_name() (ramp_database.model.Submission property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.official_score_type">official_score_type (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.official_score_type">official_score_type() (ramp_database.model.Event property)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.ordered_scores">ordered_scores() (ramp_database.model.Submission method)</a>
 </li>
@@ -1203,10 +1241,10 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.path">path (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.path">path() (ramp_database.model.Submission property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.path">(ramp_database.model.SubmissionFile attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.path">(ramp_database.model.SubmissionFile property)</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_frontend.forms.AskForEventForm.html#ramp_frontend.forms.AskForEventForm.populate_obj">populate_obj() (ramp_frontend.forms.AskForEventForm method)</a>
@@ -1237,14 +1275,14 @@
 </li>
       <li><a href="generated/ramp_frontend.forms.MultiCheckboxField.html#ramp_frontend.forms.MultiCheckboxField.pre_validate">pre_validate() (ramp_frontend.forms.MultiCheckboxField method)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.precision">precision (ramp_database.model.SubmissionScore attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.precision">precision() (ramp_database.model.SubmissionScore property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.Predictions">Predictions (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.Predictions">Predictions() (ramp_database.model.Event property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.Predictions">(ramp_database.model.Problem attribute)</a>
+        <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.Predictions">(ramp_database.model.Problem property)</a>
 </li>
-        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.Predictions">(ramp_database.model.Submission attribute)</a>
+        <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.Predictions">(ramp_database.model.Submission property)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1489,8 +1527,6 @@
         <li><a href="cli.html#cmdoption-ramp-database-update-all-users-leaderboards-event">--event &lt;event&gt;</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ramp-database-update-leaderboards command line option
 
@@ -1511,6 +1547,8 @@
         <li><a href="cli.html#cmdoption-ramp-database-update-user-leaderboards-user">--user &lt;user&gt;</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ramp-frontend-test-launch command line option
 
@@ -1520,6 +1558,36 @@
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-host">--host &lt;host&gt;</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-port">--port &lt;port&gt;</a>
+</li>
+      </ul></li>
+      <li>
+    ramp-launch-dispatcher command line option
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-config">--config &lt;config&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-event-config">--event-config &lt;event_config&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-hunger-policy">--hunger-policy &lt;hunger_policy&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-n-threads">--n-threads &lt;n_threads&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-n-workers">--n-workers &lt;n_workers&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-v">-v, --verbose</a>
+</li>
+      </ul></li>
+      <li>
+    ramp-launch-worker command line option
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-config">--config &lt;config&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-event-config">--event-config &lt;event_config&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-submission">--submission &lt;submission&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-worker-v">-v, --verbose</a>
 </li>
       </ul></li>
       <li>
@@ -1621,23 +1689,23 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="generated/ramp_frontend.views.ramp.sandbox.html#ramp_frontend.views.ramp.sandbox">sandbox() (in module ramp_frontend.views.ramp)</a>
 </li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.score_function">score_function (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.score_function">score_function() (ramp_database.model.EventScoreType property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.score_function">(ramp_database.model.SubmissionScore attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.score_function">(ramp_database.model.SubmissionScore property)</a>
 </li>
-        <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.score_function">(ramp_database.model.SubmissionScoreOnCVFold attribute)</a>
+        <li><a href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold.score_function">(ramp_database.model.SubmissionScoreOnCVFold property)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.score_name">score_name (ramp_database.model.SubmissionScore attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore.score_name">score_name() (ramp_database.model.SubmissionScore property)</a>
 </li>
       <li><a href="generated/ramp_frontend.views.visualization.score_plot.html#ramp_frontend.views.visualization.score_plot">score_plot() (in module ramp_frontend.views.visualization)</a>
 </li>
       <li><a href="generated/ramp_database.tools.submission.score_submission.html#ramp_database.tools.submission.score_submission">score_submission() (in module ramp_database.tools.submission)</a>
 </li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.score_type_object">score_type_object (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.score_type_object">score_type_object() (ramp_database.model.EventScoreType property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.score_types">score_types (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.score_types">score_types() (ramp_database.model.Submission property)</a>
 </li>
       <li><a href="generated/ramp_database.model.ScoreType.html#ramp_database.model.ScoreType">ScoreType (class in ramp_database.model)</a>
 </li>
@@ -1701,7 +1769,7 @@
 </li>
       <li><a href="generated/ramp_database.testing.sign_up_teams_to_events.html#ramp_database.testing.sign_up_teams_to_events">sign_up_teams_to_events() (in module ramp_database.testing)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.state_with_link">state_with_link (ramp_database.model.Submission attribute)</a>
+      <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.state_with_link">state_with_link() (ramp_database.model.Submission property)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission">Submission (class in ramp_database.model)</a>
 </li>
@@ -1738,11 +1806,9 @@
       <li><a href="generated/ramp_database.model.Team.html#ramp_database.model.Team">Team (class in ramp_database.model)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.team">team (ramp_database.model.Submission attribute)</a>
-
-      <ul>
-        <li><a href="generated/ramp_database.model.UserInteraction.html#ramp_database.model.UserInteraction.team">(ramp_database.model.UserInteraction attribute)</a>
 </li>
-      </ul></li>
+      <li><a href="generated/ramp_database.model.UserInteraction.html#ramp_database.model.UserInteraction.team">team() (ramp_database.model.UserInteraction property)</a>
+</li>
       <li><a href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker.teardown">teardown() (ramp_engine.aws.AWSWorker method)</a>
 
       <ul>
@@ -1753,18 +1819,18 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.test_predictions">test_predictions (ramp_database.model.SubmissionOnCVFold attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.test_predictions">test_predictions() (ramp_database.model.SubmissionOnCVFold property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.title">title (ramp_database.model.Problem attribute)</a>
+      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.title">title() (ramp_database.model.Problem property)</a>
 </li>
       <li><a href="generated/ramp_database.exceptions.TooEarlySubmissionError.html#ramp_database.exceptions.TooEarlySubmissionError">TooEarlySubmissionError (class in ramp_database.exceptions)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.train_predictions">train_predictions (ramp_database.model.SubmissionOnCVFold attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.train_predictions">train_predictions() (ramp_database.model.SubmissionOnCVFold property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.type">type (ramp_database.model.SubmissionFile attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile.type">type() (ramp_database.model.SubmissionFile property)</a>
 
       <ul>
-        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.type">(ramp_database.model.WorkflowElement attribute)</a>
+        <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement.type">(ramp_database.model.WorkflowElement property)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1837,7 +1903,7 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.valid_predictions">valid_predictions (ramp_database.model.SubmissionOnCVFold attribute)</a>
+      <li><a href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold.valid_predictions">valid_predictions() (ramp_database.model.SubmissionOnCVFold property)</a>
 </li>
       <li><a href="generated/ramp_frontend.forms.AskForEventForm.html#ramp_frontend.forms.AskForEventForm.validate">validate() (ramp_frontend.forms.AskForEventForm method)</a>
 
@@ -1915,9 +1981,9 @@
       </ul></li>
       <li><a href="generated/ramp_database.model.Workflow.html#ramp_database.model.Workflow">Workflow (class in ramp_database.model)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.workflow">workflow (ramp_database.model.Event attribute)</a>
+      <li><a href="generated/ramp_database.model.Event.html#ramp_database.model.Event.workflow">workflow() (ramp_database.model.Event property)</a>
 </li>
-      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.workflow_object">workflow_object (ramp_database.model.Problem attribute)</a>
+      <li><a href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem.workflow_object">workflow_object() (ramp_database.model.Problem property)</a>
 </li>
       <li><a href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement">WorkflowElement (class in ramp_database.model)</a>
 </li>
@@ -1925,7 +1991,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType">WorkflowElementType (class in ramp_database.model)</a>
 </li>
-      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.worst">worst (ramp_database.model.EventScoreType attribute)</a>
+      <li><a href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType.worst">worst() (ramp_database.model.EventScoreType property)</a>
 </li>
       <li><a href="generated/ramp_frontend.forms.AskForEventForm.html#ramp_frontend.forms.AskForEventForm.Meta.wrap_formdata">wrap_formdata() (ramp_frontend.forms.AskForEventForm.Meta method)</a>
 

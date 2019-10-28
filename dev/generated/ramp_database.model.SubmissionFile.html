@@ -95,7 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
@@ -103,10 +103,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.SubmissionFile</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.SubmissionFile</li>
     
     
 
@@ -183,42 +183,31 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.SubmissionFile<a class="headerlink" href="#ramp-database-model-submissionfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_database.model.SubmissionFile">
-<em class="property">class </em><code class="descclassname">ramp_database.model.</code><code class="descname">SubmissionFile</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">SubmissionFile</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>SubmissionFile table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the table row.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The ID of the table row.</p>
 </dd>
-<dt><strong>submission_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the associated submission.</p>
+<dt><strong>submission_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the associated submission.</p>
 </dd>
-<dt><strong>submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt>
-<dd><p class="first last">The submission instance associated.</p>
+<dt><strong>submission</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt><dd><p>The submission instance associated.</p>
 </dd>
-<dt><strong>workflow_element_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the associated workflow element.</p>
+<dt><strong>workflow_element_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the associated workflow element.</p>
 </dd>
-<dt><strong>workflow_element</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement" title="ramp_database.model.WorkflowElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElement</span></code></a></span></dt>
-<dd><p class="first last">The workflow element associated with the submission.</p>
+<dt><strong>workflow_element</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement" title="ramp_database.model.WorkflowElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElement</span></code></a></span></dt><dd><p>The workflow element associated with the submission.</p>
 </dd>
-<dt><strong>submission_file_type_extension_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The ID of the associated submission file type extension.</p>
+<dt><strong>submission_file_type_extension_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the associated submission file type extension.</p>
 </dd>
-<dt><strong>submission_file_type_extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension" title="ramp_database.model.SubmissionFileTypeExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFileTypeExtension</span></code></a></span></dt>
-<dd><p class="first last">The associated submission file type extension instance.</p>
+<dt><strong>submission_file_type_extension</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension" title="ramp_database.model.SubmissionFileTypeExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFileTypeExtension</span></code></a></span></dt><dd><p>The associated submission file type extension instance.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="ramp_database.model.SubmissionFile.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple constructor that allows initialization from kwargs.</p>
 <p>Sets attributes on the constructed instance using the names and
 values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
@@ -227,83 +216,78 @@ attributes of the instance’s class are allowed. These could be,
 for example, any mapped columns or relationships.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.extension">
-<code class="descname">extension</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.extension" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">extension</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.extension" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The extension of the file format.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.f_name">
-<code class="descname">f_name</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.f_name" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">f_name</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.f_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The corresponding file name.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_database.model.SubmissionFile.get_code">
-<code class="descname">get_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.get_code" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_code</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.get_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: Get the content of the file.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.is_editable">
-<code class="descname">is_editable</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.is_editable" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_editable</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.is_editable" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool: Whether the submission file is from an editable format.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.link">
-<code class="descname">link</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.link" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">link</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.link" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: A unique link to the file. The hash is generated by the
 Submission instance.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.name">
-<code class="descname">name</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.name" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The name of the workflow element.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.name_with_link">
-<code class="descname">name_with_link</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.name_with_link" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">name_with_link</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.name_with_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The HTML hyperlink of the name of the submission file.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.path">
-<code class="descname">path</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.path" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.path" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The path to the file in the deployment directory.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ramp_database.model.SubmissionFile.query_class">
-<code class="descname">query_class</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.query_class" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.query_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_database.model.SubmissionFile.set_code">
-<code class="descname">set_code</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.set_code" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_code</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionFile.set_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the content of the submission file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>code</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The code to write into the submission file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>code</strong><span class="classifier">str</span></dt><dd><p>The code to write into the submission file.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="ramp_database.model.SubmissionFile.type">
-<code class="descname">type</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.type" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#ramp_database.model.SubmissionFile.type" title="Permalink to this definition">¶</a></dt>
 <dd><p>str: The workflow type associated with the file.</p>
 </dd></dl>
 

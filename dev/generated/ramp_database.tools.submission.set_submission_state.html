@@ -95,17 +95,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.tools.submission</span></code>.set_submission_state</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.submission</span></code>.set_submission_state</li>
     
     
 
@@ -182,40 +182,33 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.submission</span></code>.set_submission_state<a class="headerlink" href="#ramp-database-tools-submission-set-submission-state" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.submission.set_submission_state">
-<code class="descclassname">ramp_database.tools.submission.</code><code class="descname">set_submission_state</code><span class="sig-paren">(</span><em>session</em>, <em>submission_id</em>, <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.submission.set_submission_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.tools.submission.</code><code class="sig-name descname">set_submission_state</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">submission_id</em>, <em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.submission.set_submission_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the set of a submission.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt>
-<dd><p class="first last">The session to directly perform the operation on the database.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>submission_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">id of the requested submission</p>
+<dt><strong>submission_id</strong><span class="classifier">int</span></dt><dd><p>id of the requested submission</p>
 </dd>
-<dt><strong>state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first">The state of the submission. The possible states for a submission are:</p>
-<ul class="last simple">
-<li>‘new’: submitted by user to the web interface;</li>
-<li>‘sent_to_training’: submission was send for training but not launch
-yet.</li>
-<li>‘trained’: training finished normally;</li>
-<li>‘training_error’: training finished abnormally;</li>
-<li>‘validated’: validation finished normally;</li>
-<li>‘validating_error’: validation finished abnormally;</li>
-<li>‘tested’: testing finished normally;</li>
-<li>‘testing_error’: testing finished abnormally;</li>
-<li>‘training’: training is running normally;</li>
-<li>‘scored’: submission scored.</li>
+<dt><strong>state</strong><span class="classifier">str</span></dt><dd><p>The state of the submission. The possible states for a submission are:</p>
+<ul class="simple">
+<li><p>‘new’: submitted by user to the web interface;</p></li>
+<li><p>‘sent_to_training’: submission was send for training but not launch
+yet.</p></li>
+<li><p>‘trained’: training finished normally;</p></li>
+<li><p>‘training_error’: training finished abnormally;</p></li>
+<li><p>‘validated’: validation finished normally;</p></li>
+<li><p>‘validating_error’: validation finished abnormally;</p></li>
+<li><p>‘tested’: testing finished normally;</p></li>
+<li><p>‘testing_error’: testing finished abnormally;</p></li>
+<li><p>‘training’: training is running normally;</p></li>
+<li><p>‘scored’: submission scored.</p></li>
 </ul>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

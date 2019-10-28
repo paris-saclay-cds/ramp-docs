@@ -95,17 +95,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_admin</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_admin</li>
     
     
 
@@ -182,27 +182,20 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_admin<a class="headerlink" href="#ramp-database-tools-frontend-is-admin" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.frontend.is_admin">
-<code class="descclassname">ramp_database.tools.frontend.</code><code class="descname">is_admin</code><span class="sig-paren">(</span><em>session</em>, <em>event_name</em>, <em>user_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.is_admin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.tools.frontend.</code><code class="sig-name descname">is_admin</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.is_admin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether or not a user is administrator or administrate an event.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>session</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt>
-<dd><p class="first last">The session to directly perform the operation on the database.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>event_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The event name.</p>
+<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
 </dd>
-<dt><strong>user_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The user name.</p>
+<dt><strong>user_name</strong><span class="classifier">str</span></dt><dd><p>The user name.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

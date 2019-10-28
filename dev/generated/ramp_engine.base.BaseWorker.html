@@ -98,9 +98,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../api.html#ramp-dispatcher">RAMP Dispatcher</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../api.html#ramp-workers">RAMP Workers</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_engine.local.CondaEnvWorker.html"><code class="docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_engine.aws.AWSWorker.html"><code class="docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_engine.local.CondaEnvWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_engine.aws.AWSWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker</a></li>
 </ul>
 </li>
 </ul>
@@ -162,7 +162,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</li>
     
     
 
@@ -178,56 +178,49 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker<a class="headerlink" href="#ramp-engine-base-baseworker" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ramp_engine.base.BaseWorker">
-<em class="property">class </em><code class="descclassname">ramp_engine.base.</code><code class="descname">BaseWorker</code><span class="sig-paren">(</span><em>config</em>, <em>submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.base.</code><code class="sig-name descname">BaseWorker</code><span class="sig-paren">(</span><em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Metaclass used to build a RAMP worker. Do not use this class directly.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>config</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Configuration of the worker.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Configuration of the worker.</p>
 </dd>
-<dt><strong>submission</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the RAMP submission to be handle by the worker.</p>
+<dt><strong>submission</strong><span class="classifier">str</span></dt><dd><p>Name of the RAMP submission to be handle by the worker.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>status</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first">The status of the worker. It should be one of the following state:</p>
-<blockquote class="last">
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>status</strong><span class="classifier">str</span></dt><dd><p>The status of the worker. It should be one of the following state:</p>
+<blockquote>
 <div><ul class="simple">
-<li>‘initialized’: the worker has been instanciated.</li>
-<li>‘setup’: the worker has been set up.</li>
-<li>‘running’: the worker is training the submission.</li>
-<li>‘finished’: the worker finished to train the submission.</li>
-<li>‘collected’: the results of the training have been collected.</li>
-<li>‘killed’</li>
+<li><p>‘initialized’: the worker has been instanciated.</p></li>
+<li><p>‘setup’: the worker has been set up.</p></li>
+<li><p>‘running’: the worker is training the submission.</p></li>
+<li><p>‘finished’: the worker finished to train the submission.</p></li>
+<li><p>‘collected’: the results of the training have been collected.</p></li>
+<li><p>‘killed’</p></li>
 </ul>
 </div></blockquote>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>config</em>, <em>submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.collect_results">
-<code class="descname">collect_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.collect_results" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">collect_results</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.collect_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect the results after submission training.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.launch">
-<code class="descname">launch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.launch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">launch</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.launch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Launch a standalone RAMP worker.</p>
 <p>You can use this method when you want to use a worker without using
 the RAMP dispatcher.</p>
@@ -235,20 +228,20 @@ the RAMP dispatcher.</p>
 
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.launch_submission">
-<code class="descname">launch_submission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.launch_submission" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">launch_submission</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.launch_submission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Launch a submission to be trained.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup the worker with some given setting required before launching
 a submission.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ramp_engine.base.BaseWorker.teardown">
-<code class="descname">teardown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.teardown" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.base.BaseWorker.teardown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clean up (i.e., removing path, etc.) before killing the worker.</p>
 </dd></dl>
 
