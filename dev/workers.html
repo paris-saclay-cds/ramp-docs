@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Notes regarding the RAMP workers &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>4. Notes regarding the RAMP workers &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Interactions with the RAMP website" href="frontend.html" />
-    <link rel="prev" title="2. Set up a new RAMP event" href="create_ramp_event.html" /> 
+    <link rel="next" title="5. Interactions with the RAMP website" href="frontend.html" />
+    <link rel="prev" title="3. Set up a new RAMP event" href="create_ramp_event.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,20 +94,21 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">2. Set up a new RAMP event</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Notes regarding the RAMP workers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">3.1. Running submissions in a Conda environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">3.2. Running submissions on Amazon Web Services (AWS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">3.3. Create your own worker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-setup-and-teardown-functions">3.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-launch-submission-and-collect-results-functions">3.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-is-submission-finished-function">3.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">2. Personalize your RAMP front webpage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Notes regarding the RAMP workers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">4.1. Running submissions in a Conda environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">4.2. Running submissions on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">4.3. Create your own worker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-setup-and-teardown-functions">4.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-launch-submission-and-collect-results-functions">4.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-is-submission-finished-function">4.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="frontend.html">4. Interactions with the RAMP website</a></li>
-<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">5. Useful tips when running a RAMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">5. Interactions with the RAMP website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">6. Useful tips when running a RAMP</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
@@ -164,7 +165,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li>3. Notes regarding the RAMP workers</li>
+      <li>4. Notes regarding the RAMP workers</li>
     
     
 
@@ -177,7 +178,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="notes-regarding-the-ramp-workers">
-<span id="all-workers"></span><h1>3. Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
+<span id="all-workers"></span><h1>4. Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
 <p>The RAMP “worker” is the object responsible of actually running (training and
 evaluating) a submission and returning back the results (predictions and
 scores).
@@ -200,7 +201,7 @@ instance and copy back the results. This worker is specified as
 see below.</p></li>
 </ul>
 <div class="section" id="running-submissions-in-a-conda-environment">
-<span id="conda-env-worker"></span><h2>3.1. Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
+<span id="conda-env-worker"></span><h2>4.1. Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>As previously mentioned, the <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> workers
 rely on a Conda environment to execute the submission.</p>
 <p>For instance, if you would like to run the <a class="reference external" href="https://github.com/ramp-kits/iris">Iris challenge</a>, the starting kit requires numpy, pandas,
@@ -221,7 +222,7 @@ the environment:</p>
 </div>
 </div>
 <div class="section" id="running-submissions-on-amazon-web-services-aws">
-<h2>3.2. Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
 specific resources (e.g. GPU’s).</p>
@@ -308,14 +309,14 @@ cd ..
 </ul>
 </div>
 <div class="section" id="create-your-own-worker">
-<h2>3.3. Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
+<h2>4.3. Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the choice of workers in RAMP is quite limited. You might want to
 create your own worker for your platform (Openstack, Azure, etc.). This section
 illustrates how to implement your own worker.</p>
 <p>Your new worker should subclass <a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker" title="ramp_engine.base.BaseWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.base.BaseWorker</span></code></a>. This
 class implements some basic functionalities which you should use.</p>
 <div class="section" id="the-setup-and-teardown-functions">
-<h3>3.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions<a class="headerlink" href="#the-setup-and-teardown-functions" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions<a class="headerlink" href="#the-setup-and-teardown-functions" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> function will initialize the worker before it can be used, e.g.
 activate the right conda environment. Your worker should implement this class
 and call <code class="docutils literal notranslate"><span class="pre">super</span></code> at the end of it. Indeed, the base class is in charge of
@@ -341,7 +342,7 @@ to the <code class="docutils literal notranslate"><span class="pre">setup</span>
 </div>
 </div>
 <div class="section" id="the-launch-submission-and-collect-results-functions">
-<h3>3.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions<a class="headerlink" href="#the-launch-submission-and-collect-results-functions" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions<a class="headerlink" href="#the-launch-submission-and-collect-results-functions" title="Permalink to this headline">¶</a></h3>
 <p>The actual job of the worker should be implemented in <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> in
 charge of running a submission and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> in charge of collecting
 and paste them in the location indicated by the dispatcher. As for the other
@@ -386,7 +387,7 @@ dispatcher:</p>
 </div>
 </div>
 <div class="section" id="the-is-submission-finished-function">
-<h3>3.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function<a class="headerlink" href="#the-is-submission-finished-function" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function<a class="headerlink" href="#the-is-submission-finished-function" title="Permalink to this headline">¶</a></h3>
 <p>You need to implement the <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function to indicate the
 worker that he can call the <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> function. This function will
 be dependent of the platform that you are using. For instance, for a conda
@@ -412,10 +413,10 @@ worker, it would look like:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="frontend.html" class="btn btn-neutral float-right" title="4. Interactions with the RAMP website" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="frontend.html" class="btn btn-neutral float-right" title="5. Interactions with the RAMP website" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="create_ramp_event.html" class="btn btn-neutral float-left" title="2. Set up a new RAMP event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="create_ramp_event.html" class="btn btn-neutral float-left" title="3. Set up a new RAMP event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

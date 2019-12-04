@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Useful tips when running a RAMP &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>2. Personalize your RAMP front webpage &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="RAMP API" href="api.html" />
-    <link rel="prev" title="5. Interactions with the RAMP website" href="frontend.html" /> 
+    <link rel="next" title="3. Set up a new RAMP event" href="create_ramp_event.html" />
+    <link rel="prev" title="1. Set up your own server to run RAMP" href="setup_server.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,14 +94,14 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="personalize.html">2. Personalize your RAMP front webpage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Personalize your RAMP front webpage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#powered-by">2.1. Powered by</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workers.html">4. Notes regarding the RAMP workers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend.html">5. Interactions with the RAMP website</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Useful tips when running a RAMP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-restart-a-failed-submission-manually">6.1. How to restart a failed submission manually</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">6. Useful tips when running a RAMP</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
@@ -158,7 +158,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li>6. Useful tips when running a RAMP</li>
+      <li>2. Personalize your RAMP front webpage</li>
     
     
 
@@ -170,19 +170,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="useful-tips-when-running-a-ramp">
-<h1>6. Useful tips when running a RAMP<a class="headerlink" href="#useful-tips-when-running-a-ramp" title="Permalink to this headline">¶</a></h1>
-<p>When running a RAMP challenge, you might need one of the following tips.</p>
-<div class="section" id="how-to-restart-a-failed-submission-manually">
-<h2>6.1. How to restart a failed submission manually<a class="headerlink" href="#how-to-restart-a-failed-submission-manually" title="Permalink to this headline">¶</a></h2>
-<p>If for some reason, one of the submission failed and you would like to
-re-evaluate this submission, you should change the state of this submission.
-You can use the following command to change the status of a submission:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">database</span> <span class="nb">set</span><span class="o">-</span><span class="n">submission</span><span class="o">-</span><span class="n">state</span> <span class="o">--</span><span class="n">submission</span><span class="o">-</span><span class="nb">id</span> <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">state</span> <span class="n">new</span>
+  <div class="section" id="personalize-your-ramp-front-webpage">
+<h1>2. Personalize your RAMP front webpage<a class="headerlink" href="#personalize-your-ramp-front-webpage" title="Permalink to this headline">¶</a></h1>
+<p>It is possible to personalize your RAMP front page.</p>
+<div class="section" id="powered-by">
+<h2>2.1. Powered by<a class="headerlink" href="#powered-by" title="Permalink to this headline">¶</a></h2>
+<p>You might be interested in displaying some images (logos) in the <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code>
+section in the very bottom of your RAMP webpage.</p>
+<p>To do so, add all the images you wish to have displayed to the following
+directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="o">-</span><span class="n">board</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">frontend</span><span class="o">/</span><span class="n">ramp_frontend</span><span class="o">/</span><span class="n">static</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">powered_by</span>
 </pre></div>
 </div>
-<p>Since the submission was set to <code class="docutils literal notranslate"><span class="pre">new</span></code>, the RAMP dispatcher will automatically
-pick up this submission to train it again.</p>
+<p>Your images must have one of the following extensions:</p>
+<ul class="simple">
+<li><p>.png</p></li>
+<li><p>.jpg’ (.jpeg)</p></li>
+<li><p>.gif</p></li>
+<li><p>.svg</p></li>
+</ul>
+<p>When you reload your RAMP page the new <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code> section should appear</p>
 </div>
 </div>
 
@@ -194,10 +201,10 @@ pick up this submission to train it again.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="RAMP API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="create_ramp_event.html" class="btn btn-neutral float-right" title="3. Set up a new RAMP event" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frontend.html" class="btn btn-neutral float-left" title="5. Interactions with the RAMP website" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="setup_server.html" class="btn btn-neutral float-left" title="1. Set up your own server to run RAMP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
