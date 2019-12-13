@@ -183,9 +183,10 @@ that you use the <code class="docutils literal notranslate"><span class="pre">ma
 </div>
 <div class="section" id="prepare-database-engine">
 <h2>Prepare database engine<a class="headerlink" href="#prepare-database-engine" title="Permalink to this headline">¶</a></h2>
-<p>Testing RAMP require a database, you need to create a database similarly to
-<a class="reference internal" href="setup_server.html#set-database"><span class="std std-ref">create database</span></a></p>
-<p>In short, create the <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code> using the command:</p>
+<p>Testing RAMP requires a database cluster, you need to create it similarly as
+described in <a class="reference internal" href="setup_server.html#set-database"><span class="std std-ref">create database</span></a> section.</p>
+<p>If you haven’t done so already create the <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code>
+using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ initdb postgres_dbs
 </pre></div>
 </div>
@@ -193,23 +194,23 @@ that you use the <code class="docutils literal notranslate"><span class="pre">ma
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
 </pre></div>
 </div>
-<p>However, RAMP tests do not know which database engine you are using for
-your ramp development and therefore you need to inform RAMP tests about this
-To do this, open the <code class="docutils literal notranslate"><span class="pre">db_engine.yml</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> directory.
+<p>Within your database cluster <cite>postgres</cite> database is created automatically.
+<cite>pytest</cite> will use it to make and then drop the test engine. But it needs
+to know who is the owner of your <cite>postgres</cite> database and therefore you
+need to inform RAMP tests about this.
+To do this, open the <code class="docutils literal notranslate"><span class="pre">db_engine.yml</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>
+directory.
 It should look as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db_owner</span><span class="p">:</span> <span class="n">postgres</span>
-<span class="n">db_cluster_name</span><span class="p">:</span> <span class="n">postgres</span>
 </pre></div>
 </div>
-<p>You need to change &lt;postgres&gt; to your local settings.</p>
-<p><code class="docutils literal notranslate"><span class="pre">db_owner</span></code> is the owner of your database. If you don’t know who is
-the owner of your database you can find it out by typing in your terminal:</p>
+<p>You need to change &lt;postgres&gt; to the owner of the <cite>postgres</cite> database.</p>
+<p>If you don’t know who is the owner of your <cite>postgres</cite> database you can
+find it out by typing in your terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ psql -l
 </pre></div>
 </div>
 <p>This command will list all of your databases along with their owners.</p>
-<p><code class="docutils literal notranslate"><span class="pre">db_cluster_name</span></code> is the name of your Postgres database cluster (if you used
-commands as above your <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code> name is <cite>‘postgres_dbs’</cite>).</p>
 </div>
 <div class="section" id="test">
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
