@@ -189,7 +189,7 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a>.setup_ramp_kit_ramp_data<a class="headerlink" href="#ramp-database-testing-setup-ramp-kit-ramp-data" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.testing.setup_ramp_kit_ramp_data">
-<code class="sig-prename descclassname">ramp_database.testing.</code><code class="sig-name descname">setup_ramp_kit_ramp_data</code><span class="sig-paren">(</span><em class="sig-param">ramp_config</em>, <em class="sig-param">problem_name</em>, <em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.testing.setup_ramp_kit_ramp_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.testing.</code><code class="sig-name descname">setup_ramp_kit_ramp_data</code><span class="sig-paren">(</span><em class="sig-param">ramp_config</em>, <em class="sig-param">problem_name</em>, <em class="sig-param">force=False</em>, <em class="sig-param">depth=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.testing.setup_ramp_kit_ramp_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clone ramp-kit and ramp-data repository and setup it up.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -202,6 +202,9 @@ It corresponds to the configuration generated with
 </dd>
 <dt><strong>force</strong><span class="classifier">bool, default is False</span></dt><dd><p>Whether or not to overwrite the RAMP kit and data repositories if they
 already exists.</p>
+</dd>
+<dt><strong>depth</strong><span class="classifier">int, default=None</span></dt><dd><p>the depth parameter to pass to git clone. Use <code class="docutils literal notranslate"><span class="pre">depth=1</span></code> for a shallow
+clone (faster).</p>
 </dd>
 </dl>
 </dd>
