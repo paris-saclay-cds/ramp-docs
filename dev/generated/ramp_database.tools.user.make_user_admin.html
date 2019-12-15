@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.tools.team.sign_up_team &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>ramp_database.tools.user.make_user_admin &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_database.tools.user.add_user" href="ramp_database.tools.user.add_user.html" />
-    <link rel="prev" title="ramp_database.tools.user.make_user_admin" href="ramp_database.tools.user.make_user_admin.html" /> 
+    <link rel="next" title="ramp_database.tools.team.sign_up_team" href="ramp_database.tools.team.sign_up_team.html" />
+    <link rel="prev" title="ramp_database.tools.user.approve_user" href="ramp_database.tools.user.approve_user.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.team</span></code>.sign_up_team</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.user</span></code>.make_user_admin</li>
     
     
 
@@ -179,20 +179,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-database-tools-team-sign-up-team">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.team</span></code>.sign_up_team<a class="headerlink" href="#ramp-database-tools-team-sign-up-team" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-database-tools-user-make-user-admin">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.user</span></code>.make_user_admin<a class="headerlink" href="#ramp-database-tools-user-make-user-admin" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_database.tools.team.sign_up_team">
-<code class="sig-prename descclassname">ramp_database.tools.team.</code><code class="sig-name descname">sign_up_team</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">team_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.team.sign_up_team" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register a team to a RAMP event and submit the starting kit.</p>
+<dt id="ramp_database.tools.user.make_user_admin">
+<code class="sig-prename descclassname">ramp_database.tools.user.</code><code class="sig-name descname">make_user_admin</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.user.make_user_admin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a user a RAMP admin.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The RAMP event name.</p>
-</dd>
-<dt><strong>team_name</strong><span class="classifier">str</span></dt><dd><p>The name of the team.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the user.</p>
 </dd>
 </dl>
 </dd>
@@ -209,10 +207,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_database.tools.user.add_user.html" class="btn btn-neutral float-right" title="ramp_database.tools.user.add_user" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_database.tools.team.sign_up_team.html" class="btn btn-neutral float-right" title="ramp_database.tools.team.sign_up_team" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_database.tools.user.make_user_admin.html" class="btn btn-neutral float-left" title="ramp_database.tools.user.make_user_admin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_database.tools.user.approve_user.html" class="btn btn-neutral float-left" title="ramp_database.tools.user.approve_user" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
