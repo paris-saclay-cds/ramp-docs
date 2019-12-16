@@ -167,7 +167,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li>5. Notes regarding the RAMP workers</li>
+      <li><span class="section-number">5. </span>Notes regarding the RAMP workers</li>
     
     
 
@@ -180,7 +180,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="notes-regarding-the-ramp-workers">
-<span id="all-workers"></span><h1>5. Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
+<span id="all-workers"></span><h1><span class="section-number">5. </span>Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
 <p>The RAMP “worker” is the object responsible of actually running (training and
 evaluating) a submission and returning back the results (predictions and
 scores).
@@ -203,7 +203,7 @@ instance and copy back the results. This worker is specified as
 see below.</p></li>
 </ul>
 <div class="section" id="running-submissions-in-a-conda-environment">
-<span id="conda-env-worker"></span><h2>5.1. Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
+<span id="conda-env-worker"></span><h2><span class="section-number">5.1. </span>Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>As previously mentioned, the <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> workers
 rely on a Conda environment to execute the submission.</p>
 <p>For instance, if you would like to run the <a class="reference external" href="https://github.com/ramp-kits/iris">Iris challenge</a>, the starting kit requires numpy, pandas,
@@ -224,7 +224,7 @@ the environment:</p>
 </div>
 </div>
 <div class="section" id="running-submissions-on-amazon-web-services-aws">
-<h2>5.2. Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
 specific resources (e.g. GPU’s).</p>
@@ -311,14 +311,14 @@ cd ..
 </ul>
 </div>
 <div class="section" id="create-your-own-worker">
-<h2>5.3. Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the choice of workers in RAMP is quite limited. You might want to
 create your own worker for your platform (Openstack, Azure, etc.). This section
 illustrates how to implement your own worker.</p>
 <p>Your new worker should subclass <a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker" title="ramp_engine.base.BaseWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.base.BaseWorker</span></code></a>. This
 class implements some basic functionalities which you should use.</p>
 <div class="section" id="the-setup-and-teardown-functions">
-<h3>5.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions<a class="headerlink" href="#the-setup-and-teardown-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions<a class="headerlink" href="#the-setup-and-teardown-functions" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> function will initialize the worker before it can be used, e.g.
 activate the right conda environment. Your worker should implement this class
 and call <code class="docutils literal notranslate"><span class="pre">super</span></code> at the end of it. Indeed, the base class is in charge of
@@ -344,7 +344,7 @@ to the <code class="docutils literal notranslate"><span class="pre">setup</span>
 </div>
 </div>
 <div class="section" id="the-launch-submission-and-collect-results-functions">
-<h3>5.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions<a class="headerlink" href="#the-launch-submission-and-collect-results-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions<a class="headerlink" href="#the-launch-submission-and-collect-results-functions" title="Permalink to this headline">¶</a></h3>
 <p>The actual job of the worker should be implemented in <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> in
 charge of running a submission and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> in charge of collecting
 and paste them in the location indicated by the dispatcher. As for the other
@@ -389,7 +389,7 @@ dispatcher:</p>
 </div>
 </div>
 <div class="section" id="the-is-submission-finished-function">
-<h3>5.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function<a class="headerlink" href="#the-is-submission-finished-function" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.3. </span>The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function<a class="headerlink" href="#the-is-submission-finished-function" title="Permalink to this headline">¶</a></h3>
 <p>You need to implement the <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function to indicate the
 worker that he can call the <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> function. This function will
 be dependent of the platform that you are using. For instance, for a conda
