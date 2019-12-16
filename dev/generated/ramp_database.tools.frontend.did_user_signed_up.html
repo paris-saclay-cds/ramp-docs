@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.tools.frontend.is_accessible_leaderboard &mdash; RAMP 0.1.0.dev0 documentation</title>
+  <title>ramp_database.tools.frontend.did_user_signed_up &mdash; RAMP 0.1.0.dev0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_database.tools.frontend.is_accessible_code" href="ramp_database.tools.frontend.is_accessible_code.html" />
-    <link rel="prev" title="ramp_database.tools.frontend.is_accessible_event" href="ramp_database.tools.frontend.is_accessible_event.html" /> 
+    <link rel="next" title="ramp_database.tools.frontend.is_admin" href="ramp_database.tools.frontend.is_admin.html" />
+    <link rel="prev" title="ramp_database.tools.submission.set_time" href="ramp_database.tools.submission.set_time.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -167,7 +167,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_accessible_leaderboard</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.did_user_signed_up</li>
     
     
 
@@ -179,27 +179,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-database-tools-frontend-is-accessible-leaderboard">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_accessible_leaderboard<a class="headerlink" href="#ramp-database-tools-frontend-is-accessible-leaderboard" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-database-tools-frontend-did-user-signed-up">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.did_user_signed_up<a class="headerlink" href="#ramp-database-tools-frontend-did-user-signed-up" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_database.tools.frontend.is_accessible_leaderboard">
-<code class="sig-prename descclassname">ramp_database.tools.frontend.</code><code class="sig-name descname">is_accessible_leaderboard</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.is_accessible_leaderboard" title="Permalink to this definition">¶</a></dt>
-<dd><p>Whether or not a leaderboard is public or and a user is registered to
-RAMP or and admin.</p>
+<dt id="ramp_database.tools.frontend.did_user_signed_up">
+<code class="sig-prename descclassname">ramp_database.tools.frontend.</code><code class="sig-name descname">did_user_signed_up</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.did_user_signed_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not user signed up to an event.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
+<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The RAMP event name.</p>
 </dd>
-<dt><strong>user_name</strong><span class="classifier">str</span></dt><dd><p>The user name.</p>
+<dt><strong>team_name</strong><span class="classifier">str</span></dt><dd><p>The name of the team.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>is_accessible</strong><span class="classifier">bool</span></dt><dd><p>True if leaderboard can be displayed.</p>
+<dt><strong>asked</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the user had asked to join event or not.</p>
 </dd>
 </dl>
 </dd>
@@ -216,10 +215,10 @@ RAMP or and admin.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_database.tools.frontend.is_accessible_code.html" class="btn btn-neutral float-right" title="ramp_database.tools.frontend.is_accessible_code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_database.tools.frontend.is_admin.html" class="btn btn-neutral float-right" title="ramp_database.tools.frontend.is_admin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_database.tools.frontend.is_accessible_event.html" class="btn btn-neutral float-left" title="ramp_database.tools.frontend.is_accessible_event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_database.tools.submission.set_time.html" class="btn btn-neutral float-left" title="ramp_database.tools.submission.set_time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
