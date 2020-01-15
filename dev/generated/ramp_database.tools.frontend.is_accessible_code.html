@@ -184,7 +184,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.frontend</span></code>.is_accessible_code<a class="headerlink" href="#ramp-database-tools-frontend-is-accessible-code" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="ramp_database.tools.frontend.is_accessible_code">
-<code class="sig-prename descclassname">ramp_database.tools.frontend.</code><code class="sig-name descname">is_accessible_code</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name</em>, <em class="sig-param">submission_name='sandbox'</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.is_accessible_code" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ramp_database.tools.frontend.</code><code class="sig-name descname">is_accessible_code</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name</em>, <em class="sig-param">submission_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.frontend.is_accessible_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether or not the user can look at the code submission.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -195,7 +195,7 @@
 </dd>
 <dt><strong>user_name</strong><span class="classifier">str</span></dt><dd><p>The user name.</p>
 </dd>
-<dt><strong>submission_name</strong><span class="classifier">str, default == ‘sandbox’</span></dt><dd><p>The submission name which you should be shown. Default is the sandbox
+<dt><strong>submission_id</strong><span class="classifier">int, default=None</span></dt><dd><p>The submission name which you should be shown. Default is the sandbox
 submission.</p>
 </dd>
 </dl>
