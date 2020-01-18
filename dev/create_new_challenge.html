@@ -190,8 +190,9 @@ datasets:</p>
 <li><p>public dataset which is given to all of the competing users. This dataset
 will be split for cross-validation (train and test) and can be used for
 self-evaluation during the duration of the challenge;</p></li>
-<li><p>private dataset which is never given to the competing users and which is used
-to evaluate the score of the users after the challenge deadline has passed.</p></li>
+<li><p>private dataset which is never given to the competing users and which is
+used to evaluate the score of the users after the challenge deadline has
+passed.</p></li>
 </ul>
 <p>To write you own challenge for RAMP you need to create directory with the name
 of your challenge in the ramp-kits directory of your RAMP:</p>
@@ -229,7 +230,8 @@ Its content might, for example, look as follows:</p>
 or regression <a class="reference external" href="https://github.com/ramp-kits/boston_housing/blob/master/problem.py">boston housing problem</a>);</p></li>
 <li><p>which RAMP workflow you want to use;</p></li>
 <li><p>the score which will be used for evaluation
-and include three functions: get_cv(), get_train_data() and get_test_data().</p></li>
+and include three functions: <cite>get_cv()</cite>, <cite>get_train_data()</cite>, and
+<cite>get_test_data()</cite>.</p></li>
 </ul>
 <p>The basic Iris <a class="reference external" href="https://github.com/ramp-kits/iris/blob/master/problem.py">problem.py</a> (which is a
 classification problem) looks like that:</p>
@@ -280,7 +282,7 @@ but if none of those matches your needs, you can also add new one(s):</p>
 </div>
 <p>Finally you should create few functions which should include:</p>
 <ul>
-<li><p>get_cv()
+<li><p><cite>get_cv()</cite>
 with input X (the training data) and y (test data). This function
 should define how the public dataset is to be split for cross-validation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cv</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -289,8 +291,8 @@ should define how the public dataset is to be split for cross-validation:</p>
 </pre></div>
 </div>
 </li>
-<li><p>get_train_data() and get_test_data()
-should return the correct sets of the data:</p>
+<li><p><cite>get_train_data()</cite> and <cite>get_test_data()</cite> should return the correct sets of
+the data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_train_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
     <span class="n">f_name</span> <span class="o">=</span> <span class="s1">&#39;train.csv&#39;</span>
     <span class="k">return</span> <span class="n">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">)</span>
@@ -321,7 +323,7 @@ error, random_forest_10_10 and starting_kit.</p>
 classifier.py letting the user know that their submission should also include
 classifier.py file. The name of the file expected for the submission and its
 structure will depend on the workflow you chose to use.</p>
-<p>For example, Iris uses workflow Classifier() (defined in problem.py) and
+<p>For example, Iris uses workflow <cite>Classifier()</cite> (defined in problem.py) and
 therefore the file in the submission has to be classifier.py. Sample of this
 file is given to the users as part of Iris challenge. It includes the sample
 functions which classifier.py submitted by the user will also need to include,
@@ -355,12 +357,12 @@ the challenge.</p>
 <div class="section" id="your-challenge-starting-kit-ipynb-jupiter-notebook-file">
 <h2><span class="section-number">4.5. </span>your_challenge_starting_kit.ipynb Jupiter notebook file<a class="headerlink" href="#your-challenge-starting-kit-ipynb-jupiter-notebook-file" title="Permalink to this headline">¶</a></h2>
 <p>Finally, you need to create a notebook informing the users about the challenge.
-This notebook will be visible to all logged-in users, no matter if they
-decided to take part in the challenge or not. You can structure this file
-completely freely as the RAMP will not rely on it during the challenge. However,
-for the sake of the users it is recommended that you introduce the problem and
-explain what are the requirements. It is also advisable to get the users started
-by showing them how to access the data and samples of the code.</p>
+This notebook will be visible to all logged-in users, no matter if they decided
+to take part in the challenge or not. You can structure this file completely
+freely as the RAMP will not rely on it during the challenge. However, for the
+sake of the users it is recommended that you introduce the problem and explain
+what are the requirements. It is also advisable to get the users started by
+showing them how to access the data and samples of the code.</p>
 </div>
 <div class="section" id="examplar-ramp-kits">
 <h2><span class="section-number">4.6. </span>examplar RAMP kits<a class="headerlink" href="#examplar-ramp-kits" title="Permalink to this headline">¶</a></h2>
