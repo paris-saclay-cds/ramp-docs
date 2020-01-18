@@ -198,6 +198,9 @@ submissions;</p></li>
 submission will be stored;</p></li>
 <li><p><cite>predictions_dir</cite>: path to the directory where the
 predictions of the submission will be stored.</p></li>
+<li><p>‘timeout’: timeout after a given number of seconds when
+running the worker. If not provided, a default of 7200
+is used.</p></li>
 </ul>
 </dd>
 <dt><strong>submission</strong><span class="classifier">str</span></dt><dd><p>Name of the RAMP submission to be handle by the worker.</p>
@@ -224,6 +227,12 @@ predictions of the submission will be stored.</p></li>
 <dt id="ramp_engine.local.CondaEnvWorker.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_engine.local.CondaEnvWorker.check_timeout">
+<code class="sig-name descname">check_timeout</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.check_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the submission for timeout.</p>
 </dd></dl>
 
 <dl class="method">
