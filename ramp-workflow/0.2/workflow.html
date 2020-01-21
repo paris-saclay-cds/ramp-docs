@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Build your own RAMP challenge &mdash; RAMP 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preparing your data" href="data.html" />
+    <link rel="prev" title="Who are you" href="who_are_you.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">What can RAMP offer you?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP workflow</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Build your own RAMP challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP workflow commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Build your own RAMP challenge</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build-your-own-ramp-challenge">
+<span id="build-challenge"></span><h1>Build your own RAMP challenge<a class="headerlink" href="#build-your-own-ramp-challenge" title="Permalink to this headline">¶</a></h1>
+<p>If you have a new data set and a predictive problem, you may wish to use RAMP
+to organise local experiments within your team, log model prototypes
+and their scores or formalise your problem with resuable workflow building
+blocks. If you are a <a class="reference internal" href="who_are_you.html#researcher-domain-science"><span class="std std-ref">researcher</span></a> you may
+be interested in setting up a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP studio</a> to incite data
+scientists and machine learning researchers to provide machine learning
+solutions to your predictive problem. In this section we walk you through what
+you need to do to either use RAMP workflow locally or to launch a RAMP
+challenge on RAMP studio.</p>
+<p>First, you will need to prepare your data by cleaning, if necessary, and
+splitting it into the required public and private, test and training sets.
+See <a class="reference internal" href="data.html#data"><span class="std std-ref">Preparing your data</span></a> for more details.</p>
+<p>Next, to setup your predictive problem to use RAMP workflow, the following
+files/folders are required:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">problem.py</span></code> - this parametrizes the setup and uses building blocks from
+RAMP workflow. More information about writing this script can be found at
+<a class="reference internal" href="problem.html#problem"><span class="std std-ref">The problem.py file</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submissions/</span></code> - each solution to be tested should be stored in its own
+directory within <code class="docutils literal notranslate"><span class="pre">submissions/</span></code>. The name of this new directory will serve
+as the ID for the submission. If you wish to launch a RAMP chellenge you
+will need to provide an example solution within <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>.
+Even if you are not launching a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP Studio</a>, it is
+useful to have an example submission as it shows which files are required,
+how they need to be named and how each file should be structured.</p></li>
+<li><p>data files - the data files of the challenge can be stored with your starting
+kit in a folder named <code class="docutils literal notranslate"><span class="pre">data/</span></code>. Alternatively, your data may also be
+downloaded from elsewhere. If this is the case, you will need to provide a
+<code class="docutils literal notranslate"><span class="pre">download_data.py</span></code> file. This file should download the data when you open a
+terminal and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python download_data.py
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Once you have the above files, it is quite easy to prepare the additional files
+required for a full RAMP ‘starting kit’. These files are not
+required for RAMP workflow to function locally but are useful for participants
+and are required to launch a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP Studio</a>.</p>
+<ul class="simple">
+<li><p>starting kit notebook - this is a jupyter notebook that introduces the
+predictive problem, provides some background information, exploratory
+data analysis and data visualisation, explains the workflow and provides a
+simple example solution. This example solution should generally be the same
+solution as within the <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit</span></code> (see above).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - lists the required packages, for participants that
+wish to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - lists the required packages, for participants that wish
+to use <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> - this is the homepage when the challenge is on GitHub and
+should provide a quick start guide.</p></li>
+</ul>
+<p>The base directory of a full ramp-kit should thus look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;ramp_kit_name&gt;/    # root ramp-kit directory
+├── README.md
+├── download_data.py (optional)
+├── problem.py
+├── requirements.txt
+├── &lt;ramp_kit_name&gt;_starting_kit.ipynb
+├── data
+└── submissions/
+    └── &lt;starting_kit&gt;/
+</pre></div>
+</div>
+<p>If you wish to launch a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP Studio</a> you will need to
+upload the full ramp-kit to <a class="reference external" href="https://github.com/ramp-kits">ramp-kits</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data.html" class="btn btn-neutral float-right" title="Preparing your data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="who_are_you.html" class="btn btn-neutral float-left" title="Who are you" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
