@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/basic.css" type="text/css" />
@@ -31,21 +39,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contributing" href="contribute.html" />
     <link rel="prev" title="RAMP scoring" href="scoring.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -178,22 +181,22 @@
 the submission: <code class="docutils literal notranslate"><span class="pre">./submissions/starting_kit/</span></code>.</p>
 <p>Options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ‘ramp-kit’ to test. Default:
-<code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
-contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
-Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to test. It should be
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ‘ramp-kit’ to test. Default:
+<code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
+contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
+Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to test. It should be
 located in the <code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code>. If <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>, all submissions in the
-directory will be tested. Default: <code class="docutils literal notranslate"><span class="pre">starting_kit</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--quick-test]</span></code> Specify this flag to test the submission on a small subset
-of the data.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--pickle]</span></code> Specify this flag to pickle the submission after training.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--save-output]</span></code> Specify this flag to save predictions, scores, eventual
-error trace, and state after training.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--retrain]</span></code> Specify this flag to retrain the submission on the full
-training set after the CV loops.</li>
+directory will be tested. Default: <code class="docutils literal notranslate"><span class="pre">starting_kit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--quick-test]</span></code> Specify this flag to test the submission on a small subset
+of the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--pickle]</span></code> Specify this flag to pickle the submission after training.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--save-output]</span></code> Specify this flag to save predictions, scores, eventual
+error trace, and state after training.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--retrain]</span></code> Specify this flag to retrain the submission on the full
+training set after the CV loops.</p></li>
 </ul>
 </div>
 <div class="section" id="ramp-blend-submissions">
@@ -205,18 +208,18 @@ weighting of each submission, the overall combined score and best combined
 score for each fold is output.</p>
 <p>Options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ramp-kit to test. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
-contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
-Default: <code class="docutils literal notranslate"><span class="pre">.</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to blend. They should be
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ramp-kit to test. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
+contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
+Default: <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to blend. They should be
 located in the <code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code>. Separate submissions by a comma
 without any spaces. If <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>, all submissions in the
-<code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code> directory will be blended. Default: <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--save_output]</span></code> Specify this flag to save predictions after blending.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--min-improvement]</span></code> The minimum score improvement when adding submissions
-to the ensemble. Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code> directory will be blended. Default: <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--save_output]</span></code> Specify this flag to save predictions after blending.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--min-improvement]</span></code> The minimum score improvement when adding submissions
+to the ensemble. Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="ramp-leaderboard">
@@ -226,32 +229,32 @@ to the ensemble. Default: <code class="docutils literal notranslate"><span class
 <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span> <span class="pre">--submission</span> <span class="pre">&lt;name&gt;</span> <span class="pre">--save-output</span></code>.</p>
 <p>Options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the RAMP-kit. Default <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--cols]</span></code> list of columns (separated by ‘,’) to display. By default it is
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the RAMP-kit. Default <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--cols]</span></code> list of columns (separated by ‘,’) to display. By default it is
 ‘train_&lt;metric&gt;,valid_&lt;metric&gt;,test_&lt;metric&gt;’ where &lt;metric&gt; is the first
 score metric from <code class="docutils literal notranslate"><span class="pre">score_types</span></code> (see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>)
 according to
 alphabetical order. Use <code class="docutils literal notranslate"><span class="pre">--help-cols</span></code> to show the column names. Column
 names are of the form ‘&lt;step&gt;_&lt;metric&gt;’ where &lt;step&gt; could be one of ‘train’,
 ‘valid’ or ‘test’ and &lt;metric&gt; is any <code class="docutils literal notranslate"><span class="pre">score_type</span></code> defined in
-<code class="docutils literal notranslate"><span class="pre">problem.py</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--asc]</span></code> sort scores in ascending order if <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise descending
-order. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--metric]</span></code> metric to display. This can be used instead of specifying
+<code class="docutils literal notranslate"><span class="pre">problem.py</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--asc]</span></code> sort scores in ascending order if <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise descending
+order. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--metric]</span></code> metric to display. This can be used instead of specifying
 <code class="docutils literal notranslate"><span class="pre">--cols</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">--metric=acc</span></code> is equivalent to
-<code class="docutils literal notranslate"><span class="pre">--cols=train_acc,valid_acc,test_acc</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--precision</span></code>] precision for rounding. Default: <code class="docutils literal notranslate"><span class="pre">2</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">--cols=train_acc,valid_acc,test_acc</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--precision</span></code>] precision for rounding. Default: <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
 </ul>
 <p>Help:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--help-cols]</span></code> prints the list of column names.</li>
-<li><code class="docutils literal notranslate"><span class="pre">[--help-metrics]</span></code> prints the list of score metrics.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--help-cols]</span></code> prints the list of column names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--help-metrics]</span></code> prints the list of score metrics.</p></li>
 </ul>
 <p>Examples:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--metric=acc</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_acc,valid_acc,test_acc</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_nll</span> <span class="pre">--sort-by=train_nll,train_acc</span> <span class="pre">--asc</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--metric=acc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_acc,valid_acc,test_acc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_nll</span> <span class="pre">--sort-by=train_nll,train_acc</span> <span class="pre">--asc</span></code></p></li>
 </ul>
 <p><strong>Commands for use on server</strong></p>
 </div>
@@ -261,7 +264,7 @@ order. Default: <code class="docutils literal notranslate"><span class="pre">Fal
 tests if the notebook can be executed.</p>
 <p>Options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="ramp-convert-notebook">
@@ -270,7 +273,7 @@ tests if the notebook can be executed.</p>
 be used on the welcome page of the challenge on RAMP studio.</p>
 <p>Options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</p></li>
 </ul>
 </div>
 </div>
@@ -286,7 +289,7 @@ be used on the welcome page of the challenge on RAMP studio.</p>
         <a href="contribute.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="scoring.html" class="btn btn-neutral" title="RAMP scoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="scoring.html" class="btn btn-neutral float-left" title="RAMP scoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -312,26 +315,16 @@ be used on the welcome page of the challenge on RAMP studio.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/js/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/basic.css" type="text/css" />
@@ -31,21 +39,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="The problem.py file" href="problem.html" />
     <link rel="prev" title="Build your own RAMP challenge" href="workflow.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -171,14 +174,14 @@
 <span id="data"></span><h1>Preparing your data<a class="headerlink" href="#preparing-your-data" title="Permalink to this headline">¶</a></h1>
 <p>The data for your RAMP challenge should consist of:</p>
 <ul class="simple">
-<li><strong>Private test data</strong> - this data is stored on the RAMP server and is used to
+<li><p><strong>Private test data</strong> - this data is stored on the RAMP server and is used to
 compute scores for each submission for the private leaderboard. It is
-essential that this data remains private from participants.</li>
-<li><strong>Private training data</strong> - this data is also stored on the RAMP server and will
+essential that this data remains private from participants.</p></li>
+<li><p><strong>Private training data</strong> - this data is also stored on the RAMP server and will
 be used by the server to train each submission. It is good practice that this
 is completely independent of the public data. However, if you have a small
-data size, it is also fine for this data to be the same as the public data.</li>
-<li><strong>Public data</strong> - this data is made available to the participants. It needs to be
+data size, it is also fine for this data to be the same as the public data.</p></li>
+<li><p><strong>Public data</strong> - this data is made available to the participants. It needs to be
 split into ‘public training data’ and ‘public testing’ subsets. This is
 because the same script is used to test submissions when you run RAMP locally
 and on the RAMP server, when you make a submission to a RAMP event. Therefore,
@@ -186,7 +189,7 @@ and on the RAMP server, when you make a submission to a RAMP event. Therefore,
 needs to work
 both locally and on the RAMP server. This is generally achieved by naming the
 public test and train dataset the same as the private test and train dataset.
-See <a class="reference internal" href="#prepare-ramp-data"><span class="std std-ref">RAMP-data</span></a> for an example.</li>
+See <a class="reference internal" href="#prepare-ramp-data"><span class="std std-ref">RAMP-data</span></a> for an example.</p></li>
 </ul>
 <div class="section" id="ramp-data">
 <span id="prepare-ramp-data"></span><h2>RAMP-data<a class="headerlink" href="#ramp-data" title="Permalink to this headline">¶</a></h2>
@@ -216,12 +219,12 @@ a very basic <code class="docutils literal notranslate"><span class="pre">prepar
 <p>Note that the private training data was also used as the public data, due to
 the small size of this dataset. At this stage we have 4 files:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">train.csv</span></code> - private training data.</li>
-<li><code class="docutils literal notranslate"><span class="pre">test.csv</span></code> - private testing data. This should never be made public.</li>
-<li><code class="docutils literal notranslate"><span class="pre">public_train.csv</span></code> - in this case, this was a subset of the private
-training data <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">public_test.csv</span></code> - in this case, this was a subset of the private training
-data <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train.csv</span></code> - private training data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test.csv</span></code> - private testing data. This should never be made public.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public_train.csv</span></code> - in this case, this was a subset of the private
+training data <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public_test.csv</span></code> - in this case, this was a subset of the private training
+data <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>.</p></li>
 </ul>
 <p>We now need to copy the public data files <code class="docutils literal notranslate"><span class="pre">public_train.csv</span></code> and
 <code class="docutils literal notranslate"><span class="pre">public_test.csv</span></code> into the ‘ramp-kits’ directory. Note that the script
@@ -271,7 +274,7 @@ public datasets.</p>
         <a href="problem.html" class="btn btn-neutral float-right" title="The problem.py file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="workflow.html" class="btn btn-neutral" title="Build your own RAMP challenge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="workflow.html" class="btn btn-neutral float-left" title="Build your own RAMP challenge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -297,26 +300,16 @@ public datasets.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/js/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

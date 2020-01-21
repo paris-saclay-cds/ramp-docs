@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/basic.css" type="text/css" />
@@ -31,21 +39,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Preparing your data" href="data.html" />
     <link rel="prev" title="Who are you" href="who_are_you.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -180,19 +183,17 @@ See <a class="reference internal" href="data.html#data"><span class="std std-ref
 <p>Next, to setup your predictive problem to use RAMP workflow, the following
 files/folders are required:</p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">problem.py</span></code> - this parametrizes the setup and uses building blocks from
+<li><p><code class="docutils literal notranslate"><span class="pre">problem.py</span></code> - this parametrizes the setup and uses building blocks from
 RAMP workflow. More information about writing this script can be found at
-<a class="reference internal" href="problem.html#problem"><span class="std std-ref">The problem.py file</span></a>.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">submissions/</span></code> - each solution to be tested should be stored in its own
+<a class="reference internal" href="problem.html#problem"><span class="std std-ref">The problem.py file</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submissions/</span></code> - each solution to be tested should be stored in its own
 directory within <code class="docutils literal notranslate"><span class="pre">submissions/</span></code>. The name of this new directory will serve
 as the ID for the submission. If you wish to launch a RAMP chellenge you
 will need to provide an example solution within <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>.
 Even if you are not launching a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP Studio</a>, it is
 useful to have an example submission as it shows which files are required,
-how they need to be named and how each file should be structured.</p>
-</li>
-<li><p class="first">data files - the data files of the challenge can be stored with your starting
+how they need to be named and how each file should be structured.</p></li>
+<li><p>data files - the data files of the challenge can be stored with your starting
 kit in a folder named <code class="docutils literal notranslate"><span class="pre">data/</span></code>. Alternatively, your data may also be
 downloaded from elsewhere. If this is the case, you will need to provide a
 <code class="docutils literal notranslate"><span class="pre">download_data.py</span></code> file. This file should download the data when you open a
@@ -207,17 +208,17 @@ required for a full RAMP ‘starting kit’. These files are not
 required for RAMP workflow to function locally but are useful for participants
 and are required to launch a RAMP challenge on <a class="reference external" href="https://ramp.studio/">RAMP Studio</a>.</p>
 <ul class="simple">
-<li>starting kit notebook - this is a jupyter notebook that introduces the
+<li><p>starting kit notebook - this is a jupyter notebook that introduces the
 predictive problem, provides some background information, exploratory
 data analysis and data visualisation, explains the workflow and provides a
 simple example solution. This example solution should generally be the same
-solution as within the <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit</span></code> (see above).</li>
-<li><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - lists the required packages, for participants that
-wish to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - lists the required packages, for participants that wish
-to use <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">README.md</span></code> - this is the homepage when the challenge is on GitHub and
-should provide a quick start guide.</li>
+solution as within the <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit</span></code> (see above).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - lists the required packages, for participants that
+wish to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - lists the required packages, for participants that wish
+to use <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> - this is the homepage when the challenge is on GitHub and
+should provide a quick start guide.</p></li>
 </ul>
 <p>The base directory of a full ramp-kit should thus look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;ramp_kit_name&gt;/    # root ramp-kit directory
@@ -246,7 +247,7 @@ upload the full ramp-kit to <a class="reference external" href="https://github.c
         <a href="data.html" class="btn btn-neutral float-right" title="Preparing your data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="who_are_you.html" class="btn btn-neutral" title="Who are you" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="who_are_you.html" class="btn btn-neutral float-left" title="Who are you" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -272,26 +273,16 @@ upload the full ramp-kit to <a class="reference external" href="https://github.c
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/js/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

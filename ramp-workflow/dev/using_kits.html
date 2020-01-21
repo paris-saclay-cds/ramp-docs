@@ -17,34 +17,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Contributing" href="contribute.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -169,7 +172,7 @@
 <span id="using-kits"></span><h1>Using RAMP starting-kits<a class="headerlink" href="#using-ramp-starting-kits" title="Permalink to this headline">¶</a></h1>
 <p>To get started working on an existing RAMP challenge:</p>
 <ol class="arabic">
-<li><p class="first">Clone the <a class="reference external" href="https://github.com/ramp-kits">starting kit</a> for the challenge from GitHub:</p>
+<li><p>Clone the <a class="reference external" href="https://github.com/ramp-kits">starting kit</a> for the challenge from GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ramp-kits/&lt;ramp_kit_name&gt;.git
 $ <span class="nb">cd</span> &lt;ramp_kit_name&gt;
 </pre></div>
@@ -180,9 +183,9 @@ you will need to download the data using the <code class="docutils literal notra
 </pre></div>
 </div>
 </li>
-<li><p class="first">Install dependencies:</p>
+<li><p>Install dependencies:</p>
 <ul>
-<li><p class="first">with <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> to create
+<li><p>with <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> to create
 a virtual environment with all the required dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to create the environment</span>
 $ conda env create -f environment.yml
@@ -191,7 +194,7 @@ $ <span class="nb">source</span> activate &lt;ramp_kit_name&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">with <a class="reference external" href="https://pypi.org/project/pip/">pip</a>:</p>
+<li><p>with <a class="reference external" href="https://pypi.org/project/pip/">pip</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
 <span class="c1"># install ramp-workflow</span>
 $ pip install https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
@@ -200,7 +203,7 @@ $ pip install https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipbal
 </li>
 </ul>
 </li>
-<li><p class="first">Test that the starting kit works:</p>
+<li><p>Test that the starting kit works:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp_test_submission --quick-test
 </pre></div>
 </div>
@@ -224,10 +227,9 @@ how they need to be named and how each file should be structured.</p>
 <h2>Submiting to a RAMP event<a class="headerlink" href="#submiting-to-a-ramp-event" title="Permalink to this headline">¶</a></h2>
 <p>To submit your solution to <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>:</p>
 <ol class="arabic">
-<li><p class="first">Log in at <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>. If it is your first time, you will need to first
-register.</p>
-</li>
-<li><p class="first">Find an open event for your RAMP challenge. Events for RAMP challenges
+<li><p>Log in at <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>. If it is your first time, you will need to first
+register.</p></li>
+<li><p>Find an open event for your RAMP challenge. Events for RAMP challenges
 can be found underneath the challenge title:</p>
 <a class="reference internal image-reference" href="_images/ramp_event.png"><img alt="_images/ramp_event.png" src="_images/ramp_event.png" style="width: 700px;" /></a>
 <div class="line-block">
@@ -252,30 +254,30 @@ you need to click on the RAMP challenge and not an event of the challenge to
 find this button.</p>
 <a class="reference internal image-reference" href="_images/ramp_newevent.png"><img alt="_images/ramp_newevent.png" src="_images/ramp_newevent.png" style="width: 700px;" /></a>
 <ol class="arabic" start="3">
-<li><p class="first">Once your sign up as been approved you will have access to a number of
+<li><p>Once your sign up as been approved you will have access to a number of
 menu options on the right hand side:</p>
 <a class="reference internal image-reference" href="_images/ramp_sidebar.png"><img alt="_images/ramp_sidebar.png" src="_images/ramp_sidebar.png" style="width: 650px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
-<li><strong>leaderboard</strong> - table of all submissions from all participants of the
+<li><p><strong>leaderboard</strong> - table of all submissions from all participants of the
 event. The score metrics, contributivity, time taken to train and test
 the model, max RAM usage and time of submission will all be shown. By
 default it will show the most recent submissions first, but you can change
-this by clicking on the up and down arrows next to the column names.</li>
-<li><strong>competition leaderboard</strong> - table of the final submission of each
+this by clicking on the up and down arrows next to the column names.</p></li>
+<li><p><strong>competition leaderboard</strong> - table of the final submission of each
 participant. It will show only the ‘official’ score metric
 (see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>), time taken to train and test the
-model and submission time. This is ordered by the best score, by default.</li>
-<li><strong>sandbox</strong> - you can make your submissions here. See below for more
-details.</li>
-<li><strong>my submissions</strong> - shows all your previous submissions, with separate
+model and submission time. This is ordered by the best score, by default.</p></li>
+<li><p><strong>sandbox</strong> - you can make your submissions here. See below for more
+details.</p></li>
+<li><p><strong>my submissions</strong> - shows all your previous submissions, with separate
 tables for submissions which are pending and submissions which have
-finished computing.</li>
+finished computing.</p></li>
 </ul>
 </li>
-<li><p class="first">To make a submission go to your sandbox. Here, you can edit the
+<li><p>To make a submission go to your sandbox. Here, you can edit the
 required submission files (e.g., <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> and
 <code class="docutils literal notranslate"><span class="pre">classifier.py</span></code>), available in the middle of the page, then save
 the files. Alternatively, you can upload the required files from
@@ -312,7 +314,7 @@ from what you find in the starting kit, so the score may be different.</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="contribute.html" class="btn btn-neutral" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="contribute.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -338,26 +340,16 @@ from what you find in the starting kit, so the score may be different.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/js/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
