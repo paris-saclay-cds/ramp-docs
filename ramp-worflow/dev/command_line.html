@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RAMP workflow commands &mdash; RAMP 0.2.0.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contribute.html" />
+    <link rel="prev" title="RAMP scoring" href="scoring.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">What can RAMP offer you?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP workflow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP scoring</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP workflow commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-test-submission"><code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-blend-submissions"><code class="docutils literal notranslate"><span class="pre">ramp_blend_submissions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-leaderboard"><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-test-notebook"><code class="docutils literal notranslate"><span class="pre">ramp_test_notebook</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-convert-notebook"><code class="docutils literal notranslate"><span class="pre">ramp_convert_notebook</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>RAMP workflow commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/command_line.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-workflow-commands">
+<span id="command-line"></span><h1>RAMP workflow commands<a class="headerlink" href="#ramp-workflow-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ramp-test-submission">
+<h2><code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code><a class="headerlink" href="#ramp-test-submission" title="Permalink to this headline">¶</a></h2>
+<p>Tests your RAMP submission. Has no required arguments and will by default test
+the submission: <code class="docutils literal notranslate"><span class="pre">./submissions/starting_kit/</span></code>.</p>
+<p>Options:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ‘ramp-kit’ to test. Default:
+<code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
+contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
+Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to test. It should be
+located in the <code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code>. If <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>, all submissions in the
+directory will be tested. Default: <code class="docutils literal notranslate"><span class="pre">starting_kit</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--quick-test]</span></code> Specify this flag to test the submission on a small subset
+of the data.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--pickle]</span></code> Specify this flag to pickle the submission after training.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--save-output]</span></code> Specify this flag to save predictions, scores, eventual
+error trace, and state after training.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--retrain]</span></code> Specify this flag to retrain the submission on the full
+training set after the CV loops.</li>
+</ul>
+</div>
+<div class="section" id="ramp-blend-submissions">
+<h2><code class="docutils literal notranslate"><span class="pre">ramp_blend_submissions</span></code><a class="headerlink" href="#ramp-blend-submissions" title="Permalink to this headline">¶</a></h2>
+<p>Takes a list of submissions and finds the best ‘blend’ of submissions that
+result in the best combined score. See <a class="reference internal" href="scoring.html#scoring"><span class="std std-ref">RAMP scoring</span></a> for more details on how
+predictions are combined to calculate the combined score. The relative
+weighting of each submission, the overall combined score and best combined
+score for each fold is output.</p>
+<p>Options:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the ramp-kit to test. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_data_dir]</span></code> Directory containing the data. This directory should
+contain a ‘data’ folder. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_submission_dir]</span></code> Directory where the submissions are stored.
+Default: <code class="docutils literal notranslate"><span class="pre">.</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--submission]</span></code> The folder name of the submission to blend. They should be
+located in the <code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code>. Separate submissions by a comma
+without any spaces. If <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>, all submissions in the
+<code class="docutils literal notranslate"><span class="pre">ramp_submission_dir</span></code> directory will be blended. Default: <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--save_output]</span></code> Specify this flag to save predictions after blending.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--min-improvement]</span></code> The minimum score improvement when adding submissions
+to the ensemble. Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="ramp-leaderboard">
+<h2><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span></code><a class="headerlink" href="#ramp-leaderboard" title="Permalink to this headline">¶</a></h2>
+<p>Pretty prints scores from previous locally tested submissions (using
+<code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code>). Previous submissions need to be saved using
+<code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span> <span class="pre">--submission</span> <span class="pre">&lt;name&gt;</span> <span class="pre">--save-output</span></code>.</p>
+<p>Options:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Root directory of the RAMP-kit. Default <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--cols]</span></code> list of columns (separated by ‘,’) to display. By default it is
+‘train_&lt;metric&gt;,valid_&lt;metric&gt;,test_&lt;metric&gt;’ where &lt;metric&gt; is the first
+score metric from <code class="docutils literal notranslate"><span class="pre">score_types</span></code> (see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>)
+according to
+alphabetical order. Use <code class="docutils literal notranslate"><span class="pre">--help-cols</span></code> to show the column names. Column
+names are of the form ‘&lt;step&gt;_&lt;metric&gt;’ where &lt;step&gt; could be one of ‘train’,
+‘valid’ or ‘test’ and &lt;metric&gt; is any <code class="docutils literal notranslate"><span class="pre">score_type</span></code> defined in
+<code class="docutils literal notranslate"><span class="pre">problem.py</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--asc]</span></code> sort scores in ascending order if <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise descending
+order. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--metric]</span></code> metric to display. This can be used instead of specifying
+<code class="docutils literal notranslate"><span class="pre">--cols</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">--metric=acc</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">--cols=train_acc,valid_acc,test_acc</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--precision</span></code>] precision for rounding. Default: <code class="docutils literal notranslate"><span class="pre">2</span></code>.</li>
+</ul>
+<p>Help:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--help-cols]</span></code> prints the list of column names.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[--help-metrics]</span></code> prints the list of score metrics.</li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--metric=acc</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_acc,valid_acc,test_acc</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ramp_leaderboard</span> <span class="pre">--cols=train_nll</span> <span class="pre">--sort-by=train_nll,train_acc</span> <span class="pre">--asc</span></code></li>
+</ul>
+<p><strong>Commands for use on server</strong></p>
+</div>
+<div class="section" id="ramp-test-notebook">
+<h2><code class="docutils literal notranslate"><span class="pre">ramp_test_notebook</span></code><a class="headerlink" href="#ramp-test-notebook" title="Permalink to this headline">¶</a></h2>
+<p>First converts the starting kit notebook into HTML using <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> then
+tests if the notebook can be executed.</p>
+<p>Options:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="ramp-convert-notebook">
+<h2><code class="docutils literal notranslate"><span class="pre">ramp_convert_notebook</span></code><a class="headerlink" href="#ramp-convert-notebook" title="Permalink to this headline">¶</a></h2>
+<p>Converts the starting kit notebook into HTML using <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code>. This is would
+be used on the welcome page of the challenge on RAMP studio.</p>
+<p>Options:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[--ramp_kit_dir]</span></code> Directory containing the notebook. Default: <code class="docutils literal notranslate"><span class="pre">'.'</span></code>.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contribute.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="scoring.html" class="btn btn-neutral" title="RAMP scoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
