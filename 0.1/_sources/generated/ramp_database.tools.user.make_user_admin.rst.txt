@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.user`.make_user_admin
+============================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: make_user_admin
+
+.. raw:: html
+
+    <div style='clear:both'></div>

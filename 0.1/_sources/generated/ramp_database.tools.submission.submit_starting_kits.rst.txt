@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.submission`.submit_starting_kits
+=======================================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: submit_starting_kits
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.submission`.set_scores
+=============================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: set_scores
+
+.. raw:: html
+
+    <div style='clear:both'></div>

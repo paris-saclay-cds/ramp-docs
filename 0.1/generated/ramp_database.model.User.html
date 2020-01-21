@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ramp_database.model.User &mdash; RAMP 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_database.model.CVFold" href="ramp_database.model.CVFold.html" />
+    <link rel="prev" title="ramp_database.model.Team" href="ramp_database.model.Team.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-tables">Submission-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.User</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-database-model-user">
+<h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.User<a class="headerlink" href="#ramp-database-model-user" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ramp_database.model.User">
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">hashed_password</em>, <em class="sig-param">lastname</em>, <em class="sig-param">firstname</em>, <em class="sig-param">email</em>, <em class="sig-param">access_level='user'</em>, <em class="sig-param">hidden_notes=''</em>, <em class="sig-param">linkedin_url=''</em>, <em class="sig-param">twitter_url=''</em>, <em class="sig-param">facebook_url=''</em>, <em class="sig-param">google_url=''</em>, <em class="sig-param">github_url=''</em>, <em class="sig-param">website_url=''</em>, <em class="sig-param">bio=''</em>, <em class="sig-param">is_want_news=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>User table.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The user name.</p>
+</dd>
+<dt><strong>hashed_password</strong><span class="classifier">str</span></dt><dd><p>The hashed password.</p>
+</dd>
+<dt><strong>lastname</strong><span class="classifier">str</span></dt><dd><p>The user’s last name.</p>
+</dd>
+<dt><strong>firstname</strong><span class="classifier">str</span></dt><dd><p>The user’s first name.</p>
+</dd>
+<dt><strong>email</strong><span class="classifier">str</span></dt><dd><p>The user’s email</p>
+</dd>
+<dt><strong>access_level</strong><span class="classifier">{‘admin’, ‘user’, ‘asked’}</span></dt><dd><p>The user’s admin level.</p>
+</dd>
+<dt><strong>hidden_notes</strong><span class="classifier">str</span></dt><dd><p>Some hidden notes.</p>
+</dd>
+<dt><strong>signup_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time of the user’s sign-up.</p>
+</dd>
+<dt><strong>linkedin_url</strong><span class="classifier">str</span></dt><dd><p>The user’s LinkedIn URL.</p>
+</dd>
+<dt><strong>twitter_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Twitter URL.</p>
+</dd>
+<dt><strong>facebook_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Facebook URL.</p>
+</dd>
+<dt><strong>google_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Google URL.</p>
+</dd>
+<dt><strong>github_url</strong><span class="classifier">str</span></dt><dd><p>The user’s GitHub URL.</p>
+</dd>
+<dt><strong>website_url</strong><span class="classifier">str</span></dt><dd><p>The user’s personal website URL.</p>
+</dd>
+<dt><strong>bio</strong><span class="classifier">str</span></dt><dd><p>The user’s biography.</p>
+</dd>
+<dt><strong>is_want_news</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the user wants to receive RAMP news.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The ID of the table row.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The user name.</p>
+</dd>
+<dt><strong>hashed_password</strong><span class="classifier">str</span></dt><dd><p>The hashed password.</p>
+</dd>
+<dt><strong>lastname</strong><span class="classifier">str</span></dt><dd><p>The user’s last name.</p>
+</dd>
+<dt><strong>firstname</strong><span class="classifier">str</span></dt><dd><p>The user’s first name.</p>
+</dd>
+<dt><strong>email</strong><span class="classifier">str</span></dt><dd><p>The user’s email</p>
+</dd>
+<dt><strong>access_level</strong><span class="classifier">{‘admin’, ‘user’, ‘asked’, ‘not_confirmed’}</span></dt><dd><p>The user’s admin level. The possible access level are:</p>
+<ul class="simple">
+<li><p>‘admin’ : RAMP administrator;</p></li>
+<li><p>‘user’: RAMP user;</p></li>
+<li><p>‘asked’: asked to be a RAMP user and confirmed via emails;</p></li>
+<li><p>‘not_confirmed’: signed-up through the frontend but did not confirm
+yet by email.</p></li>
+</ul>
+</dd>
+<dt><strong>hidden_notes</strong><span class="classifier">str</span></dt><dd><p>Some hidden notes.</p>
+</dd>
+<dt><strong>signup_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time of the user’s sign-up.</p>
+</dd>
+<dt><strong>linkedin_url</strong><span class="classifier">str</span></dt><dd><p>The user’s LinkedIn URL.</p>
+</dd>
+<dt><strong>twitter_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Twitter URL.</p>
+</dd>
+<dt><strong>facebook_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Facebook URL.</p>
+</dd>
+<dt><strong>google_url</strong><span class="classifier">str</span></dt><dd><p>The user’s Google URL.</p>
+</dd>
+<dt><strong>github_url</strong><span class="classifier">str</span></dt><dd><p>The user’s GitHub URL.</p>
+</dd>
+<dt><strong>website_url</strong><span class="classifier">str</span></dt><dd><p>The user’s personal website URL.</p>
+</dd>
+<dt><strong>bio</strong><span class="classifier">str</span></dt><dd><p>The user’s biography.</p>
+</dd>
+<dt><strong>is_want_news</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the user wants to receive RAMP news.</p>
+</dd>
+<dt><strong>is_authenticated</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the user logged-in.</p>
+</dd>
+<dt><strong>admined_events</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.EventAdmin.html#ramp_database.model.EventAdmin" title="ramp_database.model.EventAdmin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventAdmin</span></code></a></span></dt><dd><p>A back-reference to the events administrated by the user.</p>
+</dd>
+<dt><strong>submission_similaritys</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.SubmissionSimilarity.html#ramp_database.model.SubmissionSimilarity" title="ramp_database.model.SubmissionSimilarity"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionSimilarity</span></code></a></span></dt><dd><p>A back-reference to the submission similarity.</p>
+</dd>
+<dt><strong>admined_teams</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.Team.html#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a></span></dt><dd><p>A back-reference to the teams administrated by the user.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ramp_database.model.User.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name</em>, <em class="sig-param">hashed_password</em>, <em class="sig-param">lastname</em>, <em class="sig-param">firstname</em>, <em class="sig-param">email</em>, <em class="sig-param">access_level='user'</em>, <em class="sig-param">hidden_notes=''</em>, <em class="sig-param">linkedin_url=''</em>, <em class="sig-param">twitter_url=''</em>, <em class="sig-param">facebook_url=''</em>, <em class="sig-param">google_url=''</em>, <em class="sig-param">github_url=''</em>, <em class="sig-param">website_url=''</em>, <em class="sig-param">bio=''</em>, <em class="sig-param">is_want_news=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.User.get_id">
+<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>str: Return the user ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.User.is_active">
+<em class="property">property </em><code class="sig-name descname">is_active</code><a class="headerlink" href="#ramp_database.model.User.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Return True.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.User.is_anonymous">
+<em class="property">property </em><code class="sig-name descname">is_anonymous</code><a class="headerlink" href="#ramp_database.model.User.is_anonymous" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Return False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.User.query_class">
+<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.User.query_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ramp_database.model.CVFold.html" class="btn btn-neutral float-right" title="ramp_database.model.CVFold" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ramp_database.model.Team.html" class="btn btn-neutral float-left" title="ramp_database.model.Team" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.visualization`.score_plot
+================================================================
+
+.. currentmodule:: ramp_frontend.views.visualization
+
+.. autofunction:: score_plot
+
+.. raw:: html
+
+    <div style='clear:both'></div>
