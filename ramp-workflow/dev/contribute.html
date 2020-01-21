@@ -199,18 +199,18 @@ to merge this into ramp-workflow.</p></li>
 </ol>
 <div class="section" id="release-process">
 <h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
-<p>The following explain the main steps to release <cite>ramp-board</cite>:</p>
+<p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
 <ol class="arabic simple">
-<li><p>Run <cite>bumpversion release</cite>. It will remove the <cite>dev0</cite> tag.</p></li>
-<li><p>Commit the change <cite>git commit -am “bumpversion 0.1.0”</cite>.</p></li>
-<li><p>Create a branch for this version <cite>git checkout -b 0.1.X</cite>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span></code>. It will remove the <code class="docutils literal notranslate"><span class="pre">dev0</span></code> tag.</p></li>
+<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.1.0&quot;</span></code>.</p></li>
+<li><p>Create a branch for this version <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.1.X</span></code>.</p></li>
 <li><p>Push the new branch into the upstream repository.</p></li>
 <li><p>You can create a GitHub release.</p></li>
-<li><p>Change the symlink in the <cite>ramp-docs</cite> repository such that stable point on
+<li><p>Change the symlink in the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository such that stable point on
 0.1.X.</p></li>
 <li><p>Push on PyPI by executing the following:
-<cite>python setup.py sdist bdist_wheel &amp;&amp; twine upload dist/*</cite>.</p></li>
-<li><p>In <cite>master</cite>, run <cite>bumpversion minor</cite>, commit and push on upstream.</p></li>
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">sdist</span> <span class="pre">bdist_wheel</span> <span class="pre">&amp;&amp;</span> <span class="pre">twine</span> <span class="pre">upload</span> <span class="pre">dist/*</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">master</span></code>, run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on upstream.</p></li>
 </ol>
 </div>
 </div>
