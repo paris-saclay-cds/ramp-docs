@@ -224,7 +224,7 @@ information.</p></li>
 </div>
 <p>Finally, you can easily deploy the event (adding both problem and event to the
 database) by calling from the deployment directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span> <span class="n">setup</span> <span class="n">deploy</span><span class="o">-</span><span class="n">event</span> <span class="o">--</span><span class="n">event</span><span class="o">-</span><span class="n">config</span> <span class="n">events</span><span class="o">/</span><span class="n">iris_test</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cloning</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup deploy-event --event-config events/iris_test/config.yml --no-cloning
 </pre></div>
 </div>
 <p>Without passing <code class="docutils literal notranslate"><span class="pre">--no-cloning</span></code>, it will try to clone the starting kit and
