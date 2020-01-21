@@ -201,8 +201,8 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>label</strong> – The label of the field.</p></li>
-<li><p><strong>validators</strong> – A sequence of validators to call when <cite>validate</cite> is called.</p></li>
-<li><p><strong>filters</strong> – A sequence of filters which are run on input data by <cite>process</cite>.</p></li>
+<li><p><strong>validators</strong> – A sequence of validators to call when <code class="docutils literal notranslate"><span class="pre">validate</span></code> is called.</p></li>
+<li><p><strong>filters</strong> – A sequence of filters which are run on input data by <code class="docutils literal notranslate"><span class="pre">process</span></code>.</p></li>
 <li><p><strong>description</strong> – A description for the field, typically used for help text.</p></li>
 <li><p><strong>id</strong> – An id to use for the field. A reasonable default is set by the form,
 and you shouldn’t need to set this manually.</p></li>
@@ -225,7 +225,7 @@ don’t pass this yourself.</p></li>
 </ul>
 </dd>
 </dl>
-<p>If <cite>_form</cite> and <cite>_name</cite> isn’t provided, an <code class="xref py py-class docutils literal notranslate"><span class="pre">UnboundField</span></code> will be
+<p>If <code class="docutils literal notranslate"><span class="pre">_form</span></code> and <code class="docutils literal notranslate"><span class="pre">_name</span></code> isn’t provided, an <code class="xref py py-class docutils literal notranslate"><span class="pre">UnboundField</span></code> will be
 returned instead. Call its <code class="xref py py-func docutils literal notranslate"><span class="pre">bind</span></code> method with a form instance and
 a name to construct the field.</p>
 </dd></dl>
@@ -270,10 +270,10 @@ iterable of (value, label, selected) tuples.</p>
 <dl class="method">
 <dt id="ramp_frontend.forms.MultiCheckboxField.populate_obj">
 <code class="sig-name descname">populate_obj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.populate_obj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Populates <cite>obj.&lt;name&gt;</cite> with the field’s data.</p>
+<dd><p>Populates <code class="docutils literal notranslate"><span class="pre">obj.&lt;name&gt;</span></code> with the field’s data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note</dt>
-<dd class="field-odd"><p>This is a destructive operation. If <cite>obj.&lt;name&gt;</cite> already exists,
+<dd class="field-odd"><p>This is a destructive operation. If <code class="docutils literal notranslate"><span class="pre">obj.&lt;name&gt;</span></code> already exists,
 it will be overridden. Use with caution.</p>
 </dd>
 </dl>
@@ -288,7 +288,7 @@ normal validation. This shouldn’t be needed in most cases.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>form</strong> – The form the field belongs to.</p></li>
-<li><p><strong>validation_stopped</strong> – <cite>True</cite> if any validator raised StopValidation.</p></li>
+<li><p><strong>validation_stopped</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> if any validator raised StopValidation.</p></li>
 </ul>
 </dd>
 </dl>
@@ -311,7 +311,7 @@ validators.</p>
 <code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata</em>, <em class="sig-param">data=&lt;unset value&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process incoming data, calling process_data, process_formdata as needed,
 and run filters.</p>
-<p>If <cite>data</cite> is not provided, process_data will be called on the field’s
+<p>If <code class="docutils literal notranslate"><span class="pre">data</span></code> is not provided, process_data will be called on the field’s
 default.</p>
 <p>Field subclasses usually won’t override this, instead overriding the
 process_formdata and process_data methods. Only override this for
@@ -323,8 +323,8 @@ inputs.</p>
 <dt id="ramp_frontend.forms.MultiCheckboxField.process_data">
 <code class="sig-name descname">process_data</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the Python data applied to this field and store the result.</p>
-<p>This will be called during form construction by the form’s <cite>kwargs</cite> or
-<cite>obj</cite> argument.</p>
+<p>This will be called during form construction by the form’s <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> or
+<code class="docutils literal notranslate"><span class="pre">obj</span></code> argument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>value</strong> – The python object containing the value to process.</p>
@@ -337,7 +337,7 @@ inputs.</p>
 <code class="sig-name descname">process_formdata</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">valuelist</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process_formdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process data received over the wire from a form.</p>
 <p>This will be called during form construction with data supplied
-through the <cite>formdata</cite> argument.</p>
+through the <code class="docutils literal notranslate"><span class="pre">formdata</span></code> argument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>valuelist</strong> – A list of strings to process.</p>
@@ -348,11 +348,11 @@ through the <cite>formdata</cite> argument.</p>
 <dl class="method">
 <dt id="ramp_frontend.forms.MultiCheckboxField.validate">
 <code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em>, <em class="sig-param">extra_validators=()</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates the field and returns True or False. <cite>self.errors</cite> will
+<dd><p>Validates the field and returns True or False. <code class="docutils literal notranslate"><span class="pre">self.errors</span></code> will
 contain any errors raised during validation. This is usually only
-called by <cite>Form.validate</cite>.</p>
+called by <code class="docutils literal notranslate"><span class="pre">Form.validate</span></code>.</p>
 <p>Subfields shouldn’t override this, but rather override either
-<cite>pre_validate</cite>, <cite>post_validate</cite> or both, depending on needs.</p>
+<code class="docutils literal notranslate"><span class="pre">pre_validate</span></code>, <code class="docutils literal notranslate"><span class="pre">post_validate</span></code> or both, depending on needs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">

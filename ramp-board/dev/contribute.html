@@ -196,9 +196,9 @@ using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
 </pre></div>
 </div>
-<p>Within your database cluster <cite>postgres</cite> database is created automatically.
-<cite>pytest</cite> will use it to make and then drop the test engine. But it needs
-to know who is the owner of your <cite>postgres</cite> database and therefore you
+<p>Within your database cluster <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database is created automatically.
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> will use it to make and then drop the test engine. But it needs
+to know who is the owner of your <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database and therefore you
 need to inform RAMP tests about this.
 To do this, open the <code class="docutils literal notranslate"><span class="pre">db_engine.yml</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>
 directory.
@@ -206,8 +206,8 @@ It should look as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db_owner</span><span class="p">:</span> <span class="n">postgres</span>
 </pre></div>
 </div>
-<p>You need to change &lt;postgres&gt; to the owner of the <cite>postgres</cite> database.</p>
-<p>If you don’t know who is the owner of your <cite>postgres</cite> database you can
+<p>You need to change &lt;postgres&gt; to the owner of the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database.</p>
+<p>If you don’t know who is the owner of your <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database you can
 find it out by typing in your terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ psql -l
 </pre></div>
@@ -221,7 +221,7 @@ has been started. You can always start it using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
 </pre></div>
 </div>
-<p>where <cite>postgres_dbs</cite> is the database cluster you created in the previous steps.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">postgres_dbs</span></code> is the database cluster you created in the previous steps.</p>
 <p>In addition, you might want to start an SMTP server to run all the tests.
 If you don’t run the server, some of the tests will fail because they cannot
 be run. To launch the server, execute the following
@@ -294,16 +294,16 @@ following rules before submitting a pull request:</p>
 <ul>
 <li><p>Follow the <a class="reference external" href="http://scikit-learn.org/dev/developers/contributing.html#coding-guidelines">coding-guidelines</a> as for scikit-learn.</p></li>
 <li><p>When applicable, use the validation tools and other code in the
-<cite>ramp_utils</cite> subpackage.</p></li>
+<code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code> subpackage.</p></li>
 <li><p>If your pull request addresses an issue, please use the title to describe
 the issue and mention the issue number in the pull request description to
 ensure a link is created to the original issue.</p></li>
 <li><p>All public methods should have informative docstrings with sample
 usage presented as doctests when appropriate.</p></li>
-<li><p>Please prefix the title of your pull request with <cite>[MRG]</cite> if the
+<li><p>Please prefix the title of your pull request with <code class="docutils literal notranslate"><span class="pre">[MRG]</span></code> if the
 contribution is complete and should be subjected to a detailed review.
-Incomplete contributions should be prefixed <cite>[WIP]</cite> to indicate a work in
-progress (and changed to <cite>[MRG]</cite> when it matures). WIPs may be useful to:
+Incomplete contributions should be prefixed <code class="docutils literal notranslate"><span class="pre">[WIP]</span></code> to indicate a work in
+progress (and changed to <code class="docutils literal notranslate"><span class="pre">[MRG]</span></code> when it matures). WIPs may be useful to:
 indicate you are working on something to avoid duplicated work, request
 broad review of functionality or API, or seek collaborators. WIPs often
 benefit from the inclusion of a <a class="reference external" href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">task list</a> in the PR description.</p></li>
@@ -398,17 +398,17 @@ illustrating it.</p>
 </div>
 <div class="section" id="release-process">
 <h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
-<p>The following explain the main steps to release <cite>ramp-board</cite>:</p>
+<p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
 <ol class="arabic simple">
-<li><p>Run <cite>bumpversion release</cite>. It will remove the <cite>dev0</cite> tag.</p></li>
-<li><p>Commit the change <cite>git commit -am “bumpversion 0.1.0”</cite>.</p></li>
-<li><p>Create a branch for this version <cite>git checkout -b 0.1.X</cite>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span></code>. It will remove the <code class="docutils literal notranslate"><span class="pre">dev0</span></code> tag.</p></li>
+<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.1.0&quot;</span></code>.</p></li>
+<li><p>Create a branch for this version <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.1.X</span></code>.</p></li>
 <li><p>Push the new branch into the upstream repository.</p></li>
 <li><p>You can create a GitHub release.</p></li>
-<li><p>Change the symlink in the <cite>ramp-docs</cite> repository such that stable point on
+<li><p>Change the symlink in the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository such that stable point on
 0.1.X.</p></li>
-<li><p>Push on PyPI with <cite>make upload-pypi</cite>.</p></li>
-<li><p>In <cite>master</cite>, run <cite>bumpversion minor</cite>, commit and push on upstream.</p></li>
+<li><p>Push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">master</span></code>, run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on upstream.</p></li>
 </ol>
 </div>
 </div>

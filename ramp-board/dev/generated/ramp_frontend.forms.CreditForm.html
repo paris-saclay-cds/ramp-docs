@@ -209,24 +209,24 @@ RAMP submission after tracking the user activity.</p>
 </dl>
 <dl class="method">
 <dt id="ramp_frontend.forms.CreditForm.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata=&lt;object object at 0x7fbbadd60080&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata=&lt;object object at 0x7f7ba85fa080&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <cite>request.POST</cite> or
+<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <code class="docutils literal notranslate"><span class="pre">request.POST</span></code> or
 equivalent. formdata should be some sort of request-data wrapper which
 can get multiple parameters from the form input, and values are unicode
 strings, e.g. a Werkzeug/Django/WebOb MultiDict</p></li>
-<li><p><strong>obj</strong> – If <cite>formdata</cite> is empty or not provided, this object is checked for
+<li><p><strong>obj</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided, this object is checked for
 attributes matching form field names, which will be used for field
 values.</p></li>
 <li><p><strong>prefix</strong> – If provided, all fields will have their name prefixed with the
 value.</p></li>
-<li><p><strong>data</strong> – Accept a dictionary of data. This is only used if <cite>formdata</cite> and
-<cite>obj</cite> are not present.</p></li>
+<li><p><strong>data</strong> – Accept a dictionary of data. This is only used if <code class="docutils literal notranslate"><span class="pre">formdata</span></code> and
+<code class="docutils literal notranslate"><span class="pre">obj</span></code> are not present.</p></li>
 <li><p><strong>meta</strong> – If provided, this is a dictionary of values to override attributes
 on this form’s meta instance.</p></li>
-<li><p><strong>**kwargs</strong> – If <cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+<li><p><strong>**kwargs</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
 an attribute named the same as a field, form will assign the value
 of a matching keyword argument to the field, if one exists.</p></li>
 </ul>
@@ -262,7 +262,7 @@ of a matching keyword argument to the field, if one exists.</p></li>
 <code class="sig-name descname">build_csrf</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.Meta.build_csrf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a CSRF implementation. This is called once per form instance.</p>
 <p>The default implementation builds the class referenced to by
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">csrf_class</span></code> with zero arguments. If <cite>csrf_class</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">csrf_class</span></code> with zero arguments. If <code class="docutils literal notranslate"><span class="pre">csrf_class</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 will instead use the default implementation
 <code class="xref py py-class docutils literal notranslate"><span class="pre">wtforms.csrf.session.SessionCSRF</span></code>.</p>
 <dl class="field-list simple">
@@ -300,7 +300,7 @@ See the i18n documentation for more.</p>
 <dl class="method">
 <dt id="ramp_frontend.forms.CreditForm.Meta.update_values">
 <code class="sig-name descname">update_values</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">values</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.Meta.update_values" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a dictionary of values, update values on this <cite>Meta</cite> instance.</p>
+<dd><p>Given a dictionary of values, update values on this <code class="docutils literal notranslate"><span class="pre">Meta</span></code> instance.</p>
 </dd></dl>
 
 <dl class="method">
@@ -353,7 +353,7 @@ the method is <code class="docutils literal notranslate"><span class="pre">POST<
 <dl class="method">
 <dt id="ramp_frontend.forms.CreditForm.populate_obj">
 <code class="sig-name descname">populate_obj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.populate_obj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Populates the attributes of the passed <cite>obj</cite> with data from the form’s
+<dd><p>Populates the attributes of the passed <code class="docutils literal notranslate"><span class="pre">obj</span></code> with data from the form’s
 fields.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note</dt>
@@ -371,15 +371,15 @@ process them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <cite>request.POST</cite> or
+<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <code class="docutils literal notranslate"><span class="pre">request.POST</span></code> or
 equivalent.</p></li>
-<li><p><strong>obj</strong> – If <cite>formdata</cite> is empty or not provided, this object is checked for
+<li><p><strong>obj</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided, this object is checked for
 attributes matching form field names, which will be used for field
 values.</p></li>
 <li><p><strong>data</strong> – If provided, must be a dictionary of data. This is only used if
-<cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+<code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
 an attribute named the same as the field.</p></li>
-<li><p><strong>**kwargs</strong> – If <cite>formdata</cite> is empty or not provided and <cite>obj</cite> does not contain
+<li><p><strong>**kwargs</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
 an attribute named the same as a field, form will assign the value
 of a matching keyword argument to the field, if one exists.</p></li>
 </ul>
@@ -390,8 +390,8 @@ of a matching keyword argument to the field, if one exists.</p></li>
 <dl class="method">
 <dt id="ramp_frontend.forms.CreditForm.validate">
 <code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.CreditForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates the form by calling <cite>validate</cite> on each field, passing any
-extra <cite>Form.validate_&lt;fieldname&gt;</cite> validators to the field validator.</p>
+<dd><p>Validates the form by calling <code class="docutils literal notranslate"><span class="pre">validate</span></code> on each field, passing any
+extra <code class="docutils literal notranslate"><span class="pre">Form.validate_&lt;fieldname&gt;</span></code> validators to the field validator.</p>
 </dd></dl>
 
 <dl class="method">
