@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#release-process">Release process</a></li>
 </ul>
 </li>
 </ul>
@@ -228,7 +229,8 @@ command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ python -m smtpd -n -c DebuggingServer localhost:8025 &amp;
 </pre></div>
 </div>
-<p>You are now ready to run the tests. You can do so using <code class="docutils literal notranslate"><span class="pre">pytest</span></code> from the root <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> directory:</p>
+<p>You are now ready to run the tests. You can do so using <code class="docutils literal notranslate"><span class="pre">pytest</span></code> from the
+root <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pytest -vsl .
 </pre></div>
 </div>
@@ -243,7 +245,8 @@ In the other case, you can test the individual packages with:</p>
 <p>This guide is adapted from <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md">scikit-learn contribution guide</a>.</p>
 <div class="section" id="forking-ramp">
 <h3>Forking RAMP<a class="headerlink" href="#forking-ramp" title="Permalink to this headline">¶</a></h3>
-<p>The preferred way to contribute to RAMP is to fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a> on GitHub:</p>
+<p>The preferred way to contribute to RAMP is to fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a>
+on GitHub:</p>
 <ol class="arabic">
 <li><p>To fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a> click on the ‘Fork’ button near the
 top of the page. This creates a copy of the code under your account
@@ -299,11 +302,11 @@ ensure a link is created to the original issue.</p></li>
 usage presented as doctests when appropriate.</p></li>
 <li><p>Please prefix the title of your pull request with <cite>[MRG]</cite> if the
 contribution is complete and should be subjected to a detailed review.
-Incomplete contributions should be prefixed <cite>[WIP]</cite> to indicate a work
-in progress (and changed to <cite>[MRG]</cite> when it matures). WIPs may be useful
-to: indicate you are working on something to avoid duplicated work,
-request broad review of functionality or API, or seek collaborators.
-WIPs often benefit from the inclusion of a <a class="reference external" href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">task list</a> in the PR description.</p></li>
+Incomplete contributions should be prefixed <cite>[WIP]</cite> to indicate a work in
+progress (and changed to <cite>[MRG]</cite> when it matures). WIPs may be useful to:
+indicate you are working on something to avoid duplicated work, request
+broad review of functionality or API, or seek collaborators. WIPs often
+benefit from the inclusion of a <a class="reference external" href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">task list</a> in the PR description.</p></li>
 <li><p>All other tests pass when everything is rebuilt from scratch. On
 Unix-like systems, check with (from the toplevel source folder):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make
@@ -392,6 +395,18 @@ start with a small paragraph with a hand-waving explanation of what the
 method does to the data and a figure (coming from an example)
 illustrating it.</p>
 </div>
+</div>
+<div class="section" id="release-process">
+<h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
+<p>The following explain the main steps to release <cite>ramp-board</cite>:</p>
+<ol class="arabic simple">
+<li><p>Run <cite>bumpversion release</cite>. It will remove the <cite>dev0</cite> tag.</p></li>
+<li><p>Commit the change <cite>git commit -am “bumpversion 0.1.0”</cite>.</p></li>
+<li><p>Create a branch for this version <cite>git checkout -b 0.1.X</cite>.</p></li>
+<li><p>Push the new branch into the upstream repository.</p></li>
+<li><p>You can create a GitHub release.</p></li>
+<li><p>Push on PyPI with <cite>make upload-pypi</cite>.</p></li>
+</ol>
 </div>
 </div>
 
