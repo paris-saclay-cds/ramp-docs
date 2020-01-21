@@ -1,10 +1,144 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta http-equiv="refresh" content="0; url=https://paris-saclay-cds.github.io/ramp-docs/stable" />
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Rapid Analytics Modeling Prototyping &mdash; RAMP documentation</title>
-  <link rel="canonical" href="https://paris-saclay-cds.github.io/ramp-docs/stable/index.html" />
-  </head>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RAMP: collaborative data science challenges</title>
+    <meta name="description" content="Collaborative crowdsourcing data challenge site for building and optimizing data science workflows for scientific and business applications.">
+    <meta name="keyword" content="data science, data challenge, crowdsourcing, open innovation, Paris-Saclay, Center for Data Science, teaching data science, deep learning, time series, missing data, feature extraction, hyperopt, AutoML">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="static/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="static/lib/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/themes/flat-blue.css">
+</head>
+
+<body class="flat-blue landing-page">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-affix" role="navigation" data-spy="affix" data-offset-top="60">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div id="navbar" class="navbar-collapse collapse " aria-expanded="true">
+                        <ul class="nav navbar-nav navbar-left navbar-font-index">
+                            <li class="active"><a href="#features"><img src="static/img/logo_CDS.svg" height="26px"></a></li>
+                            <li class="active"><a href="ramp-workflow/index.html">RAMP workflow</a></li>
+                            <li class="active"><a href="ramp-board/index.html">RAMP board</a></li>
+                        </ul>
+                    </div>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="jumbotron app-header" id='titleback'>
+        <div class="container">
+            <h2 class="text-center">
+                <br>
+                <div class="color-white font-large font-heavy"><span><img src="static/img/logo_CDS.svg" alt="CDS logo" class="app-logo color-white" height="98">&nbsp;RAMP</span></div>
+            </h2>
+            <p class="text-center color-white app-description font-med">Rapid Analytics & Model Prototyping</p>
+            <p class="text-center color-white app-description font-small">The Developer Documentation</p></div>
+            <br>
+            <br>
+            <p class="text-center"><a class="btn btn-primary btn-lg app-btn" href="#features" role="button">Learn more »</a></p>
+        </div>
+    </div>
+
+    <div class="container-fluid app-content-a" id="packages">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center app-content-header">RAMP packages</h2>
+                        <p class="text-center app-content-description font-small">
+                        RAMP packages offer versatile tools to define, build and optimize machine learning workflows via data challenges, great for prototyping models in your data science team.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+
+                    <div class="col-md-6 col-sm-6">
+                        <a href="ramp-workflow/index.html">
+                        <span class="fa-stack fa-lg fa-5x">
+                          <i class="fa fa-circle-thin fa-stack-2x"></i>
+                          <i class="fa fa-gears fa-stack-1x"></i>
+                        </span>
+                        <h2>RAMP workflow</h2>
+                        </a>
+                        <p><a href="ramp-workflow/index.html">RAMP workflow</a> allows you to formalise a machine learning workflow by defining score types (metrics), workflow elements and prediction types.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <a href="ramp-board/index.html">
+                        <span class="fa-stack fa-lg fa-5x">
+                          <i class="fa fa-circle-thin fa-stack-2x"></i>
+                          <i class="fa fa-server fa-stack-1x"></i>
+                        </span>
+                        <h2>RAMP board</h2>
+                        </a>
+                        <p><a href="ramp-board/index.html">RAMP board</a> consists of a bundle of modules that allow you to easily setup your own RAMP server and deploy new data challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <hr align="center" width="50%">
+
+    <div class="container-fluid app-content-a" id="dev">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center app-content-header">Developed by:</h2>
+                <br>
+                <div class="col-md-12">
+                    <center>
+                    <a href="https://www.datascience-paris-saclay.fr/" target="_blank">
+                    <img src="static/img/partners/upsaclay.png" class="img" alt="Université Paris-Saclay" height="100">
+                    </a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div class="container">
+          <center><span class="pull-left"><i class="icon fa fa-copyright"></i> RAMP version beta <a href="#"><i class="icon fa fa-long-arrow-up"></i><i class="icon fa fa-long-arrow-up"></i></a></span> &nbsp; &nbsp; &nbsp; &nbsp;
+          <span><a href="/"><img src="static/img/logo_CDS_footer.svg" height="20px"></a></span> &nbsp; &nbsp; &nbsp; &nbsp; <span><a href="mailto:admin@ramp.studio">Contact Us <i class="icon fa fa-envelope"></i></a></span>
+          <span class="pull-right">Thanks to <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank">tui2tone</a> for the  template!</span>
+          </center>
+      </div>
+    </footer>
+    <!-- Javascript Libs -->
+    <script type="text/javascript" src="static/lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/Chart.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="static/lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/ace/ace.js"></script>
+    <script type="text/javascript" src="static/lib/js/ace/mode-html.js"></script>
+    <script type="text/javascript" src="static/lib/js/ace/theme-github.js"></script>
+    <!-- /.container -->
+</body>
+
 </html>
