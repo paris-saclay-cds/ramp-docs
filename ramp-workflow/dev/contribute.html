@@ -97,7 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP scoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP workflow commands</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#release-process">Release process</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Using RAMP kits</span></p>
 <ul>
@@ -194,6 +197,22 @@ environment for ramp-workflow.</p>
 <li><p>Add your contributions and submit a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull request</a>
 to merge this into ramp-workflow.</p></li>
 </ol>
+<div class="section" id="release-process">
+<h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
+<p>The following explain the main steps to release <cite>ramp-board</cite>:</p>
+<ol class="arabic simple">
+<li><p>Run <cite>bumpversion release</cite>. It will remove the <cite>dev0</cite> tag.</p></li>
+<li><p>Commit the change <cite>git commit -am “bumpversion 0.1.0”</cite>.</p></li>
+<li><p>Create a branch for this version <cite>git checkout -b 0.1.X</cite>.</p></li>
+<li><p>Push the new branch into the upstream repository.</p></li>
+<li><p>You can create a GitHub release.</p></li>
+<li><p>Change the symlink in the <cite>ramp-docs</cite> repository such that stable point on
+0.1.X.</p></li>
+<li><p>Push on PyPI by executing the following:
+<cite>python setup.py sdist bdist_wheel &amp;&amp; twine upload dist/*</cite>.</p></li>
+<li><p>In <cite>master</cite>, run <cite>bumpversion minor</cite>, commit and push on upstream.</p></li>
+</ol>
+</div>
 </div>
 
 
