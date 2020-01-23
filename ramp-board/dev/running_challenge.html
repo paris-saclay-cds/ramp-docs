@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Useful tips when running a RAMP &mdash; RAMP 0.2.0.dev0 documentation</title>
+  <title>7. Useful tips using RAMP &mdash; RAMP 0.2.0.dev0 documentation</title>
   
 
   
@@ -101,8 +101,9 @@
 <li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workers.html">5. Notes regarding the RAMP workers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Useful tips when running a RAMP</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Useful tips using RAMP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-restart-a-failed-submission-manually">7.1. How to restart a failed submission manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-standalone-worker-without-connection-to-database">7.2. Running a standalone worker without connection to database</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +162,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Useful tips when running a RAMP</li>
+      <li><span class="section-number">7. </span>Useful tips using RAMP</li>
     
     
 
@@ -173,9 +174,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="useful-tips-when-running-a-ramp">
-<h1><span class="section-number">7. </span>Useful tips when running a RAMP<a class="headerlink" href="#useful-tips-when-running-a-ramp" title="Permalink to this headline">¶</a></h1>
-<p>When running a RAMP challenge, you might need one of the following tips.</p>
+  <div class="section" id="useful-tips-using-ramp">
+<h1><span class="section-number">7. </span>Useful tips using RAMP<a class="headerlink" href="#useful-tips-using-ramp" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-to-restart-a-failed-submission-manually">
 <h2><span class="section-number">7.1. </span>How to restart a failed submission manually<a class="headerlink" href="#how-to-restart-a-failed-submission-manually" title="Permalink to this headline">¶</a></h2>
 <p>If for some reason, one of the submission failed and you would like to
@@ -186,6 +186,43 @@ You can use the following command to change the status of a submission:</p>
 </div>
 <p>Since the submission was set to <code class="docutils literal notranslate"><span class="pre">new</span></code>, the RAMP dispatcher will automatically
 pick up this submission to train it again.</p>
+</div>
+<div class="section" id="running-a-standalone-worker-without-connection-to-database">
+<h2><span class="section-number">7.2. </span>Running a standalone worker without connection to database<a class="headerlink" href="#running-a-standalone-worker-without-connection-to-database" title="Permalink to this headline">¶</a></h2>
+<p>It can happen that you want to use a worker to run a submission locally to
+reproduce what the dispatcher is doing or just train a local submission.
+You can use the command <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">launch</span> <span class="pre">worker</span></code> to this regard. What you need
+is to provide a configuration file with the information regarding the
+submission and the worker. For instance, let’s imagine that you cloned the
+iris kit in locally and that you want to run one of the submission.</p>
+<p>We cloned the iris repository in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+</pre></div>
+</div>
+<p>Now, we need to provide a configuration file containing the information used
+by the worker. For instance, for a conda worker, we will provide the following
+<code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
+    <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
+    <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_test</span>
+    <span class="n">event_title</span><span class="p">:</span> <span class="s2">&quot;Human readable event name to display on website&quot;</span>
+    <span class="n">event_is_public</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">kit_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">submissions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">submissions</span>
+    <span class="n">predictions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">predictions</span>
+    <span class="n">logs_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">logs</span>
+    <span class="n">sandbox_dir</span><span class="p">:</span> <span class="n">starting_kit</span>
+<span class="n">worker</span><span class="p">:</span>
+    <span class="n">worker_type</span><span class="p">:</span> <span class="n">conda</span>
+    <span class="n">conda_env</span><span class="p">:</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span>
+</pre></div>
+</div>
+<p>Then, you can launch the worker for the submission <code class="docutils literal notranslate"><span class="pre">random_forest_10_10</span></code> as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/Documents/ramp/iris $ ramp launch worker --submission random_forest_10_10
+</pre></div>
+</div>
+<p>And you can check the results in the <code class="docutils literal notranslate"><span class="pre">logs</span></code> folder.</p>
 </div>
 </div>
 
