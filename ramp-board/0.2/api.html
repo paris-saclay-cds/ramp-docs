@@ -145,9 +145,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ramp-engine">RAMP engine</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ramp-dispatcher">RAMP Dispatcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ramp-dispatcher">RAMP Dispatcher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#ramp-workers">RAMP Workers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker</a></li>
 </ul>
 </li>
@@ -521,14 +525,14 @@ information from and in the database.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_leaderboards</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_leaderboards.html#ramp_database.tools.leaderboard.update_leaderboards" title="ramp_database.tools.leaderboard.update_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_leaderboards</span></code></a>(…[, …])</p></td>
+<td><p>Update the leaderboards for a given event.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_user_leaderboards</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_user_leaderboards.html#ramp_database.tools.leaderboard.update_user_leaderboards" title="ramp_database.tools.leaderboard.update_user_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_user_leaderboards</span></code></a>(…)</p></td>
+<td><p>Update the of a user leaderboards for a given event.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_all_user_leaderboards</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_all_user_leaderboards.html#ramp_database.tools.leaderboard.update_all_user_leaderboards" title="ramp_database.tools.leaderboard.update_all_user_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_all_user_leaderboards</span></code></a>(…)</p></td>
+<td><p>Update the leaderboards for all users for a given event.</p></td>
 </tr>
 </tbody>
 </table>
@@ -593,8 +597,8 @@ information from and in the database.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_keyword_by_name.html#ramp_database.tools.event.get_keyword_by_name" title="ramp_database.tools.event.get_keyword_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_keyword_by_name</span></code></a>(session, name)</p></td>
 <td><p>Get the keyword filtering by there name</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.get_leaderboard</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.get_leaderboard.html#ramp_database.tools.leaderboard.get_leaderboard" title="ramp_database.tools.leaderboard.get_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.get_leaderboard</span></code></a>(session, …)</p></td>
+<td><p>Get a leaderboard.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_problem.html#ramp_database.tools.event.get_problem" title="ramp_database.tools.event.get_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_problem</span></code></a>(session, problem_name)</p></td>
 <td><p>Get problem from the database.</p></td>
@@ -873,8 +877,8 @@ evaluation of submissions which are processed using workers.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatcher.Dispatcher</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher" title="ramp_engine.dispatcher.Dispatcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatcher.Dispatcher</span></code></a>(config, event_config)</p></td>
+<td><p>Dispatcher which schedule workers and communicate with the database.</p></td>
 </tr>
 </tbody>
 </table>
@@ -890,8 +894,8 @@ evaluation of submissions which are processed using workers.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker" title="ramp_engine.base.BaseWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.BaseWorker</span></code></a>(config, submission)</p></td>
 <td><p>Metaclass used to build a RAMP worker.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">local.CondaEnvWorker</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local.CondaEnvWorker</span></code></a>(config, submission)</p></td>
+<td><p>Local worker which uses conda environment to dispatch submission.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aws.AWSWorker</span></code></a>(config, submission)</p></td>
 <td><p>Run RAMP submissions on Amazon.</p></td>
@@ -1042,35 +1046,35 @@ with the RAMP backend.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problems</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.problems.html#ramp_frontend.views.ramp.problems" title="ramp_frontend.views.ramp.problems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problems</span></code></a>()</p></td>
+<td><p>Landing page showing all the RAMP problems.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.problem.html#ramp_frontend.views.ramp.problem" title="ramp_frontend.views.ramp.problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problem</span></code></a>(problem_name)</p></td>
+<td><p>Landing page for a single RAMP problem.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.user_event.html#ramp_frontend.views.ramp.user_event" title="ramp_frontend.views.ramp.user_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.user_event</span></code></a>(event_name)</p></td>
+<td><p>Landing page for a given event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.sign_up_for_event.html#ramp_frontend.views.ramp.sign_up_for_event" title="ramp_frontend.views.ramp.sign_up_for_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sign_up_for_event</span></code></a>(event_name)</p></td>
+<td><p>Landing page to sign-up to a specific RAMP event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.sandbox.html#ramp_frontend.views.ramp.sandbox" title="ramp_frontend.views.ramp.sandbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sandbox</span></code></a>(event_name)</p></td>
+<td><p>Landing page for the user’s sandbox.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.ask_for_event.html#ramp_frontend.views.ramp.ask_for_event" title="ramp_frontend.views.ramp.ask_for_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.ask_for_event</span></code></a>(problem_name)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problem</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.credit.html#ramp_frontend.views.ramp.credit" title="ramp_frontend.views.ramp.credit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.credit</span></code></a>(submission_hash)</p></td>
+<td><p>The landing page to credit other submission when a user submit is own.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.user_event</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.event_plots.html#ramp_frontend.views.ramp.event_plots" title="ramp_frontend.views.ramp.event_plots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.event_plots</span></code></a>(event_name)</p></td>
+<td><p>Landing page of the plot illustrating the score evolution over time for a specific RAMP event.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sign_up_for_event</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.view_model.html#ramp_frontend.views.ramp.view_model" title="ramp_frontend.views.ramp.view_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_model</span></code></a>(submission_hash, f_name)</p></td>
+<td><p>Rendering submission codes using templates/submission.html.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sandbox</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.ask_for_event</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.credit</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.event_plots</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_model</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_submission_error</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.view_submission_error.html#ramp_frontend.views.ramp.view_submission_error" title="ramp_frontend.views.ramp.view_submission_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_submission_error</span></code></a>(submission_hash)</p></td>
+<td><p>Rendering submission codes using templates/submission.html.</p></td>
 </tr>
 </tbody>
 </table>

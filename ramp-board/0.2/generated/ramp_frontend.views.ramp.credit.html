@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_frontend.views.redirect.redirect_to_credit &mdash; RAMP 0.2.0 documentation</title>
+  <title>ramp_frontend.views.ramp.credit &mdash; RAMP 0.2.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_frontend.views.redirect.redirect_to_sandbox" href="ramp_frontend.views.redirect.redirect_to_sandbox.html" />
-    <link rel="prev" title="ramp_frontend.views.ramp.view_submission_error" href="ramp_frontend.views.ramp.view_submission_error.html" /> 
+    <link rel="next" title="ramp_frontend.views.ramp.event_plots" href="ramp_frontend.views.ramp.event_plots.html" />
+    <link rel="prev" title="ramp_frontend.views.ramp.ask_for_event" href="ramp_frontend.views.ramp.ask_for_event.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,8 +105,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../api.html#authentication-views">Authentication views</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#admin-views">Admin views</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#leaderboard-views">Leaderboard views</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api.html#submission-views">Submission views</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../api.html#utilities">Utilities</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#submission-views">Submission views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#utilities">Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a></li>
@@ -170,7 +170,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views.redirect</span></code>.redirect_to_credit</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views.ramp</span></code>.credit</li>
     
     
 
@@ -182,22 +182,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-frontend-views-redirect-redirect-to-credit">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views.redirect</span></code>.redirect_to_credit<a class="headerlink" href="#ramp-frontend-views-redirect-redirect-to-credit" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-frontend-views-ramp-credit">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views.ramp</span></code>.credit<a class="headerlink" href="#ramp-frontend-views-ramp-credit" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_frontend.views.redirect.redirect_to_credit">
-<code class="sig-prename descclassname">ramp_frontend.views.redirect.</code><code class="sig-name descname">redirect_to_credit</code><span class="sig-paren">(</span><em class="sig-param">submission_hash</em>, <em class="sig-param">message_str</em>, <em class="sig-param">is_error=True</em>, <em class="sig-param">category=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.views.redirect.redirect_to_credit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Redirect the page to the credit landing page.</p>
+<dt id="ramp_frontend.views.ramp.credit">
+<code class="sig-prename descclassname">ramp_frontend.views.ramp.</code><code class="sig-name descname">credit</code><span class="sig-paren">(</span><em class="sig-param">submission_hash</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.views.ramp.credit" title="Permalink to this definition">¶</a></dt>
+<dd><p>The landing page to credit other submission when a user submit is own.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>submission_hash</strong><span class="classifier">str</span></dt><dd><p>The hash of the current submission.</p>
-</dd>
-<dt><strong>message_str</strong><span class="classifier">str</span></dt><dd><p>The message to inform the user what is going on.</p>
-</dd>
-<dt><strong>is_error</strong><span class="classifier">bool, default is True</span></dt><dd><p>Whether this is due to an error.</p>
-</dd>
-<dt><strong>category</strong><span class="classifier">str or None</span></dt><dd><p>The category of the error. Refer to <code class="xref py py-func docutils literal notranslate"><span class="pre">flask.flash</span></code>.</p>
+<dt><strong>submission_hash</strong><span class="classifier">str</span></dt><dd><p>The submission hash of the current submission.</p>
 </dd>
 </dl>
 </dd>
@@ -214,10 +208,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_frontend.views.redirect.redirect_to_sandbox.html" class="btn btn-neutral float-right" title="ramp_frontend.views.redirect.redirect_to_sandbox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_frontend.views.ramp.event_plots.html" class="btn btn-neutral float-right" title="ramp_frontend.views.ramp.event_plots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_frontend.views.ramp.view_submission_error.html" class="btn btn-neutral float-left" title="ramp_frontend.views.ramp.view_submission_error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_frontend.views.ramp.ask_for_event.html" class="btn btn-neutral float-left" title="ramp_frontend.views.ramp.ask_for_event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

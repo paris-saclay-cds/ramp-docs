@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.tools.team.delete_event_team &mdash; RAMP 0.2.0 documentation</title>
+  <title>ramp_database.tools.leaderboard.get_leaderboard &mdash; RAMP 0.2.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_database.tools.leaderboard.update_leaderboards" href="ramp_database.tools.leaderboard.update_leaderboards.html" />
-    <link rel="prev" title="ramp_database.tools.user.delete_user" href="ramp_database.tools.user.delete_user.html" /> 
+    <link rel="next" title="ramp_database.tools.event.get_problem" href="ramp_database.tools.event.get_problem.html" />
+    <link rel="prev" title="ramp_database.tools.event.get_keyword_by_name" href="ramp_database.tools.event.get_keyword_by_name.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,8 +99,8 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
@@ -168,7 +168,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.team</span></code>.delete_event_team</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.leaderboard</span></code>.get_leaderboard</li>
     
     
 
@@ -180,20 +180,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-database-tools-team-delete-event-team">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.team</span></code>.delete_event_team<a class="headerlink" href="#ramp-database-tools-team-delete-event-team" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-database-tools-leaderboard-get-leaderboard">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.leaderboard</span></code>.get_leaderboard<a class="headerlink" href="#ramp-database-tools-leaderboard-get-leaderboard" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_database.tools.team.delete_event_team">
-<code class="sig-prename descclassname">ramp_database.tools.team.</code><code class="sig-name descname">delete_event_team</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">event_name</em>, <em class="sig-param">team_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.team.delete_event_team" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete a team from an RAMP event.</p>
+<dt id="ramp_database.tools.leaderboard.get_leaderboard">
+<code class="sig-prename descclassname">ramp_database.tools.leaderboard.</code><code class="sig-name descname">get_leaderboard</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">leaderboard_type</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name=None</em>, <em class="sig-param">with_links=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.leaderboard.get_leaderboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a leaderboard.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The RAMP event name.</p>
+<dt><strong>leaderboard_type</strong><span class="classifier">{‘public’, ‘private’, ‘failed’, ‘new’, ‘public competition’, ‘private competition’}</span></dt><dd><p>The type of leaderboard to generate.</p>
 </dd>
-<dt><strong>team_name</strong><span class="classifier">str</span></dt><dd><p>The name of the team.</p>
+<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
+</dd>
+<dt><strong>user_name</strong><span class="classifier">None or str, default is None</span></dt><dd><p>The user name. If None, scores from all users will be queried. This
+parameter is discarded when requesting the competition leaderboard.</p>
+</dd>
+<dt><strong>with_links</strong><span class="classifier">bool, default is True</span></dt><dd><p>Whether or not the submission name should be clickable.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>leaderboard</strong><span class="classifier">str</span></dt><dd><p>The leaderboard in HTML format.</p>
 </dd>
 </dl>
 </dd>
@@ -210,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_database.tools.leaderboard.update_leaderboards.html" class="btn btn-neutral float-right" title="ramp_database.tools.leaderboard.update_leaderboards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_database.tools.event.get_problem.html" class="btn btn-neutral float-right" title="ramp_database.tools.event.get_problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_database.tools.user.delete_user.html" class="btn btn-neutral float-left" title="ramp_database.tools.user.delete_user" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_database.tools.event.get_keyword_by_name.html" class="btn btn-neutral float-left" title="ramp_database.tools.event.get_keyword_by_name" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
