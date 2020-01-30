@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Create New Challenge &mdash; RAMP 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Notes regarding the RAMP workers" href="workers.html" />
+    <link rel="prev" title="3. Set up a new RAMP event" href="create_ramp_event.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">2. Personalize your RAMP front webpage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Create New Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-txt-file">4.1. requirements.txt file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-py-python-file">4.2. problem.py Python file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submission-directory">4.3. submission directory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-submission-directory-and-its-content">4.3.1. example submission directory and its content</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-directory">4.4. data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#your-challenge-starting-kit-ipynb-jupiter-notebook-file">4.5. your_challenge_starting_kit.ipynb Jupiter notebook file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examplar-ramp-kits">4.6. examplar RAMP kits</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workers.html">5. Notes regarding the RAMP workers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">7. Useful tips using RAMP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>Create New Challenge</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="create-new-challenge">
+<h1><span class="section-number">4. </span>Create New Challenge<a class="headerlink" href="#create-new-challenge" title="Permalink to this headline">¶</a></h1>
+<p>Before you start creating your RAMP challenge, make sure that you have the
+data needed to run your challenge. RAMP kit will need to include two types of
+datasets:</p>
+<ul class="simple">
+<li><p>public dataset which is given to all of the competing users. This dataset
+will be split for cross-validation (train and test) and can be used for
+self-evaluation during the duration of the challenge;</p></li>
+<li><p>private dataset which is never given to the competing users and which is
+used to evaluate the score of the users after the challenge deadline has
+passed.</p></li>
+</ul>
+<p>To write you own challenge for RAMP you need to create directory with the name
+of your challenge in the ramp-kits directory of your RAMP:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">ramp_kits</span><span class="o">/</span><span class="n">your_challenge</span>
+</pre></div>
+</div>
+<p>This directory tree should be of the following structure:</p>
+<img alt="_images/dir_structure.png" src="_images/dir_structure.png" />
+<p>With:</p>
+<ul class="simple">
+<li><p>requirements.txt file</p></li>
+<li><p>problem.py file</p></li>
+<li><p>submissions directory with example submission(s)</p></li>
+<li><p>directory with the public data, and</p></li>
+<li><p>Jupiter notebook introduction the challenge</p></li>
+</ul>
+<div class="section" id="requirements-txt-file">
+<h2><span class="section-number">4.1. </span>requirements.txt file<a class="headerlink" href="#requirements-txt-file" title="Permalink to this headline">¶</a></h2>
+<p>This file should include all the libraries required to run your challenge
+Its content might, for example, look as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span>
+<span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">pandas</span>
+<span class="n">matplotlib</span>
+<span class="n">seaborn</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="problem-py-python-file">
+<h2><span class="section-number">4.2. </span>problem.py Python file<a class="headerlink" href="#problem-py-python-file" title="Permalink to this headline">¶</a></h2>
+<p>Here, you will need to define:</p>
+<ul class="simple">
+<li><p>what type of problem the user will face during the challenge
+(e.g. classification <a class="reference external" href="https://github.com/ramp-kits/pollenating_insects_3_simplified/blob/master/problem.py">pollenating insects problem</a>
+or regression <a class="reference external" href="https://github.com/ramp-kits/boston_housing/blob/master/problem.py">boston housing problem</a>);</p></li>
+<li><p>which RAMP workflow you want to use;</p></li>
+<li><p>the score which will be used for evaluation
+and include three functions: <code class="docutils literal notranslate"><span class="pre">get_cv()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_train_data()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">get_test_data()</span></code>.</p></li>
+</ul>
+<p>The basic Iris <a class="reference external" href="https://github.com/ramp-kits/iris/blob/master/problem.py">problem.py</a> (which is a
+classification problem) looks like that:</p>
+<p>First you need to import all the required libraries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">rampwf</span> <span class="k">as</span> <span class="nn">rw</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
+</pre></div>
+</div>
+<p>Next, define the name of the problem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">problem_title</span> <span class="o">=</span> <span class="s1">&#39;Iris classification&#39;</span>
+</pre></div>
+</div>
+<p>Define which column in your .csv file is to be classified:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_target_column_name</span> <span class="o">=</span> <span class="s1">&#39;species&#39;</span>
+</pre></div>
+</div>
+<p>Specify possible labels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_prediction_label_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;setosa&#39;</span><span class="p">,</span> <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;virginica&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Choose which prediction class will be used. You can choose from <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/prediction_types">existing
+prediction classes</a>
+or create your own:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A type (class) which will be used to create wrapper objects for y_pred</span>
+<span class="n">Predictions</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">prediction_types</span><span class="o">.</span><span class="n">make_multiclass</span><span class="p">(</span>
+    <span class="n">label_names</span><span class="o">=</span><span class="n">_prediction_label_names</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Specify which RAMP workflow will be used. You can use one of the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/workflows">existing
+workflows</a>
+or you can create your own:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># An object implementing the workflow</span>
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">workflows</span><span class="o">.</span><span class="n">Classifier</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Next, define which score types will be calculated. Score types defined in
+RAMP can be found <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/score_types">here</a>
+but if none of those matches your needs, you can also add new one(s):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">score_types</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">Accuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;acc&#39;</span><span class="p">),</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">ClassificationError</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">),</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">NegativeLogLikelihood</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;nll&#39;</span><span class="p">),</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">F1Above</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;f1_70&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Finally you should create few functions which should include:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_cv()</span></code>
+with input X (the training data) and y (test data). This function
+should define how the public dataset is to be split for cross-validation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cv</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">cv</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">57</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_train_data()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_test_data()</span></code> should return the correct sets of
+the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_train_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="n">f_name</span> <span class="o">=</span> <span class="s1">&#39;train.csv&#39;</span>
+    <span class="k">return</span> <span class="n">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_test_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="n">f_name</span> <span class="o">=</span> <span class="s1">&#39;test.csv&#39;</span>
+    <span class="k">return</span> <span class="n">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">f_name</span><span class="p">))</span>
+    <span class="n">y_array</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">_target_column_name</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">X_array</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">_target_column_name</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="n">X_array</span><span class="p">,</span> <span class="n">y_array</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="submission-directory">
+<h2><span class="section-number">4.3. </span>submission directory<a class="headerlink" href="#submission-directory" title="Permalink to this headline">¶</a></h2>
+<p>All the submissions will be expected to be stored in the submission directory.
+The user might select any name for their submission. At least one sample
+submission is always given to the users. In the <a class="reference external" href="https://github.com/ramp-kits/iris">Iris</a> example three submissions are provided:
+error, random_forest_10_10 and starting_kit.</p>
+<div class="section" id="example-submission-directory-and-its-content">
+<h3><span class="section-number">4.3.1. </span>example submission directory and its content<a class="headerlink" href="#example-submission-directory-and-its-content" title="Permalink to this headline">¶</a></h3>
+<p>In Iris example, each of the submission directories include python file called
+classifier.py letting the user know that their submission should also include
+classifier.py file. The name of the file expected for the submission and its
+structure will depend on the workflow you chose to use.</p>
+<p>For example, Iris uses workflow <code class="docutils literal notranslate"><span class="pre">Classifier()</span></code> (defined in problem.py) and
+therefore the file in the submission has to be classifier.py. Sample of this
+file is given to the users as part of Iris challenge. It includes the sample
+functions which classifier.py submitted by the user will also need to include,
+in Iris example in the starting_kit it looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="k">class</span> <span class="nc">Classifier</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span>
+            <span class="n">n_estimators</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">61</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="data-directory">
+<h2><span class="section-number">4.4. </span>data directory<a class="headerlink" href="#data-directory" title="Permalink to this headline">¶</a></h2>
+<p>This directory should include all the public datasets (train and test) used in
+the challenge.</p>
+</div>
+<div class="section" id="your-challenge-starting-kit-ipynb-jupiter-notebook-file">
+<h2><span class="section-number">4.5. </span>your_challenge_starting_kit.ipynb Jupiter notebook file<a class="headerlink" href="#your-challenge-starting-kit-ipynb-jupiter-notebook-file" title="Permalink to this headline">¶</a></h2>
+<p>Finally, you need to create a notebook informing the users about the challenge.
+This notebook will be visible to all logged-in users, no matter if they decided
+to take part in the challenge or not. You can structure this file completely
+freely as the RAMP will not rely on it during the challenge. However, for the
+sake of the users it is recommended that you introduce the problem and explain
+what are the requirements. It is also advisable to get the users started by
+showing them how to access the data and samples of the code.</p>
+</div>
+<div class="section" id="examplar-ramp-kits">
+<h2><span class="section-number">4.6. </span>examplar RAMP kits<a class="headerlink" href="#examplar-ramp-kits" title="Permalink to this headline">¶</a></h2>
+<p>For other examples of code of existing challenges feel free to visit RAMP kits
+github account: <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="workers.html" class="btn btn-neutral float-right" title="5. Notes regarding the RAMP workers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create_ramp_event.html" class="btn btn-neutral float-left" title="3. Set up a new RAMP event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.general`.keywords
+========================================================
+
+.. currentmodule:: ramp_frontend.views.general
+
+.. autofunction:: keywords
+
+.. raw:: html
+
+    <div style='clear:both'></div>

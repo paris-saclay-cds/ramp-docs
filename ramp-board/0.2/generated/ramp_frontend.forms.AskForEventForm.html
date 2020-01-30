@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ramp_frontend.forms.AskForEventForm &mdash; RAMP 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_frontend.testing.login" href="ramp_frontend.testing.login.html" />
+    <link rel="prev" title="ramp_frontend.forms.CreditForm" href="ramp_frontend.forms.CreditForm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ramp_frontend.create_app.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.LoginForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.LoginForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserCreateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserCreateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CodeForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CodeForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.SubmitForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.SubmitForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UploadForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UploadForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.EventUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.EventUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.MultiCheckboxField.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.ImportForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.ImportForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CreditForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CreditForm</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-frontend-forms-askforeventform">
+<h1><a class="reference internal" href="../api.html#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>.AskForEventForm<a class="headerlink" href="#ramp-frontend-forms-askforeventform" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ramp_frontend.forms.AskForEventForm">
+<em class="property">class </em><code class="sig-prename descclassname">ramp_frontend.forms.</code><code class="sig-name descname">AskForEventForm</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form to ask for a new event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>suffix</strong><span class="classifier">str</span></dt><dd><p>The suffix used for the event.</p>
+</dd>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>The event title.</p>
+</dd>
+<dt><strong>n_students</strong><span class="classifier">int</span></dt><dd><p>The number of students that will take part in the event.</p>
+</dd>
+<dt><strong>min_duration_between_submission_hour</strong><span class="classifier">int</span></dt><dd><p>The number of hour to wait between two submissions.</p>
+</dd>
+<dt><strong>min_duration_between_submission_minute</strong><span class="classifier">int</span></dt><dd><p>The number of minute to wait between two submissions.</p>
+</dd>
+<dt><strong>min_duration_between_submission_second</strong><span class="classifier">int</span></dt><dd><p>The number of second to wait between two submissions.</p>
+</dd>
+<dt><strong>opening_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time when the event is opening.</p>
+</dd>
+<dt><strong>closing_timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The date and time when the event is closing.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata=&lt;object object at 0x7f25e54c6160&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <code class="docutils literal notranslate"><span class="pre">request.POST</span></code> or
+equivalent. formdata should be some sort of request-data wrapper which
+can get multiple parameters from the form input, and values are unicode
+strings, e.g. a Werkzeug/Django/WebOb MultiDict</p></li>
+<li><p><strong>obj</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided, this object is checked for
+attributes matching form field names, which will be used for field
+values.</p></li>
+<li><p><strong>prefix</strong> – If provided, all fields will have their name prefixed with the
+value.</p></li>
+<li><p><strong>data</strong> – Accept a dictionary of data. This is only used if <code class="docutils literal notranslate"><span class="pre">formdata</span></code> and
+<code class="docutils literal notranslate"><span class="pre">obj</span></code> are not present.</p></li>
+<li><p><strong>meta</strong> – If provided, this is a dictionary of values to override attributes
+on this form’s meta instance.</p></li>
+<li><p><strong>**kwargs</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
+an attribute named the same as a field, form will assign the value
+of a matching keyword argument to the field, if one exists.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.bind_field">
+<code class="sig-name descname">bind_field</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em>, <em class="sig-param">unbound_field</em>, <em class="sig-param">options</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.bind_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>bind_field allows potential customization of how fields are bound.</p>
+<p>The default implementation simply passes the options to
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">UnboundField.bind</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – The form.</p></li>
+<li><p><strong>unbound_field</strong> – The unbound field.</p></li>
+<li><p><strong>options</strong> – A dictionary of options which are typically passed to the field.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A bound field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.build_csrf">
+<code class="sig-name descname">build_csrf</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.build_csrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a CSRF implementation. This is called once per form instance.</p>
+<p>The default implementation builds the class referenced to by
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">csrf_class</span></code> with zero arguments. If <code class="docutils literal notranslate"><span class="pre">csrf_class</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+will instead use the default implementation
+<code class="xref py py-class docutils literal notranslate"><span class="pre">wtforms.csrf.session.SessionCSRF</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> – The form.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A CSRF implementation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.get_translations">
+<code class="sig-name descname">get_translations</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.get_translations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override in subclasses to provide alternate translations factory.
+See the i18n documentation for more.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> – The form.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An object that provides gettext() and ngettext() methods.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.render_field">
+<code class="sig-name descname">render_field</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">field</em>, <em class="sig-param">render_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.render_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>render_field allows customization of how widget rendering is done.</p>
+<p>The default implementation calls <code class="docutils literal notranslate"><span class="pre">field.widget(field,</span> <span class="pre">**render_kw)</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.update_values">
+<code class="sig-name descname">update_values</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">values</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.update_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dictionary of values, update values on this <code class="docutils literal notranslate"><span class="pre">Meta</span></code> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.Meta.wrap_formdata">
+<code class="sig-name descname">wrap_formdata</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em>, <em class="sig-param">formdata</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.Meta.wrap_formdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>wrap_formdata allows doing custom wrappers of WTForms formdata.</p>
+<p>The default implementation detects webob-style multidicts and wraps
+them, otherwise passes formdata back un-changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – The form.</p></li>
+<li><p><strong>formdata</strong> – Form data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A form-input wrapper compatible with WTForms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.hidden_tag">
+<code class="sig-name descname">hidden_tag</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*fields</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.hidden_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render the form’s hidden fields in one call.</p>
+<p>A field is considered hidden if it uses the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">HiddenInput</span></code> widget.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fields</span></code> are given, only render the given fields that
+are hidden.  If a string is passed, render the field with that
+name if it exists.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13: </span>No longer wraps inputs in hidden div.
+This is valid HTML 5.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13: </span>Skip passed fields that aren’t hidden.
+Skip passed names that don’t exist.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.is_submitted">
+<code class="sig-name descname">is_submitted</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.is_submitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Consider the form submitted if there is an active request and
+the method is <code class="docutils literal notranslate"><span class="pre">POST</span></code>, <code class="docutils literal notranslate"><span class="pre">PUT</span></code>, <code class="docutils literal notranslate"><span class="pre">PATCH</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.populate_obj">
+<code class="sig-name descname">populate_obj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.populate_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates the attributes of the passed <code class="docutils literal notranslate"><span class="pre">obj</span></code> with data from the form’s
+fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>This is a destructive operation; Any attribute with the same name
+as a field will be overridden. Use with caution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.process">
+<code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata=None</em>, <em class="sig-param">obj=None</em>, <em class="sig-param">data=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take form, object data, and keyword arg input and have the fields
+process them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>formdata</strong> – Used to pass data coming from the enduser, usually <code class="docutils literal notranslate"><span class="pre">request.POST</span></code> or
+equivalent.</p></li>
+<li><p><strong>obj</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided, this object is checked for
+attributes matching form field names, which will be used for field
+values.</p></li>
+<li><p><strong>data</strong> – If provided, must be a dictionary of data. This is only used if
+<code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
+an attribute named the same as the field.</p></li>
+<li><p><strong>**kwargs</strong> – If <code class="docutils literal notranslate"><span class="pre">formdata</span></code> is empty or not provided and <code class="docutils literal notranslate"><span class="pre">obj</span></code> does not contain
+an attribute named the same as a field, form will assign the value
+of a matching keyword argument to the field, if one exists.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the form by calling <code class="docutils literal notranslate"><span class="pre">validate</span></code> on each field, passing any
+extra <code class="docutils literal notranslate"><span class="pre">Form.validate_&lt;fieldname&gt;</span></code> validators to the field validator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.AskForEventForm.validate_on_submit">
+<code class="sig-name descname">validate_on_submit</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.AskForEventForm.validate_on_submit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <a class="reference internal" href="#ramp_frontend.forms.AskForEventForm.validate" title="ramp_frontend.forms.AskForEventForm.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate</span></code></a> only if the form is submitted.
+This is a shortcut for <code class="docutils literal notranslate"><span class="pre">form.is_submitted()</span> <span class="pre">and</span> <span class="pre">form.validate()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ramp_frontend.testing.login.html" class="btn btn-neutral float-right" title="ramp_frontend.testing.login" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ramp_frontend.forms.CreditForm.html" class="btn btn-neutral float-left" title="ramp_frontend.forms.CreditForm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

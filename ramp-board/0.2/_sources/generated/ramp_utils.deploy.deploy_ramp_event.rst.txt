@@ -1,0 +1,10 @@
+:mod:`ramp_utils.deploy`.deploy_ramp_event
+=======================================================
+
+.. currentmodule:: ramp_utils.deploy
+
+.. autofunction:: deploy_ramp_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>

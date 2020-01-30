@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.general`.teaching
+========================================================
+
+.. currentmodule:: ramp_frontend.views.general
+
+.. autofunction:: teaching
+
+.. raw:: html
+
+    <div style='clear:both'></div>

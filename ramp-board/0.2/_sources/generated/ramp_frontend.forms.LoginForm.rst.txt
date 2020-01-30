@@ -1,0 +1,14 @@
+:mod:`ramp_frontend.forms`.LoginForm
+===========================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: LoginForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.UserInteraction
+=================================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: UserInteraction
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

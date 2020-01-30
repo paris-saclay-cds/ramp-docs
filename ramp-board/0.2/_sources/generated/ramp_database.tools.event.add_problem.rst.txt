@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.event`.add_problem
+=========================================================
+
+.. currentmodule:: ramp_database.tools.event
+
+.. autofunction:: add_problem
+
+.. raw:: html
+
+    <div style='clear:both'></div>

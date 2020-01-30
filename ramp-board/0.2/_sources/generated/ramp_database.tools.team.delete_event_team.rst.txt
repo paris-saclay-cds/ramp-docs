@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.team`.delete_event_team
+==============================================================
+
+.. currentmodule:: ramp_database.tools.team
+
+.. autofunction:: delete_event_team
+
+.. raw:: html
+
+    <div style='clear:both'></div>
