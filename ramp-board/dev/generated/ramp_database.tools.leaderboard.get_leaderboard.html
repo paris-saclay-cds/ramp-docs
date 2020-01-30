@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.utils.session_scope &mdash; RAMP 0.3.0.dev0 documentation</title>
+  <title>ramp_database.tools.leaderboard.get_leaderboard &mdash; RAMP 0.3.0.dev0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_engine.dispatcher.Dispatcher" href="ramp_engine.dispatcher.Dispatcher.html" />
-    <link rel="prev" title="ramp_database.utils.setup_db" href="ramp_database.utils.setup_db.html" /> 
+    <link rel="next" title="ramp_database.tools.event.get_problem" href="ramp_database.tools.event.get_problem.html" />
+    <link rel="prev" title="ramp_database.tools.event.get_keyword_by_name" href="ramp_database.tools.event.get_keyword_by_name.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,16 +98,16 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ramp_database.utils.check_password.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.check_password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_database.utils.hash_password.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.hash_password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_database.utils.setup_db.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.setup_db</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.session_scope</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-database-tools">User-related database tools</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#event-related-database-tools">Event-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-database-tools">Submission-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#frontend-related-database-tools">Frontend-related database tools</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
@@ -168,7 +168,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.session_scope</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.leaderboard</span></code>.get_leaderboard</li>
     
     
 
@@ -180,24 +180,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-database-utils-session-scope">
-<h1><a class="reference internal" href="../api.html#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a>.session_scope<a class="headerlink" href="#ramp-database-utils-session-scope" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-database-tools-leaderboard-get-leaderboard">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools.leaderboard</span></code>.get_leaderboard<a class="headerlink" href="#ramp-database-tools-leaderboard-get-leaderboard" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_database.utils.session_scope">
-<code class="sig-prename descclassname">ramp_database.utils.</code><code class="sig-name descname">session_scope</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.utils.session_scope" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect to a database and provide a session to make some operation.</p>
+<dt id="ramp_database.tools.leaderboard.get_leaderboard">
+<code class="sig-prename descclassname">ramp_database.tools.leaderboard.</code><code class="sig-name descname">get_leaderboard</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">leaderboard_type</em>, <em class="sig-param">event_name</em>, <em class="sig-param">user_name=None</em>, <em class="sig-param">with_links=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.leaderboard.get_leaderboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a leaderboard.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Configuration file containing the information to connect to the
-dataset. If you are using the configuration provided by ramp, it
-corresponds to the the <code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> key.</p>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
+</dd>
+<dt><strong>leaderboard_type</strong><span class="classifier">{‘public’, ‘private’, ‘failed’, ‘new’, ‘public competition’, ‘private competition’}</span></dt><dd><p>The type of leaderboard to generate.</p>
+</dd>
+<dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
+</dd>
+<dt><strong>user_name</strong><span class="classifier">None or str, default is None</span></dt><dd><p>The user name. If None, scores from all users will be queried. This
+parameter is discarded when requesting the competition leaderboard.</p>
+</dd>
+<dt><strong>with_links</strong><span class="classifier">bool, default is True</span></dt><dd><p>Whether or not the submission name should be clickable.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl>
-<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
+<dd class="field-even"><dl class="simple">
+<dt><strong>leaderboard</strong><span class="classifier">str</span></dt><dd><p>The leaderboard in HTML format.</p>
 </dd>
 </dl>
 </dd>
@@ -214,10 +221,10 @@ corresponds to the the <code class="docutils literal notranslate"><span class="p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_engine.dispatcher.Dispatcher.html" class="btn btn-neutral float-right" title="ramp_engine.dispatcher.Dispatcher" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_database.tools.event.get_problem.html" class="btn btn-neutral float-right" title="ramp_database.tools.event.get_problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_database.utils.setup_db.html" class="btn btn-neutral float-left" title="ramp_database.utils.setup_db" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_database.tools.event.get_keyword_by_name.html" class="btn btn-neutral float-left" title="ramp_database.tools.event.get_keyword_by_name" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

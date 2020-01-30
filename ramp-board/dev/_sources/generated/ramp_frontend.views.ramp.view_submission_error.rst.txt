@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.ramp`.view_submission_error
+==================================================================
+
+.. currentmodule:: ramp_frontend.views.ramp
+
+.. autofunction:: view_submission_error
+
+.. raw:: html
+
+    <div style='clear:both'></div>
