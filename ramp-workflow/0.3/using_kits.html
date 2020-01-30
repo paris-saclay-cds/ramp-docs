@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using RAMP starting-kits &mdash; RAMP 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Contributing" href="contribute.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">What can RAMP offer you?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP workflow</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP workflow commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using RAMP kits</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using RAMP starting-kits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submiting-to-a-ramp-event">Submiting to a RAMP event</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using RAMP starting-kits</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-ramp-starting-kits">
+<span id="using-kits"></span><h1>Using RAMP starting-kits<a class="headerlink" href="#using-ramp-starting-kits" title="Permalink to this headline">¶</a></h1>
+<p>To get started working on an existing RAMP challenge:</p>
+<ol class="arabic">
+<li><p>Clone the <a class="reference external" href="https://github.com/ramp-kits">starting kit</a> for the challenge from GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ramp-kits/&lt;ramp_kit_name&gt;.git
+$ <span class="nb">cd</span> &lt;ramp_kit_name&gt;
+</pre></div>
+</div>
+<p>If the starting kit does not include the data (i.e. a <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder)
+you will need to download the data using the <code class="docutils literal notranslate"><span class="pre">download_data.py</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python download_data.py
+</pre></div>
+</div>
+</li>
+<li><p>Install dependencies:</p>
+<ul>
+<li><p>with <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> to create
+a virtual environment with all the required dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to create the environment</span>
+$ conda env create -f environment.yml
+<span class="c1"># to activate the environment</span>
+$ <span class="nb">source</span> activate &lt;ramp_kit_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p>with <a class="reference external" href="https://pypi.org/project/pip/">pip</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+<span class="c1"># install ramp-workflow</span>
+$ pip install https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Test that the starting kit works:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp_test_submission --quick-test
+</pre></div>
+</div>
+<p>Alternatively you can test the kit from a Python shell environment using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rampwf.utils.testing</span> <span class="kn">import</span> <span class="n">assert_submission</span>
+
+<span class="n">assert_submission</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See the <code class="docutils literal notranslate"><span class="pre">assert_submission()</span></code> <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/blob/master/rampwf/utils/testing.py#L63">source code</a>
+for more details.</p>
+</li>
+</ol>
+<p>Now you are ready to write your own solution for the prediction problem. It is
+useful to read the starting kit notebook which will introduce the problem,
+provide some data analysis and visualisation and walk you through a simple
+example solution. There will also be at least one example submission in
+<code class="docutils literal notranslate"><span class="pre">submissions/</span></code>, which show you which files are required for each submission,
+how they need to be named and how each file should be structured.</p>
+<div class="section" id="submiting-to-a-ramp-event">
+<h2>Submiting to a RAMP event<a class="headerlink" href="#submiting-to-a-ramp-event" title="Permalink to this headline">¶</a></h2>
+<p>To submit your solution to <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>:</p>
+<ol class="arabic">
+<li><p>Log in at <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>. If it is your first time, you will need to first
+register.</p></li>
+<li><p>Find an open event for your RAMP challenge. Events for RAMP challenges
+can be found underneath the challenge title:</p>
+<a class="reference internal image-reference" href="_images/ramp_event.png"><img alt="_images/ramp_event.png" src="_images/ramp_event.png" style="width: 700px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To sign up for an event, click on the open event (<em>not</em> on the challenge).
+This should take you to a page with the challenge and event as the title.
+Click on the yellow ‘Sign up’ button to sign up for this event:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/ramp_signup.png"><img alt="_images/ramp_signup.png" src="_images/ramp_signup.png" style="width: 500px;" /></a>
+</li>
+</ol>
+<p>Note that registering for RAMP studio and signing up for events are controlled
+by RAMP administrators, so there can be a delay between asking to sign up and
+being able to submit.</p>
+<p>If you cannot find an open event for the challenge you are interested in,
+you can request a new event by clicking on ‘Click here if you would like to
+use this problem for teaching’, on the welcome page of the challenge. Note
+you need to click on the RAMP challenge and not an event of the challenge to
+find this button.</p>
+<a class="reference internal image-reference" href="_images/ramp_newevent.png"><img alt="_images/ramp_newevent.png" src="_images/ramp_newevent.png" style="width: 700px;" /></a>
+<ol class="arabic" start="3">
+<li><p>Once your sign up as been approved you will have access to a number of
+menu options on the right hand side:</p>
+<a class="reference internal image-reference" href="_images/ramp_sidebar.png"><img alt="_images/ramp_sidebar.png" src="_images/ramp_sidebar.png" style="width: 650px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>leaderboard</strong> - table of all submissions from all participants of the
+event. The score metrics, contributivity, time taken to train and test
+the model, max RAM usage and time of submission will all be shown. By
+default it will show the most recent submissions first, but you can change
+this by clicking on the up and down arrows next to the column names.</p></li>
+<li><p><strong>competition leaderboard</strong> - table of the final submission of each
+participant. It will show only the ‘official’ score metric
+(see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>), time taken to train and test the
+model and submission time. This is ordered by the best score, by default.</p></li>
+<li><p><strong>sandbox</strong> - you can make your submissions here. See below for more
+details.</p></li>
+<li><p><strong>my submissions</strong> - shows all your previous submissions, with separate
+tables for submissions which are pending and submissions which have
+finished computing.</p></li>
+</ul>
+</li>
+<li><p>To make a submission go to your sandbox. Here, you can edit the
+required submission files (e.g., <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">classifier.py</span></code>), available in the middle of the page, then save
+the files. Alternatively, you can upload the required files from
+your computer, on the right hand side:</p>
+<a class="reference internal image-reference" href="_images/ramp_sandbox1.png"><img alt="_images/ramp_sandbox1.png" src="_images/ramp_sandbox1.png" style="width: 750px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Submit by providing a name for your submission (it is a good idea to start
+the name with your username, so you can easily identify your submission on
+the leaderboard), then clicking ‘submit’ at the bottom of the page:</p>
+<a class="reference internal image-reference" href="_images/ramp_sandbox2.png"><img alt="_images/ramp_sandbox2.png" src="_images/ramp_sandbox2.png" style="width: 700px;" /></a>
+</li>
+</ol>
+<p>The submission is trained and tested on our backend in the same way as
+<code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code> does it locally. When your submission is waiting in
+the queue and being trained, you can find it in the
+‘New submissions (pending training)’ table in ‘my submissions’. Once it is
+trained, you get will get an email, and your submission will show up on the
+public leaderboard. If there is an error (note you should always test your
+submission locally with <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code>), it will show up in the
+‘Failed submissions’ table in ‘my submissions’. You can click on the error to
+see part of the trace. The data set we use at the backend is usually different
+from what you find in the starting kit, so the score may be different.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="contribute.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
