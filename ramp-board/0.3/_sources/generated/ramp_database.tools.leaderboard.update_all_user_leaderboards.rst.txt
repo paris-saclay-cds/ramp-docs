@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.leaderboard`.update_all_user_leaderboards
+================================================================================
+
+.. currentmodule:: ramp_database.tools.leaderboard
+
+.. autofunction:: update_all_user_leaderboards
+
+.. raw:: html
+
+    <div style='clear:both'></div>

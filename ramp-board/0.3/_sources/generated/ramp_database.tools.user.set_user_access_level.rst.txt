@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.user`.set_user_access_level
+==================================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: set_user_access_level
+
+.. raw:: html
+
+    <div style='clear:both'></div>

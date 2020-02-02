@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ramp_database.model.SubmissionOnCVFold &mdash; RAMP 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_database.model.SubmissionScoreOnCVFold" href="ramp_database.model.SubmissionScoreOnCVFold.html" />
+    <link rel="prev" title="ramp_database.model.SubmissionFileType" href="ramp_database.model.SubmissionFileType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#submission-related-tables">Submission-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.SubmissionOnCVFold</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-database-model-submissiononcvfold">
+<h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.SubmissionOnCVFold<a class="headerlink" href="#ramp-database-model-submissiononcvfold" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ramp_database.model.SubmissionOnCVFold">
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">SubmissionOnCVFold</code><span class="sig-paren">(</span><em class="sig-param">submission</em>, <em class="sig-param">cv_fold</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold" title="Permalink to this definition">¶</a></dt>
+<dd><p>SubmissionOnCVFold.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>submission</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt><dd><p>The submission used.</p>
+</dd>
+<dt><strong>cv_fold</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.CVFold.html#ramp_database.model.CVFold" title="ramp_database.model.CVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.CVFold</span></code></a></span></dt><dd><p>The fold to associate with the submission.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>SubmissionOnCVFold is an instantiation of Submission, to be trained on a
+data file and a cv fold. We don’t actually store the trained model in the
+db (lack of disk and pickling issues), so trained submission is not a
+database column. On the other hand, we will store train, valid, and test
+predictions. In a sense substituting CPU time for storage.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The ID of the table row.</p>
+</dd>
+<dt><strong>submission_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the submission.</p>
+</dd>
+<dt><strong>submission</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Submission</span></code></a></span></dt><dd><p>The submission instance.</p>
+</dd>
+<dt><strong>cv_fold_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the CV fold.</p>
+</dd>
+<dt><strong>cv_fold</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.CVFold.html#ramp_database.model.CVFold" title="ramp_database.model.CVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.CVFold</span></code></a></span></dt><dd><p>The CV fold instance.</p>
+</dd>
+<dt><strong>contributivity</strong><span class="classifier">float</span></dt><dd><p>The contributivity of the submission.</p>
+</dd>
+<dt><strong>best</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the submission is the best.</p>
+</dd>
+<dt><strong>full_train_y_pred</strong><span class="classifier">ndarray</span></dt><dd><p>Predictions on the full training set.</p>
+</dd>
+<dt><strong>test_y_pred</strong><span class="classifier">ndarray</span></dt><dd><p>Predictions on the testing set.</p>
+</dd>
+<dt><strong>train_time</strong><span class="classifier">float</span></dt><dd><p>Computation time for the training set.</p>
+</dd>
+<dt><strong>valid_time</strong><span class="classifier">float</span></dt><dd><p>Computation time for the validation set.</p>
+</dd>
+<dt><strong>test_time</strong><span class="classifier">float</span></dt><dd><p>Computation time for the testing set.</p>
+</dd>
+<dt><strong>state</strong><span class="classifier">str</span></dt><dd><p>State of of the submission on this fold.</p>
+</dd>
+<dt><strong>error_msg</strong><span class="classifier">str</span></dt><dd><p>Error message in case of failing submission.</p>
+</dd>
+<dt><strong>scores</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold" title="ramp_database.model.SubmissionScoreOnCVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionScoreOnCVFold</span></code></a></span></dt><dd><p>A back-reference on the scores for this fold.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">submission</em>, <em class="sig-param">cv_fold</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.compute_test_scores">
+<code class="sig-name descname">compute_test_scores</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.compute_test_scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute all testing scores.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.compute_train_scores">
+<code class="sig-name descname">compute_train_scores</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.compute_train_scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute all training scores.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.compute_valid_scores">
+<code class="sig-name descname">compute_valid_scores</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.compute_valid_scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute all validating scores.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.full_train_predictions">
+<em class="property">property </em><code class="sig-name descname">full_train_predictions</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.full_train_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.Predictions</span></code>: Training
+predictions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.is_error">
+<code class="sig-name descname">is_error</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.is_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Whether or not the submission failed at one of the stage.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.is_public_leaderboard">
+<code class="sig-name descname">is_public_leaderboard</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.is_public_leaderboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Whether or not the submission is scored and ready to be on
+the public leaderboard.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.is_tested">
+<code class="sig-name descname">is_tested</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.is_tested" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Whether or not the submission was tested.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.is_trained">
+<code class="sig-name descname">is_trained</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.is_trained" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Whether or not the submission was trained.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.is_validated">
+<code class="sig-name descname">is_validated</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.is_validated" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: Whether or not the submission was validated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.official_score">
+<em class="property">property </em><code class="sig-name descname">official_score</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.official_score" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold" title="ramp_database.model.SubmissionScoreOnCVFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionScoreOnCVFold</span></code></a>: The official score
+used for the submission.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ramp_database.model.SubmissionOnCVFold.query_class">
+<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.query_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the submission on CV fold to an initial stage.</p>
+<p>The contributivity, state, error, and scores will be reset to initial
+values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.set_error">
+<code class="sig-name descname">set_error</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">error</em>, <em class="sig-param">error_msg</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.set_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fail the CV fold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>error</strong><span class="classifier">str</span></dt><dd><p>The error state of the submission and each fold.</p>
+</dd>
+<dt><strong>error_msg</strong><span class="classifier">str</span></dt><dd><p>The associated error message for the submission and each fold.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Setting the error will first reset the submission.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.test_predictions">
+<em class="property">property </em><code class="sig-name descname">test_predictions</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.test_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.Predictions</span></code>: Testing
+predictions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.train_predictions">
+<em class="property">property </em><code class="sig-name descname">train_predictions</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.train_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.Predictions</span></code>: Training
+predictions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">detached_submission_on_cv_fold</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the submission on CV Fold from a detached submission.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>detached_submission_on_cv_fold</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.DetachedSubmissionOnCVFold</span></code></span></dt><dd><p>The detached submission from which we will update the current
+submission.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_database.model.SubmissionOnCVFold.valid_predictions">
+<em class="property">property </em><code class="sig-name descname">valid_predictions</code><a class="headerlink" href="#ramp_database.model.SubmissionOnCVFold.valid_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.Predictions</span></code>: Validation
+predictions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ramp_database.model.SubmissionScoreOnCVFold.html" class="btn btn-neutral float-right" title="ramp_database.model.SubmissionScoreOnCVFold" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ramp_database.model.SubmissionFileType.html" class="btn btn-neutral float-left" title="ramp_database.model.SubmissionFileType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

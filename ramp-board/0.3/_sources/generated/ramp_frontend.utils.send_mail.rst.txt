@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.utils`.send_mail
+=================================================
+
+.. currentmodule:: ramp_frontend.utils
+
+.. autofunction:: send_mail
+
+.. raw:: html
+
+    <div style='clear:both'></div>

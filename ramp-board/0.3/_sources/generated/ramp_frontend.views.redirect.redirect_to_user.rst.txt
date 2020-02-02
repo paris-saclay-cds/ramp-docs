@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.redirect`.redirect_to_user
+=================================================================
+
+.. currentmodule:: ramp_frontend.views.redirect
+
+.. autofunction:: redirect_to_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

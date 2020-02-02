@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.Keyword
+=========================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: Keyword
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

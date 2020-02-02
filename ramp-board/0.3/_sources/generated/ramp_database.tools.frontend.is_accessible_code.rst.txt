@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.frontend`.is_accessible_code
+===================================================================
+
+.. currentmodule:: ramp_database.tools.frontend
+
+.. autofunction:: is_accessible_code
+
+.. raw:: html
+
+    <div style='clear:both'></div>
