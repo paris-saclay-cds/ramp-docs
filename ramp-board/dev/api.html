@@ -146,6 +146,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ramp-engine">RAMP engine</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ramp-dispatcher">RAMP Dispatcher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.daemon.Daemon.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.daemon</span></code>.Daemon</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher</a></li>
 </ul>
 </li>
@@ -868,7 +869,9 @@ the RAMP database.</p>
 <div class="section" id="ramp-engine">
 <h2>RAMP engine<a class="headerlink" href="#ramp-engine" title="Permalink to this headline">¶</a></h2>
 <p>The RAMP engine is made of a dispatcher to orchestrate the training and
-evaluation of submissions which are processed using workers.</p>
+evaluation of submissions which are processed using workers. Since there is
+a dispatcher for each RAMP event, we provide a daemon which will start
+dispatcher for each open event.</p>
 <div class="section" id="ramp-dispatcher">
 <h3>RAMP Dispatcher<a class="headerlink" href="#ramp-dispatcher" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
@@ -877,7 +880,10 @@ evaluation of submissions which are processed using workers.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher" title="ramp_engine.dispatcher.Dispatcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatcher.Dispatcher</span></code></a>(config, event_config)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.daemon.Daemon.html#ramp_engine.daemon.Daemon" title="ramp_engine.daemon.Daemon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">daemon.Daemon</span></code></a>(config, events_dir)</p></td>
+<td><p>RAMP daemon starting dispatchers for open challenges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher" title="ramp_engine.dispatcher.Dispatcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatcher.Dispatcher</span></code></a>(config, event_config)</p></td>
 <td><p>Dispatcher which schedule workers and communicate with the database.</p></td>
 </tr>
 </tbody>

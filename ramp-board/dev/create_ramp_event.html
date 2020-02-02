@@ -100,6 +100,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3. Set up a new RAMP event</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#deploy-a-specific-ramp-event">3.1. Deploy a specific RAMP event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#launch-the-dispatcher-to-train-and-evaluate-submissions">3.2. Launch the dispatcher to train and evaluate submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-several-dispatchers-at-once">3.3. Launch several dispatchers at once</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
@@ -249,6 +250,17 @@ updating the database:</p>
 within a terminal multiplexer as <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code>. It will allow you
 to detach the process and let it run. Refer to the documentation of <code class="docutils literal notranslate"><span class="pre">screen</span></code>
 or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> to use them.</p>
+</div>
+<div class="section" id="launch-several-dispatchers-at-once">
+<h2><span class="section-number">3.3. </span>Launch several dispatchers at once<a class="headerlink" href="#launch-several-dispatchers-at-once" title="Permalink to this headline">¶</a></h2>
+<p>In case that you are running multiple events in parallel, you will want to
+start several dispatchers, on for each open event. We provide a daemon which
+will be in charge of managing the pool of dispatchers. You can start it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp launch daemon --events-dir events --verbose
+</pre></div>
+</div>
+<p>To can interrupt the daemon by pressing the combination of keyboard keys
+<code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. You can start launch the daemon within <code class="docutils literal notranslate"><span class="pre">tmux</span></code> or <code class="docutils literal notranslate"><span class="pre">screen</span></code> as well.</p>
 </div>
 </div>
 

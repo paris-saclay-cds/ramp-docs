@@ -245,6 +245,8 @@
 </li>
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-config">ramp-frontend-test-launch command line option</a>
 </li>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-config">ramp-launch-daemon command line option</a>
+</li>
         <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-config">ramp-launch-dispatcher command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-setup-deploy-event-config">ramp-setup-deploy-event command line option</a>
@@ -305,6 +307,15 @@
         <li><a href="cli.html#cmdoption-ramp-launch-worker-event-config">ramp-launch-worker command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-setup-deploy-event-event-config">ramp-setup-deploy-event command line option</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-setup-update-conda-env-event-config">ramp-setup-update-conda-env command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --events-dir &lt;events_dir&gt;
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-events-dir">ramp-launch-daemon command line option</a>
 </li>
       </ul></li>
       <li>
@@ -500,6 +511,8 @@
     --verbose
 
       <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-v">ramp-launch-daemon command line option</a>
+</li>
         <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-v">ramp-launch-dispatcher command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-launch-worker-v">ramp-launch-worker command line option</a>
@@ -509,6 +522,8 @@
     -v
 
       <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-v">ramp-launch-daemon command line option</a>
+</li>
         <li><a href="cli.html#cmdoption-ramp-launch-dispatcher-v">ramp-launch-dispatcher command line option</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-launch-worker-v">ramp-launch-worker command line option</a>
@@ -588,6 +603,8 @@
         <li><a href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker.__init__">(ramp_engine.aws.AWSWorker method)</a>
 </li>
         <li><a href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker.__init__">(ramp_engine.base.BaseWorker method)</a>
+</li>
+        <li><a href="generated/ramp_engine.daemon.Daemon.html#ramp_engine.daemon.Daemon.__init__">(ramp_engine.daemon.Daemon method)</a>
 </li>
         <li><a href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher.__init__">(ramp_engine.dispatcher.Dispatcher method)</a>
 </li>
@@ -802,6 +819,8 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ramp_engine.daemon.Daemon.html#ramp_engine.daemon.Daemon">Daemon (class in ramp_engine.daemon)</a>
+</li>
       <li><a href="generated/ramp_frontend.views.admin.dashboard_submissions.html#ramp_frontend.views.admin.dashboard_submissions">dashboard_submissions() (in module ramp_frontend.views.admin)</a>
 </li>
       <li><a href="generated/ramp_frontend.views.general.data_science_themes.html#ramp_frontend.views.general.data_science_themes">data_science_themes() (in module ramp_frontend.views.general)</a>
@@ -1141,6 +1160,8 @@
       <ul>
         <li><a href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker.launch">(ramp_engine.base.BaseWorker method)</a>
 </li>
+        <li><a href="generated/ramp_engine.daemon.Daemon.html#ramp_engine.daemon.Daemon.launch">(ramp_engine.daemon.Daemon method)</a>
+</li>
         <li><a href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher.launch">(ramp_engine.dispatcher.Dispatcher method)</a>
 </li>
         <li><a href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker.launch">(ramp_engine.local.CondaEnvWorker method)</a>
@@ -1154,10 +1175,10 @@
         <li><a href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker.launch_submission">(ramp_engine.local.CondaEnvWorker method)</a>
 </li>
       </ul></li>
-      <li><a href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher.launch_workers">launch_workers() (ramp_engine.dispatcher.Dispatcher method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher.launch_workers">launch_workers() (ramp_engine.dispatcher.Dispatcher method)</a>
+</li>
       <li><a href="generated/ramp_frontend.views.leaderboard.leaderboard.html#ramp_frontend.views.leaderboard.leaderboard">leaderboard() (in module ramp_frontend.views.leaderboard)</a>
 </li>
       <li><a href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission.link">link() (ramp_database.model.Submission property)</a>
@@ -1589,8 +1610,6 @@
         <li><a href="cli.html#cmdoption-ramp-database-sign-up-team-team">--team &lt;team&gt;</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ramp-database-update-all-users-leaderboards command line option
 
@@ -1600,6 +1619,8 @@
         <li><a href="cli.html#cmdoption-ramp-database-update-all-users-leaderboards-event">--event &lt;event&gt;</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ramp-database-update-leaderboards command line option
 
@@ -1629,6 +1650,19 @@
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-host">--host &lt;host&gt;</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-frontend-test-launch-port">--port &lt;port&gt;</a>
+</li>
+      </ul></li>
+      <li>
+    ramp-launch-daemon command line option
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-config">--config &lt;config&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-events-dir">--events-dir &lt;events_dir&gt;</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-v">--verbose</a>
+</li>
+        <li><a href="cli.html#cmdoption-ramp-launch-daemon-v">-v</a>
 </li>
       </ul></li>
       <li>
@@ -1690,6 +1724,13 @@
         <li><a href="cli.html#cmdoption-ramp-setup-init-event-force">--force</a>
 </li>
         <li><a href="cli.html#cmdoption-ramp-setup-init-event-name">--name &lt;name&gt;</a>
+</li>
+      </ul></li>
+      <li>
+    ramp-setup-update-conda-env command line option
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ramp-setup-update-conda-env-event-config">--event-config &lt;event_config&gt;</a>
 </li>
       </ul></li>
       <li><a href="generated/ramp_utils.testing.ramp_config_template.html#ramp_utils.testing.ramp_config_template">ramp_config_template() (in module ramp_utils.testing)</a>

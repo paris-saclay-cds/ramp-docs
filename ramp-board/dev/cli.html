@@ -102,6 +102,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-deploy-event">deploy-event</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-init">init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-init-event">init-event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ramp-setup-update-conda-env">update-conda-env</a></li>
 </ul>
 </li>
 </ul>
@@ -137,6 +138,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#commands-to-interact-with-the-ramp-engine">Commands to interact with the RAMP engine</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ramp-launch">ramp-launch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ramp-launch-daemon">daemon</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-launch-dispatcher">dispatcher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-launch-worker">worker</a></li>
 </ul>
@@ -322,6 +324,20 @@ kit and data)</p>
 <dt id="cmdoption-ramp-setup-init-event-force">
 <code class="sig-name descname">--force</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ramp-setup-init-event-force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether or not to potentially overwrite the repositories, problem and event in the database.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ramp-setup-update-conda-env">
+<h4>update-conda-env<a class="headerlink" href="#ramp-setup-update-conda-env" title="Permalink to this headline">¶</a></h4>
+<p>Update the conda environment for a specific event</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-setup update-conda-env <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-ramp-setup-update-conda-env-event-config">
+<code class="sig-name descname">--event-config</code><code class="sig-prename descclassname"> &lt;event_config&gt;</code><a class="headerlink" href="#cmdoption-ramp-setup-update-conda-env-event-config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration file in YAML format containing the RAMP information  [default: config.yml]</p>
 </dd></dl>
 
 </div>
@@ -848,6 +864,33 @@ kit and data)</p>
 <p>Command-line to launch engine to process RAMP submission.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-launch <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
 </pre></div>
+</div>
+<div class="section" id="ramp-launch-daemon">
+<h4>daemon<a class="headerlink" href="#ramp-launch-daemon" title="Permalink to this headline">¶</a></h4>
+<p>Launch the RAMP dispatcher.</p>
+<p>The RAMP dispatcher is in charge of starting RAMP workers, collecting
+results from them, and update the database.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-launch daemon <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-ramp-launch-daemon-config">
+<code class="sig-name descname">--config</code><code class="sig-prename descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-daemon-config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration file in YAML format containing the database information.  [default: config.yml]</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ramp-launch-daemon-events-dir">
+<code class="sig-name descname">--events-dir</code><code class="sig-prename descclassname"> &lt;events_dir&gt;</code><a class="headerlink" href="#cmdoption-ramp-launch-daemon-events-dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Directory where the event config files are located.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ramp-launch-daemon-v">
+<code class="sig-name descname">-v</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--verbose</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ramp-launch-daemon-v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="ramp-launch-dispatcher">
 <h4>dispatcher<a class="headerlink" href="#ramp-launch-dispatcher" title="Permalink to this headline">¶</a></h4>
