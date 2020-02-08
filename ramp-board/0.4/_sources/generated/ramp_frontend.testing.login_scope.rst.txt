@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.testing`.login_scope
+=====================================================
+
+.. currentmodule:: ramp_frontend.testing
+
+.. autofunction:: login_scope
+
+.. raw:: html
+
+    <div style='clear:both'></div>

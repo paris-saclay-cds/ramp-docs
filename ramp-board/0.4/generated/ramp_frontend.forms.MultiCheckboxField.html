@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ramp_frontend.forms.MultiCheckboxField &mdash; RAMP 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_frontend.forms.ImportForm" href="ramp_frontend.forms.ImportForm.html" />
+    <link rel="prev" title="ramp_frontend.forms.EventUpdateProfileForm" href="ramp_frontend.forms.EventUpdateProfileForm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ramp_frontend.create_app.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.LoginForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.LoginForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserCreateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserCreateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CodeForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CodeForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.SubmitForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.SubmitForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UploadForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UploadForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.EventUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.EventUpdateProfileForm</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.ImportForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.ImportForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CreditForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CreditForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.AskForEventForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-frontend-forms-multicheckboxfield">
+<h1><a class="reference internal" href="../api.html#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>.MultiCheckboxField<a class="headerlink" href="#ramp-frontend-forms-multicheckboxfield" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ramp_frontend.forms.MultiCheckboxField">
+<em class="property">class </em><code class="sig-prename descclassname">ramp_frontend.forms.</code><code class="sig-name descname">MultiCheckboxField</code><span class="sig-paren">(</span><em class="sig-param">label=None</em>, <em class="sig-param">validators=None</em>, <em class="sig-param">coerce=&lt;class 'str'&gt;</em>, <em class="sig-param">choices=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField" title="Permalink to this definition">¶</a></dt>
+<dd><p>A form containing multiple checkboxes.</p>
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">label=None</em>, <em class="sig-param">validators=None</em>, <em class="sig-param">coerce=&lt;class 'str'&gt;</em>, <em class="sig-param">choices=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the field.</p></li>
+<li><p><strong>validators</strong> – A sequence of validators to call when <code class="docutils literal notranslate"><span class="pre">validate</span></code> is called.</p></li>
+<li><p><strong>filters</strong> – A sequence of filters which are run on input data by <code class="docutils literal notranslate"><span class="pre">process</span></code>.</p></li>
+<li><p><strong>description</strong> – A description for the field, typically used for help text.</p></li>
+<li><p><strong>id</strong> – An id to use for the field. A reasonable default is set by the form,
+and you shouldn’t need to set this manually.</p></li>
+<li><p><strong>default</strong> – The default value to assign to the field, if no form or object
+input is provided. May be a callable.</p></li>
+<li><p><strong>widget</strong> – If provided, overrides the widget used to render the field.</p></li>
+<li><p><strong>render_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – If provided, a dictionary which provides default keywords that
+will be given to the widget at render time.</p></li>
+<li><p><strong>_form</strong> – The form holding this field. It is passed by the form itself during
+construction. You should never pass this value yourself.</p></li>
+<li><p><strong>_name</strong> – The name of this field, passed by the enclosing form during its
+construction. You should never pass this value yourself.</p></li>
+<li><p><strong>_prefix</strong> – The prefix to prepend to the form name of this field, passed by
+the enclosing form during construction.</p></li>
+<li><p><strong>_translations</strong> – A translations object providing message translations. Usually
+passed by the enclosing form during construction. See
+<span class="xref std std-doc">I18n docs</span> for information on message translations.</p></li>
+<li><p><strong>_meta</strong> – If provided, this is the ‘meta’ instance from the form. You usually
+don’t pass this yourself.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">_form</span></code> and <code class="docutils literal notranslate"><span class="pre">_name</span></code> isn’t provided, an <code class="xref py py-class docutils literal notranslate"><span class="pre">UnboundField</span></code> will be
+returned instead. Call its <code class="xref py py-func docutils literal notranslate"><span class="pre">bind</span></code> method with a form instance and
+a name to construct the field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.gettext">
+<code class="sig-name descname">gettext</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.gettext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a translation for the given message.</p>
+<p>This proxies for the internal translations object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> – A unicode string to be translated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A unicode string which is the translated output.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.iter_choices">
+<code class="sig-name descname">iter_choices</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.iter_choices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides data for choice widget rendering. Must return a sequence or
+iterable of (value, label, selected) tuples.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.ngettext">
+<code class="sig-name descname">ngettext</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">singular</em>, <em class="sig-param">plural</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.ngettext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a translation for a message which can be pluralized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>singular</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The singular form of the message.</p></li>
+<li><p><strong>plural</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The plural form of the message.</p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The number of elements this message is referring to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.populate_obj">
+<code class="sig-name descname">populate_obj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.populate_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates <code class="docutils literal notranslate"><span class="pre">obj.&lt;name&gt;</span></code> with the field’s data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>This is a destructive operation. If <code class="docutils literal notranslate"><span class="pre">obj.&lt;name&gt;</span></code> already exists,
+it will be overridden. Use with caution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.post_validate">
+<code class="sig-name descname">post_validate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em>, <em class="sig-param">validation_stopped</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.post_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override if you need to run any field-level validation tasks after
+normal validation. This shouldn’t be needed in most cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – The form the field belongs to.</p></li>
+<li><p><strong>validation_stopped</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> if any validator raised StopValidation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.pre_validate">
+<code class="sig-name descname">pre_validate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.pre_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override if you need field-level validation. Runs before any other
+validators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> – The form the field belongs to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.process">
+<code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">formdata</em>, <em class="sig-param">data=&lt;unset value&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process incoming data, calling process_data, process_formdata as needed,
+and run filters.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">data</span></code> is not provided, process_data will be called on the field’s
+default.</p>
+<p>Field subclasses usually won’t override this, instead overriding the
+process_formdata and process_data methods. Only override this for
+special advanced processing, such as when a field encapsulates many
+inputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.process_data">
+<code class="sig-name descname">process_data</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the Python data applied to this field and store the result.</p>
+<p>This will be called during form construction by the form’s <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> or
+<code class="docutils literal notranslate"><span class="pre">obj</span></code> argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – The python object containing the value to process.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.process_formdata">
+<code class="sig-name descname">process_formdata</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">valuelist</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.process_formdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process data received over the wire from a form.</p>
+<p>This will be called during form construction with data supplied
+through the <code class="docutils literal notranslate"><span class="pre">formdata</span></code> argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>valuelist</strong> – A list of strings to process.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">form</em>, <em class="sig-param">extra_validators=()</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the field and returns True or False. <code class="docutils literal notranslate"><span class="pre">self.errors</span></code> will
+contain any errors raised during validation. This is usually only
+called by <code class="docutils literal notranslate"><span class="pre">Form.validate</span></code>.</p>
+<p>Subfields shouldn’t override this, but rather override either
+<code class="docutils literal notranslate"><span class="pre">pre_validate</span></code>, <code class="docutils literal notranslate"><span class="pre">post_validate</span></code> or both, depending on needs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – The form the field belongs to.</p></li>
+<li><p><strong>extra_validators</strong> – A sequence of extra validators to run.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ramp_frontend.forms.ImportForm.html" class="btn btn-neutral float-right" title="ramp_frontend.forms.ImportForm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ramp_frontend.forms.EventUpdateProfileForm.html" class="btn btn-neutral float-left" title="ramp_frontend.forms.EventUpdateProfileForm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+:mod:`ramp_utils`.import_module_from_source
+========================================================
+
+.. currentmodule:: ramp_utils
+
+.. autofunction:: import_module_from_source
+
+.. raw:: html
+
+    <div style='clear:both'></div>

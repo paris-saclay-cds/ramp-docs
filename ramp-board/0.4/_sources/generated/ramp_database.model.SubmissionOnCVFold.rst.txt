@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.SubmissionOnCVFold
+====================================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: SubmissionOnCVFold
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.user`.add_user_interaction
+=================================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: add_user_interaction
+
+.. raw:: html
+
+    <div style='clear:both'></div>

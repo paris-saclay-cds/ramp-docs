@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.redirect`.redirect_to_credit
+===================================================================
+
+.. currentmodule:: ramp_frontend.views.redirect
+
+.. autofunction:: redirect_to_credit
+
+.. raw:: html
+
+    <div style='clear:both'></div>

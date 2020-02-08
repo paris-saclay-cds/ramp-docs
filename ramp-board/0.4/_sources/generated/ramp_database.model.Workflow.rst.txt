@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.Workflow
+==========================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: Workflow
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

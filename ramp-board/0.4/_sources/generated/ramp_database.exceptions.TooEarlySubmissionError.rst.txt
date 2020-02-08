@@ -1,0 +1,14 @@
+:mod:`ramp_database.exceptions`.TooEarlySubmissionError
+==============================================================
+
+.. currentmodule:: ramp_database.exceptions
+
+.. autoclass:: TooEarlySubmissionError
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.frontend`.is_accessible_leaderboard
+==========================================================================
+
+.. currentmodule:: ramp_database.tools.frontend
+
+.. autofunction:: is_accessible_leaderboard
+
+.. raw:: html
+
+    <div style='clear:both'></div>
