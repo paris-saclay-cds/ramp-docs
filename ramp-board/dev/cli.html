@@ -99,6 +99,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP Command-Line Interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#commands-to-setup-your-ramp-server-or-ramp-events">Commands to setup your RAMP server or RAMP events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ramp-setup">ramp-setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ramp-setup-create-conda-env">create-conda-env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-deploy-event">deploy-event</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-init">init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-setup-init-event">init-event</a></li>
@@ -247,6 +248,26 @@ RAMP server and events. In addition, it will allow you to deploy easily
 RAMP events.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-setup <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
 </pre></div>
+</div>
+<div class="section" id="ramp-setup-create-conda-env">
+<h4>create-conda-env<a class="headerlink" href="#ramp-setup-create-conda-env" title="Permalink to this headline">¶</a></h4>
+<p>Create the conda environment for a specific event</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-setup create-conda-env <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-ramp-setup-create-conda-env-config">
+<code class="sig-name descname">--config</code><code class="sig-prename descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ramp-setup-create-conda-env-config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration file in YAML format containing the database information  [default: config.yml]</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ramp-setup-create-conda-env-event-config">
+<code class="sig-name descname">--event-config</code><code class="sig-prename descclassname"> &lt;event_config&gt;</code><a class="headerlink" href="#cmdoption-ramp-setup-create-conda-env-event-config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration file in YAML format containing the RAMP information  [default: config.yml]</p>
+</dd></dl>
+
 </div>
 <div class="section" id="ramp-setup-deploy-event">
 <h4>deploy-event<a class="headerlink" href="#ramp-setup-deploy-event" title="Permalink to this headline">¶</a></h4>

@@ -104,7 +104,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7. Useful tips using RAMP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-restart-a-failed-submission-manually">7.1. How to restart a failed submission manually</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-a-standalone-worker-without-connection-to-database">7.2. Running a standalone worker without connection to database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-automatically-a-conda-environment-link-to-an-event">7.3. Update automatically a conda environment link to an event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-automatically-a-conda-environment-linked-to-an-event">7.3. Create automatically a conda environment linked to an event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-automatically-a-conda-environment-linked-to-an-event">7.4. Update automatically a conda environment linked to an event</a></li>
 </ul>
 </li>
 </ul>
@@ -225,8 +226,19 @@ by the worker. For instance, for a conda worker, we will provide the following
 </div>
 <p>And you can check the results in the <code class="docutils literal notranslate"><span class="pre">logs</span></code> folder.</p>
 </div>
-<div class="section" id="update-automatically-a-conda-environment-link-to-an-event">
-<h2><span class="section-number">7.3. </span>Update automatically a conda environment link to an event<a class="headerlink" href="#update-automatically-a-conda-environment-link-to-an-event" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-automatically-a-conda-environment-linked-to-an-event">
+<span id="create-conda-env"></span><h2><span class="section-number">7.3. </span>Create automatically a conda environment linked to an event<a class="headerlink" href="#create-automatically-a-conda-environment-linked-to-an-event" title="Permalink to this headline">¶</a></h2>
+<p>When launching an event, you might need to create a conda environment. We
+provide a command-line tool to automatically create the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup create-conda-env --event-config events/iris_test/config.yml
+</pre></div>
+</div>
+<p>This command will create the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment and install the packages
+using the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> which should be located inside the <code class="docutils literal notranslate"><span class="pre">ramp-kit</span></code>
+directory of the challenge.</p>
+</div>
+<div class="section" id="update-automatically-a-conda-environment-linked-to-an-event">
+<span id="update-conda-env"></span><h2><span class="section-number">7.4. </span>Update automatically a conda environment linked to an event<a class="headerlink" href="#update-automatically-a-conda-environment-linked-to-an-event" title="Permalink to this headline">¶</a></h2>
 <p>We provide a command-line tool to automatically update the packages of a RAMP
 event. You use it as follow:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml

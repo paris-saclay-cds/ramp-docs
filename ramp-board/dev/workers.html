@@ -214,13 +214,22 @@ should have these libraries installed, in addition to ramp-workflow.</p>
 configuration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ conda create --name ramp-iris pip numpy pandas scikit-learn
 ~ $ conda activate ramp-iris
-~ $ pip install git+https://github.com/paris-saclay-cds/ramp-workflow
+~ $ pip install ramp-workflow
 </pre></div>
 </div>
 <p>If you are using a ramp-kit from the <a class="reference external" href="https://github.com/ramp-kits">Paris-Saclay CDS</a>, each kit will provide either an
 <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">ami_environment.yml</span></code> file which you can use to create
 the environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>Alternatively, you can include an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file inside the <code class="docutils literal notranslate"><span class="pre">ramp-kit</span></code>
+directory and use the following to install the environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup create-conda-env --event-config events/iris_test/config.yml
+</pre></div>
+</div>
+<p>You can update an existing environment with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml
 </pre></div>
 </div>
 </div>
