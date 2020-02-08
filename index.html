@@ -3,12 +3,14 @@
 
 <head>
     <title>RAMP: collaborative data science challenges</title>
-    <meta name="description" content="Collaborative crowdsourcing data challenge site for building and optimizing data science workflows for scientific and business applications.">
-    <meta name="keyword" content="data science, data challenge, crowdsourcing, open innovation, Paris-Saclay, Center for Data Science, teaching data science, deep learning, time series, missing data, feature extraction, hyperopt, AutoML">
+    <meta name="description"
+        content="Collaborative crowdsourcing data challenge site for building and optimizing data science workflows for scientific and business applications.">
+    <meta name="keyword"
+        content="data science, data challenge, crowdsourcing, open innovation, Paris-Saclay, Center for Data Science, teaching data science, deep learning, time series, missing data, feature extraction, hyperopt, AutoML">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <!-- CSS Libs -->
     <link rel="stylesheet" type="text/css" href="static/lib/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/lib/css/font-awesome.min.css">
@@ -25,78 +27,87 @@
 
 <body class="flat-blue landing-page">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-affix" role="navigation" data-spy="affix" data-offset-top="60">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <div id="navbar" class="navbar-collapse collapse " aria-expanded="true">
-                        <ul class="nav navbar-nav navbar-left navbar-font-index">
-                            <li class="active"><a href="#features"><img src="static/img/logo_CDS.svg" height="26px"></a></li>
-                            <li class="active"><a href="ramp-workflow/index.html">RAMP workflow</a></li>
-                            <li class="active"><a href="ramp-board/index.html">RAMP board</a></li>
-                        </ul>
-                    </div>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-affix" data-spy="affix" data-offset-top="60">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#packages"><img src="static/img/logo_CDS.svg" height="26px"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-font-index">
+                        <li><a href="ramp-workflow/index.html">RAMP workflow</a></li>
+                        <li><a href="ramp-board/index.html">RAMP board</a></li>
+                    </ul>
+                </div>
             </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
+        </nav>
+    </div>
+
     <div class="jumbotron app-header" id='titleback'>
-        <div class="container">
+        <div class="container header-title">
             <h2 class="text-center">
                 <br>
-                <div class="color-white font-large font-heavy"><span><img src="static/img/logo_CDS.svg" alt="CDS logo" class="app-logo color-white" height="98">&nbsp;RAMP</span></div>
+                <div class="color-white"><span><img src="static/img/logo_CDS.svg" alt="CDS logo"
+                            class="app-logo color-white" height="96px" style="max-width: 12%">&nbsp;RAMP</span></div>
             </h2>
-            <p class="text-center color-white app-description font-med">Rapid Analytics & Model Prototyping</p>
-            <p class="text-center color-white app-description font-small">The Developer Documentation</p></div>
-            <br>
-            <br>
-            <p class="text-center"><a class="btn btn-primary btn-lg app-btn" href="#features" role="button">Learn more »</a></p>
+            <p class="text-center color-white app-description">Rapid Analytics & Model Prototyping</p>
+            <p class="text-center color-white app-description">using Python</p>
+            <div class="header-button">
+                <a class="btn btn-primary btn-lg app-btn" href="#packages" role="button">Learn More »</a>
+            </div>
         </div>
+    </div>
     </div>
 
     <div class="container-fluid app-content-a" id="packages">
-            <div class="container">
+        <div class="container">
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center app-content-header">RAMP packages</h2>
-                        <p class="text-center app-content-description font-small">
-                        RAMP packages offer versatile tools to define, build and optimize machine learning workflows via data challenges, great for prototyping models in your data science team.
-                        </p>
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center app-content-header">RAMP packages</h2>
+                    <p class="text-center app-content-description">
+                        RAMP packages offer versatile tools to define, build and optimize machine learning workflows via
+                        data challenges, great for prototyping models in your data science team.
+                    </p>
                 </div>
+            </div>
 
-                <div class="row text-center">
+            <div class="row text-center">
 
-                    <div class="col-md-6 col-sm-6">
-                        <a href="ramp-workflow/index.html">
+                <div class="col-md-6 col-sm-6">
+                    <a href="ramp-workflow/index.html">
                         <span class="fa-stack fa-lg fa-5x">
-                          <i class="fa fa-circle-thin fa-stack-2x"></i>
-                          <i class="fa fa-gears fa-stack-1x"></i>
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-gears fa-stack-1x"></i>
                         </span>
                         <h2>RAMP workflow</h2>
-                        </a>
-                        <p><a href="ramp-workflow/index.html">RAMP workflow</a> allows you to formalise a machine learning workflow by defining score types (metrics), workflow elements and prediction types.</p>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <a href="ramp-board/index.html">
+                    </a>
+                    <p class="index-body"><a href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a>
+                        allows you to formalise a machine learning workflow by defining score types (metrics), workflow
+                        elements and prediction types.</p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <a href="ramp-board/index.html">
                         <span class="fa-stack fa-lg fa-5x">
-                          <i class="fa fa-circle-thin fa-stack-2x"></i>
-                          <i class="fa fa-server fa-stack-1x"></i>
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-server fa-stack-1x"></i>
                         </span>
                         <h2>RAMP board</h2>
-                        </a>
-                        <p><a href="ramp-board/index.html">RAMP board</a> consists of a bundle of modules that allow you to easily setup your own RAMP server and deploy new data challenges.</p>
-                    </div>
+                    </a>
+                    <p class="index-body"><a href="https://github.com/paris-saclay-cds/ramp-board">RAMP board</a>
+                        consists of a bundle of modules that allow you to easily setup your own RAMP server and deploy
+                        new data challenges.</p>
                 </div>
             </div>
         </div>
+    </div>
 
     <hr align="center" width="50%">
 
@@ -105,55 +116,57 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-center app-content-header">Install RAMP bundle</h2>
-                    <p class="text-center app-content-description font-small">
-                    All RAMP packages are available on PyPI and can be easily installed using <code>pip</code>
-                    <br />
-                    <br />
-                    <code>$ pip install ramp-workflow ramp-frontend ramp-database ramp-engine ramp-utils</code>
+                    <p class="text-center app-content-description">
+                        All RAMP packages are available on PyPI and can be easily installed using <code>pip</code>
+                        <br />
+                        <br />
+                        <code>$ pip install ramp-workflow ramp-frontend ramp-database ramp-engine ramp-utils</code>
                     </p>
                     <br />
-                    <p>
-                    The RAMP ecosystem contains two organizations and two
-                    libraries. The purpose of the bundle is to define, build,
-                    manage, and optimize data analytics workflows, typically on
-                    the top of open source machine learning libraries like
-                    pandas, scikit-learn, and keras. The bundle consists of
+                    <p class="index-body">
+                        The RAMP ecosystem contains two organizations and two
+                        libraries. The purpose of the bundle is to define, build,
+                        manage, and optimize data analytics workflows, typically on
+                        the top of open source machine learning libraries like
+                        pandas, scikit-learn, and keras. The bundle consists of
                     </p>
                     <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                        <th scope="col">Library/Organisation</th>
-                        <th scope="col">Purpose</th>
-                        <th scope="col">Publicly available</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row"><a href="https://github.com/paris-saclay-cds/ramp-workflow">ramp-workflow</a></th>
-                        <td>A set of reusable tools and scripts to define score
-                        types (metrics), workflow elements, prediction types
-                        and data connectors.</td>
-                        <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a></th>
-                        <td>A library managing the frontend and the database of
-                        the RAMP platform.</td>
-                        <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="https://github.com/ramp-data">ramp-data</a></th>
-                        <td>An organization containing data sets on which
-                        workflows are trained and evaluated.</td>
-                        <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></td>
-                        </tr>
-                        <th scope="row"><a href="https://github.com/ramp-kits">ramp-kits</a></th>
-                        <td>An organization containing starting kits that use
-                        tools from ramp-workflow to implement a first valid
-                        (tested) workflow.</td>
-                        <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
-                        </tr>
-                    </tbody>
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Library/Organisation</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Publicly available</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><a
+                                        href="https://github.com/paris-saclay-cds/ramp-workflow">ramp-workflow</a></th>
+                                <td>A set of reusable tools and scripts to define score
+                                    types (metrics), workflow elements, prediction types
+                                    and data connectors.</td>
+                                <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a>
+                                </th>
+                                <td>A library managing the frontend and the database of
+                                    the RAMP platform.</td>
+                                <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="https://github.com/ramp-data">ramp-data</a></th>
+                                <td>An organization containing data sets on which
+                                    workflows are trained and evaluated.</td>
+                                <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></td>
+                            </tr>
+                            <th scope="row"><a href="https://github.com/ramp-kits">ramp-kits</a></th>
+                            <td>An organization containing starting kits that use
+                                tools from ramp-workflow to implement a first valid
+                                (tested) workflow.</td>
+                            <td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -169,9 +182,10 @@
                 <br>
                 <div class="col-md-12">
                     <center>
-                    <a href="https://www.datascience-paris-saclay.fr/" target="_blank">
-                    <img src="static/img/partners/upsaclay.png" class="img" alt="Université Paris-Saclay" height="100">
-                    </a>
+                        <a href="https://www.datascience-paris-saclay.fr/" target="_blank">
+                            <img src="static/img/partners/upsaclay.png" class="img" alt="Université Paris-Saclay"
+                                width="700vh" style="max-width: 95%;">
+                        </a>
                     </center>
                 </div>
             </div>
@@ -181,12 +195,17 @@
     <!-- /END THE FEATURETTES -->
     <!-- FOOTER -->
     <footer class="app-footer">
-      <div class="container">
-          <center><span class="pull-left"><i class="icon fa fa-copyright"></i> RAMP version beta <a href="#"><i class="icon fa fa-long-arrow-up"></i><i class="icon fa fa-long-arrow-up"></i></a></span> &nbsp; &nbsp; &nbsp; &nbsp;
-          <span><a href="/"><img src="static/img/logo_CDS_footer.svg" height="20px"></a></span> &nbsp; &nbsp; &nbsp; &nbsp; <span><a href="mailto:admin@ramp.studio">Contact Us <i class="icon fa fa-envelope"></i></a></span>
-          <span class="pull-right">Thanks to <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank">tui2tone</a> for the  template!</span>
-          </center>
-      </div>
+        <div class="container">
+            <center><span class="pull-left"><i class="icon fa fa-copyright"></i> RAMP <a href="#"><i
+                            class="icon fa fa-long-arrow-up"></i><i class="icon fa fa-long-arrow-up"></i></a></span>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <span><a href="/"><img src="static/img/logo_CDS_footer.svg" height="20px"></a></span> &nbsp; &nbsp;
+                &nbsp; &nbsp; <span><a href="mailto:admin@ramp.studio">Contact Us <i
+                            class="icon fa fa-envelope"></i></a></span>
+                <span class="pull-right">Thanks to <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates"
+                        target="_blank">tui2tone</a> for the template!</span>
+            </center>
+        </div>
     </footer>
     <!-- Javascript Libs -->
     <script type="text/javascript" src="static/lib/js/jquery.min.js"></script>
