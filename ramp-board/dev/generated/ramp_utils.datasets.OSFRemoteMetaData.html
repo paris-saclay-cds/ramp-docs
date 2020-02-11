@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_utils.testing.database_config_template &mdash; RAMP 0.5.0.dev0 documentation</title>
+  <title>ramp_utils.datasets.OSFRemoteMetaData &mdash; RAMP 0.5.0.dev0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_utils.testing.ramp_config_template" href="ramp_utils.testing.ramp_config_template.html" />
-    <link rel="prev" title="ramp_utils.read_config" href="ramp_utils.read_config.html" /> 
+    <link rel="next" title="ramp_utils.deploy.deploy_ramp_event" href="ramp_utils.deploy.deploy_ramp_event.html" />
+    <link rel="prev" title="ramp_utils.datasets.fetch_from_osf" href="ramp_utils.datasets.fetch_from_osf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,16 +100,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_flask_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_flask_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_ramp_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_worker_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.read_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.ramp_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.ramp_config_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#datasets-utilities">Datasets utilities</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.datasets.fetch_from_osf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.fetch_from_osf</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.OSFRemoteMetaData</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#datasets-utilities">Datasets utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#deployment-utilities">Deployment utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#ramp-shared-utilities">RAMP shared utilities</a></li>
 </ul>
@@ -169,7 +165,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.OSFRemoteMetaData</li>
     
     
 
@@ -181,20 +177,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-utils-testing-database-config-template">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template<a class="headerlink" href="#ramp-utils-testing-database-config-template" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="ramp_utils.testing.database_config_template">
-<code class="sig-prename descclassname">ramp_utils.testing.</code><code class="sig-name descname">database_config_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.testing.database_config_template" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the path a template database configuration file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The database configuration filename.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+  <div class="section" id="ramp-utils-datasets-osfremotemetadata">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.OSFRemoteMetaData<a class="headerlink" href="#ramp-utils-datasets-osfremotemetadata" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData">
+<em class="property">class </em><code class="sig-prename descclassname">ramp_utils.datasets.</code><code class="sig-name descname">OSFRemoteMetaData</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">id</em>, <em class="sig-param">revision</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">/</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.filename">
+<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.id">
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em>, <em class="sig-param">start=0</em>, <em class="sig-param">stop=9223372036854775807</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ramp_utils.datasets.OSFRemoteMetaData.revision">
+<em class="property">property </em><code class="sig-name descname">revision</code><a class="headerlink" href="#ramp_utils.datasets.OSFRemoteMetaData.revision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -207,10 +231,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_utils.testing.ramp_config_template.html" class="btn btn-neutral float-right" title="ramp_utils.testing.ramp_config_template" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_utils.deploy.deploy_ramp_event.html" class="btn btn-neutral float-right" title="ramp_utils.deploy.deploy_ramp_event" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_utils.read_config.html" class="btn btn-neutral float-left" title="ramp_utils.read_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_utils.datasets.fetch_from_osf.html" class="btn btn-neutral float-left" title="ramp_utils.datasets.fetch_from_osf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_utils.testing.database_config_template &mdash; RAMP 0.5.0.dev0 documentation</title>
+  <title>ramp_utils.datasets.fetch_from_osf &mdash; RAMP 0.5.0.dev0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ramp_utils.testing.ramp_config_template" href="ramp_utils.testing.ramp_config_template.html" />
-    <link rel="prev" title="ramp_utils.read_config" href="ramp_utils.read_config.html" /> 
+    <link rel="next" title="ramp_utils.datasets.OSFRemoteMetaData" href="ramp_utils.datasets.OSFRemoteMetaData.html" />
+    <link rel="prev" title="ramp_utils.testing.ramp_config_template" href="ramp_utils.testing.ramp_config_template.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,16 +100,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_flask_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_flask_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_ramp_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.generate_worker_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.read_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ramp_utils.testing.ramp_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.ramp_config_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#configuration-utilities">Configuration utilities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#datasets-utilities">Datasets utilities</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.fetch_from_osf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_utils.datasets.OSFRemoteMetaData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.OSFRemoteMetaData</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#datasets-utilities">Datasets utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#deployment-utilities">Deployment utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api.html#ramp-shared-utilities">RAMP shared utilities</a></li>
 </ul>
@@ -169,7 +165,7 @@
         
           <li><a href="../api.html">RAMP API</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.fetch_from_osf</li>
     
     
 
@@ -181,16 +177,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-utils-testing-database-config-template">
-<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template<a class="headerlink" href="#ramp-utils-testing-database-config-template" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ramp-utils-datasets-fetch-from-osf">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.fetch_from_osf<a class="headerlink" href="#ramp-utils-datasets-fetch-from-osf" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ramp_utils.testing.database_config_template">
-<code class="sig-prename descclassname">ramp_utils.testing.</code><code class="sig-name descname">database_config_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.testing.database_config_template" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the path a template database configuration file.</p>
+<dt id="ramp_utils.datasets.fetch_from_osf">
+<code class="sig-prename descclassname">ramp_utils.datasets.</code><code class="sig-name descname">fetch_from_osf</code><span class="sig-paren">(</span><em class="sig-param">path_data</em>, <em class="sig-param">metadata</em>, <em class="sig-param">token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_utils.datasets.fetch_from_osf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch files from OSF storage.</p>
+<p>If the file is inside a private project, you will need to specify your
+token.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The database configuration filename.</p>
+<dt><strong>path_data</strong><span class="classifier">str</span></dt><dd><p>The path where to store the data which will be downloaded.</p>
+</dd>
+<dt><strong>metadata</strong><span class="classifier">list of OSFRemoteMetaData</span></dt><dd><p>A list of OSF metadata for each file in the dataset.</p>
+</dd>
+<dt><strong>token</strong><span class="classifier">str</span></dt><dd><p>The OSF token to be able to make the token in case the file is in a
+private project.</p>
 </dd>
 </dl>
 </dd>
@@ -207,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ramp_utils.testing.ramp_config_template.html" class="btn btn-neutral float-right" title="ramp_utils.testing.ramp_config_template" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ramp_utils.datasets.OSFRemoteMetaData.html" class="btn btn-neutral float-right" title="ramp_utils.datasets.OSFRemoteMetaData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ramp_utils.read_config.html" class="btn btn-neutral float-left" title="ramp_utils.read_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ramp_utils.testing.ramp_config_template.html" class="btn btn-neutral float-left" title="ramp_utils.testing.ramp_config_template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
