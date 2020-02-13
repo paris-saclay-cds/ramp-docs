@@ -15,9 +15,13 @@ Changelog
 `ramp-frontend`
 ...............
 
+- Bug: fix a bug for which it was impossible to download a submission
+  via the frontend.
+  :pr:`397` by :user:`Guillaume Lemaitre <glemaitre>`.
+
 `ramp-utils`
 ............
 
 - Enhancement: add :func:`ramp_utils.datasets.fetch_from_osf` allowing to fetch
   a file from OSF.
-  By :pr:`396` by :user:`Guillaume Lemaitre <glemaitre>`.
+  :pr:`396` by :user:`Guillaume Lemaitre <glemaitre>`.
