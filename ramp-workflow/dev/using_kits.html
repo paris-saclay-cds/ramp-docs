@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/js/copybutton.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -101,7 +101,10 @@
 <p class="caption"><span class="caption-text">Using RAMP kits</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using RAMP starting-kits</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#submiting-to-a-ramp-event">Submiting to a RAMP event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-starting-kit">Get the starting-kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-a-submission">Test a submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-to-a-ramp-event">Submitting to a RAMP event</a></li>
 </ul>
 </li>
 </ul>
@@ -163,138 +166,129 @@
             
   <div class="section" id="using-ramp-starting-kits">
 <span id="using-kits"></span><h1>Using RAMP starting-kits<a class="headerlink" href="#using-ramp-starting-kits" title="Permalink to this headline">¶</a></h1>
-<p>To get started working on an existing RAMP challenge:</p>
-<ol class="arabic">
-<li><p>Clone the <a class="reference external" href="https://github.com/ramp-kits">starting kit</a> for the challenge from GitHub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ramp-kits/&lt;ramp_kit_name&gt;.git
-$ <span class="nb">cd</span> &lt;ramp_kit_name&gt;
+<div class="section" id="get-the-starting-kit">
+<h2>Get the starting-kit<a class="headerlink" href="#get-the-starting-kit" title="Permalink to this headline">¶</a></h2>
+<p>To start working on a specific challenge, you can download the starting-kit
+directly from the event page (i.e. “Download kit” button).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/ramp_kit_download.png"><img alt="_images/ramp_kit_download.png" src="_images/ramp_kit_download.png" style="width: 700px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>It will provide a zip file providing all the necessary materials. Sometimes,
+each starting-kit comes with specific instructions (e.g. to download extra
+data) which will be available in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
+</div>
+<div class="section" id="install-dependencies">
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>To run a submission and the notebook you will need the dependencies listed
+in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. You can install install the dependencies with the
+following command-line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -U -r requirements.txt
 </pre></div>
 </div>
-<p>If the starting kit does not include the data (i.e. a <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder)
-you will need to download the data using the <code class="docutils literal notranslate"><span class="pre">download_data.py</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python download_data.py
+<p>If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file for similar
+usage.</p>
+</div>
+<div class="section" id="test-a-submission">
+<h2>Test a submission<a class="headerlink" href="#test-a-submission" title="Permalink to this headline">¶</a></h2>
+<p>The submissions need to be located in the <code class="docutils literal notranslate"><span class="pre">submissions</span></code> folder. For instance
+for <code class="docutils literal notranslate"><span class="pre">my_submission</span></code>, it should be located in <code class="docutils literal notranslate"><span class="pre">submissions/my_submission</span></code>.</p>
+<p>To run a specific submission, you can use the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp-test --submission my_submissions
 </pre></div>
 </div>
-</li>
-<li><p>Install dependencies:</p>
-<ul>
-<li><p>with <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> to create
-a virtual environment with all the required dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to create the environment</span>
-$ conda env create -f environment.yml
-<span class="c1"># to activate the environment</span>
-$ <span class="nb">source</span> activate &lt;ramp_kit_name&gt;
+<p>You can get more information regarding this command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp-test --help
 </pre></div>
 </div>
-</li>
-<li><p>with <a class="reference external" href="https://pypi.org/project/pip/">pip</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
-<span class="c1"># install ramp-workflow</span>
-$ pip install https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
+<p>The output of the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command will be looking like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Testing Iris classification
+Reading train and <span class="nb">test</span> files from ./data ...
+Reading cv ...
+Training submissions/starting_kit ...
+CV fold <span class="m">0</span>
+   score   acc  error   nll  f1_70      <span class="nb">time</span>
+   train  <span class="m">0</span>.58   <span class="m">0</span>.42  <span class="m">1</span>.17   <span class="m">0</span>.33  <span class="m">0</span>.175953
+   valid  <span class="m">0</span>.65   <span class="m">0</span>.35  <span class="m">0</span>.52   <span class="m">0</span>.33  <span class="m">0</span>.001978
+   <span class="nb">test</span>   <span class="m">0</span>.71   <span class="m">0</span>.29  <span class="m">0</span>.80   <span class="m">0</span>.67  <span class="m">0</span>.001837
+CV fold <span class="m">1</span>
+   score   acc  error   nll  f1_70      <span class="nb">time</span>
+   train  <span class="m">0</span>.63   <span class="m">0</span>.37  <span class="m">0</span>.78   <span class="m">0</span>.67  <span class="m">0</span>.011339
+   valid  <span class="m">0</span>.65   <span class="m">0</span>.35  <span class="m">0</span>.66   <span class="m">0</span>.67  <span class="m">0</span>.002846
+   <span class="nb">test</span>   <span class="m">0</span>.54   <span class="m">0</span>.46  <span class="m">0</span>.72   <span class="m">0</span>.33  <span class="m">0</span>.003474
+----------------------------
+Mean CV scores
+----------------------------
+   score           acc         error           nll        f1_70        <span class="nb">time</span>
+   train  <span class="m">0</span>.61 ± <span class="m">0</span>.026  <span class="m">0</span>.39 ± <span class="m">0</span>.026  <span class="m">0</span>.98 ± <span class="m">0</span>.197  <span class="m">0</span>.5 ± <span class="m">0</span>.167  <span class="m">0</span>.1 ± <span class="m">0</span>.08
+   valid    <span class="m">0</span>.65 ± <span class="m">0</span>.0    <span class="m">0</span>.35 ± <span class="m">0</span>.0  <span class="m">0</span>.59 ± <span class="m">0</span>.069  <span class="m">0</span>.5 ± <span class="m">0</span>.167   <span class="m">0</span>.0 ± <span class="m">0</span>.0
+   <span class="nb">test</span>   <span class="m">0</span>.62 ± <span class="m">0</span>.083  <span class="m">0</span>.38 ± <span class="m">0</span>.083  <span class="m">0</span>.76 ± <span class="m">0</span>.041  <span class="m">0</span>.5 ± <span class="m">0</span>.167   <span class="m">0</span>.0 ± <span class="m">0</span>.0
+----------------------------
+Bagged scores
+----------------------------
+   score   acc  error   nll  f1_70
+   valid  <span class="m">0</span>.65   <span class="m">0</span>.35  <span class="m">0</span>.59   <span class="m">0</span>.33
+   <span class="nb">test</span>   <span class="m">0</span>.71   <span class="m">0</span>.29  <span class="m">0</span>.66   <span class="m">0</span>.33
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p>Test that the starting kit works:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp_test_submission --quick-test
-</pre></div>
-</div>
-<p>Alternatively you can test the kit from a Python shell environment using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rampwf.utils.testing</span> <span class="kn">import</span> <span class="n">assert_submission</span>
-
-<span class="n">assert_submission</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>See the <code class="docutils literal notranslate"><span class="pre">assert_submission()</span></code> <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/blob/master/rampwf/utils/testing.py#L63">source code</a>
-for more details.</p>
-</li>
-</ol>
 <p>Now you are ready to write your own solution for the prediction problem. It is
 useful to read the starting kit notebook which will introduce the problem,
 provide some data analysis and visualisation and walk you through a simple
 example solution. There will also be at least one example submission in
 <code class="docutils literal notranslate"><span class="pre">submissions/</span></code>, which show you which files are required for each submission,
 how they need to be named and how each file should be structured.</p>
-<div class="section" id="submiting-to-a-ramp-event">
-<h2>Submiting to a RAMP event<a class="headerlink" href="#submiting-to-a-ramp-event" title="Permalink to this headline">¶</a></h2>
-<p>To submit your solution to <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>:</p>
+</div>
+<div class="section" id="submitting-to-a-ramp-event">
+<h2>Submitting to a RAMP event<a class="headerlink" href="#submitting-to-a-ramp-event" title="Permalink to this headline">¶</a></h2>
+<p>To submit your solution to <a class="reference external" href="https://www.ramp.studio">RAMP studio</a>:</p>
 <ol class="arabic">
-<li><p>Log in at <a class="reference external" href="http://www.ramp.studio">RAMP studio</a>. If it is your first time, you will need to first
+<li><p>Log in at <a class="reference external" href="https://www.ramp.studio">RAMP studio</a>. If it is your first time, you will need to first
 register.</p></li>
-<li><p>Find an open event for your RAMP challenge. Events for RAMP challenges
-can be found underneath the challenge title:</p>
-<a class="reference internal image-reference" href="_images/ramp_event.png"><img alt="_images/ramp_event.png" src="_images/ramp_event.png" style="width: 700px;" /></a>
+<li><p>For a given challenge, go to the event to which you want to participate.
+If you did not join the event yet, you will need to click on “Join event”.</p>
+<a class="reference internal image-reference" href="_images/ramp_join_event.png"><img alt="_images/ramp_join_event.png" src="_images/ramp_join_event.png" style="width: 700px;" /></a>
+<p>For most of the events, your registration needs to be validated by an event
+administrator. During this transition, you see the status
+“Waiting approval…”.</p>
+<a class="reference internal image-reference" href="_images/ramp_waiting_approval.png"><img alt="_images/ramp_waiting_approval.png" src="_images/ramp_waiting_approval.png" style="width: 700px;" /></a>
+<p>Once you are approved, you will see the status “Event joined”.</p>
+<a class="reference internal image-reference" href="_images/ramp_event_joined.png"><img alt="_images/ramp_event_joined.png" src="_images/ramp_event_joined.png" style="width: 700px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>To sign up for an event, click on the open event (<em>not</em> on the challenge).
-This should take you to a page with the challenge and event as the title.
-Click on the yellow ‘Sign up’ button to sign up for this event:</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/ramp_signup.png"><img alt="_images/ramp_signup.png" src="_images/ramp_signup.png" style="width: 500px;" /></a>
 </li>
-</ol>
-<p>Note that registering for RAMP studio and signing up for events are controlled
-by RAMP administrators, so there can be a delay between asking to sign up and
-being able to submit.</p>
-<p>If you cannot find an open event for the challenge you are interested in,
-you can request a new event by clicking on ‘Click here if you would like to
-use this problem for teaching’, on the welcome page of the challenge. Note
-you need to click on the RAMP challenge and not an event of the challenge to
-find this button.</p>
-<a class="reference internal image-reference" href="_images/ramp_newevent.png"><img alt="_images/ramp_newevent.png" src="_images/ramp_newevent.png" style="width: 700px;" /></a>
-<ol class="arabic" start="3">
 <li><p>Once your sign up as been approved you will have access to a number of
-menu options on the right hand side:</p>
+menu options on the left-hand side:</p>
 <a class="reference internal image-reference" href="_images/ramp_sidebar.png"><img alt="_images/ramp_sidebar.png" src="_images/ramp_sidebar.png" style="width: 650px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
-<li><p><strong>leaderboard</strong> - table of all submissions from all participants of the
-event. The score metrics, contributivity, time taken to train and test
-the model, max RAM usage and time of submission will all be shown. By
-default it will show the most recent submissions first, but you can change
-this by clicking on the up and down arrows next to the column names.</p></li>
-<li><p><strong>competition leaderboard</strong> - table of the final submission of each
-participant. It will show only the ‘official’ score metric
-(see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>), time taken to train and test the
-model and submission time. This is ordered by the best score, by default.</p></li>
-<li><p><strong>sandbox</strong> - you can make your submissions here. See below for more
-details.</p></li>
-<li><p><strong>my submissions</strong> - shows all your previous submissions, with separate
-tables for submissions which are pending and submissions which have
-finished computing.</p></li>
+<li><p><strong>Leaderboard</strong>: it contains a summary of <strong>all</strong> submissions performance
+from all event’s participants;</p></li>
+<li><p><strong>Competition leaderboard</strong>: it contains only the best submission for each
+participant;</p></li>
+<li><p><strong>Sandbox</strong>: it is your sandbox to make a submission to the event;</p></li>
+<li><p><strong>My submissions</strong>: it shows information regarding all your submissions.</p></li>
 </ul>
 </li>
-<li><p>To make a submission go to your sandbox. Here, you can edit the
-required submission files (e.g., <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> and
-<code class="docutils literal notranslate"><span class="pre">classifier.py</span></code>), available in the middle of the page, then save
-the files. Alternatively, you can upload the required files from
-your computer, on the right hand side:</p>
-<a class="reference internal image-reference" href="_images/ramp_sandbox1.png"><img alt="_images/ramp_sandbox1.png" src="_images/ramp_sandbox1.png" style="width: 750px;" /></a>
+<li><p>To make a submission go to your “Sandbox”. Paste the code of your submission
+that you earlier validated with <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command-line. If you wish, you
+can save your submission and come back to it later by clicking on
+“Save for later”. If you are ready, you can click on “Submit now”. You will
+get the following window:</p>
+<a class="reference internal image-reference" href="_images/ramp_sandbox_submission.png"><img alt="_images/ramp_sandbox_submission.png" src="_images/ramp_sandbox_submission.png" style="width: 650px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Submit by providing a name for your submission (it is a good idea to start
-the name with your username, so you can easily identify your submission on
-the leaderboard), then clicking ‘submit’ at the bottom of the page:</p>
-<a class="reference internal image-reference" href="_images/ramp_sandbox2.png"><img alt="_images/ramp_sandbox2.png" src="_images/ramp_sandbox2.png" style="width: 700px;" /></a>
+<p>You need to enter a submission name without any spaces containing between
+4 and 20 characters. When ready, click on “Submit now”.
+Shortly, your submission will be send to training and you will be able to
+see the processing status in the different leaderboard.</p>
 </li>
 </ol>
-<p>The submission is trained and tested on our backend in the same way as
-<code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code> does it locally. When your submission is waiting in
-the queue and being trained, you can find it in the
-‘New submissions (pending training)’ table in ‘my submissions’. Once it is
-trained, you get will get an email, and your submission will show up on the
-public leaderboard. If there is an error (note you should always test your
-submission locally with <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code>), it will show up in the
-‘Failed submissions’ table in ‘my submissions’. You can click on the error to
-see part of the trace. The data set we use at the backend is usually different
-from what you find in the starting kit, so the score may be different.</p>
 </div>
 </div>
 
