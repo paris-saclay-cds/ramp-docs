@@ -216,8 +216,13 @@ find it out by typing in your terminal:</p>
 </div>
 <div class="section" id="test">
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
-<p>Each time before running the tests make sure your <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code>
-has been started. You can always start it using the command:</p>
+<p>In order to run your tests please create a test conda environment (you will
+need to do that only once):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ conda env create -f ci_tools/environment_iris_kit.yml
+</pre></div>
+</div>
+<p>Also, before running the tests make sure your <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code> has
+been started. You can always start it using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
 </pre></div>
 </div>
