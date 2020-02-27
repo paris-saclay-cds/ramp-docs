@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The problem.py file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP scoring</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP workflow commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Using RAMP kits</span></p>
@@ -240,16 +240,40 @@ are shown below:</p>
 </div></blockquote>
 <ol class="arabic simple" start="4">
 <li><p>Select a workflow
-Workflows implement the steps of the machine learning problem. Each workflow
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/workflows">Workflows</a>
+implement the steps of the machine learning problem. Each workflow
 is a class with a <code class="docutils literal notranslate"><span class="pre">train_submission()</span></code> and a <code class="docutils literal notranslate"><span class="pre">test_submission()</span></code>
 function, which defines the workflow to implement during training and
 testing time. An attribute called <code class="docutils literal notranslate"><span class="pre">workflow_element_names</span></code> is also
 required. This attribute is a list of the file names that
 <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code> expects for each submission. This class is
 implemented by RAMP workflow internals to train and test each submission of a
-challenge. The <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/workflows">workflows</a>
-available are described below:</p>
+challenge.</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Estimator()</span></code> - a versatile, commonly used workflow that will work for
+any <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> estimator or
+pipeline (where the last step is an estimator). It imports a file
+named <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code> from the submission directory (e.g.
+<code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code> file should define a
+function named <code class="docutils literal notranslate"><span class="pre">get_estimator()</span></code>, which returns a scikit-learn
+estimator or pipeline with a final estimator. The <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code>
+methods of the estimator/pipeline are then performed on the training
+and test data respectively.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EstimatorExternalData()</span></code> - similar to the workflow above, except it
+allows an external data file, named``external_data.csv``, to be used in the
+workflow.</p></li>
+</ul>
+<p>There are also more specific workflows, for example for timeseries or image
+data. Some of specific workflows were designed for one specific challenge but
+can be re-used for similar challenges. The first four workflows below are used
+as building blocks for the more specific workflows that follow:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Regressor()</span></code> - this workflow is for simple regression problems. It will
 import the file named <code class="docutils literal notranslate"><span class="pre">regressor.py</span></code> from the submission directory
 (e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">regressor.py</span></code> file should
@@ -259,10 +283,8 @@ testing time, run <code class="docutils literal notranslate"><span class="pre">p
 model. If you are using a scikit-learn function, you can simply call the
 <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict()</span></code> methods of the model you are using.</p></li>
 </ul>
-</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+</div></blockquote>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Classifier()</span></code> - this workflow is for simple classification problems. It
 will import the file named <code class="docutils literal notranslate"><span class="pre">classifier.py</span></code> from the submission directory
 (e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">classifier.py</span></code> file should
@@ -274,17 +296,16 @@ you can simply call the <code class="docutils literal notranslate"><span class="
 model you are using.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> - this workflow is designed for preprocessing data,
 for example converting non-numeric features into numeric, normalising data
-and creating new features using existing features. This workflow is
-designed to be used with the <code class="docutils literal notranslate"><span class="pre">Classifier</span></code> or <code class="docutils literal notranslate"><span class="pre">Regressor</span></code> workflow. It
-will import the file named <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> from the submission
-directory (e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This
-<code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> file should define a class named
-<code class="docutils literal notranslate"><span class="pre">FeatureExtractor</span></code> with a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and a <code class="docutils literal notranslate"><span class="pre">transform()</span></code> method. This
-workflow will run <code class="docutils literal notranslate"><span class="pre">fit()</span></code> on the features and target of the data and run
-<code class="docutils literal notranslate"><span class="pre">transform()</span></code> on the features of training data. Note that <code class="docutils literal notranslate"><span class="pre">fit()</span></code> takes
-both the features and target of the data as input to enable feature
-engineering strategies such as target encoding during training time. The
-output of this workflow is the preprocessed features of the data.</p></li>
+and creating new features using existing features. It will import the file
+named <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> from the submission directory
+(e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> file
+should define a class named <code class="docutils literal notranslate"><span class="pre">FeatureExtractor</span></code> with a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">transform()</span></code> method. This workflow will run <code class="docutils literal notranslate"><span class="pre">fit()</span></code> on the features
+and target of the data and run <code class="docutils literal notranslate"><span class="pre">transform()</span></code> on the features of training
+data. Note that <code class="docutils literal notranslate"><span class="pre">fit()</span></code> takes both the features and target of the data as
+input to enable feature engineering strategies such as target encoding
+during training time. The output of this workflow is the preprocessed
+features of the data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">feature_extractor_regressor()</span></code> - this workflow combines the
 <code class="docutils literal notranslate"><span class="pre">FeatureExtrator()</span></code> and <code class="docutils literal notranslate"><span class="pre">Regressor()</span></code> workflows such that data is first
 preprocessed with <code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> and then <code class="docutils literal notranslate"><span class="pre">Regressor()</span></code>
@@ -298,9 +319,7 @@ performs model training and prediciton. As above the <code class="docutils liter
 <code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> is only performed on training data but not test
 data.</p></li>
 </ul>
-<p>There are also a number of much more specific workflows, some of which were
-designed for one specific challenge but can be re-used for similar
-challenges:</p>
+<p>Workflows for specific data challenges:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ImageClassifier()</span></code> - this workflow is for image classification
 tasks, particularly for cases when the dataset cannot be stored in memory.
