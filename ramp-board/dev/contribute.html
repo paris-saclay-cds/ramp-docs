@@ -406,15 +406,27 @@ illustrating it.</p>
 <p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
 <ol class="arabic simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span></code>. It will remove the <code class="docutils literal notranslate"><span class="pre">dev0</span></code> tag.</p></li>
-<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.1.0&quot;</span></code>.</p></li>
-<li><p>Create a branch for this version <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.1.X</span></code>.</p></li>
+<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.0&quot;</span></code>
+(e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.5.0&quot;</span></code>).</p></li>
+<li><p>Create a branch for this version <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.X</span></code>.</p></li>
 <li><p>Push the new branch into the upstream repository.</p></li>
-<li><p>You can create a GitHub release.</p></li>
-<li><p>Change the symlink in the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository such that stable point on
-0.1.X.</p></li>
-<li><p>Push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">master</span></code>, run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on upstream.</p></li>
+<li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Copy the
+release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p></li>
+<li><p>Change the symlink in the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs">ramp-docs</a> repository such that
+stable points to the latest release version, i.e, 0.&lt;version number&gt;. To do
+this, clone the repository, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">ramp-board/</span></code> then run <code class="docutils literal notranslate"><span class="pre">unlink</span> <span class="pre">stable</span></code>
+then <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;</span> <span class="pre">stable</span></code> in a bash shell. To check that
+this was performed correctly, ensure that <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs/blob/master/ramp-board/stable">ramp-board/stable</a>
+has the new version number.</p></li>
+<li><p>Remove unnecessary files with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+<li><p>Switch to <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on
+upstream.</p></li>
+<li><p>Add a new <code class="docutils literal notranslate"><span class="pre">v0.&lt;version</span> <span class="pre">number&gt;.rst</span></code> file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/doc/whats_new">doc/whats_new/</a>
+and <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span></code> this new file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/master/doc/whats_new.rst">doc/whats_new.rst</a>.</p></li>
 </ol>
+<p>Note that the steps from 4 to 7 should be performed while in the release
+branch, e.g. branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>.</p>
 </div>
 </div>
 
