@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.database`.add_submission_file_type
+=========================================================================
+
+.. currentmodule:: ramp_database.tools.database
+
+.. autofunction:: add_submission_file_type
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+:mod:`ramp_utils.datasets`.fetch_from_osf
+======================================================
+
+.. currentmodule:: ramp_utils.datasets
+
+.. autofunction:: fetch_from_osf
+
+.. raw:: html
+
+    <div style='clear:both'></div>

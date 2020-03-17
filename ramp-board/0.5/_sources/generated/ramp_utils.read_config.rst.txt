@@ -1,0 +1,10 @@
+:mod:`ramp_utils`.read_config
+==========================================
+
+.. currentmodule:: ramp_utils
+
+.. autofunction:: read_config
+
+.. raw:: html
+
+    <div style='clear:both'></div>

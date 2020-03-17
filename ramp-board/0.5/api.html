@@ -1,0 +1,1343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RAMP API &mdash; RAMP 0.5.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ramp_database.model.Extension" href="generated/ramp_database.model.Extension.html" />
+    <link rel="prev" title="7. Useful tips using RAMP" href="running_challenge.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-database">RAMP database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-tables">General tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-related-tables">User-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-related-tables">Event-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submission-related-tables">Submission-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relationship-tables">Relationship tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-related-database-tools">User-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-related-database-tools">Event-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submission-related-database-tools">Submission-related database tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#frontend-related-database-tools">Frontend-related database tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.DuplicateSubmissionError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.DuplicateSubmissionError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.MergeTeamError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.MergeTeamError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.MissingSubmissionFileError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.MissingSubmissionFileError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.MissingExtensionError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.MissingExtensionError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.NameClashError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.NameClashError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.TooEarlySubmissionError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.TooEarlySubmissionError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.exceptions.UnknownStateError.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>.UnknownStateError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_events.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_users.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.add_problems.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.add_problems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.create_test_db.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.create_test_db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.create_toy_db.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.create_toy_db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.setup_toy_db.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.setup_toy_db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.setup_ramp_kit_ramp_data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.setup_ramp_kit_ramp_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.setup_files_extension_type.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.setup_files_extension_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.sign_up_teams_to_events.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.sign_up_teams_to_events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.testing.submit_all_starting_kits.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>.submit_all_starting_kits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.check_password.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.check_password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.hash_password.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.hash_password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.setup_db.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.setup_db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_database.utils.session_scope.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>.session_scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-engine">RAMP engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ramp-dispatcher">RAMP Dispatcher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.daemon.Daemon.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.daemon</span></code>.Daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ramp-workers">RAMP Workers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-frontend">RAMP frontend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/ramp_frontend.create_app.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-views">General views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#authentication-views">Authentication views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#admin-views">Admin views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#leaderboard-views">Leaderboard views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submission-views">Submission views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilities">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.LoginForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.LoginForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.UserUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.UserCreateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserCreateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.CodeForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CodeForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.SubmitForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.SubmitForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.UploadForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UploadForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.EventUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.EventUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.MultiCheckboxField.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.ImportForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.ImportForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.CreditForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CreditForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.forms.AskForEventForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.login.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.logout.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.testing.login_scope.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>.login_scope</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.utils.body_formatter_user.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>.body_formatter_user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_frontend.utils.send_mail.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>.send_mail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ramp-utils">RAMP utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-utilities">Configuration utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.generate_flask_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_flask_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.generate_ramp_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_ramp_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.generate_worker_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.generate_worker_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.read_config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.read_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.testing.database_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.database_config_template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.testing.ramp_config_template.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.testing</span></code>.ramp_config_template</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datasets-utilities">Datasets utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.datasets.fetch_from_osf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.fetch_from_osf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.datasets.OSFRemoteMetaData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.datasets</span></code>.OSFRemoteMetaData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deployment-utilities">Deployment utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.deploy.deploy_ramp_event.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils.deploy</span></code>.deploy_ramp_event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ramp-shared-utilities">RAMP shared utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_utils.import_module_from_source.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_utils</span></code>.import_module_from_source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>RAMP API</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-api">
+<h1>RAMP API<a class="headerlink" href="#ramp-api" title="Permalink to this headline">¶</a></h1>
+<p>This is the full API documentation of the different RAMP packages.</p>
+<div class="section" id="ramp-database">
+<h2>RAMP database<a class="headerlink" href="#ramp-database" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ramp_database.model">
+<span id="ramp-database-model-the-database-model"></span><h3><a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>: the database model<a class="headerlink" href="#module-ramp_database.model" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a> defines the database structure which is used for
+the RAMP events.</p>
+<p>The database schema is summarized in the figure below:</p>
+<a class="reference external image-reference" href="_static/img/schema_db.png"><img alt="_images/schema_db.png" src="_images/schema_db.png" /></a>
+<div class="section" id="general-tables">
+<h4>General tables<a class="headerlink" href="#general-tables" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.Extension.html#ramp_database.model.Extension" title="ramp_database.model.Extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Extension</span></code></a>(**kwargs)</p></td>
+<td><p>Extension table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.Keyword.html#ramp_database.model.Keyword" title="ramp_database.model.Keyword"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Keyword</span></code></a>(**kwargs)</p></td>
+<td><p>Keyword table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.UserInteraction.html#ramp_database.model.UserInteraction" title="ramp_database.model.UserInteraction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.UserInteraction</span></code></a>([interaction, user, …])</p></td>
+<td><p>UserInteraction table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="user-related-tables">
+<h4>User-related tables<a class="headerlink" href="#user-related-tables" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.Team.html#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Team</span></code></a>(name, admin[, initiator, acceptor])</p></td>
+<td><p>Team table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.User</span></code></a>(name, hashed_password, lastname, …)</p></td>
+<td><p>User table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-related-tables">
+<h4>Event-related tables<a class="headerlink" href="#event-related-tables" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.CVFold.html#ramp_database.model.CVFold" title="ramp_database.model.CVFold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.CVFold</span></code></a>(**kwargs)</p></td>
+<td><p>CVFold table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.Event.html#ramp_database.model.Event" title="ramp_database.model.Event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Event</span></code></a>(problem_name, name, event_title, …)</p></td>
+<td><p>Event table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.Problem.html#ramp_database.model.Problem" title="ramp_database.model.Problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Problem</span></code></a>(name, path_ramp_kit, …[, …])</p></td>
+<td><p>Problem table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.ScoreType.html#ramp_database.model.ScoreType" title="ramp_database.model.ScoreType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.ScoreType</span></code></a>(name, is_lower_the_better, …)</p></td>
+<td><p>ScoreType table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.Workflow.html#ramp_database.model.Workflow" title="ramp_database.model.Workflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Workflow</span></code></a>(name)</p></td>
+<td><p>Workflow table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="submission-related-tables">
+<h4>Submission-related tables<a class="headerlink" href="#submission-related-tables" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.HistoricalContributivity.html#ramp_database.model.HistoricalContributivity" title="ramp_database.model.HistoricalContributivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.HistoricalContributivity</span></code></a>(**kwargs)</p></td>
+<td><p>HistoricalContributivity table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.Submission.html#ramp_database.model.Submission" title="ramp_database.model.Submission"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.Submission</span></code></a>(name, event_team[, session])</p></td>
+<td><p>Submission table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionScore.html#ramp_database.model.SubmissionScore" title="ramp_database.model.SubmissionScore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionScore</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionScore table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile" title="ramp_database.model.SubmissionFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionFile</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionFile table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionFileType.html#ramp_database.model.SubmissionFileType" title="ramp_database.model.SubmissionFileType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionFileType</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionFileType table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionOnCVFold.html#ramp_database.model.SubmissionOnCVFold" title="ramp_database.model.SubmissionOnCVFold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionOnCVFold</span></code></a>(submission, cv_fold)</p></td>
+<td><p>SubmissionOnCVFold.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionScoreOnCVFold.html#ramp_database.model.SubmissionScoreOnCVFold" title="ramp_database.model.SubmissionScoreOnCVFold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionScoreOnCVFold</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionScoreOnCVFold table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionSimilarity.html#ramp_database.model.SubmissionSimilarity" title="ramp_database.model.SubmissionSimilarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionSimilarity</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionSimilarity table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="relationship-tables">
+<h4>Relationship tables<a class="headerlink" href="#relationship-tables" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.EventTeam.html#ramp_database.model.EventTeam" title="ramp_database.model.EventTeam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.EventTeam</span></code></a>(event, team)</p></td>
+<td><p>EventTeam table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.EventAdmin.html#ramp_database.model.EventAdmin" title="ramp_database.model.EventAdmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.EventAdmin</span></code></a>(**kwargs)</p></td>
+<td><p>EventAdmin table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.EventScoreType</span></code></a>(event, score_type_object)</p></td>
+<td><p>EventScoreType table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.ProblemKeyword.html#ramp_database.model.ProblemKeyword" title="ramp_database.model.ProblemKeyword"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.ProblemKeyword</span></code></a>(**kwargs)</p></td>
+<td><p>ProblemKeyword table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.SubmissionFileTypeExtension.html#ramp_database.model.SubmissionFileTypeExtension" title="ramp_database.model.SubmissionFileTypeExtension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.SubmissionFileTypeExtension</span></code></a>(**kwargs)</p></td>
+<td><p>SubmissionFileTypeExtension table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.model.WorkflowElement.html#ramp_database.model.WorkflowElement" title="ramp_database.model.WorkflowElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.WorkflowElement</span></code></a>(workflow, …[, …])</p></td>
+<td><p>WorkflowElement table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType" title="ramp_database.model.WorkflowElementType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.WorkflowElementType</span></code></a>(**kwargs)</p></td>
+<td><p>WorkflowElementType table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="module-ramp_database.tools">
+<span id="ramp-database-tools-the-tools-to-communicate-with-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a>: the tools to communicate with the database<a class="headerlink" href="#module-ramp_database.tools" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a> provides some routine to get and set
+information from and in the database.</p>
+<div class="section" id="user-related-database-tools">
+<h4>User-related database tools<a class="headerlink" href="#user-related-database-tools" title="Permalink to this headline">¶</a></h4>
+<p><strong>Functions to act on an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.team.ask_sign_up_team.html#ramp_database.tools.team.ask_sign_up_team" title="ramp_database.tools.team.ask_sign_up_team"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.team.ask_sign_up_team</span></code></a>(session, …)</p></td>
+<td><p>Register a team to a RAMP event without approving.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.approve_user.html#ramp_database.tools.user.approve_user" title="ramp_database.tools.user.approve_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.approve_user</span></code></a>(session, name)</p></td>
+<td><p>Approve a user once it is created.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.make_user_admin.html#ramp_database.tools.user.make_user_admin" title="ramp_database.tools.user.make_user_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.make_user_admin</span></code></a>(session, name)</p></td>
+<td><p>Make a user a RAMP admin.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.set_user_access_level.html#ramp_database.tools.user.set_user_access_level" title="ramp_database.tools.user.set_user_access_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.set_user_access_level</span></code></a>(session, name)</p></td>
+<td><p>Change the access level of a user.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.team.sign_up_team.html#ramp_database.tools.team.sign_up_team" title="ramp_database.tools.team.sign_up_team"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.team.sign_up_team</span></code></a>(session, event_name, …)</p></td>
+<td><p>Register a team to a RAMP event and submit the starting kit.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to add new entries in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.add_user.html#ramp_database.tools.user.add_user" title="ramp_database.tools.user.add_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.add_user</span></code></a>(session, name, password, …)</p></td>
+<td><p>Add a new user in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.add_user_interaction.html#ramp_database.tools.user.add_user_interaction" title="ramp_database.tools.user.add_user_interaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.add_user_interaction</span></code></a>(session[, …])</p></td>
+<td><p>Add a user interaction in the database.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to get entries from the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.team.get_event_team_by_name.html#ramp_database.tools.team.get_event_team_by_name" title="ramp_database.tools.team.get_event_team_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.team.get_event_team_by_name</span></code></a>(session, …)</p></td>
+<td><p>Get the event/team given an event and a user.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.get_user_by_name.html#ramp_database.tools.user.get_user_by_name" title="ramp_database.tools.user.get_user_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.get_user_by_name</span></code></a>(session, name)</p></td>
+<td><p>Get a user by his/her name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.get_team_by_name.html#ramp_database.tools.user.get_team_by_name" title="ramp_database.tools.user.get_team_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.get_team_by_name</span></code></a>(session, name)</p></td>
+<td><p>Get a team by its name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.get_user_interactions_by_name.html#ramp_database.tools.user.get_user_interactions_by_name" title="ramp_database.tools.user.get_user_interactions_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.get_user_interactions_by_name</span></code></a>(session)</p></td>
+<td><p>Get the user interactions.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to set an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.set_user_by_instance.html#ramp_database.tools.user.set_user_by_instance" title="ramp_database.tools.user.set_user_by_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.set_user_by_instance</span></code></a>(session, …)</p></td>
+<td><p>Set the information of a user.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to delete an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.user.delete_user.html#ramp_database.tools.user.delete_user" title="ramp_database.tools.user.delete_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.user.delete_user</span></code></a>(session, name)</p></td>
+<td><p>Delete a user from the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.team.delete_event_team.html#ramp_database.tools.team.delete_event_team" title="ramp_database.tools.team.delete_event_team"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.team.delete_event_team</span></code></a>(session, …)</p></td>
+<td><p>Delete a team from an RAMP event.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-related-database-tools">
+<h4>Event-related database tools<a class="headerlink" href="#event-related-database-tools" title="Permalink to this headline">¶</a></h4>
+<p><strong>Functions to act on an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_leaderboards.html#ramp_database.tools.leaderboard.update_leaderboards" title="ramp_database.tools.leaderboard.update_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_leaderboards</span></code></a>(…[, …])</p></td>
+<td><p>Update the leaderboards for a given event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_user_leaderboards.html#ramp_database.tools.leaderboard.update_user_leaderboards" title="ramp_database.tools.leaderboard.update_user_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_user_leaderboards</span></code></a>(…)</p></td>
+<td><p>Update the of a user leaderboards for a given event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.update_all_user_leaderboards.html#ramp_database.tools.leaderboard.update_all_user_leaderboards" title="ramp_database.tools.leaderboard.update_all_user_leaderboards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.update_all_user_leaderboards</span></code></a>(…)</p></td>
+<td><p>Update the leaderboards for all users for a given event.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to add new entries in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_event.html#ramp_database.tools.event.add_event" title="ramp_database.tools.event.add_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_event</span></code></a>(session, problem_name, …)</p></td>
+<td><p>Add a RAMP event in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_event_admin.html#ramp_database.tools.event.add_event_admin" title="ramp_database.tools.event.add_event_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_event_admin</span></code></a>(session, …)</p></td>
+<td><p>Add an administrator event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_keyword.html#ramp_database.tools.event.add_keyword" title="ramp_database.tools.event.add_keyword"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_keyword</span></code></a>(session, name, …)</p></td>
+<td><p>Add a keyword to the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_problem.html#ramp_database.tools.event.add_problem" title="ramp_database.tools.event.add_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_problem</span></code></a>(session, …[, force])</p></td>
+<td><p>Add a RAMP problem to the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_problem_keyword.html#ramp_database.tools.event.add_problem_keyword" title="ramp_database.tools.event.add_problem_keyword"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_problem_keyword</span></code></a>(session, …)</p></td>
+<td><p>Add relationship between a keyword and a problem.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.add_workflow.html#ramp_database.tools.event.add_workflow" title="ramp_database.tools.event.add_workflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.add_workflow</span></code></a>(session, …)</p></td>
+<td><p>Add a new workflow.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to delete entries in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.delete_event.html#ramp_database.tools.event.delete_event" title="ramp_database.tools.event.delete_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.delete_event</span></code></a>(session, event_name)</p></td>
+<td><p>Delete an event from the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.delete_problem.html#ramp_database.tools.event.delete_problem" title="ramp_database.tools.event.delete_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.delete_problem</span></code></a>(session, problem_name)</p></td>
+<td><p>Delete a problem from the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.delete_submission_similarity.html#ramp_database.tools.event.delete_submission_similarity" title="ramp_database.tools.event.delete_submission_similarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.delete_submission_similarity</span></code></a>(…)</p></td>
+<td><p>Delete the submission similarity associated with a submission.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to get entries from the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_event.html#ramp_database.tools.event.get_event" title="ramp_database.tools.event.get_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_event</span></code></a>(session, event_name)</p></td>
+<td><p>Get event from the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_event_admin.html#ramp_database.tools.event.get_event_admin" title="ramp_database.tools.event.get_event_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_event_admin</span></code></a>(session, …)</p></td>
+<td><p>Get an administrator event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_keyword_by_name.html#ramp_database.tools.event.get_keyword_by_name" title="ramp_database.tools.event.get_keyword_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_keyword_by_name</span></code></a>(session, name)</p></td>
+<td><p>Get the keyword filtering by there name</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.leaderboard.get_leaderboard.html#ramp_database.tools.leaderboard.get_leaderboard" title="ramp_database.tools.leaderboard.get_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.leaderboard.get_leaderboard</span></code></a>(session, …)</p></td>
+<td><p>Get a leaderboard.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_problem.html#ramp_database.tools.event.get_problem" title="ramp_database.tools.event.get_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_problem</span></code></a>(session, problem_name)</p></td>
+<td><p>Get problem from the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_problem_keyword_by_name.html#ramp_database.tools.event.get_problem_keyword_by_name" title="ramp_database.tools.event.get_problem_keyword_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_problem_keyword_by_name</span></code></a>(…)</p></td>
+<td><p>Get a problem-keyword relationship given their names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.event.get_workflow.html#ramp_database.tools.event.get_workflow" title="ramp_database.tools.event.get_workflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.event.get_workflow</span></code></a>(session, workflow_name)</p></td>
+<td><p>Get workflow from the database.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="submission-related-database-tools">
+<h4>Submission-related database tools<a class="headerlink" href="#submission-related-database-tools" title="Permalink to this headline">¶</a></h4>
+<p><strong>Functions to act on an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.score_submission.html#ramp_database.tools.submission.score_submission" title="ramp_database.tools.submission.score_submission"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.score_submission</span></code></a>(session, …)</p></td>
+<td><p>Score a submission and change its state to ‘scored’</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.submit_starting_kits.html#ramp_database.tools.submission.submit_starting_kits" title="ramp_database.tools.submission.submit_starting_kits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.submit_starting_kits</span></code></a>(…)</p></td>
+<td><p>Submit all starting kits for a given event.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to add new entries in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.add_extension.html#ramp_database.tools.database.add_extension" title="ramp_database.tools.database.add_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.add_extension</span></code></a>(session, name)</p></td>
+<td><p>Adding a new extension, e.g., ‘py’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.add_submission.html#ramp_database.tools.submission.add_submission" title="ramp_database.tools.submission.add_submission"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.add_submission</span></code></a>(session, …)</p></td>
+<td><p>Create a submission in the database and returns an handle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.add_submission_file_type.html#ramp_database.tools.database.add_submission_file_type" title="ramp_database.tools.database.add_submission_file_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.add_submission_file_type</span></code></a>(…)</p></td>
+<td><p>Add a new submission file type, e.g., (‘code’, True, 10 ** 5).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.add_submission_file_type_extension.html#ramp_database.tools.database.add_submission_file_type_extension" title="ramp_database.tools.database.add_submission_file_type_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.add_submission_file_type_extension</span></code></a>(…)</p></td>
+<td><p>Adding a new submission file type extension, e.g., (‘code’, ‘py’).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.add_submission_similarity.html#ramp_database.tools.submission.add_submission_similarity" title="ramp_database.tools.submission.add_submission_similarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.add_submission_similarity</span></code></a>(…)</p></td>
+<td><p>Add submission similarity entry.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to get entries from the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_event_nb_folds.html#ramp_database.tools.submission.get_event_nb_folds" title="ramp_database.tools.submission.get_event_nb_folds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_event_nb_folds</span></code></a>(session, …)</p></td>
+<td><p>Get the number of fold for a given event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.get_extension.html#ramp_database.tools.database.get_extension" title="ramp_database.tools.database.get_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.get_extension</span></code></a>(session, …)</p></td>
+<td><p>Get extension from the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_predictions.html#ramp_database.tools.submission.get_predictions" title="ramp_database.tools.submission.get_predictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_predictions</span></code></a>(session, …)</p></td>
+<td><p>Get the predictions from the database of a submission.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_scores.html#ramp_database.tools.submission.get_scores" title="ramp_database.tools.submission.get_scores"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_scores</span></code></a>(session, …)</p></td>
+<td><p>Get the scores for each fold of a submission.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_source_submissions.html#ramp_database.tools.submission.get_source_submissions" title="ramp_database.tools.submission.get_source_submissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_source_submissions</span></code></a>(…)</p></td>
+<td><p>Get the submissions with which a user interacted.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submissions.html#ramp_database.tools.submission.get_submissions" title="ramp_database.tools.submission.get_submissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submissions</span></code></a>(session, …)</p></td>
+<td><p>Get information about submissions from an event with a specific state optionally.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submission_by_id.html#ramp_database.tools.submission.get_submission_by_id" title="ramp_database.tools.submission.get_submission_by_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submission_by_id</span></code></a>(…)</p></td>
+<td><p>Get a submission given its id.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submission_by_name.html#ramp_database.tools.submission.get_submission_by_name" title="ramp_database.tools.submission.get_submission_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submission_by_name</span></code></a>(…)</p></td>
+<td><p>Get a single submission filtering by event, team, and submission names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submission_error_msg.html#ramp_database.tools.submission.get_submission_error_msg" title="ramp_database.tools.submission.get_submission_error_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submission_error_msg</span></code></a>(…)</p></td>
+<td><p>Get the error message after that a submission failed to be processed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.get_submission_file_type.html#ramp_database.tools.database.get_submission_file_type" title="ramp_database.tools.database.get_submission_file_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.get_submission_file_type</span></code></a>(…)</p></td>
+<td><p>Get submission file type from the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.database.get_submission_file_type_extension.html#ramp_database.tools.database.get_submission_file_type_extension" title="ramp_database.tools.database.get_submission_file_type_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.database.get_submission_file_type_extension</span></code></a>(…)</p></td>
+<td><p>Get submission file type extension from the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submission_max_ram.html#ramp_database.tools.submission.get_submission_max_ram" title="ramp_database.tools.submission.get_submission_max_ram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submission_max_ram</span></code></a>(…)</p></td>
+<td><p>Get the max amount RAM used by a submission during processing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.get_submission_state.html#ramp_database.tools.submission.get_submission_state" title="ramp_database.tools.submission.get_submission_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.get_submission_state</span></code></a>(…)</p></td>
+<td><p>Get the state of a submission given its id.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functions to set an entry in the database</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_bagged_scores.html#ramp_database.tools.submission.set_bagged_scores" title="ramp_database.tools.submission.set_bagged_scores"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_bagged_scores</span></code></a>(session, …)</p></td>
+<td><p>Set the bagged scores in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_predictions.html#ramp_database.tools.submission.set_predictions" title="ramp_database.tools.submission.set_predictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_predictions</span></code></a>(session, …)</p></td>
+<td><p>Set the predictions in the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_scores.html#ramp_database.tools.submission.set_scores" title="ramp_database.tools.submission.set_scores"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_scores</span></code></a>(session, …)</p></td>
+<td><p>Set the scores in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_submission_error_msg.html#ramp_database.tools.submission.set_submission_error_msg" title="ramp_database.tools.submission.set_submission_error_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_submission_error_msg</span></code></a>(…)</p></td>
+<td><p>Set the error message after that a submission failed to be processed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_submission_max_ram.html#ramp_database.tools.submission.set_submission_max_ram" title="ramp_database.tools.submission.set_submission_max_ram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_submission_max_ram</span></code></a>(…)</p></td>
+<td><p>Set the max amount RAM used by a submission during processing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_submission_state.html#ramp_database.tools.submission.set_submission_state" title="ramp_database.tools.submission.set_submission_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_submission_state</span></code></a>(…)</p></td>
+<td><p>Set the set of a submission.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.submission.set_time.html#ramp_database.tools.submission.set_time" title="ramp_database.tools.submission.set_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.submission.set_time</span></code></a>(session, …)</p></td>
+<td><p>Set the timing information in the database.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="frontend-related-database-tools">
+<h4>Frontend-related database tools<a class="headerlink" href="#frontend-related-database-tools" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_admin.html#ramp_database.tools.frontend.is_admin" title="ramp_database.tools.frontend.is_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_admin</span></code></a>(session, event_name, …)</p></td>
+<td><p>Whether or not a user is administrator or administrate an event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_accessible_event.html#ramp_database.tools.frontend.is_accessible_event" title="ramp_database.tools.frontend.is_accessible_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_accessible_event</span></code></a>(session, …)</p></td>
+<td><p>Whether or not an event is public or and a user is registered to RAMP or and admin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_accessible_leaderboard.html#ramp_database.tools.frontend.is_accessible_leaderboard" title="ramp_database.tools.frontend.is_accessible_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_accessible_leaderboard</span></code></a>(…)</p></td>
+<td><p>Whether or not a leaderboard is public or and a user is registered to RAMP or and admin.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_accessible_code.html#ramp_database.tools.frontend.is_accessible_code" title="ramp_database.tools.frontend.is_accessible_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_accessible_code</span></code></a>(session, …)</p></td>
+<td><p>Whether or not the user can look at the code submission.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_user_signed_up.html#ramp_database.tools.frontend.is_user_signed_up" title="ramp_database.tools.frontend.is_user_signed_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_user_signed_up</span></code></a>(session, …)</p></td>
+<td><p>Whether or not user signed up to an event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.tools.frontend.is_user_sign_up_requested.html#ramp_database.tools.frontend.is_user_sign_up_requested" title="ramp_database.tools.frontend.is_user_sign_up_requested"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tools.frontend.is_user_sign_up_requested</span></code></a>(…)</p></td>
+<td><p>Whether or not user signed up to an event.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="module-ramp_database.exceptions">
+<span id="ramp-database-exceptions-type-of-errors-raise-by-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a>: type of errors raise by the database<a class="headerlink" href="#module-ramp_database.exceptions" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a> module include all custom warnings and
+errors used in <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.DuplicateSubmissionError.html#ramp_database.exceptions.DuplicateSubmissionError" title="ramp_database.exceptions.DuplicateSubmissionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.DuplicateSubmissionError</span></code></a></p></td>
+<td><p>Error to raise when a submission is already present in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.MergeTeamError.html#ramp_database.exceptions.MergeTeamError" title="ramp_database.exceptions.MergeTeamError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.MergeTeamError</span></code></a></p></td>
+<td><p>Error to raise when the merging of teams is failing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.MissingSubmissionFileError.html#ramp_database.exceptions.MissingSubmissionFileError" title="ramp_database.exceptions.MissingSubmissionFileError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.MissingSubmissionFileError</span></code></a></p></td>
+<td><p>Error to raise when the file submitted is not present in the supposed location.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.MissingExtensionError.html#ramp_database.exceptions.MissingExtensionError" title="ramp_database.exceptions.MissingExtensionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.MissingExtensionError</span></code></a></p></td>
+<td><p>Error to raise when the extension is not registered in the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.NameClashError.html#ramp_database.exceptions.NameClashError" title="ramp_database.exceptions.NameClashError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.NameClashError</span></code></a></p></td>
+<td><p>Error to raise when there is a duplicate in submission name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.TooEarlySubmissionError.html#ramp_database.exceptions.TooEarlySubmissionError" title="ramp_database.exceptions.TooEarlySubmissionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.TooEarlySubmissionError</span></code></a></p></td>
+<td><p>Error to raise when a submission was submitted to early.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.exceptions.UnknownStateError.html#ramp_database.exceptions.UnknownStateError" title="ramp_database.exceptions.UnknownStateError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exceptions.UnknownStateError</span></code></a></p></td>
+<td><p>Error to raise when the state of the submission is unknown.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-ramp_database.testing">
+<span id="ramp-database-testing-functionalities-to-test-database-model-and-tools"></span><h3><a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a>: functionalities to test database model and tools<a class="headerlink" href="#module-ramp_database.testing" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a> module create facility functions to test the
+tools and model of <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.testing.add_events.html#ramp_database.testing.add_events" title="ramp_database.testing.add_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.add_events</span></code></a>(session)</p></td>
+<td><p>Add events in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.testing.add_users.html#ramp_database.testing.add_users" title="ramp_database.testing.add_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.add_users</span></code></a>(session)</p></td>
+<td><p>Add dummy users in the database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.testing.add_problems.html#ramp_database.testing.add_problems" title="ramp_database.testing.add_problems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.add_problems</span></code></a>(session)</p></td>
+<td><p>Add dummy problems into the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.testing.create_test_db.html#ramp_database.testing.create_test_db" title="ramp_database.testing.create_test_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.create_test_db</span></code></a>(database_config, …)</p></td>
+<td><p>Create an empty test database and the setup the files for RAMP.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.testing.create_toy_db.html#ramp_database.testing.create_toy_db" title="ramp_database.testing.create_toy_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.create_toy_db</span></code></a>(database_config, …)</p></td>
+<td><p>Create a toy dataset with couple of users, problems, events.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.testing.setup_toy_db.html#ramp_database.testing.setup_toy_db" title="ramp_database.testing.setup_toy_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.setup_toy_db</span></code></a>(session)</p></td>
+<td><p>Only setup the database by adding some data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.testing.setup_ramp_kit_ramp_data.html#ramp_database.testing.setup_ramp_kit_ramp_data" title="ramp_database.testing.setup_ramp_kit_ramp_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.setup_ramp_kit_ramp_data</span></code></a>(…[, …])</p></td>
+<td><p>Clone ramp-kit and ramp-data repository and setup it up.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.testing.setup_files_extension_type.html#ramp_database.testing.setup_files_extension_type" title="ramp_database.testing.setup_files_extension_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.setup_files_extension_type</span></code></a>(session)</p></td>
+<td><p>Setup the files’ extensions and types.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.testing.sign_up_teams_to_events.html#ramp_database.testing.sign_up_teams_to_events" title="ramp_database.testing.sign_up_teams_to_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.sign_up_teams_to_events</span></code></a>(session)</p></td>
+<td><p>Sign up user to the events in the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.testing.submit_all_starting_kits.html#ramp_database.testing.submit_all_starting_kits" title="ramp_database.testing.submit_all_starting_kits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.submit_all_starting_kits</span></code></a>(session)</p></td>
+<td><p>Submit all starting kits.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-ramp_database.utils">
+<span id="ramp-database-utils-setup-and-connect-ramp-database"></span><h3><a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a>: setup and connect RAMP database<a class="headerlink" href="#module-ramp_database.utils" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a> module provides tools to setup and connect to
+the RAMP database.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.utils.check_password.html#ramp_database.utils.check_password" title="ramp_database.utils.check_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.check_password</span></code></a>(password, hashed_password)</p></td>
+<td><p>Check if a password is the same than the hashed password.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.utils.hash_password.html#ramp_database.utils.hash_password" title="ramp_database.utils.hash_password"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.hash_password</span></code></a>(password)</p></td>
+<td><p>Hash a password.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_database.utils.setup_db.html#ramp_database.utils.setup_db" title="ramp_database.utils.setup_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.setup_db</span></code></a>(config)</p></td>
+<td><p>Create a sqlalchemy engine and session to interact with the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_database.utils.session_scope.html#ramp_database.utils.session_scope" title="ramp_database.utils.session_scope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.session_scope</span></code></a>(config)</p></td>
+<td><p>Connect to a database and provide a session to make some operation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ramp-engine">
+<h2>RAMP engine<a class="headerlink" href="#ramp-engine" title="Permalink to this headline">¶</a></h2>
+<p>The RAMP engine is made of a dispatcher to orchestrate the training and
+evaluation of submissions which are processed using workers. Since there is
+a dispatcher for each RAMP event, we provide a daemon which will start
+dispatcher for each open event.</p>
+<div class="section" id="ramp-dispatcher">
+<h3>RAMP Dispatcher<a class="headerlink" href="#ramp-dispatcher" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.daemon.Daemon.html#ramp_engine.daemon.Daemon" title="ramp_engine.daemon.Daemon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">daemon.Daemon</span></code></a>(config, events_dir)</p></td>
+<td><p>RAMP daemon starting dispatchers for open challenges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.dispatcher.Dispatcher.html#ramp_engine.dispatcher.Dispatcher" title="ramp_engine.dispatcher.Dispatcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatcher.Dispatcher</span></code></a>(config, event_config)</p></td>
+<td><p>Dispatcher which schedule workers and communicate with the database.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ramp-workers">
+<h3>RAMP Workers<a class="headerlink" href="#ramp-workers" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker" title="ramp_engine.base.BaseWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.BaseWorker</span></code></a>(config, submission)</p></td>
+<td><p>Metaclass used to build a RAMP worker.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local.CondaEnvWorker</span></code></a>(config, submission)</p></td>
+<td><p>Local worker which uses conda environment to dispatch submission.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aws.AWSWorker</span></code></a>(config, submission)</p></td>
+<td><p>Run RAMP submissions on Amazon.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ramp-frontend">
+<h2>RAMP frontend<a class="headerlink" href="#ramp-frontend" title="Permalink to this headline">¶</a></h2>
+<p>The RAMP frontend is the development of the website. It uses extensively Flask.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.create_app.html#ramp_frontend.create_app" title="ramp_frontend.create_app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_app</span></code></a>(config)</p></td>
+<td><p>Create the RAMP Flask app and register the views.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="module-ramp_frontend.views">
+<span id="ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user"></span><h3><a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a>: views used on the frontend to interact with the user<a class="headerlink" href="#module-ramp_frontend.views" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a> defines all operations a user can need to deal
+with the RAMP backend.</p>
+<div class="section" id="general-views">
+<h4>General views<a class="headerlink" href="#general-views" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.general.index.html#ramp_frontend.views.general.index" title="ramp_frontend.views.general.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.index</span></code></a>()</p></td>
+<td><p>Default landing page.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.general.ramp.html#ramp_frontend.views.general.ramp" title="ramp_frontend.views.general.ramp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.ramp</span></code></a>()</p></td>
+<td><p>RAMP description request.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.general.teaching.html#ramp_frontend.views.general.teaching" title="ramp_frontend.views.general.teaching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.teaching</span></code></a>()</p></td>
+<td><p>Page related to RAMP offers for teaching classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.general.data_science_themes.html#ramp_frontend.views.general.data_science_themes" title="ramp_frontend.views.general.data_science_themes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.data_science_themes</span></code></a>()</p></td>
+<td><p>Page reviewing problems organized by ML themes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.general.keywords.html#ramp_frontend.views.general.keywords" title="ramp_frontend.views.general.keywords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.keywords</span></code></a>(keyword_name)</p></td>
+<td><p>Page which give details about a keyword.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="authentication-views">
+<h4>Authentication views<a class="headerlink" href="#authentication-views" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.load_user</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.login</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.logout</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.reset_password</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.reset_with_token</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.sign_up</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.update_profile</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth.user_confirm_email</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="admin-views">
+<h4>Admin views<a class="headerlink" href="#admin-views" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.approve_users.html#ramp_frontend.views.admin.approve_users" title="ramp_frontend.views.admin.approve_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.approve_users</span></code></a>()</p></td>
+<td><p>Approve new user to log-in and sign-up to events.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.approve_single_user.html#ramp_frontend.views.admin.approve_single_user" title="ramp_frontend.views.admin.approve_single_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.approve_single_user</span></code></a>(user_name)</p></td>
+<td><p>Approve a single user.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.approve_sign_up_for_event.html#ramp_frontend.views.admin.approve_sign_up_for_event" title="ramp_frontend.views.admin.approve_sign_up_for_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.approve_sign_up_for_event</span></code></a>(event_name, …)</p></td>
+<td><p>Approve a user for a specific event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.update_event.html#ramp_frontend.views.admin.update_event" title="ramp_frontend.views.admin.update_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.update_event</span></code></a>(event_name)</p></td>
+<td><p>Update the parameters of an event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.user_interactions.html#ramp_frontend.views.admin.user_interactions" title="ramp_frontend.views.admin.user_interactions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.user_interactions</span></code></a>()</p></td>
+<td><p>Show the user interactions recorded on the website.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.admin.dashboard_submissions.html#ramp_frontend.views.admin.dashboard_submissions" title="ramp_frontend.views.admin.dashboard_submissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin.dashboard_submissions</span></code></a>(event_name)</p></td>
+<td><p>Show information about all submissions for a given event.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="leaderboard-views">
+<h4>Leaderboard views<a class="headerlink" href="#leaderboard-views" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.leaderboard.my_submissions.html#ramp_frontend.views.leaderboard.my_submissions" title="ramp_frontend.views.leaderboard.my_submissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaderboard.my_submissions</span></code></a>(event_name)</p></td>
+<td><p>Landing page of all user’s submission information.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.leaderboard.leaderboard.html#ramp_frontend.views.leaderboard.leaderboard" title="ramp_frontend.views.leaderboard.leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaderboard.leaderboard</span></code></a>(event_name)</p></td>
+<td><p>Landing page showing all user’s submissions information.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.leaderboard.competition_leaderboard.html#ramp_frontend.views.leaderboard.competition_leaderboard" title="ramp_frontend.views.leaderboard.competition_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaderboard.competition_leaderboard</span></code></a>(event_name)</p></td>
+<td><p>Landing page for the competition leaderboard for all users.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.leaderboard.private_leaderboard.html#ramp_frontend.views.leaderboard.private_leaderboard" title="ramp_frontend.views.leaderboard.private_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaderboard.private_leaderboard</span></code></a>(event_name)</p></td>
+<td><p>Landing page for the private leaderboard.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.leaderboard.private_competition_leaderboard.html#ramp_frontend.views.leaderboard.private_competition_leaderboard" title="ramp_frontend.views.leaderboard.private_competition_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaderboard.private_competition_leaderboard</span></code></a>(…)</p></td>
+<td><p>Landing page for the private competition leaderboard.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="submission-views">
+<h4>Submission views<a class="headerlink" href="#submission-views" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.problems.html#ramp_frontend.views.ramp.problems" title="ramp_frontend.views.ramp.problems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problems</span></code></a>()</p></td>
+<td><p>Landing page showing all the RAMP problems.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.problem.html#ramp_frontend.views.ramp.problem" title="ramp_frontend.views.ramp.problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.problem</span></code></a>(problem_name)</p></td>
+<td><p>Landing page for a single RAMP problem.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.user_event.html#ramp_frontend.views.ramp.user_event" title="ramp_frontend.views.ramp.user_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.user_event</span></code></a>(event_name)</p></td>
+<td><p>Landing page for a given event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.sign_up_for_event.html#ramp_frontend.views.ramp.sign_up_for_event" title="ramp_frontend.views.ramp.sign_up_for_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sign_up_for_event</span></code></a>(event_name)</p></td>
+<td><p>Landing page to sign-up to a specific RAMP event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.sandbox.html#ramp_frontend.views.ramp.sandbox" title="ramp_frontend.views.ramp.sandbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.sandbox</span></code></a>(event_name)</p></td>
+<td><p>Landing page for the user’s sandbox.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.ask_for_event.html#ramp_frontend.views.ramp.ask_for_event" title="ramp_frontend.views.ramp.ask_for_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.ask_for_event</span></code></a>(problem_name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.credit.html#ramp_frontend.views.ramp.credit" title="ramp_frontend.views.ramp.credit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.credit</span></code></a>(submission_hash)</p></td>
+<td><p>The landing page to credit other submission when a user submit is own.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.event_plots.html#ramp_frontend.views.ramp.event_plots" title="ramp_frontend.views.ramp.event_plots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.event_plots</span></code></a>(event_name)</p></td>
+<td><p>Landing page of the plot illustrating the score evolution over time for a specific RAMP event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.view_model.html#ramp_frontend.views.ramp.view_model" title="ramp_frontend.views.ramp.view_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_model</span></code></a>(submission_hash, f_name)</p></td>
+<td><p>Rendering submission codes using templates/submission.html.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.ramp.view_submission_error.html#ramp_frontend.views.ramp.view_submission_error" title="ramp_frontend.views.ramp.view_submission_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp.view_submission_error</span></code></a>(submission_hash)</p></td>
+<td><p>Rendering submission codes using templates/submission.html.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utilities">
+<h4>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.redirect.redirect_to_credit.html#ramp_frontend.views.redirect.redirect_to_credit" title="ramp_frontend.views.redirect.redirect_to_credit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">redirect.redirect_to_credit</span></code></a>(submission_hash, …)</p></td>
+<td><p>Redirect the page to the credit landing page.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.redirect.redirect_to_sandbox.html#ramp_frontend.views.redirect.redirect_to_sandbox" title="ramp_frontend.views.redirect.redirect_to_sandbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">redirect.redirect_to_sandbox</span></code></a>(event, message_str)</p></td>
+<td><p>Redirect the page to the sandbox landing page.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.views.redirect.redirect_to_user.html#ramp_frontend.views.redirect.redirect_to_user" title="ramp_frontend.views.redirect.redirect_to_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">redirect.redirect_to_user</span></code></a>(message_str[, …])</p></td>
+<td><p>Redirect the page to the problem landing page.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.views.visualization.score_plot.html#ramp_frontend.views.visualization.score_plot" title="ramp_frontend.views.visualization.score_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">visualization.score_plot</span></code></a>(session, event)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="module-ramp_frontend.forms">
+<span id="ramp-frontend-forms-forms-used-in-the-website"></span><h3><a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>: forms used in the website<a class="headerlink" href="#module-ramp_frontend.forms" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a> module defines the different forms used on the
+website.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.LoginForm.html#ramp_frontend.forms.LoginForm" title="ramp_frontend.forms.LoginForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.LoginForm</span></code></a>([formdata])</p></td>
+<td><p>Login-in form.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.UserUpdateProfileForm.html#ramp_frontend.forms.UserUpdateProfileForm" title="ramp_frontend.forms.UserUpdateProfileForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.UserUpdateProfileForm</span></code></a>([formdata])</p></td>
+<td><p>User profile form.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.UserCreateProfileForm.html#ramp_frontend.forms.UserCreateProfileForm" title="ramp_frontend.forms.UserCreateProfileForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.UserCreateProfileForm</span></code></a>([formdata])</p></td>
+<td><p>User profile form.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.CodeForm.html#ramp_frontend.forms.CodeForm" title="ramp_frontend.forms.CodeForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.CodeForm</span></code></a>([formdata])</p></td>
+<td><p>Code form.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.SubmitForm.html#ramp_frontend.forms.SubmitForm" title="ramp_frontend.forms.SubmitForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.SubmitForm</span></code></a>([formdata])</p></td>
+<td><p>Submission name form.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.UploadForm.html#ramp_frontend.forms.UploadForm" title="ramp_frontend.forms.UploadForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.UploadForm</span></code></a>([formdata])</p></td>
+<td><p>Submission uploading form.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.EventUpdateProfileForm.html#ramp_frontend.forms.EventUpdateProfileForm" title="ramp_frontend.forms.EventUpdateProfileForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.EventUpdateProfileForm</span></code></a>([formdata])</p></td>
+<td><p>Form to update the parameters of an event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.MultiCheckboxField.html#ramp_frontend.forms.MultiCheckboxField" title="ramp_frontend.forms.MultiCheckboxField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.MultiCheckboxField</span></code></a>([label, …])</p></td>
+<td><p>A form containing multiple checkboxes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.ImportForm.html#ramp_frontend.forms.ImportForm" title="ramp_frontend.forms.ImportForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.ImportForm</span></code></a>([formdata])</p></td>
+<td><p>The form allowing to select which model to view.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.CreditForm.html#ramp_frontend.forms.CreditForm" title="ramp_frontend.forms.CreditForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.CreditForm</span></code></a>([formdata])</p></td>
+<td><p>Credit form.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.forms.AskForEventForm.html#ramp_frontend.forms.AskForEventForm" title="ramp_frontend.forms.AskForEventForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forms.AskForEventForm</span></code></a>([formdata])</p></td>
+<td><p>Form to ask for a new event.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-ramp_frontend.testing">
+<span id="ramp-frontend-testing-functionalities-to-test-the-frontend"></span><h3><a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a>: functionalities to test the frontend<a class="headerlink" href="#module-ramp_frontend.testing" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a> module contains all functions used to
+easily test the frontend.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.testing.login.html#ramp_frontend.testing.login" title="ramp_frontend.testing.login"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.login</span></code></a>(client, username, password)</p></td>
+<td><p>Simulate a log-in from a user.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.testing.logout.html#ramp_frontend.testing.logout" title="ramp_frontend.testing.logout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.logout</span></code></a>(client)</p></td>
+<td><p>Simulate a log-out.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.testing.login_scope.html#ramp_frontend.testing.login_scope" title="ramp_frontend.testing.login_scope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.login_scope</span></code></a>(client, username, password)</p></td>
+<td><p>Context manager to log-in during the <code class="docutils literal notranslate"><span class="pre">with</span></code> scope.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-ramp_frontend.utils">
+<span id="ramp-frontend-utils-utilities-to-ease-sending-email"></span><h3><a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a>: Utilities to ease sending email<a class="headerlink" href="#module-ramp_frontend.utils" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a> provides utilities to ease sending email.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_frontend.utils.body_formatter_user.html#ramp_frontend.utils.body_formatter_user" title="ramp_frontend.utils.body_formatter_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.body_formatter_user</span></code></a>(user)</p></td>
+<td><p>Create the body of an email using the user information.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_frontend.utils.send_mail.html#ramp_frontend.utils.send_mail" title="ramp_frontend.utils.send_mail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.send_mail</span></code></a>(to, subject, body)</p></td>
+<td><p>Send email using Flask Mail.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ramp-utils">
+<h2>RAMP utils<a class="headerlink" href="#ramp-utils" title="Permalink to this headline">¶</a></h2>
+<p>The RAMP utils package is made of utilities used for managing configuration,
+deploying RAMP events, and other utilities shared between the different RAMP
+packages.</p>
+<div class="section" id="configuration-utilities">
+<h3>Configuration utilities<a class="headerlink" href="#configuration-utilities" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.generate_flask_config.html#ramp_utils.generate_flask_config" title="ramp_utils.generate_flask_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_flask_config</span></code></a>(config)</p></td>
+<td><p>Generate the configuration to deal with Flask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_utils.generate_ramp_config.html#ramp_utils.generate_ramp_config" title="ramp_utils.generate_ramp_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_ramp_config</span></code></a>(event_config[, …])</p></td>
+<td><p>Generate the configuration to deploy RAMP.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.generate_worker_config.html#ramp_utils.generate_worker_config" title="ramp_utils.generate_worker_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_worker_config</span></code></a>(event_config[, …])</p></td>
+<td><p>Generate the configuration for RAMP worker from a configuration file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_utils.read_config.html#ramp_utils.read_config" title="ramp_utils.read_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_config</span></code></a>(config_file[, filter_section, …])</p></td>
+<td><p>Read and parse the configuration file for RAMP.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.testing.database_config_template.html#ramp_utils.testing.database_config_template" title="ramp_utils.testing.database_config_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.database_config_template</span></code></a>()</p></td>
+<td><p>Return the path a template database configuration file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_utils.testing.ramp_config_template.html#ramp_utils.testing.ramp_config_template" title="ramp_utils.testing.ramp_config_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.ramp_config_template</span></code></a>()</p></td>
+<td><p>Return the path a template RAMP configuration file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="datasets-utilities">
+<h3>Datasets utilities<a class="headerlink" href="#datasets-utilities" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.datasets.fetch_from_osf.html#ramp_utils.datasets.fetch_from_osf" title="ramp_utils.datasets.fetch_from_osf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datasets.fetch_from_osf</span></code></a>(path_data, metadata)</p></td>
+<td><p>Fetch files from OSF storage.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.datasets.OSFRemoteMetaData.html#ramp_utils.datasets.OSFRemoteMetaData" title="ramp_utils.datasets.OSFRemoteMetaData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datasets.OSFRemoteMetaData</span></code></a>(filename, id, …)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deployment-utilities">
+<h3>Deployment utilities<a class="headerlink" href="#deployment-utilities" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.deploy.deploy_ramp_event.html#ramp_utils.deploy.deploy_ramp_event" title="ramp_utils.deploy.deploy_ramp_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deploy.deploy_ramp_event</span></code></a>(config, event_config)</p></td>
+<td><p>Deploy a RAMP event using a configuration file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ramp-shared-utilities">
+<h3>RAMP shared utilities<a class="headerlink" href="#ramp-shared-utilities" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_utils.import_module_from_source.html#ramp_utils.import_module_from_source" title="ramp_utils.import_module_from_source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_module_from_source</span></code></a>(source, name)</p></td>
+<td><p>Load a module from a Python source file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/ramp_database.model.Extension.html" class="btn btn-neutral float-right" title="ramp_database.model.Extension" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="running_challenge.html" class="btn btn-neutral float-left" title="7. Useful tips using RAMP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.SubmissionSimilarity
+======================================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: SubmissionSimilarity
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

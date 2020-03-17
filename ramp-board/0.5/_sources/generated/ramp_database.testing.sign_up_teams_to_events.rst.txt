@@ -1,0 +1,10 @@
+:mod:`ramp_database.testing`.sign_up_teams_to_events
+=================================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: sign_up_teams_to_events
+
+.. raw:: html
+
+    <div style='clear:both'></div>
