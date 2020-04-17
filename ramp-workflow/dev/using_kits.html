@@ -176,25 +176,31 @@ directly from the event page (i.e. “Download kit” button).</p>
 <div class="line"><br /></div>
 </div>
 </div></blockquote>
-<p>It will provide a zip file providing all the necessary materials. Sometimes,
-each starting-kit comes with specific instructions (e.g. to download extra
-data) which will be available in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
+<p>It will provide a zip file providing all the necessary materials. All RAMP
+starting kits can be found on the <a class="reference external" href="https://github.com/ramp-kits">RAMP starting kits</a> Github repository. Some starting-kits come
+with specific instructions (e.g. to download extra data). These instructions
+can be found in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
 </div>
 <div class="section" id="install-dependencies">
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>To run a submission and the notebook you will need the dependencies listed
-in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. You can install install the dependencies with the
+in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. You can install install the dependencies using the
 following command-line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -U -r requirements.txt
 </pre></div>
 </div>
-<p>If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file for similar
-usage.</p>
+<p>If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env create -f environment.yml
+</pre></div>
+</div>
 </div>
 <div class="section" id="test-a-submission">
 <h2>Test a submission<a class="headerlink" href="#test-a-submission" title="Permalink to this headline">¶</a></h2>
-<p>The submissions need to be located in the <code class="docutils literal notranslate"><span class="pre">submissions</span></code> folder. For instance
-for <code class="docutils literal notranslate"><span class="pre">my_submission</span></code>, it should be located in <code class="docutils literal notranslate"><span class="pre">submissions/my_submission</span></code>.</p>
+<p>The code file(s) (e.g., <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code>) for each submission needs to be stored
+in their own folder, which then needs to be located within the <code class="docutils literal notranslate"><span class="pre">submissions</span></code>
+folder. The name of the folder containing the code file(s) is the name of
+the submission. For example, the code files for the submission named
+‘my_submission’ should be located at <code class="docutils literal notranslate"><span class="pre">submissions/my_submission</span></code>.</p>
 <p>To run a specific submission, you can use the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp-test --submission my_submissions
 </pre></div>
@@ -203,7 +209,7 @@ for <code class="docutils literal notranslate"><span class="pre">my_submission</
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp-test --help
 </pre></div>
 </div>
-<p>The output of the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command will be looking like:</p>
+<p>The output of the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command should look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Testing Iris classification
 Reading train and <span class="nb">test</span> files from ./data ...
 Reading cv ...
@@ -239,6 +245,8 @@ provide some data analysis and visualisation and walk you through a simple
 example solution. There will also be at least one example submission in
 <code class="docutils literal notranslate"><span class="pre">submissions/</span></code>, which show you which files are required for each submission,
 how they need to be named and how each file should be structured.</p>
+<p>It is important to check that your submission works locally, using
+<code class="docutils literal notranslate"><span class="pre">ramp-test</span></code>, before you submit your solution to <a class="reference external" href="https://www.ramp.studio">RAMP studio</a>.</p>
 </div>
 <div class="section" id="submitting-to-a-ramp-event">
 <h2>Submitting to a RAMP event<a class="headerlink" href="#submitting-to-a-ramp-event" title="Permalink to this headline">¶</a></h2>
@@ -283,10 +291,19 @@ get the following window:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>You need to enter a submission name without any spaces containing between
-4 and 20 characters. When ready, click on “Submit now”.
-Shortly, your submission will be send to training and you will be able to
-see the processing status in the different leaderboard.</p>
+<p>You need to enter a submission name, without any spaces, containing between
+4 and 20 characters. When ready, click on “Submit now”. Ensure each
+submission has a unique name.
+Shortly afterward, your submission will be sent for training and you will be
+able to see the status of your submission in “My submissions”. When your
+submission is waiting in the queue to be trained, it will appear in the
+table “New submissions”. Once trained it will either appear in “Trained
+submissions” (if it trained sucessfully) or in “Failed submissions”. If your
+submission failed, you can click on the error to see part of the trace.</p>
+<a class="reference internal image-reference" href="_images/ramp_my_submissions.png"><img alt="_images/ramp_my_submissions.png" src="_images/ramp_my_submissions.png" style="width: 800px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </li>
 </ol>
 </div>
