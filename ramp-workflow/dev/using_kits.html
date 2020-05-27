@@ -199,8 +199,21 @@ following command-line:</p>
 <p>The code file(s) (e.g., <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code>) for each submission needs to be stored
 in their own folder, which then needs to be located within the <code class="docutils literal notranslate"><span class="pre">submissions</span></code>
 folder. The name of the folder containing the code file(s) is the name of
-the submission. For example, the code files for the submission named
-‘my_submission’ should be located at <code class="docutils literal notranslate"><span class="pre">submissions/my_submission</span></code>.</p>
+the submission. For example, the code file(s) for the submission named
+‘my_submission’ should be located at <code class="docutils literal notranslate"><span class="pre">submissions/my_submission</span></code>. The file
+structure should look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;starting_kit_name&gt;/    # root starting-kit directory
+├── &lt;various starting kit files&gt;
+├── data/
+|   ├── train.csv     # data for challenge
+|   └── test.csv
+└── submissions/
+    ├── &lt;starting_kit&gt;/       # example solution that comes with every kit
+    |   └── &lt;submission_file.py&gt;
+    └── &lt;my_submission&gt;/      # your first submission
+        └── &lt;submission_file.py&gt;
+</pre></div>
+</div>
 <p>To run a specific submission, you can use the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ramp-test --submission my_submissions
 </pre></div>
