@@ -177,9 +177,9 @@
             
   <div class="section" id="ramp-engine-dispatcher-dispatcher">
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher<a class="headerlink" href="#ramp-engine-dispatcher-dispatcher" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_engine.dispatcher.Dispatcher">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.dispatcher.</code><code class="sig-name descname">Dispatcher</code><span class="sig-paren">(</span><em class="sig-param">config</em>, <em class="sig-param">event_config</em>, <em class="sig-param">worker=None</em>, <em class="sig-param">n_workers=1</em>, <em class="sig-param">n_threads=None</em>, <em class="sig-param">hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.dispatcher.</code><code class="sig-name descname">Dispatcher</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dispatcher which schedule workers and communicate with the database.</p>
 <p>The dispatcher uses two queues: a queue containing containing the workers
 which should be launched and a queue containing the workers which are being
@@ -215,40 +215,10 @@ the last submissions.</p></li>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_engine.dispatcher.Dispatcher.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">config</em>, <em class="sig-param">event_config</em>, <em class="sig-param">worker=None</em>, <em class="sig-param">n_workers=1</em>, <em class="sig-param">n_threads=None</em>, <em class="sig-param">hunger_policy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.dispatcher.Dispatcher.collect_result">
-<code class="sig-name descname">collect_result</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.collect_result" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collect result from processed workers.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.dispatcher.Dispatcher.fetch_from_db">
-<code class="sig-name descname">fetch_from_db</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.fetch_from_db" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fetch the submission from the database and create the workers.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.dispatcher.Dispatcher.launch">
-<code class="sig-name descname">launch</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.launch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch the dispatcher.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.dispatcher.Dispatcher.launch_workers">
-<code class="sig-name descname">launch_workers</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.launch_workers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch the awaiting workers if possible.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.dispatcher.Dispatcher.update_database_results">
-<code class="sig-name descname">update_database_results</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.update_database_results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the database with the results of ramp_test_submission.</p>
 </dd></dl>
 
 </dd></dl>

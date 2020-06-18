@@ -183,9 +183,9 @@
             
   <div class="section" id="ramp-database-model-event">
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.Event<a class="headerlink" href="#ramp-database-model-event" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_database.model.Event">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param">problem_name</em>, <em class="sig-param">name</em>, <em class="sig-param">event_title</em>, <em class="sig-param">ramp_sandbox_name</em>, <em class="sig-param">path_ramp_submissions</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">problem_name</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">event_title</span></em>, <em class="sig-param"><span class="n">ramp_sandbox_name</span></em>, <em class="sig-param"><span class="n">path_ramp_submissions</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event table.</p>
 <p>This table contains all information of a RAMP event.</p>
 <dl class="field-list">
@@ -288,122 +288,10 @@ to the key <code class="docutils literal notranslate"><span class="pre">ramp_sub
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_database.model.Event.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">problem_name</em>, <em class="sig-param">name</em>, <em class="sig-param">event_title</em>, <em class="sig-param">ramp_sandbox_name</em>, <em class="sig-param">path_ramp_submissions</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">problem_name</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">event_title</span></em>, <em class="sig-param"><span class="n">ramp_sandbox_name</span></em>, <em class="sig-param"><span class="n">path_ramp_submissions</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.Predictions">
-<em class="property">property </em><code class="sig-name descname">Predictions</code><a class="headerlink" href="#ramp_database.model.Event.Predictions" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types.base.BasePrediction</span></code>: Predictions
-for the given event.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.combined_combined_test_score_str">
-<em class="property">property </em><code class="sig-name descname">combined_combined_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_test_score_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Convert to string the combined private score for all folds.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.combined_combined_valid_score_str">
-<em class="property">property </em><code class="sig-name descname">combined_combined_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_combined_valid_score_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Convert to string the combined public score for all folds.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.combined_foldwise_test_score_str">
-<em class="property">property </em><code class="sig-name descname">combined_foldwise_test_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_test_score_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Convert to string the combined public score for each fold.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.combined_foldwise_valid_score_str">
-<em class="property">property </em><code class="sig-name descname">combined_foldwise_valid_score_str</code><a class="headerlink" href="#ramp_database.model.Event.combined_foldwise_valid_score_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Convert to string the combined public score for each fold.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.get_official_score_type">
-<code class="sig-name descname">get_official_score_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.get_official_score_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the type of the default score used for the current event.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session used to make the query.</p>
-</dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
-<dt><strong>event_type_score</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventTypeScore</span></code></span></dt><dd><p>The default type score for the current event.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.is_closed">
-<em class="property">property </em><code class="sig-name descname">is_closed</code><a class="headerlink" href="#ramp_database.model.Event.is_closed" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Whether or not the event is closed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.is_open">
-<em class="property">property </em><code class="sig-name descname">is_open</code><a class="headerlink" href="#ramp_database.model.Event.is_open" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Whether or not the event is opened.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.is_public_open">
-<em class="property">property </em><code class="sig-name descname">is_public_open</code><a class="headerlink" href="#ramp_database.model.Event.is_public_open" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Whether or not the public phase of the event is opened.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.n_jobs">
-<em class="property">property </em><code class="sig-name descname">n_jobs</code><a class="headerlink" href="#ramp_database.model.Event.n_jobs" title="Permalink to this definition">¶</a></dt>
-<dd><p>int: The number of cv fold which can be used as number of jobs.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.n_participants">
-<em class="property">property </em><code class="sig-name descname">n_participants</code><a class="headerlink" href="#ramp_database.model.Event.n_participants" title="Permalink to this definition">¶</a></dt>
-<dd><p>int: The number of participants to the event.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.official_score_function">
-<em class="property">property </em><code class="sig-name descname">official_score_function</code><a class="headerlink" href="#ramp_database.model.Event.official_score_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>callable: The default function used for scoring in the event.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.official_score_type">
-<em class="property">property </em><code class="sig-name descname">official_score_type</code><a class="headerlink" href="#ramp_database.model.Event.official_score_type" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="ramp_database.model.EventScoreType.html#ramp_database.model.EventScoreType" title="ramp_database.model.EventScoreType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventScoreType</span></code></a>: The score type for the
-current event.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ramp_database.model.Event.query_class">
-<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.Event.query_class" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.set_n_submissions">
-<code class="sig-name descname">set_n_submissions</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Event.set_n_submissions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the number of submissions for the current event by checking
-each team.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Event.workflow">
-<em class="property">property </em><code class="sig-name descname">workflow</code><a class="headerlink" href="#ramp_database.model.Event.workflow" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="ramp_database.model.Workflow.html#ramp_database.model.Workflow" title="ramp_database.model.Workflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Workflow</span></code></a>: The workflow used for the
-event.</p>
-</dd></dl>
 
 </dd></dl>
 

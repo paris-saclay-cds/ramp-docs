@@ -183,9 +183,9 @@
             
   <div class="section" id="ramp-database-model-user">
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.User<a class="headerlink" href="#ramp-database-model-user" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_database.model.User">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">hashed_password</em>, <em class="sig-param">lastname</em>, <em class="sig-param">firstname</em>, <em class="sig-param">email</em>, <em class="sig-param">access_level='user'</em>, <em class="sig-param">hidden_notes=''</em>, <em class="sig-param">linkedin_url=''</em>, <em class="sig-param">twitter_url=''</em>, <em class="sig-param">facebook_url=''</em>, <em class="sig-param">google_url=''</em>, <em class="sig-param">github_url=''</em>, <em class="sig-param">website_url=''</em>, <em class="sig-param">bio=''</em>, <em class="sig-param">is_want_news=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">hashed_password</span></em>, <em class="sig-param"><span class="n">lastname</span></em>, <em class="sig-param"><span class="n">firstname</span></em>, <em class="sig-param"><span class="n">email</span></em>, <em class="sig-param"><span class="n">access_level</span><span class="o">=</span><span class="default_value">'user'</span></em>, <em class="sig-param"><span class="n">hidden_notes</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">linkedin_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">twitter_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">facebook_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">google_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">github_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">website_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_want_news</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>User table.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -278,34 +278,10 @@ yet by email.</p></li>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_database.model.User.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name</em>, <em class="sig-param">hashed_password</em>, <em class="sig-param">lastname</em>, <em class="sig-param">firstname</em>, <em class="sig-param">email</em>, <em class="sig-param">access_level='user'</em>, <em class="sig-param">hidden_notes=''</em>, <em class="sig-param">linkedin_url=''</em>, <em class="sig-param">twitter_url=''</em>, <em class="sig-param">facebook_url=''</em>, <em class="sig-param">google_url=''</em>, <em class="sig-param">github_url=''</em>, <em class="sig-param">website_url=''</em>, <em class="sig-param">bio=''</em>, <em class="sig-param">is_want_news=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">hashed_password</span></em>, <em class="sig-param"><span class="n">lastname</span></em>, <em class="sig-param"><span class="n">firstname</span></em>, <em class="sig-param"><span class="n">email</span></em>, <em class="sig-param"><span class="n">access_level</span><span class="o">=</span><span class="default_value">'user'</span></em>, <em class="sig-param"><span class="n">hidden_notes</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">linkedin_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">twitter_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">facebook_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">google_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">github_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">website_url</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_want_news</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.User.get_id">
-<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.User.get_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Return the user ID.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.User.is_active">
-<em class="property">property </em><code class="sig-name descname">is_active</code><a class="headerlink" href="#ramp_database.model.User.is_active" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Return True.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.User.is_anonymous">
-<em class="property">property </em><code class="sig-name descname">is_anonymous</code><a class="headerlink" href="#ramp_database.model.User.is_anonymous" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Return False.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ramp_database.model.User.query_class">
-<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.User.query_class" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
-</dd></dl>
 
 </dd></dl>
 

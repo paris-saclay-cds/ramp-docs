@@ -183,9 +183,9 @@
             
   <div class="section" id="ramp-database-model-userinteraction">
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.UserInteraction<a class="headerlink" href="#ramp-database-model-userinteraction" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_database.model.UserInteraction">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">UserInteraction</code><span class="sig-paren">(</span><em class="sig-param">interaction=None</em>, <em class="sig-param">user=None</em>, <em class="sig-param">problem=None</em>, <em class="sig-param">event=None</em>, <em class="sig-param">ip=None</em>, <em class="sig-param">note=None</em>, <em class="sig-param">submission=None</em>, <em class="sig-param">submission_file=None</em>, <em class="sig-param">diff=None</em>, <em class="sig-param">similarity=None</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.UserInteraction" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">UserInteraction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interaction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">problem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">note</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submission</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submission_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">diff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">similarity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.UserInteraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>UserInteraction table.</p>
 <p>This class is used to record the interaction of a user with the frontend.</p>
 <dl class="field-list">
@@ -254,28 +254,10 @@
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_database.model.UserInteraction.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">interaction=None</em>, <em class="sig-param">user=None</em>, <em class="sig-param">problem=None</em>, <em class="sig-param">event=None</em>, <em class="sig-param">ip=None</em>, <em class="sig-param">note=None</em>, <em class="sig-param">submission=None</em>, <em class="sig-param">submission_file=None</em>, <em class="sig-param">diff=None</em>, <em class="sig-param">similarity=None</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.UserInteraction.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">interaction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">problem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">note</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submission</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submission_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">diff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">similarity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.UserInteraction.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.UserInteraction.event">
-<em class="property">property </em><code class="sig-name descname">event</code><a class="headerlink" href="#ramp_database.model.UserInteraction.event" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="ramp_database.model.Event.html#ramp_database.model.Event" title="ramp_database.model.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Event</span></code></a>: The event instance.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ramp_database.model.UserInteraction.query_class">
-<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.UserInteraction.query_class" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.UserInteraction.team">
-<em class="property">property </em><code class="sig-name descname">team</code><a class="headerlink" href="#ramp_database.model.UserInteraction.team" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="ramp_database.model.Team.html#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a>: The team instance.</p>
-</dd></dl>
 
 </dd></dl>
 

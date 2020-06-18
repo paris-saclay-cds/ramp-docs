@@ -183,9 +183,9 @@
             
   <div class="section" id="ramp-database-model-workflowelement">
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.WorkflowElement<a class="headerlink" href="#ramp-database-model-workflowelement" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_database.model.WorkflowElement">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">WorkflowElement</code><span class="sig-paren">(</span><em class="sig-param">workflow</em>, <em class="sig-param">workflow_element_type</em>, <em class="sig-param">name_in_workflow=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">WorkflowElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">workflow</span></em>, <em class="sig-param"><span class="n">workflow_element_type</span></em>, <em class="sig-param"><span class="n">name_in_workflow</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement" title="Permalink to this definition">¶</a></dt>
 <dd><p>WorkflowElement table.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -217,41 +217,10 @@ element.</p>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_database.model.WorkflowElement.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">workflow</em>, <em class="sig-param">workflow_element_type</em>, <em class="sig-param">name_in_workflow=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">workflow</span></em>, <em class="sig-param"><span class="n">workflow_element_type</span></em>, <em class="sig-param"><span class="n">name_in_workflow</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.WorkflowElement.file_type">
-<em class="property">property </em><code class="sig-name descname">file_type</code><a class="headerlink" href="#ramp_database.model.WorkflowElement.file_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Name of the submission file type.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.WorkflowElement.is_editable">
-<em class="property">property </em><code class="sig-name descname">is_editable</code><a class="headerlink" href="#ramp_database.model.WorkflowElement.is_editable" title="Permalink to this definition">¶</a></dt>
-<dd><p>bool: Whether or not the submission file is an editable type on the
-frontend.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.WorkflowElement.max_size">
-<em class="property">property </em><code class="sig-name descname">max_size</code><a class="headerlink" href="#ramp_database.model.WorkflowElement.max_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>int: The maximum size of supported by the submission file type.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ramp_database.model.WorkflowElement.query_class">
-<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.WorkflowElement.query_class" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.WorkflowElement.type">
-<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#ramp_database.model.WorkflowElement.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: Name of the workflow element type.</p>
-</dd></dl>
 
 </dd></dl>
 

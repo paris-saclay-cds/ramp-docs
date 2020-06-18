@@ -178,9 +178,9 @@
             
   <div class="section" id="ramp-engine-local-condaenvworker">
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker<a class="headerlink" href="#ramp-engine-local-condaenvworker" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_engine.local.CondaEnvWorker">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.local.</code><code class="sig-name descname">CondaEnvWorker</code><span class="sig-paren">(</span><em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.local.</code><code class="sig-name descname">CondaEnvWorker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">submission</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local worker which uses conda environment to dispatch submission.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -223,57 +223,10 @@ is used.</p></li>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_engine.local.CondaEnvWorker.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">submission</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.check_timeout">
-<code class="sig-name descname">check_timeout</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.check_timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check the submission for timeout.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.collect_results">
-<code class="sig-name descname">collect_results</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.collect_results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collect the results after that the submission is completed.</p>
-<p>Be aware that calling <code class="docutils literal notranslate"><span class="pre">collect_results()</span></code> before that the submission
-finished will lock the Python main process awaiting for the submission
-to be processed. Use <code class="docutils literal notranslate"><span class="pre">worker.status</span></code> to know the status of the worker
-beforehand.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.launch">
-<code class="sig-name descname">launch</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.launch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch a standalone RAMP worker.</p>
-<p>You can use this method when you want to use a worker without using
-the RAMP dispatcher.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.launch_submission">
-<code class="sig-name descname">launch_submission</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.launch_submission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch the submission.</p>
-<p>Basically, it comes to run <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code> using the conda
-environment given in the configuration. The submission is launched in
-a subprocess to free to not lock the Python main process.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up the worker.</p>
-<p>The worker will find the path to the conda environment to use using
-the configuration passed when instantiating the worker.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.local.CondaEnvWorker.teardown">
-<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.local.CondaEnvWorker.teardown" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove the predictions stores within the submission.</p>
 </dd></dl>
 
 </dd></dl>

@@ -178,9 +178,9 @@
             
   <div class="section" id="ramp-engine-aws-awsworker">
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker<a class="headerlink" href="#ramp-engine-aws-awsworker" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_engine.aws.AWSWorker">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.aws.</code><code class="sig-name descname">AWSWorker</code><span class="sig-paren">(</span><em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.aws.</code><code class="sig-name descname">AWSWorker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">submission</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run RAMP submissions on Amazon.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -208,52 +208,10 @@ are listed in the user guide.</p>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_engine.aws.AWSWorker.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">config</em>, <em class="sig-param">submission</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">submission</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.check_timeout">
-<code class="sig-name descname">check_timeout</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.check_timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check a submission for timeout.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.collect_results">
-<code class="sig-name descname">collect_results</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.collect_results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collect the results after submission training.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.launch">
-<code class="sig-name descname">launch</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.launch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch a standalone RAMP worker.</p>
-<p>You can use this method when you want to use a worker without using
-the RAMP dispatcher.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.launch_submission">
-<code class="sig-name descname">launch_submission</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.launch_submission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch the submission.</p>
-<p>Basically, this runs <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code> inside the
-Amazon instance.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up the worker.</p>
-<p>This will launch an instance on Amazon, and copy the submission
-to the instance.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_engine.aws.AWSWorker.teardown">
-<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.aws.AWSWorker.teardown" title="Permalink to this definition">¶</a></dt>
-<dd><p>Terminate the Amazon instance</p>
 </dd></dl>
 
 </dd></dl>

@@ -183,9 +183,9 @@
             
   <div class="section" id="ramp-database-model-problem">
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.Problem<a class="headerlink" href="#ramp-database-model-problem" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="ramp_database.model.Problem">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">Problem</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">path_ramp_kit</em>, <em class="sig-param">path_ramp_data</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_database.model.</code><code class="sig-name descname">Problem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">path_ramp_kit</span></em>, <em class="sig-param"><span class="n">path_ramp_data</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Problem table.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -225,78 +225,10 @@ the key <code class="docutils literal notranslate"><span class="pre">ramp_data_d
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="ramp_database.model.Problem.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name</em>, <em class="sig-param">path_ramp_kit</em>, <em class="sig-param">path_ramp_data</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">path_ramp_kit</span></em>, <em class="sig-param"><span class="n">path_ramp_data</span></em>, <em class="sig-param"><span class="n">session</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.Predictions">
-<em class="property">property </em><code class="sig-name descname">Predictions</code><a class="headerlink" href="#ramp_database.model.Problem.Predictions" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.prediction_types</span></code>: The predictions used for the
-problem.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.get_test_data">
-<code class="sig-name descname">get_test_data</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.get_test_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>The testing data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.get_train_data">
-<code class="sig-name descname">get_train_data</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.get_train_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>The training data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.ground_truths_test">
-<code class="sig-name descname">ground_truths_test</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.ground_truths_test" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predictions: the true labels for the testing.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.ground_truths_train">
-<code class="sig-name descname">ground_truths_train</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.ground_truths_train" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predictions: the true labels for the training.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.ground_truths_valid">
-<code class="sig-name descname">ground_truths_valid</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">test_is</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.ground_truths_valid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predictions: the true labels for the validation.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.module">
-<em class="property">property </em><code class="sig-name descname">module</code><a class="headerlink" href="#ramp_database.model.Problem.module" title="Permalink to this definition">¶</a></dt>
-<dd><p>module: Get the problem module.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ramp_database.model.Problem.query_class">
-<code class="sig-name descname">query_class</code><a class="headerlink" href="#ramp_database.model.Problem.query_class" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.base.BaseQuery</span></code></p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session</em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Problem.reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset the workflow.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.title">
-<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#ramp_database.model.Problem.title" title="Permalink to this definition">¶</a></dt>
-<dd><p>str: The title of the problem.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ramp_database.model.Problem.workflow_object">
-<em class="property">property </em><code class="sig-name descname">workflow_object</code><a class="headerlink" href="#ramp_database.model.Problem.workflow_object" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rampwf.worflows</span></code>: The workflow instance used for the
-problem.</p>
-</dd></dl>
 
 </dd></dl>
 
