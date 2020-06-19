@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.admin`.update_event
+==========================================================
+
+.. currentmodule:: ramp_frontend.views.admin
+
+.. autofunction:: update_event
+
+.. raw:: html
+
+    <div style='clear:both'></div>
