@@ -227,7 +227,32 @@ more precisely the <a class="reference internal" href="workers.html#conda-env-wo
 information.</p></li>
 </ul>
 </div>
-<p>Finally, you can easily deploy the event (adding both problem and event to the
+<p>Before you continue make sure that:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Your private and public data are stored in the correct folders.</p>
+<p>For example, your data might be in:</p>
+<ul class="simple">
+<li><p>public data: <code class="docutils literal notranslate"><span class="pre">ramp_deployment/ramp-kits/&lt;problem_name&gt;/data/</span></code>, and</p></li>
+<li><p>private data: <code class="docutils literal notranslate"><span class="pre">ramp_deployment/ramp-data/&lt;problem_name&gt;/data/</span></code>.</p></li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p>for more information on directory structure of the starting kits check
+<a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-workflow/dev/workflow.html#overall-directory-structure">Overall directory structure</a></p></li>
+</ul>
+</li>
+<li><p>The conda environment (set in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file above, here
+called <code class="docutils literal notranslate"><span class="pre">ramp-iris</span></code>) used by your event exists. Note, that this only
+applies to the events which use the conda environment. To check which conda
+environments you have type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env list
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Now, you can easily deploy the event (adding both problem and event to the
 database) by calling from the deployment directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup deploy-event --event-config events/iris_test/config.yml --no-cloning
 </pre></div>
