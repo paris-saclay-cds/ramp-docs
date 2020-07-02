@@ -101,13 +101,13 @@
 <li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5. Notes regarding the RAMP workers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">5.1. Running submissions in a Conda environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">5.2. Running submissions on Amazon Web Services (AWS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">5.3. Create your own worker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-setup-and-teardown-functions">5.3.1. The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-launch-submission-and-collect-results-functions">5.3.2. The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-is-submission-finished-function">5.3.3. The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">5.2. Running submissions on Amazon Web Services (AWS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#launching-aws-instance">5.2.1. Launching AWS instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-the-instance">5.2.2. Prepare the instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-configuration">5.2.3. Event configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">5.3. Create your own worker</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
@@ -238,15 +238,44 @@ directory and use the following to install the environment:</p>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
 specific resources (e.g. GPU’s).</p>
-<p>You need to create an Amazon Machine Image (AMI) with the starting kit and
-data, and the needed packages to run submissions. This AMI will then be used
-to launch instances to run submissions.</p>
-<p>A very short how-to for creating such an AMI manually:</p>
-<ul>
-<li><p>launch an Amazon instance</p></li>
-<li><p>connect to it</p></li>
-<li><p>prepare the instance:</p>
-<ul>
+<p>Summary of steps:</p>
+<ol class="arabic simple">
+<li><p>Launch AWS instance and connect to it.</p></li>
+<li><p>Prepare the instance for running submissions.</p></li>
+<li><p>Save the instance as an Amazon Machine Image (AMI).</p></li>
+<li><p>Update the event <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file on the RAMP server.</p></li>
+</ol>
+<div class="section" id="launching-aws-instance">
+<span id="launch-aws"></span><h3><span class="section-number">5.2.1. </span>Launching AWS instance<a class="headerlink" href="#launching-aws-instance" title="Permalink to this headline">¶</a></h3>
+<p>Follow <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">AWS getting started</a>
+to launch an Amazon EC2 Linux instance. Amazon can create a new key-pair
+for your instance, which you can download. You need to store this in a
+hidden directory (e.g., <code class="docutils literal notranslate"><span class="pre">.ssh/</span></code>) and change the rights to file permissions
+to only read for owner. You can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ chmod 400 &lt;path_to_aws_key&gt;
+</pre></div>
+</div>
+<p>To connect to your instance via ssh, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">'my-instance-user-name'</span></code> depends on the type of instance you picked but is
+commonly ‘ec2-user’ or ‘ubuntu’. The full list can be found <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance">here</a>
+under ‘Get the user name for your instance’. ‘my-instance-public-dns-name’ can
+be found by clicking on your ‘Instances’ tab in your EC2 dashboard.
+Full connection details can be found in the <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">AWS guide</a>.</p>
+</div>
+<div class="section" id="prepare-the-instance">
+<span id="prepare-instance"></span><h3><span class="section-number">5.2.2. </span>Prepare the instance<a class="headerlink" href="#prepare-the-instance" title="Permalink to this headline">¶</a></h3>
+<p>To prepare the instance you need to download the starting kit, data and all
+required packages to run submissions. This can be saved as an AMI (image) and
+will then be used to launch instances to run submissions.</p>
+<p>Below is a basic guide for creating such an AMI manually, using the Iris
+challenge. This guide is for an ubuntu instance. If you have a Linux instance
+you will need not need to add miniconda to your <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> but you will
+need to install git.</p>
+<blockquote>
+<div><ul>
 <li><p>Install miniconda:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ LATEST_MINICONDA=&quot;http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh&quot;
 ~ $ wget -q $LATEST_MINICONDA -O ~/miniconda.sh
@@ -275,50 +304,97 @@ to launch instances to run submissions.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Get the data:</p>
+<li><p>Get the data and copy public data to <code class="docutils literal notranslate"><span class="pre">ramp-kits/iris/data</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ data_dir=&quot;$kit_dir/data&quot;
 ~ $ rm -rf $data_dir &amp;&amp; mkdir $data_dir
 ~ $ git clone https://github.com/ramp-data/iris ramp-data/iris
 ~ $ cd ramp-data/iris/
 ~ $ python prepare_data.py
-~ $ cd ..
+~ $ cp data/public/* ~/ramp-kits/iris/data/
 </pre></div>
 </div>
-<p>TODO: figure out this data (in ramp-kits/data or in ramp-data?)</p>
 </li>
 <li><p>Test the kit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ cd ramp-kits/iris
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ cd ~/ramp-kits/iris
 ~ $ ramp-test
 </pre></div>
 </div>
 </li>
 </ul>
-</li>
-<li><p>Save the instance as an AMI: from the instance -&gt; Actions -&gt; Image -&gt; Create image</p></li>
-<li><p>Create an event config.yml, which should look something like:</p>
+</div></blockquote>
+<p>Next, save the instance as an AMI. Starting from the instance tab:
+Actions -&gt; Image -&gt; Create image. See <a class="reference external" href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/tkv-create-ami-from-instance.html">Create an AMI from an Amazon EC2
+instance</a>
+for more details.</p>
+</div>
+<div class="section" id="event-configuration">
+<h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Create an event config.yml (see <a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>) and update the
+‘worker’ section, which should look something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
     <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
     <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_ramp_aws_test</span>
-    <span class="n">event_title</span><span class="p">:</span> <span class="n">iris_ramp_aws_test</span>
+    <span class="n">event_title</span><span class="p">:</span> <span class="s2">&quot;iris ramp aws test&quot;</span>
     <span class="n">event_is_public</span><span class="p">:</span> <span class="n">true</span>
-    <span class="o">...</span>
 <span class="n">worker</span><span class="p">:</span>
     <span class="n">worker_type</span><span class="p">:</span> <span class="n">aws</span>
     <span class="n">access_key_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">aws_access_key_id</span> <span class="k">for</span> <span class="n">boto3</span> <span class="n">Session</span><span class="o">&gt;</span>
     <span class="n">secret_access_key</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">aws_secret_access_key</span> <span class="k">for</span> <span class="n">boto3</span> <span class="n">Session</span><span class="o">&gt;</span>
     <span class="n">region_name</span><span class="p">:</span> <span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">2</span> <span class="c1"># oregon</span>
     <span class="n">ami_image_name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">AMI</span> <span class="nb">set</span> <span class="n">up</span> <span class="k">for</span> <span class="n">this</span> <span class="n">event</span><span class="o">&gt;</span>
-    <span class="n">ami_user_name</span> <span class="p">:</span> <span class="n">ubuntu</span>
-    <span class="n">instance_type</span> <span class="p">:</span> <span class="n">t2</span><span class="o">.</span><span class="n">micro</span>
-    <span class="n">key_name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">user</span> <span class="n">that</span> <span class="n">can</span> <span class="n">ssh</span> <span class="n">connect</span> <span class="k">with</span> <span class="n">the</span> <span class="n">created</span> <span class="n">AWS</span> <span class="n">instance</span><span class="o">&gt;</span>
-    <span class="n">security_group</span> <span class="p">:</span> <span class="n">launch</span><span class="o">-</span><span class="n">wizard</span><span class="o">-</span><span class="mi">103</span>
-    <span class="n">key_path</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">pem</span> <span class="n">file</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">user</span> <span class="n">name</span><span class="o">&gt;</span>
-    <span class="n">remote_ramp_kit_folder</span> <span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span>
-    <span class="n">memory_profiling</span> <span class="p">:</span> <span class="n">false</span>
+    <span class="n">ami_user_name</span><span class="p">:</span> <span class="n">ubuntu</span>
+    <span class="n">instance_type</span><span class="p">:</span> <span class="n">t2</span><span class="o">.</span><span class="n">micro</span>
+    <span class="n">key_name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">your</span> <span class="n">pem</span> <span class="n">file</span><span class="p">,</span> <span class="n">eg</span> <span class="n">iris_key</span><span class="o">&gt;</span>
+    <span class="n">security_group</span><span class="p">:</span> <span class="n">launch</span><span class="o">-</span><span class="n">wizard</span><span class="o">-</span><span class="mi">103</span>
+    <span class="n">key_path</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">pem</span> <span class="n">file</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">user</span> <span class="n">name</span><span class="p">,</span> <span class="n">eg</span> <span class="n">my_path</span><span class="o">/</span><span class="n">iris_key</span><span class="o">.</span><span class="n">pem</span><span class="o">&gt;</span>
+    <span class="n">remote_ramp_kit_folder</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">submissions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris_aws</span><span class="o">/</span><span class="n">submissions</span>
+    <span class="n">predictions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris_aws</span><span class="o">/</span><span class="n">predictions</span>
+    <span class="n">logs_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris_aws</span><span class="o">/</span><span class="n">logs</span>
+    <span class="n">memory_profiling</span><span class="p">:</span> <span class="n">false</span>
 </pre></div>
 </div>
-</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">access_key_id</span></code> and <code class="docutils literal notranslate"><span class="pre">secret_access_key</span></code>: to create a new access key, go
+to your top navigation bar, click on your user name -&gt; My Security
+Credentials. Open the ‘Access keys’ tab then click on ‘Create New Access
+Key’. You will be prompted to download your ‘access key ID’ and ‘secret
+access key’ to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file, which should be saved in a secure location.
+You can also use an existing access key by obtaining the ID and key from
+your saved <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. See <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey">Managing Access Keys</a>
+for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region_name</span></code>: zone of your instance, which can be found in the EC2
+console, ‘Instances’ tab on the left, under ‘availability zone’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ami_image_name</span></code>: name you gave to the image you prepared (see
+<a class="reference internal" href="#prepare-instance"><span class="std std-ref">Prepare the instance</span></a>). This can be found in the EC2 console, under
+‘Images’ -&gt; ‘AMI’ tab.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ami_user_name</span></code>: user name you used to ssh into your instance.
+Commonly ‘ec2-user’ or ‘ubuntu’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance_type</span></code>: found in the EC2 console, ‘Instances’ tab, ‘Description’
+tab at the bottom, under ‘Instance type’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key_name</span></code>: name of the key, eg if your key file is ‘iris_key.pem’, the key</p></li>
 </ul>
+<p>name is ‘iris_key’
+* <code class="docutils literal notranslate"><span class="pre">security_group</span></code>: in the EC2 console, ‘Instances’ tab, ‘Description’ tab</p>
+<blockquote>
+<div><p>at the bottom, under ‘Security groups’.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key_path</span></code>: path to the you private key used to ssh to your instance
+(see <a class="reference internal" href="#launch-aws"><span class="std std-ref">Launching AWS instance</span></a>). Note that you need to copy your key into the RAMP.
+It is best to give the absolute path. Ensure the permissions of this file
+is set to only ‘read’ by owner (which can be done using <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">400</span>
+<span class="pre">key_name.pem</span></code> command).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remote_ramp_kit_folder</span></code>: path to the starting kit folder on
+the AWS image you prepared (see <a class="reference internal" href="#prepare-instance"><span class="std std-ref">Prepare the instance</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submissions_dir</span></code>: path to the submissions directory on the RAMP server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predictions_dir</span></code>: path to the predictions directoryon the RAMP server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logs_dir</span></code>: path to store the submission logs on the RAMP server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">memory_profiling</span></code>: boolean, whether or not to profile memory used by each
+submission. You need to install <a class="reference external" href="https://pypi.org/project/memory-profiler/">memory profiler</a> in your prepared AMI image
+to enable this.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="create-your-own-worker">
 <h2><span class="section-number">5.3. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
@@ -327,8 +403,6 @@ create your own worker for your platform (Openstack, Azure, etc.). This section
 illustrates how to implement your own worker.</p>
 <p>Your new worker should subclass <a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html#ramp_engine.base.BaseWorker" title="ramp_engine.base.BaseWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.base.BaseWorker</span></code></a>. This
 class implements some basic functionalities which you should use.</p>
-<div class="section" id="the-setup-and-teardown-functions">
-<h3><span class="section-number">5.3.1. </span>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> and <code class="docutils literal notranslate"><span class="pre">teardown</span></code> functions<a class="headerlink" href="#the-setup-and-teardown-functions" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> function will initialize the worker before it can be used, e.g.
 activate the right conda environment. Your worker should implement this class
 and call <code class="docutils literal notranslate"><span class="pre">super</span></code> at the end of it. Indeed, the base class is in charge of
@@ -352,9 +426,6 @@ to the <code class="docutils literal notranslate"><span class="pre">setup</span>
       <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">teardown</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-launch-submission-and-collect-results-functions">
-<h3><span class="section-number">5.3.2. </span>The <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> functions<a class="headerlink" href="#the-launch-submission-and-collect-results-functions" title="Permalink to this headline">¶</a></h3>
 <p>The actual job of the worker should be implemented in <code class="docutils literal notranslate"><span class="pre">launch_submission</span></code> in
 charge of running a submission and <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> in charge of collecting
 and paste them in the location indicated by the dispatcher. As for the other
@@ -397,9 +468,6 @@ dispatcher:</p>
       <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_proc</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-is-submission-finished-function">
-<h3><span class="section-number">5.3.3. </span>The <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function<a class="headerlink" href="#the-is-submission-finished-function" title="Permalink to this headline">¶</a></h3>
 <p>You need to implement the <code class="docutils literal notranslate"><span class="pre">_is_submission_finished</span></code> function to indicate the
 worker that he can call the <code class="docutils literal notranslate"><span class="pre">collect_results</span></code> function. This function will
 be dependent of the platform that you are using. For instance, for a conda
@@ -412,7 +480,6 @@ worker, it would look like:</p>
 <span class="sd">  &quot;&quot;&quot;</span>
   <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
