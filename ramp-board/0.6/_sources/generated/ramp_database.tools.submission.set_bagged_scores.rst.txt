@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.submission`.set_bagged_scores
+====================================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: set_bagged_scores
+
+.. raw:: html
+
+    <div style='clear:both'></div>

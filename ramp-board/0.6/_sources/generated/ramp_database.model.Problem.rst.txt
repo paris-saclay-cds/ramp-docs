@@ -1,0 +1,14 @@
+:mod:`ramp_database.model`.Problem
+=========================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: Problem
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

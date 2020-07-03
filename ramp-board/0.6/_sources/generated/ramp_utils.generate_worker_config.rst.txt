@@ -1,0 +1,10 @@
+:mod:`ramp_utils`.generate_worker_config
+=====================================================
+
+.. currentmodule:: ramp_utils
+
+.. autofunction:: generate_worker_config
+
+.. raw:: html
+
+    <div style='clear:both'></div>

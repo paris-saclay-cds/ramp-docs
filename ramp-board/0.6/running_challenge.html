@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. Useful tips using RAMP &mdash; RAMP 0.6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RAMP API" href="api.html" />
+    <link rel="prev" title="6. Interactions with the RAMP website" href="frontend.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">2. Personalize your RAMP front webpage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workers.html">5. Notes regarding the RAMP workers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Useful tips using RAMP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-restart-a-failed-submission-manually">7.1. How to restart a failed submission manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-standalone-worker-without-connection-to-database">7.2. Running a standalone worker without connection to database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-automatically-a-conda-environment-linked-to-an-event">7.3. Create automatically a conda environment linked to an event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-automatically-a-conda-environment-linked-to-an-event">7.4. Update automatically a conda environment linked to an event</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">7. </span>Useful tips using RAMP</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="useful-tips-using-ramp">
+<h1><span class="section-number">7. </span>Useful tips using RAMP<a class="headerlink" href="#useful-tips-using-ramp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-restart-a-failed-submission-manually">
+<h2><span class="section-number">7.1. </span>How to restart a failed submission manually<a class="headerlink" href="#how-to-restart-a-failed-submission-manually" title="Permalink to this headline">¶</a></h2>
+<p>If for some reason, one of the submission failed and you would like to
+re-evaluate this submission, you should change the state of this submission.
+You can use the following command to change the status of a submission:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ ramp database set-submission-state --submission-id &lt;id&gt; --state new
+</pre></div>
+</div>
+<p>Since the submission was set to <code class="docutils literal notranslate"><span class="pre">new</span></code>, the RAMP dispatcher will automatically
+pick up this submission to train it again.</p>
+</div>
+<div class="section" id="running-a-standalone-worker-without-connection-to-database">
+<h2><span class="section-number">7.2. </span>Running a standalone worker without connection to database<a class="headerlink" href="#running-a-standalone-worker-without-connection-to-database" title="Permalink to this headline">¶</a></h2>
+<p>It can happen that you want to use a worker to run a submission locally to
+reproduce what the dispatcher is doing or just train a local submission.
+You can use the command <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">launch</span> <span class="pre">worker</span></code> to this regard. What you need
+is to provide a configuration file with the information regarding the
+submission and the worker. For instance, let’s imagine that you cloned the
+iris kit in locally and that you want to run one of the submission.</p>
+<p>We cloned the iris repository in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+</pre></div>
+</div>
+<p>Now, we need to provide a configuration file containing the information used
+by the worker. For instance, for a conda worker, we will provide the following
+<code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
+    <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
+    <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_test</span>
+    <span class="n">event_title</span><span class="p">:</span> <span class="s2">&quot;Human readable event name to display on website&quot;</span>
+    <span class="n">event_is_public</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">kit_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">submissions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">submissions</span>
+    <span class="n">predictions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">predictions</span>
+    <span class="n">logs_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">logs</span>
+    <span class="n">sandbox_dir</span><span class="p">:</span> <span class="n">starting_kit</span>
+<span class="n">worker</span><span class="p">:</span>
+    <span class="n">worker_type</span><span class="p">:</span> <span class="n">conda</span>
+    <span class="n">conda_env</span><span class="p">:</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span>
+</pre></div>
+</div>
+<p>Then, you can launch the worker for the submission <code class="docutils literal notranslate"><span class="pre">random_forest_10_10</span></code> as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/Documents/ramp/iris $ ramp launch worker --submission random_forest_10_10
+</pre></div>
+</div>
+<p>And you can check the results in the <code class="docutils literal notranslate"><span class="pre">logs</span></code> folder.</p>
+</div>
+<div class="section" id="create-automatically-a-conda-environment-linked-to-an-event">
+<span id="create-conda-env"></span><h2><span class="section-number">7.3. </span>Create automatically a conda environment linked to an event<a class="headerlink" href="#create-automatically-a-conda-environment-linked-to-an-event" title="Permalink to this headline">¶</a></h2>
+<p>When launching an event, you might need to create a conda environment. We
+provide a command-line tool to automatically create the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup create-conda-env --event-config events/iris_test/config.yml
+</pre></div>
+</div>
+<p>This command will create the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment and install the packages
+using the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> which should be located inside the <code class="docutils literal notranslate"><span class="pre">ramp-kit</span></code>
+directory of the challenge.</p>
+</div>
+<div class="section" id="update-automatically-a-conda-environment-linked-to-an-event">
+<span id="update-conda-env"></span><h2><span class="section-number">7.4. </span>Update automatically a conda environment linked to an event<a class="headerlink" href="#update-automatically-a-conda-environment-linked-to-an-event" title="Permalink to this headline">¶</a></h2>
+<p>We provide a command-line tool to automatically update the packages of a RAMP
+event. You use it as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml
+</pre></div>
+</div>
+<p>This will update all package using <code class="docutils literal notranslate"><span class="pre">conda</span></code> if they were installed with <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+and <code class="docutils literal notranslate"><span class="pre">pip</span></code> whenever installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="RAMP API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="frontend.html" class="btn btn-neutral float-left" title="6. Interactions with the RAMP website" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

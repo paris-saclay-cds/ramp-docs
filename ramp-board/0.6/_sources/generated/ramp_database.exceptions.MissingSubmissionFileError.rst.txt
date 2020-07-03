@@ -1,0 +1,14 @@
+:mod:`ramp_database.exceptions`.MissingSubmissionFileError
+=================================================================
+
+.. currentmodule:: ramp_database.exceptions
+
+.. autoclass:: MissingSubmissionFileError
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

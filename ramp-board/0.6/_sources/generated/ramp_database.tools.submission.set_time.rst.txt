@@ -1,0 +1,10 @@
+:mod:`ramp_database.tools.submission`.set_time
+===========================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: set_time
+
+.. raw:: html
+
+    <div style='clear:both'></div>

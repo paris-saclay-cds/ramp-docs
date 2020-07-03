@@ -1,0 +1,10 @@
+:mod:`ramp_database.testing`.add_problems
+======================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: add_problems
+
+.. raw:: html
+
+    <div style='clear:both'></div>

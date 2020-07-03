@@ -1,0 +1,10 @@
+:mod:`ramp_frontend.views.admin`.dashboard_submissions
+===================================================================
+
+.. currentmodule:: ramp_frontend.views.admin
+
+.. autofunction:: dashboard_submissions
+
+.. raw:: html
+
+    <div style='clear:both'></div>

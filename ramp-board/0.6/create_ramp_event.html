@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Set up a new RAMP event &mdash; RAMP 0.6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Create New Challenge" href="create_new_challenge.html" />
+    <link rel="prev" title="2. Personalize your RAMP front webpage" href="personalize.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">2. Personalize your RAMP front webpage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Set up a new RAMP event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploy-a-specific-ramp-event">3.1. Deploy a specific RAMP event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-the-dispatcher-to-train-and-evaluate-submissions">3.2. Launch the dispatcher to train and evaluate submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-several-dispatchers-at-once">3.3. Launch several dispatchers at once</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workers.html">5. Notes regarding the RAMP workers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">7. Useful tips using RAMP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Set up a new RAMP event</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="set-up-a-new-ramp-event">
+<h1><span class="section-number">3. </span>Set up a new RAMP event<a class="headerlink" href="#set-up-a-new-ramp-event" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deploy-a-specific-ramp-event">
+<span id="deploy-ramp-event"></span><h2><span class="section-number">3.1. </span>Deploy a specific RAMP event<a class="headerlink" href="#deploy-a-specific-ramp-event" title="Permalink to this headline">¶</a></h2>
+<p>Now we will want to deploy a specific problem and event. We will take an
+example by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
+<p>First, you need to get the starting kit and the data within the
+<code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ mkdir ramp-kits
+~/ramp_deployment $ mkdir ramp-data
+~/ramp_deployment $ git clone https://github.com/ramp-kits/iris ramp-kits/iris
+~/ramp_deployment $ git clone https://github.com/ramp-data/iris ramp-data/iris
+~/ramp_deployment $ cd ramp-data/iris
+~/ramp_deployment/ramp-data/iris $ python prepare_data.py
+~/ramp_deployment/ramp-data/iris $ cd ../..
+</pre></div>
+</div>
+<p>Next, you need to create a configuration file for a specific event. You can
+create this configuration file by executing the following command line from
+the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup init-event --name iris_test
+</pre></div>
+</div>
+<p>The above creates a <code class="docutils literal notranslate"><span class="pre">events/iris_test</span></code> directory inside the deployment
+directory, and populates it with a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> with the configuration
+specific to the event.</p>
+<p>This config file should look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
+    <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
+    <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_test</span>
+    <span class="n">event_title</span><span class="p">:</span> <span class="s2">&quot;Iris event&quot;</span>
+    <span class="n">event_is_public</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">worker</span><span class="p">:</span>
+    <span class="n">worker_type</span><span class="p">:</span> <span class="n">conda</span>
+    <span class="n">conda_env</span><span class="p">:</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span>
+<span class="n">dispatcher</span><span class="p">:</span>
+    <span class="n">hunger_policy</span><span class="p">:</span> <span class="n">sleep</span>
+    <span class="n">n_workers</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">n_threads</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>&lt;event_name&gt; must always be preceded with the ‘&lt;problem_name&gt;_’ as in
+the example above.</p></li>
+<li><p>In the previous configuration example, we are using a conda worker. You
+can refer to the documentation about the <a class="reference internal" href="workers.html#all-workers"><span class="std std-ref">workers</span></a> and
+more precisely the <a class="reference internal" href="workers.html#conda-env-worker"><span class="std std-ref">conda workers</span></a> to have more
+information.</p></li>
+</ul>
+</div>
+<p>Before you continue make sure that:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Your private and public data are stored in the correct folders.</p>
+<p>For example, your data might be in:</p>
+<ul class="simple">
+<li><p>public data: <code class="docutils literal notranslate"><span class="pre">ramp_deployment/ramp-kits/&lt;problem_name&gt;/data/</span></code>, and</p></li>
+<li><p>private data: <code class="docutils literal notranslate"><span class="pre">ramp_deployment/ramp-data/&lt;problem_name&gt;/data/</span></code>.</p></li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p>for more information on directory structure of the starting kits check
+<a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-workflow/dev/workflow.html#overall-directory-structure">Overall directory structure</a></p></li>
+</ul>
+</li>
+<li><p>The conda environment (set in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file above, here
+called <code class="docutils literal notranslate"><span class="pre">ramp-iris</span></code>) used by your event exists. Note, that this only
+applies to the events which use the conda environment. To check which conda
+environments you have type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env list
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Now, you can easily deploy the event (adding both problem and event to the
+database) by calling from the deployment directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup deploy-event --event-config events/iris_test/config.yml --no-cloning
+</pre></div>
+</div>
+<p>Without passing <code class="docutils literal notranslate"><span class="pre">--no-cloning</span></code>, it will try to clone the starting kit and
+data from the <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a> github organization. If the
+starting kit is located there, you can skip the first step of above of manually
+cloning the kit and data and preparing the data, and let <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span>
+<span class="pre">deploy-event</span></code> do that for you.</p>
+</div>
+<div class="section" id="launch-the-dispatcher-to-train-and-evaluate-submissions">
+<h2><span class="section-number">3.2. </span>Launch the dispatcher to train and evaluate submissions<a class="headerlink" href="#launch-the-dispatcher-to-train-and-evaluate-submissions" title="Permalink to this headline">¶</a></h2>
+<p>At this stage, you can launch the RAMP dispatcher from the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code>
+directory, which will be in charge of training, evaluating submissions, and
+updating the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp launch dispatcher --event-config events/iris_test/config.yml --hunger-policy sleep -vv
+</pre></div>
+</div>
+<p>If you are running the dispatcher on a remote server, you want to launch it
+within a terminal multiplexer as <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code>. It will allow you
+to detach the process and let it run. Refer to the documentation of <code class="docutils literal notranslate"><span class="pre">screen</span></code>
+or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> to use them.</p>
+</div>
+<div class="section" id="launch-several-dispatchers-at-once">
+<h2><span class="section-number">3.3. </span>Launch several dispatchers at once<a class="headerlink" href="#launch-several-dispatchers-at-once" title="Permalink to this headline">¶</a></h2>
+<p>In case that you are running multiple events in parallel, you will want to
+start several dispatchers, on for each open event. We provide a daemon which
+will be in charge of managing the pool of dispatchers. You can start it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp launch daemon --events-dir events --verbose
+</pre></div>
+</div>
+<p>To can interrupt the daemon by pressing the combination of keyboard keys
+<code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. You can start launch the daemon within <code class="docutils literal notranslate"><span class="pre">tmux</span></code> or <code class="docutils literal notranslate"><span class="pre">screen</span></code> as well.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="create_new_challenge.html" class="btn btn-neutral float-right" title="4. Create New Challenge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="personalize.html" class="btn btn-neutral float-left" title="2. Personalize your RAMP front webpage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
