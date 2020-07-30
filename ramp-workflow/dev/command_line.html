@@ -181,31 +181,56 @@
 <dl class="std option">
 <dt id="cmdoption-ramp-test-submission">
 <code class="sig-name descname">--submission</code><code class="sig-prename descclassname"> &lt;submission&gt;</code><a class="headerlink" href="#cmdoption-ramp-test-submission" title="Permalink to this definition">¶</a></dt>
-<dd><p>The kit to test. It should be located in the “submissions” folder of the starting kit. If “ALL”, all submissions in the directory will be tested.  [default: starting_kit]</p>
+<dd><p>The kit to test. It should be located in the “submissions” folder of the starting kit. If “ALL”, all submissions in the directory will be tested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>starting_kit</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-test-ramp-kit-dir">
 <code class="sig-name descname">--ramp-kit-dir</code><code class="sig-prename descclassname"> &lt;ramp_kit_dir&gt;</code><a class="headerlink" href="#cmdoption-ramp-test-ramp-kit-dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Root directory of the ramp-kit to test.  [default: .]</p>
+<dd><p>Root directory of the ramp-kit to test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-test-ramp-data-dir">
 <code class="sig-name descname">--ramp-data-dir</code><code class="sig-prename descclassname"> &lt;ramp_data_dir&gt;</code><a class="headerlink" href="#cmdoption-ramp-test-ramp-data-dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Directory containing the data. This directory should contain a “data” folder.  [default: .]</p>
+<dd><p>Directory containing the data. This directory should contain a “data” folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-test-ramp-submission-dir">
 <code class="sig-name descname">--ramp-submission-dir</code><code class="sig-prename descclassname"> &lt;ramp_submission_dir&gt;</code><a class="headerlink" href="#cmdoption-ramp-test-ramp-submission-dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Directory where the submissions are stored. It is the directory (typically called “submissions” in the ramp-kit) that contains the individual submission subdirectories.  [default: submissions]</p>
+<dd><p>Directory where the submissions are stored. It is the directory (typically called “submissions” in the ramp-kit) that contains the individual submission subdirectories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>submissions</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-test-notebook">
 <code class="sig-name descname">--notebook</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ramp-test-notebook" title="Permalink to this definition">¶</a></dt>
-<dd><p>Whether or not to test the notebook.  [default: False]</p>
+<dd><p>Whether or not to test the notebook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
@@ -255,43 +280,78 @@
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-ramp-kit-dir">
 <code class="sig-name descname">--ramp-kit-dir</code><code class="sig-prename descclassname"> &lt;ramp_kit_dir&gt;</code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-ramp-kit-dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Root directory of the ramp-kit to retrieved the train submission.  [default: .]</p>
+<dd><p>Root directory of the ramp-kit to retrieved the train submission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-metric">
 <code class="sig-name descname">--metric</code><code class="sig-prename descclassname"> &lt;metric&gt;</code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-metric" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of the metric to report  [default: []]</p>
+<dd><p>A list of the metric to report</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>[]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-step">
 <code class="sig-name descname">--step</code><code class="sig-prename descclassname"> &lt;step&gt;</code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-step" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of the processing to report. Choices are {“train” , “valid”, “test”}  [default: []]</p>
+<dd><p>A list of the processing to report. Choices are {“train” , “valid”, “test”}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>[]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-sort-by">
 <code class="sig-name descname">--sort-by</code><code class="sig-prename descclassname"> &lt;sort_by&gt;</code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-sort-by" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give the metric, step, and stat to use for sorting.  [default: []]</p>
+<dd><p>Give the metric, step, and stat to use for sorting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>[]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-ascending">
 <span id="cmdoption-ramp-show-leaderboard-descending"></span><code class="sig-name descname">--ascending</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--descending</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-ascending" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort in ascending or descending order.  [default: True]</p>
+<dd><p>Sort in ascending or descending order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-precision">
 <code class="sig-name descname">--precision</code><code class="sig-prename descclassname"> &lt;precision&gt;</code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-precision" title="Permalink to this definition">¶</a></dt>
-<dd><p>The precision for the different metrics reported.  [default: 2]</p>
+<dd><p>The precision for the different metrics reported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-bagged">
 <span id="cmdoption-ramp-show-leaderboard-mean"></span><code class="sig-name descname">--bagged</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--mean</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-bagged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bagged or mean scores.  [default: True]</p>
+<dd><p>Bagged or mean scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
