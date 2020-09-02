@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.user`.make_user_admin
+﻿:mod:`ramp_database.tools.user`.make_user_admin
 ============================================================
 
 .. currentmodule:: ramp_database.tools.user

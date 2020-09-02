@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.UserInteraction
+﻿:mod:`ramp_database.model`.UserInteraction
 =================================================
 
 .. currentmodule:: ramp_database.model

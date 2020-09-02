@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.leaderboard`.update_all_user_leaderboards
+﻿:mod:`ramp_database.tools.leaderboard`.update_all_user_leaderboards
 ================================================================================
 
 .. currentmodule:: ramp_database.tools.leaderboard

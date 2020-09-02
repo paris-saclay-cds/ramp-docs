@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.event`.add_event_admin
+﻿:mod:`ramp_database.tools.event`.add_event_admin
 =============================================================
 
 .. currentmodule:: ramp_database.tools.event

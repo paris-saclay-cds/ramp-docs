@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.utils`.send_mail
+﻿:mod:`ramp_frontend.utils`.send_mail
 =================================================
 
 .. currentmodule:: ramp_frontend.utils

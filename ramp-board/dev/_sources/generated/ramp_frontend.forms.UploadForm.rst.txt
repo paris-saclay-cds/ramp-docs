@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.forms`.UploadForm
+﻿:mod:`ramp_frontend.forms`.UploadForm
 ============================================
 
 .. currentmodule:: ramp_frontend.forms

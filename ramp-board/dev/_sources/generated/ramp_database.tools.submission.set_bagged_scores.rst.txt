@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.set_bagged_scores
+﻿:mod:`ramp_database.tools.submission`.set_bagged_scores
 ====================================================================
 
 .. currentmodule:: ramp_database.tools.submission

@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.admin`.approve_users
+﻿:mod:`ramp_frontend.views.admin`.approve_users
 ===========================================================
 
 .. currentmodule:: ramp_frontend.views.admin

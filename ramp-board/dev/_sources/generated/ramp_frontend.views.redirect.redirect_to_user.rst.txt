@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.redirect`.redirect_to_user
+﻿:mod:`ramp_frontend.views.redirect`.redirect_to_user
 =================================================================
 
 .. currentmodule:: ramp_frontend.views.redirect

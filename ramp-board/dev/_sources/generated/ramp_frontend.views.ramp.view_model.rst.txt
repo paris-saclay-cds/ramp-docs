@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.ramp`.view_model
+﻿:mod:`ramp_frontend.views.ramp`.view_model
 =======================================================
 
 .. currentmodule:: ramp_frontend.views.ramp

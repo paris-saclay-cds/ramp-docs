@@ -1,4 +1,4 @@
-:mod:`ramp_utils`.import_module_from_source
+﻿:mod:`ramp_utils`.import_module_from_source
 ========================================================
 
 .. currentmodule:: ramp_utils

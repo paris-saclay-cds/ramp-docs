@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.general`.index
+﻿:mod:`ramp_frontend.views.general`.index
 =====================================================
 
 .. currentmodule:: ramp_frontend.views.general

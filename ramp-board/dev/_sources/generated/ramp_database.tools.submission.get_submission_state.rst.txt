@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.get_submission_state
+﻿:mod:`ramp_database.tools.submission`.get_submission_state
 =======================================================================
 
 .. currentmodule:: ramp_database.tools.submission

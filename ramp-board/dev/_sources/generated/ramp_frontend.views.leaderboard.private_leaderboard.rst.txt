@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.leaderboard`.private_leaderboard
+﻿:mod:`ramp_frontend.views.leaderboard`.private_leaderboard
 =======================================================================
 
 .. currentmodule:: ramp_frontend.views.leaderboard

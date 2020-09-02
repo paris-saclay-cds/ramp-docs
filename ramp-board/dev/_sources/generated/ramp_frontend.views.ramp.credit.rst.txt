@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.ramp`.credit
+﻿:mod:`ramp_frontend.views.ramp`.credit
 ===================================================
 
 .. currentmodule:: ramp_frontend.views.ramp

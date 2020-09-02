@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.forms`.CodeForm
+﻿:mod:`ramp_frontend.forms`.CodeForm
 ==========================================
 
 .. currentmodule:: ramp_frontend.forms

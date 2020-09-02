@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.get_event_nb_folds
+﻿:mod:`ramp_database.tools.submission`.get_event_nb_folds
 =====================================================================
 
 .. currentmodule:: ramp_database.tools.submission

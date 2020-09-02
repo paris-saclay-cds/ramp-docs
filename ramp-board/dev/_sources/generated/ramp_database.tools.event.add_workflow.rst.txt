@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.event`.add_workflow
+﻿:mod:`ramp_database.tools.event`.add_workflow
 ==========================================================
 
 .. currentmodule:: ramp_database.tools.event

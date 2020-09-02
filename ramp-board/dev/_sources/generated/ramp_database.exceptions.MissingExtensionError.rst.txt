@@ -1,4 +1,4 @@
-:mod:`ramp_database.exceptions`.MissingExtensionError
+﻿:mod:`ramp_database.exceptions`.MissingExtensionError
 ============================================================
 
 .. currentmodule:: ramp_database.exceptions

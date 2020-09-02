@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.team`.ask_sign_up_team
+﻿:mod:`ramp_database.tools.team`.ask_sign_up_team
 =============================================================
 
 .. currentmodule:: ramp_database.tools.team

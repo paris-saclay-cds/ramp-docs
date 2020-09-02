@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.testing`.logout
+﻿:mod:`ramp_frontend.testing`.logout
 ================================================
 
 .. currentmodule:: ramp_frontend.testing

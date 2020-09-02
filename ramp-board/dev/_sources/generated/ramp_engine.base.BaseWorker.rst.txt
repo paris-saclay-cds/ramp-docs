@@ -1,4 +1,4 @@
-:mod:`ramp_engine.base`.BaseWorker
+﻿:mod:`ramp_engine.base`.BaseWorker
 =========================================
 
 .. currentmodule:: ramp_engine.base

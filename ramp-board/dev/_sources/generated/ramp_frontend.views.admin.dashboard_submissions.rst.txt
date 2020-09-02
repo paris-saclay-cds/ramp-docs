@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.admin`.dashboard_submissions
+﻿:mod:`ramp_frontend.views.admin`.dashboard_submissions
 ===================================================================
 
 .. currentmodule:: ramp_frontend.views.admin

@@ -1,4 +1,4 @@
-:mod:`ramp_engine.local`.CondaEnvWorker
+﻿:mod:`ramp_engine.local`.CondaEnvWorker
 ==============================================
 
 .. currentmodule:: ramp_engine.local

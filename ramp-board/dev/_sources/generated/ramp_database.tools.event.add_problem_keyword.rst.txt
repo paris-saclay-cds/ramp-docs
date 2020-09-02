@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.event`.add_problem_keyword
+﻿:mod:`ramp_database.tools.event`.add_problem_keyword
 =================================================================
 
 .. currentmodule:: ramp_database.tools.event

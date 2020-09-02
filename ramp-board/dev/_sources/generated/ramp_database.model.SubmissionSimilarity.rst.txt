@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.SubmissionSimilarity
+﻿:mod:`ramp_database.model`.SubmissionSimilarity
 ======================================================
 
 .. currentmodule:: ramp_database.model

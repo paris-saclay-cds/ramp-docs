@@ -1,4 +1,4 @@
-:mod:`ramp_database.testing`.setup_toy_db
+﻿:mod:`ramp_database.testing`.setup_toy_db
 ======================================================
 
 .. currentmodule:: ramp_database.testing

@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.frontend`.is_user_sign_up_requested
+﻿:mod:`ramp_database.tools.frontend`.is_user_sign_up_requested
 ==========================================================================
 
 .. currentmodule:: ramp_database.tools.frontend

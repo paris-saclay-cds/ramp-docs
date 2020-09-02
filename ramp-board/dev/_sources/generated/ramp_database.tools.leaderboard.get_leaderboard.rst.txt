@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.leaderboard`.get_leaderboard
+﻿:mod:`ramp_database.tools.leaderboard`.get_leaderboard
 ===================================================================
 
 .. currentmodule:: ramp_database.tools.leaderboard

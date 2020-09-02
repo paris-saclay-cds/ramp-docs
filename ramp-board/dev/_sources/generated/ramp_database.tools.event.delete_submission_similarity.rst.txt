@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.event`.delete_submission_similarity
+﻿:mod:`ramp_database.tools.event`.delete_submission_similarity
 ==========================================================================
 
 .. currentmodule:: ramp_database.tools.event

@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.user`.add_user
+﻿:mod:`ramp_database.tools.user`.add_user
 =====================================================
 
 .. currentmodule:: ramp_database.tools.user

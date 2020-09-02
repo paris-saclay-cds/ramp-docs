@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.frontend`.is_accessible_leaderboard
+﻿:mod:`ramp_database.tools.frontend`.is_accessible_leaderboard
 ==========================================================================
 
 .. currentmodule:: ramp_database.tools.frontend

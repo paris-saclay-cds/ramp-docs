@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.user`.get_team_by_name
+﻿:mod:`ramp_database.tools.user`.get_team_by_name
 =============================================================
 
 .. currentmodule:: ramp_database.tools.user

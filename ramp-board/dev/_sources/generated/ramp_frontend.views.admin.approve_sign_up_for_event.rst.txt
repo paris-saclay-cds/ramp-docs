@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.admin`.approve_sign_up_for_event
+﻿:mod:`ramp_frontend.views.admin`.approve_sign_up_for_event
 =======================================================================
 
 .. currentmodule:: ramp_frontend.views.admin

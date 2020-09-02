@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.SubmissionFileTypeExtension
+﻿:mod:`ramp_database.model`.SubmissionFileTypeExtension
 =============================================================
 
 .. currentmodule:: ramp_database.model

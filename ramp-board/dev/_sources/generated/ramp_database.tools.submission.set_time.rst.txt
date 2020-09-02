@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.set_time
+﻿:mod:`ramp_database.tools.submission`.set_time
 ===========================================================
 
 .. currentmodule:: ramp_database.tools.submission

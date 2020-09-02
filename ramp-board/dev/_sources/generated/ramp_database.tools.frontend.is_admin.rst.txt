@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.frontend`.is_admin
+﻿:mod:`ramp_database.tools.frontend`.is_admin
 =========================================================
 
 .. currentmodule:: ramp_database.tools.frontend

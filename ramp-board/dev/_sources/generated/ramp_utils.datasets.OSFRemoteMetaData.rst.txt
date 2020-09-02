@@ -1,4 +1,4 @@
-:mod:`ramp_utils.datasets`.OSFRemoteMetaData
+﻿:mod:`ramp_utils.datasets`.OSFRemoteMetaData
 ===================================================
 
 .. currentmodule:: ramp_utils.datasets

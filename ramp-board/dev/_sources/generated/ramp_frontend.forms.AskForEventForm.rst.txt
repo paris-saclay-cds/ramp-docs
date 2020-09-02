@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.forms`.AskForEventForm
+﻿:mod:`ramp_frontend.forms`.AskForEventForm
 =================================================
 
 .. currentmodule:: ramp_frontend.forms
