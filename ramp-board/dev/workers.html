@@ -272,7 +272,7 @@ required packages to run submissions. This can be saved as an AMI (image) and
 will then be used to launch instances to run submissions.</p>
 <p>Below is a basic guide for creating such an AMI manually, using the Iris
 challenge. This guide is for an ubuntu instance. If you have a Linux instance
-you will need not need to add miniconda to your <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> but you will
+you will not need to add miniconda to your <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> but you will
 need to install git.</p>
 <blockquote>
 <div><ul>
@@ -288,7 +288,7 @@ need to install git.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Get the starting kit material (example here for Iris):</p>
+<li><p>Get the starting kit material (e.g. for ‘iris’):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ RAMPKIT_DIR=&quot;$HOME/ramp-kits&quot;
 ~ $ project_name=&quot;iris&quot;
 ~ $ kit_url=&quot;https://github.com/ramp-kits/$project_name&quot;
@@ -298,24 +298,27 @@ need to install git.</p>
 </div>
 </li>
 <li><p>Update the base conda environment for the needs of the challenge:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ ami_environment=&quot;$kit_dir/ami_environment.yml&quot;
-~ $ conda env update --name base --file $ami_environment
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ environment=&quot;$kit_dir/environment.yml&quot;
+~ $ conda env update --name base --file $environment
 ~ $ conda list
 </pre></div>
 </div>
 </li>
-<li><p>Get the data and copy public data to <code class="docutils literal notranslate"><span class="pre">ramp-kits/iris/data</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ data_dir=&quot;$kit_dir/data&quot;
-~ $ rm -rf $data_dir &amp;&amp; mkdir $data_dir
-~ $ git clone https://github.com/ramp-data/iris ramp-data/iris
-~ $ cd ramp-data/iris/
+<li><p>Get the data and copy public data to <code class="docutils literal notranslate"><span class="pre">ramp-kits/&lt;project&gt;/data/</span></code>.
+Note: depending on how <code class="docutils literal notranslate"><span class="pre">prepare_data.py</span></code> structures the data files,
+the last command may differ:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ RAMPDATA_DIR=&quot;$HOME/ramp-data&quot;
+~ $ data_url=&quot;https://github.com/ramp-data/$project_name&quot;
+~ $ data_dir=&quot;$RAMPDATA_DIR/$project_name&quot;
+~ $ git clone $data_url $data_dir
+~ $ cd $data_dir
 ~ $ python prepare_data.py
-~ $ cp data/public/* ~/ramp-kits/iris/data/
+~ $ cp data/public/* $kit_dir/data/
 </pre></div>
 </div>
 </li>
 <li><p>Test the kit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ cd ~/ramp-kits/iris
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ cd $kit_dir
 ~ $ ramp-test
 </pre></div>
 </div>
