@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.score_submission
+﻿:mod:`ramp_database.tools.submission`.score_submission
 ===================================================================
 
 .. currentmodule:: ramp_database.tools.submission

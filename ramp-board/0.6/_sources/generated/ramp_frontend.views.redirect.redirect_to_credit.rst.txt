@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.redirect`.redirect_to_credit
+﻿:mod:`ramp_frontend.views.redirect`.redirect_to_credit
 ===================================================================
 
 .. currentmodule:: ramp_frontend.views.redirect

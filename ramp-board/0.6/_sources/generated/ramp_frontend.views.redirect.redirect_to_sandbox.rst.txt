@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.redirect`.redirect_to_sandbox
+﻿:mod:`ramp_frontend.views.redirect`.redirect_to_sandbox
 ====================================================================
 
 .. currentmodule:: ramp_frontend.views.redirect

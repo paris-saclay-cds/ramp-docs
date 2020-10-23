@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.add_submission_similarity
+﻿:mod:`ramp_database.tools.submission`.add_submission_similarity
 ============================================================================
 
 .. currentmodule:: ramp_database.tools.submission

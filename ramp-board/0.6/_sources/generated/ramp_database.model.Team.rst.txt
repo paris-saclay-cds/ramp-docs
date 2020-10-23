@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.Team
+﻿:mod:`ramp_database.model`.Team
 ======================================
 
 .. currentmodule:: ramp_database.model

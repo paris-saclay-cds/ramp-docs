@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.user`.set_user_by_instance
+﻿:mod:`ramp_database.tools.user`.set_user_by_instance
 =================================================================
 
 .. currentmodule:: ramp_database.tools.user

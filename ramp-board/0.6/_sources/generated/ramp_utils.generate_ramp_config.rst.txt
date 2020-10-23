@@ -1,4 +1,4 @@
-:mod:`ramp_utils`.generate_ramp_config
+﻿:mod:`ramp_utils`.generate_ramp_config
 ===================================================
 
 .. currentmodule:: ramp_utils

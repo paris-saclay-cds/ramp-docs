@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.forms`.ImportForm
+﻿:mod:`ramp_frontend.forms`.ImportForm
 ============================================
 
 .. currentmodule:: ramp_frontend.forms

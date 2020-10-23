@@ -1,4 +1,4 @@
-:mod:`ramp_database.exceptions`.UnknownStateError
+﻿:mod:`ramp_database.exceptions`.UnknownStateError
 ========================================================
 
 .. currentmodule:: ramp_database.exceptions

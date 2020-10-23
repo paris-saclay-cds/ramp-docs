@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.EventAdmin
+﻿:mod:`ramp_database.model`.EventAdmin
 ============================================
 
 .. currentmodule:: ramp_database.model

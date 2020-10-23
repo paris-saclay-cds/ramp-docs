@@ -1,4 +1,4 @@
-:mod:`ramp_database.testing`.submit_all_starting_kits
+﻿:mod:`ramp_database.testing`.submit_all_starting_kits
 ==================================================================
 
 .. currentmodule:: ramp_database.testing

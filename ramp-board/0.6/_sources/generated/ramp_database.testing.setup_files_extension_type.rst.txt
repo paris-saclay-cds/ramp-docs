@@ -1,4 +1,4 @@
-:mod:`ramp_database.testing`.setup_files_extension_type
+﻿:mod:`ramp_database.testing`.setup_files_extension_type
 ====================================================================
 
 .. currentmodule:: ramp_database.testing

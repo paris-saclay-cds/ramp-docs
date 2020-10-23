@@ -1,4 +1,4 @@
-:mod:`ramp_engine.dispatcher`.Dispatcher
+﻿:mod:`ramp_engine.dispatcher`.Dispatcher
 ===============================================
 
 .. currentmodule:: ramp_engine.dispatcher

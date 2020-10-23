@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.Extension
+﻿:mod:`ramp_database.model`.Extension
 ===========================================
 
 .. currentmodule:: ramp_database.model

@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.database`.add_submission_file_type
+﻿:mod:`ramp_database.tools.database`.add_submission_file_type
 =========================================================================
 
 .. currentmodule:: ramp_database.tools.database

@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.EventScoreType
+﻿:mod:`ramp_database.model`.EventScoreType
 ================================================
 
 .. currentmodule:: ramp_database.model

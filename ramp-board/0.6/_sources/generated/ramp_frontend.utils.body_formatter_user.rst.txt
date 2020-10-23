@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.utils`.body_formatter_user
+﻿:mod:`ramp_frontend.utils`.body_formatter_user
 ===========================================================
 
 .. currentmodule:: ramp_frontend.utils

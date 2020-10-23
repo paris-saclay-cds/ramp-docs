@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.admin`.user_interactions
+﻿:mod:`ramp_frontend.views.admin`.user_interactions
 ===============================================================
 
 .. currentmodule:: ramp_frontend.views.admin

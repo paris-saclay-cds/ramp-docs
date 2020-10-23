@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.SubmissionScoreOnCVFold
+﻿:mod:`ramp_database.model`.SubmissionScoreOnCVFold
 =========================================================
 
 .. currentmodule:: ramp_database.model

@@ -1,4 +1,4 @@
-:mod:`ramp_engine.daemon`.Daemon
+﻿:mod:`ramp_engine.daemon`.Daemon
 =======================================
 
 .. currentmodule:: ramp_engine.daemon

@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.testing`.login_scope
+﻿:mod:`ramp_frontend.testing`.login_scope
 =====================================================
 
 .. currentmodule:: ramp_frontend.testing

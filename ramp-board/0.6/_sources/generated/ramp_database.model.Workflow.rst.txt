@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.Workflow
+﻿:mod:`ramp_database.model`.Workflow
 ==========================================
 
 .. currentmodule:: ramp_database.model

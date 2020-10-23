@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.submission`.set_submission_error_msg
+﻿:mod:`ramp_database.tools.submission`.set_submission_error_msg
 ===========================================================================
 
 .. currentmodule:: ramp_database.tools.submission

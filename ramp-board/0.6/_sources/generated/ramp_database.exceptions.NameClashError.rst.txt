@@ -1,4 +1,4 @@
-:mod:`ramp_database.exceptions`.NameClashError
+﻿:mod:`ramp_database.exceptions`.NameClashError
 =====================================================
 
 .. currentmodule:: ramp_database.exceptions

@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.user`.set_user_access_level
+﻿:mod:`ramp_database.tools.user`.set_user_access_level
 ==================================================================
 
 .. currentmodule:: ramp_database.tools.user

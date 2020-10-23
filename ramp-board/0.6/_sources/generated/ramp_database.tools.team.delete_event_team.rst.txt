@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.team`.delete_event_team
+﻿:mod:`ramp_database.tools.team`.delete_event_team
 ==============================================================
 
 .. currentmodule:: ramp_database.tools.team

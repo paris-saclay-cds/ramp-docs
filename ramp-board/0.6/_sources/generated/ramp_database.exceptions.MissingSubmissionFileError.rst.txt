@@ -1,4 +1,4 @@
-:mod:`ramp_database.exceptions`.MissingSubmissionFileError
+﻿:mod:`ramp_database.exceptions`.MissingSubmissionFileError
 =================================================================
 
 .. currentmodule:: ramp_database.exceptions

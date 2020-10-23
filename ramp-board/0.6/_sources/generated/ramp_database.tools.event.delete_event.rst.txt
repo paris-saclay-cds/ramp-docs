@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.event`.delete_event
+﻿:mod:`ramp_database.tools.event`.delete_event
 ==========================================================
 
 .. currentmodule:: ramp_database.tools.event

@@ -1,4 +1,4 @@
-:mod:`ramp_database.model`.HistoricalContributivity
+﻿:mod:`ramp_database.model`.HistoricalContributivity
 ==========================================================
 
 .. currentmodule:: ramp_database.model

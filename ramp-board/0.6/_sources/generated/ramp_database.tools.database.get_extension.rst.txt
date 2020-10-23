@@ -1,4 +1,4 @@
-:mod:`ramp_database.tools.database`.get_extension
+﻿:mod:`ramp_database.tools.database`.get_extension
 ==============================================================
 
 .. currentmodule:: ramp_database.tools.database

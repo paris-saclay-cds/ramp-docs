@@ -1,4 +1,4 @@
-:mod:`ramp_frontend.views.leaderboard`.private_competition_leaderboard
+﻿:mod:`ramp_frontend.views.leaderboard`.private_competition_leaderboard
 ===================================================================================
 
 .. currentmodule:: ramp_frontend.views.leaderboard
