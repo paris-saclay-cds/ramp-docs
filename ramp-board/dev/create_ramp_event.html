@@ -179,9 +179,9 @@
 <h1><span class="section-number">3. </span>Set up a new RAMP event<a class="headerlink" href="#set-up-a-new-ramp-event" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deploy-a-specific-ramp-event">
 <span id="deploy-ramp-event"></span><h2><span class="section-number">3.1. </span>Deploy a specific RAMP event<a class="headerlink" href="#deploy-a-specific-ramp-event" title="Permalink to this headline">¶</a></h2>
-<p>Now we will want to deploy a specific problem and event. We will take an
-example by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
-<p>First, you need to get the starting kit and the data within the
+<p>Now we want to deploy a specific problem and event. We will demonstrate by
+by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
+<p>First, you need to get the starting kit and the data into the
 <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ mkdir ramp-kits
 ~/ramp_deployment $ mkdir ramp-data
@@ -201,7 +201,7 @@ the <code class="docutils literal notranslate"><span class="pre">ramp_deployment
 <p>The above creates a <code class="docutils literal notranslate"><span class="pre">events/iris_test</span></code> directory inside the deployment
 directory, and populates it with a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> with the configuration
 specific to the event.</p>
-<p>This config file should look like:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file should look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
     <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
     <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_test</span>
@@ -216,17 +216,44 @@ specific to the event.</p>
     <span class="n">n_threads</span><span class="p">:</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p><strong>ramp configuration</strong></p>
 <ul class="simple">
-<li><p>&lt;event_name&gt; must always be preceded with the ‘&lt;problem_name&gt;_’ as in
+<li><p><code class="docutils literal notranslate"><span class="pre">problem_name</span></code>: All events using the same problem should have the same
+<code class="docutils literal notranslate"><span class="pre">problem_name</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event_name</span></code>: Must always be preceded with ‘&lt;problem_name&gt;_’ as in
 the example above.</p></li>
-<li><p>In the previous configuration example, we are using a conda worker. You
-can refer to the documentation about the <a class="reference internal" href="workers.html#all-workers"><span class="std std-ref">workers</span></a> and
-more precisely the <a class="reference internal" href="workers.html#conda-env-worker"><span class="std std-ref">conda workers</span></a> to have more
-information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event_title</span></code>: Human readable event name to display on website.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event_is_public</span></code>: Boolean indication whether or not the event should be
+public.</p></li>
 </ul>
-</div>
+<p><strong>worker configuration</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">worker_type</span></code>: Refer to the documentation about
+<a class="reference internal" href="workers.html#all-workers"><span class="std std-ref">workers</span></a> for more information on worker types available.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda_env</span></code>: Name of the conda environment to use. If not specified, the
+base environment will be used. Only relevant if using a conda worker.</p></li>
+</ul>
+<p id="dispatcher-configuration"><strong>dispatcher configuration</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">hunger_policy</span></code>: Policy to apply in case that there is no anymore workers
+to be processed. One of <code class="docutils literal notranslate"><span class="pre">None</span></code>, ‘sleep’ or ‘exit’, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">None</span></code>: the dispatcher will work without interruption;</p></li>
+<li><p>if ‘sleep’: the dispatcher will sleep for 5 seconds before to check
+for new submission;</p></li>
+<li><p>if ‘exit’: the dispatcher will stop after collecting the results of
+the last submissions.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_workers</span></code>: Maximum number of workers that can run submissions
+simultaneously.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_threads</span></code>: The number of threads that each worker can use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_between_collection</span></code>: How long, in seconds, the worker should wait
+before re-checking if the submission is ready for collection. The default is
+1 second.</p></li>
+</ul>
 <p>Before you continue make sure that:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -238,14 +265,14 @@ information.</p></li>
 </ul>
 <p>Note:</p>
 <ul class="simple">
-<li><p>for more information on directory structure of the starting kits check
+<li><p>for more information on directory structure of the starting kits see
 <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-workflow/dev/workflow.html#overall-directory-structure">Overall directory structure</a></p></li>
 </ul>
 </li>
 <li><p>The conda environment (set in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file above, here
 called <code class="docutils literal notranslate"><span class="pre">ramp-iris</span></code>) used by your event exists. Note, that this only
-applies to the events which use the conda environment. To check which conda
-environments you have type:</p>
+applies to events that use the conda worker. To check which conda
+environments are available, use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env list
 </pre></div>
 </div>
@@ -258,10 +285,10 @@ database) by calling from the deployment directory:</p>
 </pre></div>
 </div>
 <p>Without passing <code class="docutils literal notranslate"><span class="pre">--no-cloning</span></code>, it will try to clone the starting kit and
-data from the <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a> github organization. If the
-starting kit is located there, you can skip the first step of above of manually
-cloning the kit and data and preparing the data, and let <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span>
-<span class="pre">deploy-event</span></code> do that for you.</p>
+data from the <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a> GitHub organization. If the
+starting kit is located on this GitHub organization, you can skip the first
+step above, which manually clones the kit and prepares the data, and let
+<code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span> <span class="pre">deploy-event</span></code> do this for you.</p>
 </div>
 <div class="section" id="launch-the-dispatcher-to-train-and-evaluate-submissions">
 <h2><span class="section-number">3.2. </span>Launch the dispatcher to train and evaluate submissions<a class="headerlink" href="#launch-the-dispatcher-to-train-and-evaluate-submissions" title="Permalink to this headline">¶</a></h2>
