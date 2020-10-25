@@ -426,6 +426,12 @@ release branch (e.g., branch <code class="docutils literal notranslate"><span cl
 with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
 <li><p>Switch to <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on
 upstream.</p></li>
+<li><p>Create a GitHub release by clicking on ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. ‘Tag version’
+should be the latest version number (e.g., 0.5.0), ‘Target’ should be the
+branch for that minor version (e.g., 0.5.X) and ‘Release title’ should
+be ‘Version &lt;release version&gt;’ (e.g., ‘Version 0.5.0’). Detail changes
+in this release, using what’s in the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/doc/whats_new">doc/whats_new/</a>
+file for the latest release.</p></li>
 <li><p>Add a new <code class="docutils literal notranslate"><span class="pre">v0.&lt;version</span> <span class="pre">number&gt;.rst</span></code> file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/doc/whats_new">doc/whats_new/</a>
 and <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span></code> this new file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/master/doc/whats_new.rst">doc/whats_new.rst</a>.</p></li>
 </ol>
@@ -435,19 +441,20 @@ branch, e.g. branch <code class="docutils literal notranslate"><span class="pre"
 <div class="section" id="patch-bug-fix-release-process">
 <h2>Patch/bug fix release process<a class="headerlink" href="#patch-bug-fix-release-process" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Checkout the branch for the lastest release, e.g.,
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.5.X</span></code>.</p></li>
 <li><p>Find the commit(s) hash of the bug fix commit you wish to back port
 using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p></li>
-<li><p>Append the bug fix commit(s) to the branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry</span> <span class="pre">pick</span> <span class="pre">&lt;hash&gt;</span></code>.</p></li>
+<li><p>Checkout the branch for the lastest release, e.g.,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.5.X</span></code>.</p></li>
+<li><p>Append the bug fix commit(s) to the branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span> <span class="pre">&lt;hash&gt;</span></code>.</p></li>
 <li><p>Bump the version number with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">patch</span></code>. This will bump the
 patch version, for example from 0.5.0 to 0.5.1.dev0.</p></li>
-<li><p>Mark the current version as release version (as opposed to ‘dev’ version)
-with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span> <span class="pre">--allow-dirty</span></code>. It will bump the version from
-0.5.1.dev0 to 0.5.1.</p></li>
+<li><p>Mark the current version as a release version (as opposed to ‘dev’ version)
+with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span> <span class="pre">--allow-dirty</span></code>. It will bump the version, for
+example from 0.5.1.dev0 to 0.5.1.</p></li>
 <li><p>Commit the changes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">'bumpversion</span> <span class="pre">&lt;new</span> <span class="pre">version&gt;'</span></code>.</p></li>
 <li><p>Push the changes to the release branch in upstream, e.g.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">&lt;upstream</span> <span class="pre">remote&gt;</span> <span class="pre">&lt;release</span> <span class="pre">branch&gt;</span></code></p></li>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">&lt;upstream</span> <span class="pre">remote&gt;</span> <span class="pre">&lt;release</span> <span class="pre">branch&gt;</span></code>. For minor version 0.5
+‘release branch’ would be ‘0.5.X’</p></li>
 <li><p>Remove unnecessary files with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with
 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
 <li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Note down the
