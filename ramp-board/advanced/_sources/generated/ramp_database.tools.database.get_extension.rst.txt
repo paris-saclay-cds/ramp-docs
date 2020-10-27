@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.database`.get_extension
+==============================================================
+
+.. currentmodule:: ramp_database.tools.database
+
+.. autofunction:: get_extension
+
+.. raw:: html
+
+    <div style='clear:both'></div>

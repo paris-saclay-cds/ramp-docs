@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.CodeForm
+==========================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: CodeForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

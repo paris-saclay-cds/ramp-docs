@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.model`.EventScoreType
+================================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: EventScoreType
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.user`.delete_user
+========================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: delete_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

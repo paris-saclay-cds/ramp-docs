@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.utils`.setup_db
+================================================
+
+.. currentmodule:: ramp_database.utils
+
+.. autofunction:: setup_db
+
+.. raw:: html
+
+    <div style='clear:both'></div>

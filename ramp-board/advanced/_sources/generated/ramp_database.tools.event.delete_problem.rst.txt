@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.event`.delete_problem
+============================================================
+
+.. currentmodule:: ramp_database.tools.event
+
+.. autofunction:: delete_problem
+
+.. raw:: html
+
+    <div style='clear:both'></div>

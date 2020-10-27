@@ -1,0 +1,14 @@
+﻿:mod:`ramp_engine.daemon`.Daemon
+=======================================
+
+.. currentmodule:: ramp_engine.daemon
+
+.. autoclass:: Daemon
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Develop and contribute &mdash; RAMP 0.7.0.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Guide" href="user_guide.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RAMP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Develop and contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-for-development">Install for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepare-database-engine">Prepare database engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test">Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-contribute">How to contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#forking-ramp">Forking RAMP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contributing-pull-requests">Contributing Pull Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filing-bugs">Filing bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#minor-release-process">Minor release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patch-bug-fix-release-process">Patch/bug fix release process</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Develop and contribute</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="develop-and-contribute">
+<span id="contribute"></span><h1>Develop and contribute<a class="headerlink" href="#develop-and-contribute" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the RAMP team. We are always happy to have new RAMP developers.</p>
+<p>You can contribute to this code by making a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">Pull Request</a>
+on <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pulls">Github</a>. Please, make sure that your code is coming with unit tests to
+ensure full coverage and continuous integration in the API.</p>
+<div class="section" id="install-for-development">
+<h2>Install for development<a class="headerlink" href="#install-for-development" title="Permalink to this headline">¶</a></h2>
+<p>To install RAMP please fallow <a class="reference internal" href="install.html#install"><span class="std std-ref">install guideline</span></a> making sure
+that you use the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">inplace</span></code> option to install RAMP in developer mode.</p>
+</div>
+<div class="section" id="prepare-database-engine">
+<h2>Prepare database engine<a class="headerlink" href="#prepare-database-engine" title="Permalink to this headline">¶</a></h2>
+<p>Testing RAMP requires a database cluster, you need to create it similarly as
+described in <a class="reference internal" href="setup_server.html#set-database"><span class="std std-ref">create database</span></a> section.</p>
+<p>If you haven’t done so already create the <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code>
+using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ initdb postgres_dbs
+</pre></div>
+</div>
+<p>and then start it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
+</pre></div>
+</div>
+<p>Within your database cluster <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database is created automatically.
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> will use it to make and then drop the test engine. But it needs
+to know who is the owner of your <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database and therefore you
+need to inform RAMP tests about this.
+To do this, open the <code class="docutils literal notranslate"><span class="pre">db_engine.yml</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>
+directory.
+It should look as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db_owner</span><span class="p">:</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>You need to change &lt;postgres&gt; to the owner of the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database.</p>
+<p>If you don’t know who is the owner of your <code class="docutils literal notranslate"><span class="pre">postgres</span></code> database you can
+find it out by typing in your terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ psql -l
+</pre></div>
+</div>
+<p>This command will list all of your databases along with their owners.</p>
+</div>
+<div class="section" id="test">
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>In order to run your tests please create a test conda environment (you will
+need to do that only once):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ conda env create -f ci_tools/environment_iris_kit.yml
+</pre></div>
+</div>
+<p>Also, before running the tests make sure your <code class="docutils literal notranslate"><span class="pre">Postgres</span> <span class="pre">database</span> <span class="pre">cluster</span></code> has
+been started. You can always start it using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pg_ctl -D postgres_dbs -l logfile start
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">postgres_dbs</span></code> is the database cluster you created in the previous steps.</p>
+<p>In addition, you might want to start an SMTP server to run all the tests.
+If you don’t run the server, some of the tests will fail because they cannot
+be run. To launch the server, execute the following
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ python -m smtpd -n -c DebuggingServer localhost:8025 &amp;
+</pre></div>
+</div>
+<p>You are now ready to run the tests. You can do so using <code class="docutils literal notranslate"><span class="pre">pytest</span></code> from the
+root <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pytest -vsl .
+</pre></div>
+</div>
+<p>The above will only work when the packages were installed in development mode.
+In the other case, you can test the individual packages with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pytest -vsl --pyargs ramp_utils ramp_database ramp_frontend ramp_engine
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-contribute">
+<h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>This guide is adapted from <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md">scikit-learn contribution guide</a>.</p>
+<div class="section" id="forking-ramp">
+<h3>Forking RAMP<a class="headerlink" href="#forking-ramp" title="Permalink to this headline">¶</a></h3>
+<p>The preferred way to contribute to RAMP is to fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a>
+on GitHub:</p>
+<ol class="arabic">
+<li><p>To fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a> click on the ‘Fork’ button near the
+top of the page. This creates a copy of the code under your account
+on the GitHub server.</p></li>
+<li><p>Clone this copy to your local disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:YourLogin/ramp-board.git
+$ cd ramp-board
+</pre></div>
+</div>
+</li>
+<li><p>Create a branch (called ‘my-feature’ below) to hold your changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b my-feature
+</pre></div>
+</div>
+<p>and start making changes.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Never work in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch!</p>
+</div>
+<ol class="arabic" start="4">
+<li><p>Work on this copy on your computer using Git to do the version
+control. When you’re done editing, do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add &lt;modified_files&gt;
+$ git commit
+</pre></div>
+</div>
+<p>to record your changes in Git, then push them to GitHub with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push -u origin my-feature
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Finally, go to the web page of your fork of the ramp-board repo,
+and click ‘Pull request’ to send your changes to the maintainers for
+review. This will send an email to the committers.</p>
+<p>If any of the above seems like magic to you, then look up <a class="reference external" href="https://git-scm.com/documentation">Git documentation</a>
+on the web.</p>
+</div>
+<div class="section" id="contributing-pull-requests">
+<h3>Contributing Pull Requests<a class="headerlink" href="#contributing-pull-requests" title="Permalink to this headline">¶</a></h3>
+<p>It is recommended to check that your contribution complies with the
+following rules before submitting a pull request:</p>
+<ul>
+<li><p>Follow the <a class="reference external" href="http://scikit-learn.org/dev/developers/contributing.html#coding-guidelines">coding-guidelines</a> as for scikit-learn.</p></li>
+<li><p>When applicable, use the validation tools and other code in the
+<code class="docutils literal notranslate"><span class="pre">ramp_utils</span></code> subpackage.</p></li>
+<li><p>If your pull request addresses an issue, please use the title to describe
+the issue and mention the issue number in the pull request description to
+ensure a link is created to the original issue.</p></li>
+<li><p>All public methods should have informative docstrings with sample
+usage presented as doctests when appropriate.</p></li>
+<li><p>Please prefix the title of your pull request with <code class="docutils literal notranslate"><span class="pre">[MRG]</span></code> if the
+contribution is complete and should be subjected to a detailed review.
+Incomplete contributions should be prefixed <code class="docutils literal notranslate"><span class="pre">[WIP]</span></code> to indicate a work in
+progress (and changed to <code class="docutils literal notranslate"><span class="pre">[MRG]</span></code> when it matures). WIPs may be useful to:
+indicate you are working on something to avoid duplicated work, request
+broad review of functionality or API, or seek collaborators. WIPs often
+benefit from the inclusion of a <a class="reference external" href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">task list</a> in the PR description.</p></li>
+<li><p>All other tests pass when everything is rebuilt from scratch. On
+Unix-like systems, check with (from the toplevel source folder):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make
+</pre></div>
+</div>
+</li>
+<li><p>Documentation and high-coverage tests are necessary for enhancements
+to be accepted.</p></li>
+<li><p>At least one paragraph of narrative documentation with links to
+references in the literature (with PDF links when possible) and
+the example.</p></li>
+</ul>
+<p>You can also check for common programming errors with the following
+tools:</p>
+<ul>
+<li><p>Code with good unittest coverage (at least 80%), check with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pytest pytest-cov
+$ pytest -vsl .
+</pre></div>
+</div>
+</li>
+<li><p>No flake8 warnings (which includes pep8 and pyflakes), check with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install flake8
+$ flake8 path/to/module.py
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="filing-bugs">
+<h3>Filing bugs<a class="headerlink" href="#filing-bugs" title="Permalink to this headline">¶</a></h3>
+<p>We use Github issues to track all bugs and feature requests; feel free to
+open an issue if you have found a bug or wish to see a feature implemented.</p>
+<p>It is recommended to check that your issue complies with the
+following rules before submitting:</p>
+<ul>
+<li><p>Verify that your issue is not being currently addressed by other
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/issues">issues</a> or <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pulls">pull requests</a>.</p></li>
+<li><p>Please ensure all code snippets and error messages are formatted in
+appropriate code blocks.
+See <a class="reference external" href="https://help.github.com/articles/creating-and-highlighting-code-blocks">Creating and highlighting code blocks</a>.</p></li>
+<li><p>Please include your operating system type and version number, as well
+as your Python, scikit-learn, numpy, and scipy versions. This information
+can be found by runnning the following code snippet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<span class="kn">import</span> <span class="nn">platform</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">())</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NumPy&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">scipy</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SciPy&quot;</span><span class="p">,</span> <span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">sklearn</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scikit-Learn&quot;</span><span class="p">,</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Please include a <a class="reference external" href="https://stackoverflow.com/help/mcve">reproducible</a> code snippet or link to a <a class="reference external" href="https://gist.github.com">gist</a>.
+If an exception is raised, please provide the traceback.</p></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>We are glad to accept any sort of documentation: function docstrings,
+reStructuredText documents (like this one), tutorials, etc.
+reStructuredText documents live in the source code repository under the
+doc/ directory.</p>
+<p>You can edit the documentation using any text editor and then generate
+the HTML output by typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> from the doc/ directory.
+Alternatively, <code class="docutils literal notranslate"><span class="pre">make</span></code> can be used to quickly generate the
+documentation without the example gallery. The resulting HTML files will
+be placed in _build/html/ and are viewable in a web browser. See the
+README file in the doc/ directory for more information.</p>
+<p>For building the documentation, you will need</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://sphinx-doc.org">sphinx</a>,</p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">sphinx_rtd_theme</a>,</p></li>
+<li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a>,</p></li>
+<li><p><a class="reference external" href="https://www.graphviz.org/">graphviz</a>,</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/ERAlchemy/">eralchemy</a>,</p></li>
+<li><p><a class="reference external" href="https://sphinx-click.readthedocs.io/en/latest/">sphinx-click</a>,</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>When you are writing documentation, it is important to keep a good
+compromise between mathematical and algorithmic details, and give
+intuition to the reader on what the algorithm does. It is best to always
+start with a small paragraph with a hand-waving explanation of what the
+method does to the data and a figure (coming from an example)
+illustrating it.</p>
+</div>
+</div>
+<div class="section" id="minor-release-process">
+<h2>Minor release process<a class="headerlink" href="#minor-release-process" title="Permalink to this headline">¶</a></h2>
+<p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span></code>. It will remove the <code class="docutils literal notranslate"><span class="pre">dev0</span></code> tag.</p></li>
+<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.0&quot;</span></code>
+(e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.5.0&quot;</span></code>).</p></li>
+<li><p>Create a branch for this version (e.g.,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.X</span></code>).</p></li>
+<li><p>Push the new branch into the upstream remote ramp-board repository.</p></li>
+<li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Copy the
+release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p></li>
+<li><p>Change the symlink in the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs">ramp-docs</a> repository such that
+stable points to the latest release version, i.e, 0.&lt;version number&gt;. To do
+this, clone the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">ramp-docs/ramp-board/</span></code>
+then run <code class="docutils literal notranslate"><span class="pre">unlink</span> <span class="pre">stable</span></code>, followed by
+<code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;</span> <span class="pre">stable</span></code>. To check that
+this was performed correctly, ensure that <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs/blob/master/ramp-board/stable">ramp-board/stable</a>
+has the new version number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> back into the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> code repository and ensure you are in the
+release branch (e.g., branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>). Remove unnecessary files
+with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+<li><p>Switch to <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on
+upstream.</p></li>
+<li><p>Add a new <code class="docutils literal notranslate"><span class="pre">v0.&lt;version</span> <span class="pre">number&gt;.rst</span></code> file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/doc/whats_new">doc/whats_new/</a>
+and <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span></code> this new file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/master/doc/whats_new.rst">doc/whats_new.rst</a>.</p></li>
+</ol>
+<p>Note that the steps 4, 5 and 7 should be performed while in the release
+branch, e.g. branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>.</p>
+</div>
+<div class="section" id="patch-bug-fix-release-process">
+<h2>Patch/bug fix release process<a class="headerlink" href="#patch-bug-fix-release-process" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Checkout the branch for the lastest release, e.g.,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.5.X</span></code>.</p></li>
+<li><p>Find the commit(s) hash of the bug fix commit you wish to back port
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p></li>
+<li><p>Append the bug fix commit(s) to the branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry</span> <span class="pre">pick</span> <span class="pre">&lt;hash&gt;</span></code>.</p></li>
+<li><p>Bump the version number with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">patch</span></code>. This will bump the
+patch version, for example from 0.5.0 to 0.5.1.dev0.</p></li>
+<li><p>Mark the current version as release version (as opposed to ‘dev’ version)
+with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span> <span class="pre">--allow-dirty</span></code>. It will bump the version from
+0.5.1.dev0 to 0.5.1.</p></li>
+<li><p>Commit the changes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">'bumpversion</span> <span class="pre">&lt;new</span> <span class="pre">version&gt;'</span></code>.</p></li>
+<li><p>Push the changes to the release branch in upstream, e.g.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">&lt;upstream</span> <span class="pre">remote&gt;</span> <span class="pre">&lt;release</span> <span class="pre">branch&gt;</span></code></p></li>
+<li><p>Remove unnecessary files with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+<li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Note down the
+bug fixes added in the patch.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user_guide.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 - 2019, Paris-Saclay Center for Data Science
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

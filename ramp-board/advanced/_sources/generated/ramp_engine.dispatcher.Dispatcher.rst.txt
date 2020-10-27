@@ -1,0 +1,14 @@
+﻿:mod:`ramp_engine.dispatcher`.Dispatcher
+===============================================
+
+.. currentmodule:: ramp_engine.dispatcher
+
+.. autoclass:: Dispatcher
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>
