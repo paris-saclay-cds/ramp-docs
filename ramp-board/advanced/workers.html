@@ -355,8 +355,14 @@ for more details.</p>
     <span class="n">predictions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris_aws</span><span class="o">/</span><span class="n">predictions</span>
     <span class="n">logs_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris_aws</span><span class="o">/</span><span class="n">logs</span>
     <span class="n">memory_profiling</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">dispatcher</span><span class="p">:</span>
+    <span class="n">hunger_policy</span><span class="p">:</span> <span class="n">sleep</span>
+    <span class="n">n_workers</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="n">n_threads</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">time_between_collection</span><span class="p">:</span> <span class="mi">60</span>
 </pre></div>
 </div>
+<p><strong>Worker configuration</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">access_key_id</span></code> and <code class="docutils literal notranslate"><span class="pre">secret_access_key</span></code>: to create a new access key, go
 to your top navigation bar, click on your user name -&gt; My Security
@@ -392,6 +398,22 @@ the AWS image you prepared (see <a class="reference internal" href="#prepare-ins
 <li><p><code class="docutils literal notranslate"><span class="pre">memory_profiling</span></code>: boolean, whether or not to profile memory used by each
 submission. You need to install <a class="reference external" href="https://pypi.org/project/memory-profiler/">memory profiler</a> in your prepared AMI image
 to enable this.</p></li>
+</ul>
+<p id="aws-dispatcher"><strong>Dispatcher configuration</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hunger_policy</span></code>: See <span class="xref std std-ref">dispatcher_configuration</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_workers</span></code>: Maximum number of workers that can run submissions
+simultaneously. For AWS workers, this means the maximum number of
+instances that can be run at one time. This should fall within your
+AWS instance limit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_threads</span></code>: The number of threads that each worker can use. This would
+depend on the AWS instance type you have choosen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_between_collection</span></code>: How long, in seconds, the worker should wait
+before re-checking if the submission is ready for collection. The default is
+1 second. For AWS workers the check for collection will be done through SSH.
+If the time between checks is too small, the repetitive SSH requests may be
+potentially blocked by the cloud provider. We advise to set this
+configuration to at least 60 seconds.</p></li>
 </ul>
 </div>
 </div>

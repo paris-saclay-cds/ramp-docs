@@ -179,15 +179,15 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher<a class="headerlink" href="#ramp-engine-dispatcher-dispatcher" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ramp_engine.dispatcher.Dispatcher">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.dispatcher.</code><code class="sig-name descname">Dispatcher</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.dispatcher.</code><code class="sig-name descname">Dispatcher</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_between_collection</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dispatcher which schedule workers and communicate with the database.</p>
 <p>The dispatcher uses two queues: a queue containing containing the workers
 which should be launched and a queue containing the workers which are being
 processed. The latter queue has a limited size defined by <code class="docutils literal notranslate"><span class="pre">n_workers</span></code>.
 Note that these workers can run simultaneously.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>config</strong><span class="classifier">dict or str</span></dt><dd><p>A configuration YAML file containing the information about the
 database.</p>
 </dd>
@@ -212,12 +212,22 @@ for new submission;</p></li>
 the last submissions.</p></li>
 </ul>
 </dd>
+<dt><strong>time_between_collection</strong><span class="classifier">int, default=1</span></dt><dd><p>The amount of time in seconds to wait before checking if we can
+collect results from worker.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This parameter is important when using a cloud platform to run
+submissions, as the check for collection will be done through SSH.
+Thus, if the time between checks is too small, the repetitive
+SSH requests may be potentially blocked by the cloud provider.</p>
+</div>
+</dd>
 </dl>
 </dd>
 </dl>
 <dl class="py method">
 <dt id="ramp_engine.dispatcher.Dispatcher.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_between_collection</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
