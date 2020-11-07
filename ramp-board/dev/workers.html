@@ -347,6 +347,7 @@ for more details.</p>
     <span class="n">ami_image_name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">AMI</span> <span class="nb">set</span> <span class="n">up</span> <span class="k">for</span> <span class="n">this</span> <span class="n">event</span><span class="o">&gt;</span>
     <span class="n">ami_user_name</span><span class="p">:</span> <span class="n">ubuntu</span>
     <span class="n">instance_type</span><span class="p">:</span> <span class="n">t2</span><span class="o">.</span><span class="n">micro</span>
+    <span class="n">use_spot_instance</span><span class="p">:</span> <span class="n">false</span>
     <span class="n">key_name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">your</span> <span class="n">pem</span> <span class="n">file</span><span class="p">,</span> <span class="n">eg</span> <span class="n">iris_key</span><span class="o">&gt;</span>
     <span class="n">security_group</span><span class="p">:</span> <span class="n">launch</span><span class="o">-</span><span class="n">wizard</span><span class="o">-</span><span class="mi">103</span>
     <span class="n">key_path</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">pem</span> <span class="n">file</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">user</span> <span class="n">name</span><span class="p">,</span> <span class="n">eg</span> <span class="n">my_path</span><span class="o">/</span><span class="n">iris_key</span><span class="o">.</span><span class="n">pem</span><span class="o">&gt;</span>
@@ -381,6 +382,9 @@ console, ‘Instances’ tab on the left, under ‘availability zone’.</p></li
 Commonly ‘ec2-user’ or ‘ubuntu’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">instance_type</span></code>: found in the EC2 console, ‘Instances’ tab, ‘Description’
 tab at the bottom, under ‘Instance type’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_spot_instance</span></code>: boolean, default false. Whether or not to use spot
+instances. See <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">AWS</a>
+for more information on spot instances.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">key_name</span></code>: name of the key, eg if your key file is ‘iris_key.pem’, the key
 name is ‘iris_key’</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">security_group</span></code>: in the EC2 console, ‘Instances’ tab, ‘Description’ tab
