@@ -107,7 +107,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#event-configuration">5.2.3. Event configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">5.3. Create your own worker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-submissions-with-dask">5.3. Running submissions with Dask</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#daskworker-setup-of-the-main-server">5.3.1. DaskWorker setup of the main server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daskworker-setup-with-a-local-cluster">5.3.2. DaskWorker setup with a local cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daskworker-setup-with-a-remote-cluster">5.3.3. DaskWorker setup with a remote cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-own-worker">5.4. Create your own worker</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
@@ -202,6 +208,10 @@ specifying the name of the conda environment.</p></li>
 instance and copy back the results. This worker is specified as
 <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">aws</span></code>, and for more details on the setup and configuration,
 see below.</p></li>
+<li><p>The <a class="reference internal" href="generated/ramp_engine.remote.DaskWorker.html#ramp_engine.remote.DaskWorker" title="ramp_engine.remote.DaskWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.remote.DaskWorker</span></code></a> will send the submission to Dask
+cluster, which can be local or remote, and copy back the results. This
+worker is specified as <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">dask</span></code>. For more details on the setup
+and configuration, see below.</p></li>
 </ul>
 <div class="section" id="running-submissions-in-a-conda-environment">
 <span id="conda-env-worker"></span><h2><span class="section-number">5.1. </span>Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
@@ -421,8 +431,140 @@ configuration to at least 60 seconds.</p></li>
 </ul>
 </div>
 </div>
+<div class="section" id="running-submissions-with-dask">
+<h2><span class="section-number">5.3. </span>Running submissions with Dask<a class="headerlink" href="#running-submissions-with-dask" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="generated/ramp_engine.remote.DaskWorker.html#ramp_engine.remote.DaskWorker" title="ramp_engine.remote.DaskWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.remote.DaskWorker</span></code></a> allows to run submissions on a Dask
+distributed cluster which can be either remote or local.</p>
+<p>To setup this worker please follow the instructions below.</p>
+<div class="section" id="daskworker-setup-of-the-main-server">
+<h3><span class="section-number">5.3.1. </span>DaskWorker setup of the main server<a class="headerlink" href="#daskworker-setup-of-the-main-server" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Setup the <a class="reference internal" href="setup_server.html#setup-server"><span class="std std-ref">ramp_frontend server</span></a> and
+<a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">deploy the RAMP event</span></a>.</p></li>
+<li><p>Install dask.distributed,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install <span class="s2">&quot;dask[distributed]&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Start a dask.distributed scheduler,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dask-scheduler
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://docs.dask.org/en/latest/setup/cli.html#command-line">dask.distributed documentation</a>
+for more information.</p>
+</li>
+<li><p>Specify the worker in the event configuration as follows,</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worker</span><span class="p">:</span>
+  <span class="nt">worker_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+  <span class="nt">conda_env</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ramp-iris</span>
+  <span class="nt">dask_scheduler</span><span class="p">:</span> <span class="s">&quot;tcp://127.0.0.1:8786&quot;</span>   <span class="c1"># or another URL to the dask scheduler</span>
+  <span class="nt">n_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>  <span class="c1"># (number of RAMP workers launched in parallel. Must be smaller</span>
+                <span class="c1">#  than the number of dask.distributed workers)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Launch the <a class="reference internal" href="create_ramp_event.html#launch-dispatcher"><span class="std std-ref">RAMP dispatcher</span></a>.</p></li>
+</ol>
+</div>
+<div class="section" id="daskworker-setup-with-a-local-cluster">
+<h3><span class="section-number">5.3.2. </span>DaskWorker setup with a local cluster<a class="headerlink" href="#daskworker-setup-with-a-local-cluster" title="Permalink to this headline">¶</a></h3>
+<p>To start a local dask.distributed cluster, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dask-worker --nprocs <span class="m">10</span>  <span class="c1"># or any appropriate number of workers.</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://docs.dask.org/en/latest/setup/cli.html#command-line">dask.distributed documentation</a>
+for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of dask.distributed workers (as specified by the <code class="docutils literal notranslate"><span class="pre">--nprocs</span></code>
+argument) must be larger, ideally by 50% or so, than the number of RAMP
+workers specified in the event configuration. For instance, on a machine
+having 16 physical CPUs, you can start 16 RAMP workers, and 32
+dask.distributed workers.</p>
+<p>This is necessary as some dask.distributed workers will be used for running
+the submission, while others manage data and state sychronization.</p>
+</div>
+</div>
+<div class="section" id="daskworker-setup-with-a-remote-cluster">
+<h3><span class="section-number">5.3.3. </span>DaskWorker setup with a remote cluster<a class="headerlink" href="#daskworker-setup-with-a-remote-cluster" title="Permalink to this headline">¶</a></h3>
+<p>To use a remote dask.distributed cluster, following pre-requisites must be verified.</p>
+<ul class="simple">
+<li><p>the remote machine must have a <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code>
+folder with the same absolute path as on the main server</p></li>
+<li><p>it must have a <code class="docutils literal notranslate"><span class="pre">base</span></code> (or <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>) environment  with the same versions of installed
+packages as on the main server. Including the same version of <code class="docutils literal notranslate"><span class="pre">dask[distributed]</span></code>.</p></li>
+</ul>
+<p>The setup steps are then as follows,</p>
+<ol class="arabic">
+<li><p>Create the conda environment for running event submissions (same name as on
+the main server).</p></li>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">ramp-kit</span></code> and <code class="docutils literal notranslate"><span class="pre">ramp-data</span></code> of the event from the main server, to the
+identical paths under the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> folder.</p></li>
+<li><p>Start the dask[distributed] workers,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dask-worker --nprocs <span class="m">10</span>  <span class="c1"># or any appropriate number of workers.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Dask scheduler is not in the same local network as the Dask workers,
+you would need to start workers as,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dask-worker tcp://&lt;scheduler-public-ip&gt;:8786 --listen-address <span class="s2">&quot;tcp://0.0.0.0:&lt;port&gt;&quot;</span> --contact-address <span class="s2">&quot;tcp://&lt;worker-public-ip&gt;:&lt;port&gt;</span>
+</pre></div>
+</div>
+<p>This however only works with one dask worker at the time. To start more,
+you can use the following bash script,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select the number of dask workers to start.</span>
+<span class="c1"># Better to start at idx=10, to keep the number of digits</span>
+<span class="c1"># (mapped to the port) constant.</span>
+<span class="k">for</span> idx in <span class="o">{</span><span class="m">10</span>..28<span class="o">}</span>
+<span class="k">do</span>
+    <span class="c1"># start dask worker in the background</span>
+    dask-worker tcp://&lt;scheduler-public-ip&gt;:8786 --listen-address <span class="s2">&quot;tcp://0.0.0.0:416</span><span class="si">${</span><span class="nv">idx</span><span class="si">}</span><span class="s2">&quot;</span>   --contact-address <span class="s2">&quot;tcp://&lt;worker-public-ip&gt;:416</span><span class="si">${</span><span class="nv">idx</span><span class="si">}</span><span class="s2">&quot;</span> --nthreads <span class="m">4</span>  <span class="p">&amp;</span>
+    sleep <span class="m">0</span>.5
+<span class="k">done</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Sleeping&quot;</span>
+<span class="k">while</span> <span class="o">[</span> <span class="m">1</span> <span class="o">]</span>
+<span class="k">do</span>
+    sleep <span class="m">1</span>
+<span class="k">done</span>
+
+<span class="c1"># On exit kill all children processes (i.e. all workers)</span>
+<span class="nb">trap</span> <span class="s2">&quot;trap - SIGTERM &amp;&amp; kill -- -</span><span class="nv">$$</span><span class="s2">&quot;</span> SIGINT SIGTERM EXIT
+</pre></div>
+</div>
+<p>which in particular allows to kill all workers with <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> when interrupting this script.</p>
+</div>
+</li>
+</ol>
+<p><strong>Security considerations</strong></p>
+<p>By default communications between dask distributed schedulers and workers is
+neither encrypted not authentificated which poses security risks. Dask
+distributed supports TLS/SSL certifications, however these are not currently
+supported in DaskWorker in RAMP.</p>
+<p>A workaround for authentification could be to configure a firewall, such as
+<a class="reference external" href="https://help.ubuntu.com/community/UFW">UFW</a> to deny connections to dask
+related ports, except from pre-defined IPs of dask worker/scheduler.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not run the following command without understanding what they do. You
+could lose SSH access to you machine.</p>
+</div>
+<p>For instance with the UFW firewall on the main server,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">22</span><span class="o">/</span><span class="n">tcp</span>   <span class="c1"># allow SSH</span>
+<span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">80</span>
+<span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">443</span>      <span class="c1"># allow access to ramp_frontend server over HTTP and HTTPS</span>
+<span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="kn">from</span> <span class="o">&lt;</span><span class="n">remote</span><span class="o">-</span><span class="n">worker</span><span class="o">-</span><span class="n">ip</span><span class="o">&gt;</span>  <span class="c1"># allow access to any port from a given IP</span>
+<span class="n">sudo</span> <span class="n">ufw</span> <span class="n">enable</span>
+<span class="n">sudo</span> <span class="n">ufw</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="create-your-own-worker">
-<h2><span class="section-number">5.3. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the choice of workers in RAMP is quite limited. You might want to
 create your own worker for your platform (Openstack, Azure, etc.). This section
 illustrates how to implement your own worker.</p>
