@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.database`.add_submission_file_type_extension
+===================================================================================
+
+.. currentmodule:: ramp_database.tools.database
+
+.. autofunction:: add_submission_file_type_extension
+
+.. raw:: html
+
+    <div style='clear:both'></div>

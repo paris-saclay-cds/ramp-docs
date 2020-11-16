@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.submission`.set_predictions
+==================================================================
+
+.. currentmodule:: ramp_database.tools.submission
+
+.. autofunction:: set_predictions
+
+.. raw:: html
+
+    <div style='clear:both'></div>
