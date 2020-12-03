@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release history &mdash; RAMP 0.7.0 documentation</title>
+  <title>Release history &mdash; RAMP 0.7.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.7.0
+                0.7.1
               </div>
             
           
@@ -127,6 +127,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">ramp-utils</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-7">Version 0.7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Changelog</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#maintenance">Maintenance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">ramp-utils</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -259,12 +270,63 @@ a file from OSF.
 </div>
 <div class="section" id="id8">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Fix a bug that make AWS worker hang by adding a time between each
+collection check.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/447">#447</a> by <a class="reference external" href="https://github.com/lucyleeow">Lucy Leeow</a>.</p></li>
+</ul>
 </div>
 <div class="section" id="id9">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id10">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-utils</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="version-0-7">
+<span id="changes-0-7"></span><h2>Version 0.7<a class="headerlink" href="#version-0-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>Changelog<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="maintenance">
+<h4>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Add support for Python 3.8.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/375">#375</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">email_validator</span></code> in requirements.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/448">#448</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+<li><p>Move CI to github action.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/460">#460</a> by <a class="reference external" href="https://github.com/rth">Roman Yurchak</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id13">
+<h4><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Add support for spot instance in AWS.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/455">#455</a> by <a class="reference external" href="https://github.com/lucyleeow">Lucy Leeow</a>.</p></li>
+<li><p>Fix bug in AWS to handle worker errors.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/465">#465</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>.</p></li>
+<li><p>Fix bug in dispatcher to handle workers errors.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/464">#464</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>.</p></li>
+<li><p>Add timeout for <code class="docutils literal notranslate"><span class="pre">curl</span></code> request in AWS worker and handle the
+subsequent SSH error.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/467">#467</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>.</p></li>
+<li><p>Improve the logging in the dispatcher.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/468">#468</a> by <a class="reference external" href="https://github.com/tommoral">Thomas Moreau</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h4><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Fix sorting index for score in the leaderboards.
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/566">#566</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4><code class="docutils literal notranslate"><span class="pre">ramp-utils</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>
