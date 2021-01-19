@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_database.tools.leaderboard.get_leaderboard &mdash; RAMP 0.7.3 documentation</title>
+  <title>ramp_database.tools.leaderboard.get_leaderboard &mdash; RAMP 0.7.4 documentation</title>
   
 
   
@@ -24,7 +24,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -63,7 +62,7 @@
             
             
               <div class="version">
-                0.7.3
+                0.7.4
               </div>
             
           
@@ -191,7 +190,10 @@
 <dd class="field-odd"><dl>
 <dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
 </dd>
-<dt><strong>leaderboard_type</strong><span class="classifier">{‘public’, ‘private’, ‘failed’, ‘new’, ‘public competition’, ‘private competition’}</span></dt><dd><p>The type of leaderboard to generate.</p>
+<dt><strong>leaderboard_type</strong><span class="classifier">{‘public’, ‘private’, ‘failed’, ‘new’, </span></dt><dd><blockquote>
+<div><p>‘public competition’, ‘private competition’}</p>
+</div></blockquote>
+<p>The type of leaderboard to generate.</p>
 </dd>
 <dt><strong>event_name</strong><span class="classifier">str</span></dt><dd><p>The event name.</p>
 </dd>
