@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Personalize your RAMP front webpage &mdash; RAMP 0.8.0.dev0 documentation</title>
+  <title>2. Personalize your RAMP instance &mdash; RAMP 0.8.0.dev0 documentation</title>
   
 
   
@@ -95,8 +95,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Personalize your RAMP front webpage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#powered-by">2.1. Powered by</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Personalize your RAMP instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#front-page">2.1. Front page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#privacy-policy-page">2.2. Privacy Policy page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sign-up-and-login-pages">2.3. Sign up and login pages</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
@@ -160,7 +162,7 @@
         
           <li><a href="user_guide.html">User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2. </span>Personalize your RAMP front webpage</li>
+      <li><span class="section-number">2. </span>Personalize your RAMP instance</li>
     
     
 
@@ -172,11 +174,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="personalize-your-ramp-front-webpage">
-<h1><span class="section-number">2. </span>Personalize your RAMP front webpage<a class="headerlink" href="#personalize-your-ramp-front-webpage" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="personalize-your-ramp-instance">
+<span id="personnalize-instance"></span><h1><span class="section-number">2. </span>Personalize your RAMP instance<a class="headerlink" href="#personalize-your-ramp-instance" title="Permalink to this headline">¶</a></h1>
 <p>It is possible to personalize your RAMP front page.</p>
-<div class="section" id="powered-by">
-<h2><span class="section-number">2.1. </span>Powered by<a class="headerlink" href="#powered-by" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="front-page">
+<h2><span class="section-number">2.1. </span>Front page<a class="headerlink" href="#front-page" title="Permalink to this headline">¶</a></h2>
 <p>You might be interested in displaying some images (logos) in the <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code>
 section in the very bottom of your RAMP webpage.</p>
 <p>To do so, add all the images you wish to have displayed to the following
@@ -192,6 +194,37 @@ directory:</p>
 <li><p>.svg</p></li>
 </ul>
 <p>When you reload your RAMP page the new <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code> section should appear.</p>
+</div>
+<div class="section" id="privacy-policy-page">
+<h2><span class="section-number">2.2. </span>Privacy Policy page<a class="headerlink" href="#privacy-policy-page" title="Permalink to this headline">¶</a></h2>
+<p>You can add an optional Privacy Policy page, setting the following in the main
+<code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flask</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">privacy_policy_page</span><span class="p">:</span> <span class="s2">&quot;&lt;path.html&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal notranslate"><span class="pre">privacy_policy_page</span></code> can be either a path to an HTML file, or
+directly the HTML contents of that page. See an example in
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/ramp-frontend/ramp_frontend/templates/privacy_policy_template.html">privacy_policy_template.html</a>.</p>
+<p>This will enable the <code class="docutils literal notranslate"><span class="pre">/privacy_policy</span></code> endpoint, and will add it to the footer
+menu.</p>
+</div>
+<div class="section" id="sign-up-and-login-pages">
+<h2><span class="section-number">2.3. </span>Sign up and login pages<a class="headerlink" href="#sign-up-and-login-pages" title="Permalink to this headline">¶</a></h2>
+<p>You can add personalized messages to the Sign Up and Login pages, by adding the
+following to the main <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flask</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">login_instructions</span><span class="p">:</span> <span class="s2">&quot;instructions A&quot;</span>
+    <span class="n">sign_up_instructions</span><span class="p">:</span> <span class="s2">&quot;instructions A&quot;</span>
+    <span class="n">sign_up_ask_social_media</span><span class="p">:</span> <span class="kc">True</span>    <span class="c1"># ask for social media acounts (optional)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">login_instructions</span></code> and <code class="docutils literal notranslate"><span class="pre">sign_up_instructions</span></code> can be either a path to an HTML
+file, or directly the HTML contents.</p>
+<p>By including HTML code with JavaScript, these field can also be used to customize the
+Sign Up and Login forms.</p>
 </div>
 </div>
 
