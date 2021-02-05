@@ -303,7 +303,7 @@ need to install git.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Get the data and copy public data to <code class="docutils literal notranslate"><span class="pre">ramp-kits/&lt;project&gt;/data/</span></code>.
+<li><p>Get the data and copy private data to <code class="docutils literal notranslate"><span class="pre">ramp-kits/&lt;project&gt;/data/</span></code>.
 Note: depending on how <code class="docutils literal notranslate"><span class="pre">prepare_data.py</span></code> structures the data files,
 the last command may differ:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ RAMPDATA_DIR=&quot;$HOME/ramp-data&quot;
@@ -312,7 +312,7 @@ the last command may differ:</p>
 ~ $ git clone $data_url $data_dir
 ~ $ cd $data_dir
 ~ $ python prepare_data.py
-~ $ cp data/public/* $kit_dir/data/
+~ $ cp data/private/* $kit_dir/data/
 </pre></div>
 </div>
 </li>
