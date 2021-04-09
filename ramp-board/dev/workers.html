@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>5. Notes regarding the RAMP workers &mdash; RAMP 0.8.0.dev0 documentation</title>
@@ -86,12 +87,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
@@ -116,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -179,7 +180,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="notes-regarding-the-ramp-workers">
+  <section id="notes-regarding-the-ramp-workers">
 <span id="all-workers"></span><h1><span class="section-number">5. </span>Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
 <p>The RAMP “worker” is the object responsible of actually running (training and
 evaluating) a submission and returning back the results (predictions and
@@ -202,7 +203,7 @@ instance and copy back the results. This worker is specified as
 <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">aws</span></code>, and for more details on the setup and configuration,
 see below.</p></li>
 </ul>
-<div class="section" id="running-submissions-in-a-conda-environment">
+<section id="running-submissions-in-a-conda-environment">
 <span id="conda-env-worker"></span><h2><span class="section-number">5.1. </span>Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>As previously mentioned, the <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> workers
 rely on a Conda environment to execute the submission.</p>
@@ -231,8 +232,8 @@ directory and use the following to install the environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-submissions-on-amazon-web-services-aws">
+</section>
+<section id="running-submissions-on-amazon-web-services-aws">
 <h2><span class="section-number">5.2. </span>Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
@@ -244,7 +245,7 @@ specific resources (e.g. GPU’s).</p>
 <li><p>Save the instance as an Amazon Machine Image (AMI).</p></li>
 <li><p>Update the event <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file on the RAMP server.</p></li>
 </ol>
-<div class="section" id="launching-aws-instance">
+<section id="launching-aws-instance">
 <span id="launch-aws"></span><h3><span class="section-number">5.2.1. </span>Launching AWS instance<a class="headerlink" href="#launching-aws-instance" title="Permalink to this headline">¶</a></h3>
 <p>Follow <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">AWS getting started</a>
 to launch an Amazon EC2 Linux instance. Amazon can create a new key-pair
@@ -263,8 +264,8 @@ commonly ‘ec2-user’ or ‘ubuntu’. The full list can be found <a class="re
 under ‘Get the user name for your instance’. ‘my-instance-public-dns-name’ can
 be found by clicking on your ‘Instances’ tab in your EC2 dashboard.
 Full connection details can be found in the <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">AWS guide</a>.</p>
-</div>
-<div class="section" id="prepare-the-instance">
+</section>
+<section id="prepare-the-instance">
 <span id="prepare-instance"></span><h3><span class="section-number">5.2.2. </span>Prepare the instance<a class="headerlink" href="#prepare-the-instance" title="Permalink to this headline">¶</a></h3>
 <p>To prepare the instance you need to download the starting kit, data and all
 required packages to run submissions. This can be saved as an AMI (image) and
@@ -328,8 +329,8 @@ the last command may differ:</p>
 Actions -&gt; Image -&gt; Create image. See <a class="reference external" href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/tkv-create-ami-from-instance.html">Create an AMI from an Amazon EC2
 instance</a>
 for more details.</p>
-</div>
-<div class="section" id="event-configuration">
+</section>
+<section id="event-configuration">
 <h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Create an event config.yml (see <a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>) and update the
 ‘worker’ section, which should look something like:</p>
@@ -418,9 +419,9 @@ If the time between checks is too small, the repetitive SSH requests may be
 potentially blocked by the cloud provider. We advise to set this
 configuration to at least 60 seconds.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="create-your-own-worker">
+</section>
+</section>
+<section id="create-your-own-worker">
 <h2><span class="section-number">5.3. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the choice of workers in RAMP is quite limited. You might want to
 create your own worker for your platform (Openstack, Azure, etc.). This section
@@ -505,8 +506,8 @@ worker, it would look like:</p>
   <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
