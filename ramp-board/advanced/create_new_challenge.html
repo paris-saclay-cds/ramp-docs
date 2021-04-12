@@ -5,10 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Create New Challenge &mdash; RAMP 0.7.0.dev0 documentation</title>
+  <title>4. Create New Challenge &mdash; RAMP 0.8.0.dev0 documentation</title>
   
 
   
@@ -24,7 +25,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.7.0.dev0
+                0.8.0.dev0
               </div>
             
           
@@ -87,12 +87,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -181,7 +181,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="create-new-challenge">
+  <section id="create-new-challenge">
 <h1><span class="section-number">4. </span>Create New Challenge<a class="headerlink" href="#create-new-challenge" title="Permalink to this headline">¶</a></h1>
 <p>Before you start creating your RAMP challenge, make sure that you have the
 data needed to run your challenge. RAMP kit will need to include two types of
@@ -209,7 +209,7 @@ of your challenge in the ramp-kits directory of your RAMP:</p>
 <li><p>directory with the public data, and</p></li>
 <li><p>Jupiter notebook introduction the challenge</p></li>
 </ul>
-<div class="section" id="requirements-txt-file">
+<section id="requirements-txt-file">
 <h2><span class="section-number">4.1. </span>requirements.txt file<a class="headerlink" href="#requirements-txt-file" title="Permalink to this headline">¶</a></h2>
 <p>This file should include all the libraries required to run your challenge
 Its content might, for example, look as follows:</p>
@@ -220,8 +220,8 @@ Its content might, for example, look as follows:</p>
 <span class="n">seaborn</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="problem-py-python-file">
+</section>
+<section id="problem-py-python-file">
 <h2><span class="section-number">4.2. </span>problem.py Python file<a class="headerlink" href="#problem-py-python-file" title="Permalink to this headline">¶</a></h2>
 <p>Here, you will need to define:</p>
 <ul class="simple">
@@ -310,14 +310,14 @@ the data:</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="submission-directory">
+</section>
+<section id="submission-directory">
 <h2><span class="section-number">4.3. </span>submission directory<a class="headerlink" href="#submission-directory" title="Permalink to this headline">¶</a></h2>
 <p>All the submissions will be expected to be stored in the submission directory.
 The user might select any name for their submission. At least one sample
 submission is always given to the users. In the <a class="reference external" href="https://github.com/ramp-kits/iris">Iris</a> example three submissions are provided:
 error, random_forest_10_10 and starting_kit.</p>
-<div class="section" id="example-submission-directory-and-its-content">
+<section id="example-submission-directory-and-its-content">
 <h3><span class="section-number">4.3.1. </span>example submission directory and its content<a class="headerlink" href="#example-submission-directory-and-its-content" title="Permalink to this headline">¶</a></h3>
 <p>In Iris example, each of the submission directories include python file called
 classifier.py letting the user know that their submission should also include
@@ -347,14 +347,14 @@ in Iris example in the starting_kit it looks like this:</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="data-directory">
+</section>
+</section>
+<section id="data-directory">
 <h2><span class="section-number">4.4. </span>data directory<a class="headerlink" href="#data-directory" title="Permalink to this headline">¶</a></h2>
 <p>This directory should include all the public datasets (train and test) used in
 the challenge.</p>
-</div>
-<div class="section" id="your-challenge-starting-kit-ipynb-jupiter-notebook-file">
+</section>
+<section id="your-challenge-starting-kit-ipynb-jupiter-notebook-file">
 <h2><span class="section-number">4.5. </span>your_challenge_starting_kit.ipynb Jupiter notebook file<a class="headerlink" href="#your-challenge-starting-kit-ipynb-jupiter-notebook-file" title="Permalink to this headline">¶</a></h2>
 <p>Finally, you need to create a notebook informing the users about the challenge.
 This notebook will be visible to all logged-in users, no matter if they decided
@@ -363,13 +363,13 @@ freely as the RAMP will not rely on it during the challenge. However, for the
 sake of the users it is recommended that you introduce the problem and explain
 what are the requirements. It is also advisable to get the users started by
 showing them how to access the data and samples of the code.</p>
-</div>
-<div class="section" id="examplar-ramp-kits">
+</section>
+<section id="examplar-ramp-kits">
 <h2><span class="section-number">4.6. </span>examplar RAMP kits<a class="headerlink" href="#examplar-ramp-kits" title="Permalink to this headline">¶</a></h2>
 <p>For other examples of code of existing challenges feel free to visit RAMP kits
 github account: <a class="reference external" href="https://github.com/ramp-kits/">https://github.com/ramp-kits/</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -5,10 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Develop and contribute &mdash; RAMP 0.7.0.dev0 documentation</title>
+  <title>Develop and contribute &mdash; RAMP 0.8.0.dev0 documentation</title>
   
 
   
@@ -24,7 +25,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.7.0.dev0
+                0.8.0.dev0
               </div>
             
           
@@ -87,7 +87,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Develop and contribute</a><ul>
@@ -106,13 +106,13 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -173,18 +173,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="develop-and-contribute">
+  <section id="develop-and-contribute">
 <span id="contribute"></span><h1>Develop and contribute<a class="headerlink" href="#develop-and-contribute" title="Permalink to this headline">¶</a></h1>
 <p>Welcome to the RAMP team. We are always happy to have new RAMP developers.</p>
 <p>You can contribute to this code by making a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">Pull Request</a>
 on <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pulls">Github</a>. Please, make sure that your code is coming with unit tests to
 ensure full coverage and continuous integration in the API.</p>
-<div class="section" id="install-for-development">
+<section id="install-for-development">
 <h2>Install for development<a class="headerlink" href="#install-for-development" title="Permalink to this headline">¶</a></h2>
 <p>To install RAMP please fallow <a class="reference internal" href="install.html#install"><span class="std std-ref">install guideline</span></a> making sure
 that you use the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">inplace</span></code> option to install RAMP in developer mode.</p>
-</div>
-<div class="section" id="prepare-database-engine">
+</section>
+<section id="prepare-database-engine">
 <h2>Prepare database engine<a class="headerlink" href="#prepare-database-engine" title="Permalink to this headline">¶</a></h2>
 <p>Testing RAMP requires a database cluster, you need to create it similarly as
 described in <a class="reference internal" href="setup_server.html#set-database"><span class="std std-ref">create database</span></a> section.</p>
@@ -214,8 +214,8 @@ find it out by typing in your terminal:</p>
 </pre></div>
 </div>
 <p>This command will list all of your databases along with their owners.</p>
-</div>
-<div class="section" id="test">
+</section>
+<section id="test">
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
 <p>In order to run your tests please create a test conda environment (you will
 need to do that only once):</p>
@@ -245,11 +245,11 @@ In the other case, you can test the individual packages with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pytest -vsl --pyargs ramp_utils ramp_database ramp_frontend ramp_engine
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-to-contribute">
+</section>
+<section id="how-to-contribute">
 <h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
 <p>This guide is adapted from <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md">scikit-learn contribution guide</a>.</p>
-<div class="section" id="forking-ramp">
+<section id="forking-ramp">
 <h3>Forking RAMP<a class="headerlink" href="#forking-ramp" title="Permalink to this headline">¶</a></h3>
 <p>The preferred way to contribute to RAMP is to fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a>
 on GitHub:</p>
@@ -292,8 +292,8 @@ and click ‘Pull request’ to send your changes to the maintainers for
 review. This will send an email to the committers.</p>
 <p>If any of the above seems like magic to you, then look up <a class="reference external" href="https://git-scm.com/documentation">Git documentation</a>
 on the web.</p>
-</div>
-<div class="section" id="contributing-pull-requests">
+</section>
+<section id="contributing-pull-requests">
 <h3>Contributing Pull Requests<a class="headerlink" href="#contributing-pull-requests" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended to check that your contribution complies with the
 following rules before submitting a pull request:</p>
@@ -341,8 +341,8 @@ $ flake8 path/to/module.py
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="filing-bugs">
+</section>
+<section id="filing-bugs">
 <h3>Filing bugs<a class="headerlink" href="#filing-bugs" title="Permalink to this headline">¶</a></h3>
 <p>We use Github issues to track all bugs and feature requests; feel free to
 open an issue if you have found a bug or wish to see a feature implemented.</p>
@@ -369,8 +369,8 @@ can be found by runnning the following code snippet:</p>
 <li><p>Please include a <a class="reference external" href="https://stackoverflow.com/help/mcve">reproducible</a> code snippet or link to a <a class="reference external" href="https://gist.github.com">gist</a>.
 If an exception is raised, please provide the traceback.</p></li>
 </ul>
-</div>
-<div class="section" id="documentation">
+</section>
+<section id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
 <p>We are glad to accept any sort of documentation: function docstrings,
 reStructuredText documents (like this one), tutorials, etc.
@@ -400,9 +400,9 @@ intuition to the reader on what the algorithm does. It is best to always
 start with a small paragraph with a hand-waving explanation of what the
 method does to the data and a figure (coming from an example)
 illustrating it.</p>
-</div>
-</div>
-<div class="section" id="minor-release-process">
+</section>
+</section>
+<section id="minor-release-process">
 <h2>Minor release process<a class="headerlink" href="#minor-release-process" title="Permalink to this headline">¶</a></h2>
 <p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
 <ol class="arabic simple">
@@ -411,9 +411,14 @@ illustrating it.</p>
 (e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.5.0&quot;</span></code>).</p></li>
 <li><p>Create a branch for this version (e.g.,
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.X</span></code>).</p></li>
-<li><p>Push the new branch into the upstream remote ramp-board repository.</p></li>
-<li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Copy the
-release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p></li>
+</ol>
+<p>4*. Push the new branch into the upstream remote ramp-board repository.
+5*. Create a GitHub release by clicking ‘Draft a new release’ <a href="#id1"><span class="problematic" id="id2">`</span></a>here</p>
+<blockquote>
+<div><p>&lt;<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">https://github.com/paris-saclay-cds/ramp-board/releases</a>&gt;`_. Copy the
+release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
 <li><p>Change the symlink in the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs">ramp-docs</a> repository such that
 stable points to the latest release version, i.e, 0.&lt;version number&gt;. To do
 this, clone the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">ramp-docs/ramp-board/</span></code>
@@ -421,9 +426,13 @@ then run <code class="docutils literal notranslate"><span class="pre">unlink</sp
 <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;</span> <span class="pre">stable</span></code>. To check that
 this was performed correctly, ensure that <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs/blob/master/ramp-board/stable">ramp-board/stable</a>
 has the new version number.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> back into the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> code repository and ensure you are in the
-release branch (e.g., branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>). Remove unnecessary files
-with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+</ol>
+<dl class="simple">
+<dt>7*. <code class="docutils literal notranslate"><span class="pre">cd</span></code> back into the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> code repository and ensure you are in the</dt><dd><p>release branch (e.g., branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>). Remove unnecessary files
+with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="8">
 <li><p>Switch to <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on
 upstream.</p></li>
 <li><p>Create a GitHub release by clicking on ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. ‘Tag version’
@@ -435,17 +444,42 @@ file for the latest release.</p></li>
 <li><p>Add a new <code class="docutils literal notranslate"><span class="pre">v0.&lt;version</span> <span class="pre">number&gt;.rst</span></code> file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/doc/whats_new">doc/whats_new/</a>
 and <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span></code> this new file in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/master/doc/whats_new.rst">doc/whats_new.rst</a>.</p></li>
 </ol>
-<p>Note that the steps 4, 5 and 7 should be performed while in the release
-branch, e.g. branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>.</p>
-</div>
-<div class="section" id="patch-bug-fix-release-process">
+<ul class="simple">
+<li><p>Note that the steps 4, 5 and 7 should be performed while in the release</p></li>
+</ul>
+<p>branch, e.g. branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>.</p>
+</section>
+<section id="patch-bug-fix-release-process">
 <h2>Patch/bug fix release process<a class="headerlink" href="#patch-bug-fix-release-process" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Find the commit(s) hash of the bug fix commit you wish to back port
-using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p></li>
-<li><p>Checkout the branch for the lastest release, e.g.,
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.5.X</span></code>.</p></li>
+<li><p>Checkout the tag for the last minor release, e.g.,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.5.X</span></code>.
+<strong>note</strong>: X is part of the name, not a number to substitute.
+<strong>note2</strong>: you can type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">--all</span> <span class="pre">--tags</span></code> to fetch available tags.</p></li>
+<li><p>There are two ways to continue. If you only want to release a couple of
+commits we recommend that you go with ‘3a’, if you want to release many commits ‘3b’
+would be easier.</p></li>
+</ol>
+<p>3a: release only a few commits</p>
+<ul class="simple">
+<li><p>Find the commit(s) hash of the bug fix commit you wish to back port using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p></li>
 <li><p>Append the bug fix commit(s) to the branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span> <span class="pre">&lt;hash&gt;</span></code>.</p></li>
+</ul>
+<p>3b: release multiple commits</p>
+<ul class="simple">
+<li><p>checkout the <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code> branch:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">release-0.5.&lt;number&gt;</span> <span class="pre">master</span></code> where ‘number’ is the number of
+your bug release.</p></li>
+<li><p>commit your desired changes by typing: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">master</span></code>.
+You should now see the list of all the commits since the last release.
+Indicate which commits you want to release by typing ‘pick’ on their lefthand
+side, and ‘drop’ if you do not want to keep it. Make sure to drop the commit
+with previous bumpversion. It’s useful to have a copy of the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span></code>
+log in the PR to help others understand what’s included.</p></li>
+<li><p>make a PR to the release branch. Once it is merged continue to the next step.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
 <li><p>Bump the version number with <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">patch</span></code>. This will bump the
 patch version, for example from 0.5.0 to 0.5.1.dev0.</p></li>
 <li><p>Mark the current version as a release version (as opposed to ‘dev’ version)
@@ -456,12 +490,14 @@ example from 0.5.1.dev0 to 0.5.1.</p></li>
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">&lt;upstream</span> <span class="pre">remote&gt;</span> <span class="pre">&lt;release</span> <span class="pre">branch&gt;</span></code>. For minor version 0.5
 ‘release branch’ would be ‘0.5.X’</p></li>
 <li><p>Remove unnecessary files with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with
-<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code> (you need to have the rights on PyPI to do so).</p></li>
 <li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Note down the
 bug fixes added in the patch.</p></li>
 </ol>
-</div>
-</div>
+<p>Note: If you are updating version of ramp on ramp.studio consider reading:
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-server-config#ramp-board---ramp-workflow">those docs</a>.</p>
+</section>
+</section>
 
 
            </div>

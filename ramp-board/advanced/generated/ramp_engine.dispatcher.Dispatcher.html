@@ -5,10 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ramp_engine.dispatcher.Dispatcher &mdash; RAMP 0.7.0.dev0 documentation</title>
+  <title>ramp_engine.dispatcher.Dispatcher &mdash; RAMP 0.8.0.dev0 documentation</title>
   
 
   
@@ -24,7 +25,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.7.0.dev0
+                0.8.0.dev0
               </div>
             
           
@@ -87,12 +87,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
@@ -112,7 +112,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
@@ -175,11 +175,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-engine-dispatcher-dispatcher">
+  <section id="ramp-engine-dispatcher-dispatcher">
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.dispatcher</span></code>.Dispatcher<a class="headerlink" href="#ramp-engine-dispatcher-dispatcher" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ramp_engine.dispatcher.Dispatcher">
-<em class="property">class </em><code class="sig-prename descclassname">ramp_engine.dispatcher.</code><code class="sig-name descname">Dispatcher</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_between_collection</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ramp_engine.dispatcher.</span></code><code class="sig-name descname"><span class="pre">Dispatcher</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hunger_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_between_collection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dispatcher which schedule workers and communicate with the database.</p>
 <p>The dispatcher uses two queues: a queue containing containing the workers
 which should be launched and a queue containing the workers which are being
@@ -227,13 +227,13 @@ SSH requests may be potentially blocked by the cloud provider.</p>
 </dl>
 <dl class="py method">
 <dt id="ramp_engine.dispatcher.Dispatcher.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">event_config</span></em>, <em class="sig-param"><span class="n">worker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">n_threads</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hunger_policy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_between_collection</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hunger_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_between_collection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_engine.dispatcher.Dispatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 </dd></dl>
 
-<div style='clear:both'></div></div>
+<div style='clear:both'></div></section>
 
 
            </div>

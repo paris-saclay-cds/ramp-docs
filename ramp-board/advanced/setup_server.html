@@ -5,10 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Set up your own server to run RAMP &mdash; RAMP 0.7.0.dev0 documentation</title>
+  <title>1. Set up your own server to run RAMP &mdash; RAMP 0.8.0.dev0 documentation</title>
   
 
   
@@ -24,7 +25,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/js/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.7.0.dev0
+                0.8.0.dev0
               </div>
             
           
@@ -87,12 +87,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. Set up your own server to run RAMP</a><ul>
@@ -116,7 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -179,12 +179,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="set-up-your-own-server-to-run-ramp">
+  <section id="set-up-your-own-server-to-run-ramp">
 <h1><span class="section-number">1. </span>Set up your own server to run RAMP<a class="headerlink" href="#set-up-your-own-server-to-run-ramp" title="Permalink to this headline">¶</a></h1>
 <p>The first step to setup your server is to install the RAMP bundle of packages.
 Refer to <a class="reference internal" href="install.html#install"><span class="std std-ref">install guideline</span></a>.</p>
 <p>Once the packages install, proceed to the following steps.</p>
-<div class="section" id="set-up-the-ramp-database">
+<section id="set-up-the-ramp-database">
 <h2><span class="section-number">1.1. </span>Set up the RAMP database<a class="headerlink" href="#set-up-the-ramp-database" title="Permalink to this headline">¶</a></h2>
 <p>We advise to use <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> for managing the database. You can install
 <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> using the system packages. If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we
@@ -208,8 +208,8 @@ create the database which will be used for RAMP:</p>
 </div>
 <p>where &lt;db_user&gt;, &lt;db_password&gt; and &lt;db_name&gt; should be replaced with actual
 values. Those values should match with the RAMP configuration file.</p>
-</div>
-<div class="section" id="set-up-the-ramp-deployment-for-kits-data-and-submissions">
+</section>
+<section id="set-up-the-ramp-deployment-for-kits-data-and-submissions">
 <h2><span class="section-number">1.2. </span>Set up the RAMP deployment for kits, data, and submissions<a class="headerlink" href="#set-up-the-ramp-deployment-for-kits-data-and-submissions" title="Permalink to this headline">¶</a></h2>
 <p>You need to create a directory in which you will deploy the RAMP kits, data,
 and submissions:</p>
@@ -268,16 +268,18 @@ configuration directly in the <code class="docutils literal notranslate"><span c
         <span class="n">handlers</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;wsgi&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="create-an-admin-user">
+<p>You can also <a class="reference internal" href="personalize.html#personnalize-instance"><span class="std std-ref">personnalize your RAMP instance</span></a>,
+for instance with a privacy page, and custom sign up instructions.</p>
+</section>
+<section id="create-an-admin-user">
 <h2><span class="section-number">1.3. </span>Create an admin user<a class="headerlink" href="#create-an-admin-user" title="Permalink to this headline">¶</a></h2>
 <p>To operate the event, it is useful to first create an admin user. From the
 <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory, run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp database add-user --login admin_user --password password --firstname firstname --lastname lastname --email admin@email.com --access-level admin
 </pre></div>
 </div>
-</div>
-<div class="section" id="launching-a-test-instance-of-the-ramp-website">
+</section>
+<section id="launching-a-test-instance-of-the-ramp-website">
 <h2><span class="section-number">1.4. </span>Launching a test instance of the  RAMP website<a class="headerlink" href="#launching-a-test-instance-of-the-ramp-website" title="Permalink to this headline">¶</a></h2>
 <p>At this stage, you will be able to test the RAMP website. From the
 <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory, run the following command:</p>
@@ -287,7 +289,7 @@ configuration directly in the <code class="docutils literal notranslate"><span c
 <p>This uses the built-in server of Flask suitable for testing. To deploy it
 in a production setting, you can refer to the following sections or to the
 Flask documentation (<a class="reference external" href="http://flask.pocoo.org/docs/1.0/deploying/#deployment">http://flask.pocoo.org/docs/1.0/deploying/#deployment</a>).</p>
-<div class="section" id="using-gunicorn">
+<section id="using-gunicorn">
 <h3><span class="section-number">1.4.1. </span>Using Gunicorn<a class="headerlink" href="#using-gunicorn" title="Permalink to this headline">¶</a></h3>
 <p>If you are using a UNIX server, you can use Gunicorn as a webserver. You can
 install directly from <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
@@ -304,9 +306,9 @@ options, refer to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ gunicorn -h
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
