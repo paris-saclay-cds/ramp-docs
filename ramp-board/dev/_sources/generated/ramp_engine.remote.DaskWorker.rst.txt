@@ -1,0 +1,14 @@
+﻿:mod:`ramp_engine.remote`.DaskWorker
+===========================================
+
+.. currentmodule:: ramp_engine.remote
+
+.. autoclass:: DaskWorker
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

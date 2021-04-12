@@ -153,6 +153,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ramp-workers">RAMP Workers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.base.BaseWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.base</span></code>.BaseWorker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.local</span></code>.CondaEnvWorker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.remote.DaskWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.remote</span></code>.DaskWorker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_engine.aws</span></code>.AWSWorker</a></li>
 </ul>
 </li>
@@ -908,7 +909,10 @@ dispatcher for each open event.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local.CondaEnvWorker</span></code></a>(config, submission)</p></td>
 <td><p>Local worker which uses conda environment to dispatch submission.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aws.AWSWorker</span></code></a>(config, submission)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ramp_engine.remote.DaskWorker.html#ramp_engine.remote.DaskWorker" title="ramp_engine.remote.DaskWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remote.DaskWorker</span></code></a>(config, submission)</p></td>
+<td><p>Dask distributed worker</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ramp_engine.aws.AWSWorker.html#ramp_engine.aws.AWSWorker" title="ramp_engine.aws.AWSWorker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aws.AWSWorker</span></code></a>(config, submission)</p></td>
 <td><p>Run RAMP submissions on Amazon.</p></td>
 </tr>
 </tbody>
