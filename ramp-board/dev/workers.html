@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>5. Notes regarding the RAMP workers &mdash; RAMP 0.8.0.dev0 documentation</title>
@@ -87,12 +86,12 @@
               
             
             
-              <p><span class="caption-text">Getting Started</span></p>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
@@ -123,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -186,7 +185,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="notes-regarding-the-ramp-workers">
+  <div class="section" id="notes-regarding-the-ramp-workers">
 <span id="all-workers"></span><h1><span class="section-number">5. </span>Notes regarding the RAMP workers<a class="headerlink" href="#notes-regarding-the-ramp-workers" title="Permalink to this headline">¶</a></h1>
 <p>The RAMP “worker” is the object responsible of actually running (training and
 evaluating) a submission and returning back the results (predictions and
@@ -213,7 +212,7 @@ cluster, which can be local or remote, and copy back the results. This
 worker is specified as <code class="docutils literal notranslate"><span class="pre">worker_type:</span> <span class="pre">dask</span></code>. For more details on the setup
 and configuration, see below.</p></li>
 </ul>
-<section id="running-submissions-in-a-conda-environment">
+<div class="section" id="running-submissions-in-a-conda-environment">
 <span id="conda-env-worker"></span><h2><span class="section-number">5.1. </span>Running submissions in a Conda environment<a class="headerlink" href="#running-submissions-in-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>As previously mentioned, the <a class="reference internal" href="generated/ramp_engine.local.CondaEnvWorker.html#ramp_engine.local.CondaEnvWorker" title="ramp_engine.local.CondaEnvWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.local.CondaEnvWorker</span></code></a> workers
 rely on a Conda environment to execute the submission.</p>
@@ -242,8 +241,8 @@ directory and use the following to install the environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml
 </pre></div>
 </div>
-</section>
-<section id="running-submissions-on-amazon-web-services-aws">
+</div>
+<div class="section" id="running-submissions-on-amazon-web-services-aws">
 <h2><span class="section-number">5.2. </span>Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
@@ -255,7 +254,7 @@ specific resources (e.g. GPU’s).</p>
 <li><p>Save the instance as an Amazon Machine Image (AMI).</p></li>
 <li><p>Update the event <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file on the RAMP server.</p></li>
 </ol>
-<section id="launching-aws-instance">
+<div class="section" id="launching-aws-instance">
 <span id="launch-aws"></span><h3><span class="section-number">5.2.1. </span>Launching AWS instance<a class="headerlink" href="#launching-aws-instance" title="Permalink to this headline">¶</a></h3>
 <p>Follow <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">AWS getting started</a>
 to launch an Amazon EC2 Linux instance. Amazon can create a new key-pair
@@ -274,8 +273,8 @@ commonly ‘ec2-user’ or ‘ubuntu’. The full list can be found <a class="re
 under ‘Get the user name for your instance’. ‘my-instance-public-dns-name’ can
 be found by clicking on your ‘Instances’ tab in your EC2 dashboard.
 Full connection details can be found in the <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">AWS guide</a>.</p>
-</section>
-<section id="prepare-the-instance">
+</div>
+<div class="section" id="prepare-the-instance">
 <span id="prepare-instance"></span><h3><span class="section-number">5.2.2. </span>Prepare the instance<a class="headerlink" href="#prepare-the-instance" title="Permalink to this headline">¶</a></h3>
 <p>To prepare the instance you need to download the starting kit, data and all
 required packages to run submissions. This can be saved as an AMI (image) and
@@ -339,8 +338,8 @@ the last command may differ:</p>
 Actions -&gt; Image -&gt; Create image. See <a class="reference external" href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/tkv-create-ami-from-instance.html">Create an AMI from an Amazon EC2
 instance</a>
 for more details.</p>
-</section>
-<section id="event-configuration">
+</div>
+<div class="section" id="event-configuration">
 <h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Create an event config.yml (see <a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>) and update the
 ‘worker’ section, which should look something like:</p>
@@ -429,14 +428,14 @@ If the time between checks is too small, the repetitive SSH requests may be
 potentially blocked by the cloud provider. We advise to set this
 configuration to at least 60 seconds.</p></li>
 </ul>
-</section>
-</section>
-<section id="running-submissions-with-dask">
+</div>
+</div>
+<div class="section" id="running-submissions-with-dask">
 <h2><span class="section-number">5.3. </span>Running submissions with Dask<a class="headerlink" href="#running-submissions-with-dask" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="generated/ramp_engine.remote.DaskWorker.html#ramp_engine.remote.DaskWorker" title="ramp_engine.remote.DaskWorker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_engine.remote.DaskWorker</span></code></a> allows to run submissions on a Dask
 distributed cluster which can be either remote or local.</p>
 <p>To setup this worker please follow the instructions below.</p>
-<section id="daskworker-setup-of-the-main-server">
+<div class="section" id="daskworker-setup-of-the-main-server">
 <h3><span class="section-number">5.3.1. </span>DaskWorker setup of the main server<a class="headerlink" href="#daskworker-setup-of-the-main-server" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Setup the <a class="reference internal" href="setup_server.html#setup-server"><span class="std std-ref">ramp_frontend server</span></a> and
@@ -467,8 +466,8 @@ for more information.</p>
 </li>
 <li><p>Launch the <a class="reference internal" href="create_ramp_event.html#launch-dispatcher"><span class="std std-ref">RAMP dispatcher</span></a>.</p></li>
 </ol>
-</section>
-<section id="daskworker-setup-with-a-local-cluster">
+</div>
+<div class="section" id="daskworker-setup-with-a-local-cluster">
 <h3><span class="section-number">5.3.2. </span>DaskWorker setup with a local cluster<a class="headerlink" href="#daskworker-setup-with-a-local-cluster" title="Permalink to this headline">¶</a></h3>
 <p>To start a local dask.distributed cluster, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dask-worker --nprocs <span class="m">10</span>  <span class="c1"># or any appropriate number of workers.</span>
@@ -486,8 +485,8 @@ dask.distributed workers.</p>
 <p>This is necessary as some dask.distributed workers will be used for running
 the submission, while others manage data and state sychronization.</p>
 </div>
-</section>
-<section id="daskworker-setup-with-a-remote-cluster">
+</div>
+<div class="section" id="daskworker-setup-with-a-remote-cluster">
 <h3><span class="section-number">5.3.3. </span>DaskWorker setup with a remote cluster<a class="headerlink" href="#daskworker-setup-with-a-remote-cluster" title="Permalink to this headline">¶</a></h3>
 <p>To use a remote dask.distributed cluster, following pre-requisites must be verified.</p>
 <ul class="simple">
@@ -561,9 +560,9 @@ could lose SSH access to you machine.</p>
 <span class="n">sudo</span> <span class="n">ufw</span> <span class="n">status</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="create-your-own-worker">
+</div>
+</div>
+<div class="section" id="create-your-own-worker">
 <h2><span class="section-number">5.4. </span>Create your own worker<a class="headerlink" href="#create-your-own-worker" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the choice of workers in RAMP is quite limited. You might want to
 create your own worker for your platform (Openstack, Azure, etc.). This section
@@ -648,8 +647,8 @@ worker, it would look like:</p>
   <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

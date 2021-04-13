@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Develop and contribute &mdash; RAMP 0.8.0.dev0 documentation</title>
@@ -87,7 +86,7 @@
               
             
             
-              <p><span class="caption-text">Getting Started</span></p>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Develop and contribute</a><ul>
@@ -106,13 +105,13 @@
 </ul>
 </li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p class="caption"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -173,18 +172,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="develop-and-contribute">
+  <div class="section" id="develop-and-contribute">
 <span id="contribute"></span><h1>Develop and contribute<a class="headerlink" href="#develop-and-contribute" title="Permalink to this headline">¶</a></h1>
 <p>Welcome to the RAMP team. We are always happy to have new RAMP developers.</p>
 <p>You can contribute to this code by making a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">Pull Request</a>
 on <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pulls">Github</a>. Please, make sure that your code is coming with unit tests to
 ensure full coverage and continuous integration in the API.</p>
-<section id="install-for-development">
+<div class="section" id="install-for-development">
 <h2>Install for development<a class="headerlink" href="#install-for-development" title="Permalink to this headline">¶</a></h2>
 <p>To install RAMP please fallow <a class="reference internal" href="install.html#install"><span class="std std-ref">install guideline</span></a> making sure
 that you use the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">inplace</span></code> option to install RAMP in developer mode.</p>
-</section>
-<section id="prepare-database-engine">
+</div>
+<div class="section" id="prepare-database-engine">
 <h2>Prepare database engine<a class="headerlink" href="#prepare-database-engine" title="Permalink to this headline">¶</a></h2>
 <p>Testing RAMP requires a database cluster, you need to create it similarly as
 described in <a class="reference internal" href="setup_server.html#set-database"><span class="std std-ref">create database</span></a> section.</p>
@@ -214,8 +213,8 @@ find it out by typing in your terminal:</p>
 </pre></div>
 </div>
 <p>This command will list all of your databases along with their owners.</p>
-</section>
-<section id="test">
+</div>
+<div class="section" id="test">
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
 <p>In order to run your tests please create a test conda environment (you will
 need to do that only once):</p>
@@ -245,11 +244,11 @@ In the other case, you can test the individual packages with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ pytest -vsl --pyargs ramp_utils ramp_database ramp_frontend ramp_engine
 </pre></div>
 </div>
-</section>
-<section id="how-to-contribute">
+</div>
+<div class="section" id="how-to-contribute">
 <h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
 <p>This guide is adapted from <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md">scikit-learn contribution guide</a>.</p>
-<section id="forking-ramp">
+<div class="section" id="forking-ramp">
 <h3>Forking RAMP<a class="headerlink" href="#forking-ramp" title="Permalink to this headline">¶</a></h3>
 <p>The preferred way to contribute to RAMP is to fork the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board repository</a>
 on GitHub:</p>
@@ -292,8 +291,8 @@ and click ‘Pull request’ to send your changes to the maintainers for
 review. This will send an email to the committers.</p>
 <p>If any of the above seems like magic to you, then look up <a class="reference external" href="https://git-scm.com/documentation">Git documentation</a>
 on the web.</p>
-</section>
-<section id="contributing-pull-requests">
+</div>
+<div class="section" id="contributing-pull-requests">
 <h3>Contributing Pull Requests<a class="headerlink" href="#contributing-pull-requests" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended to check that your contribution complies with the
 following rules before submitting a pull request:</p>
@@ -341,8 +340,8 @@ $ flake8 path/to/module.py
 </div>
 </li>
 </ul>
-</section>
-<section id="filing-bugs">
+</div>
+<div class="section" id="filing-bugs">
 <h3>Filing bugs<a class="headerlink" href="#filing-bugs" title="Permalink to this headline">¶</a></h3>
 <p>We use Github issues to track all bugs and feature requests; feel free to
 open an issue if you have found a bug or wish to see a feature implemented.</p>
@@ -369,8 +368,8 @@ can be found by runnning the following code snippet:</p>
 <li><p>Please include a <a class="reference external" href="https://stackoverflow.com/help/mcve">reproducible</a> code snippet or link to a <a class="reference external" href="https://gist.github.com">gist</a>.
 If an exception is raised, please provide the traceback.</p></li>
 </ul>
-</section>
-<section id="documentation">
+</div>
+<div class="section" id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
 <p>We are glad to accept any sort of documentation: function docstrings,
 reStructuredText documents (like this one), tutorials, etc.
@@ -400,9 +399,9 @@ intuition to the reader on what the algorithm does. It is best to always
 start with a small paragraph with a hand-waving explanation of what the
 method does to the data and a figure (coming from an example)
 illustrating it.</p>
-</section>
-</section>
-<section id="minor-release-process">
+</div>
+</div>
+<div class="section" id="minor-release-process">
 <h2>Minor release process<a class="headerlink" href="#minor-release-process" title="Permalink to this headline">¶</a></h2>
 <p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
 <ol class="arabic simple">
@@ -448,8 +447,8 @@ and <code class="docutils literal notranslate"><span class="pre">..</span> <span
 <li><p>Note that the steps 4, 5 and 7 should be performed while in the release</p></li>
 </ul>
 <p>branch, e.g. branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>.</p>
-</section>
-<section id="patch-bug-fix-release-process">
+</div>
+<div class="section" id="patch-bug-fix-release-process">
 <h2>Patch/bug fix release process<a class="headerlink" href="#patch-bug-fix-release-process" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Checkout the tag for the last minor release, e.g.,
@@ -496,8 +495,8 @@ bug fixes added in the patch.</p></li>
 </ol>
 <p>Note: If you are updating version of ramp on ramp.studio consider reading:
 <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-server-config#ramp-board---ramp-workflow">those docs</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
