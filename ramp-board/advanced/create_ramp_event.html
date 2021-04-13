@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>3. Set up a new RAMP event &mdash; RAMP 0.8.0.dev0 documentation</title>
@@ -87,12 +86,12 @@
               
             
             
-              <p><span class="caption-text">Getting Started</span></p>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
@@ -112,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -175,9 +174,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="set-up-a-new-ramp-event">
+  <div class="section" id="set-up-a-new-ramp-event">
 <h1><span class="section-number">3. </span>Set up a new RAMP event<a class="headerlink" href="#set-up-a-new-ramp-event" title="Permalink to this headline">¶</a></h1>
-<section id="deploy-a-specific-ramp-event">
+<div class="section" id="deploy-a-specific-ramp-event">
 <span id="deploy-ramp-event"></span><h2><span class="section-number">3.1. </span>Deploy a specific RAMP event<a class="headerlink" href="#deploy-a-specific-ramp-event" title="Permalink to this headline">¶</a></h2>
 <p>Now we want to deploy a specific problem and event. We will demonstrate by
 by deploying an <code class="docutils literal notranslate"><span class="pre">iris</span></code> event.</p>
@@ -290,8 +289,8 @@ data from the <a class="reference external" href="https://github.com/ramp-kits/"
 starting kit is located on this GitHub organization, you can skip the first
 step above, which manually clones the kit and prepares the data, and let
 <code class="docutils literal notranslate"><span class="pre">ramp</span> <span class="pre">setup</span> <span class="pre">deploy-event</span></code> do this for you.</p>
-</section>
-<section id="launch-the-dispatcher-to-train-and-evaluate-submissions">
+</div>
+<div class="section" id="launch-the-dispatcher-to-train-and-evaluate-submissions">
 <span id="launch-dispatcher"></span><h2><span class="section-number">3.2. </span>Launch the dispatcher to train and evaluate submissions<a class="headerlink" href="#launch-the-dispatcher-to-train-and-evaluate-submissions" title="Permalink to this headline">¶</a></h2>
 <p>At this stage, you can launch the RAMP dispatcher from the <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code>
 directory, which will be in charge of training, evaluating submissions, and
@@ -303,8 +302,8 @@ updating the database:</p>
 within a terminal multiplexer as <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code>. It will allow you
 to detach the process and let it run. Refer to the documentation of <code class="docutils literal notranslate"><span class="pre">screen</span></code>
 or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> to use them.</p>
-</section>
-<section id="launch-several-dispatchers-at-once">
+</div>
+<div class="section" id="launch-several-dispatchers-at-once">
 <h2><span class="section-number">3.3. </span>Launch several dispatchers at once<a class="headerlink" href="#launch-several-dispatchers-at-once" title="Permalink to this headline">¶</a></h2>
 <p>In case that you are running multiple events in parallel, you will want to
 start several dispatchers, on for each open event. We provide a daemon which
@@ -314,8 +313,8 @@ will be in charge of managing the pool of dispatchers. You can start it as:</p>
 </div>
 <p>To can interrupt the daemon by pressing the combination of keyboard keys
 <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. You can start launch the daemon within <code class="docutils literal notranslate"><span class="pre">tmux</span></code> or <code class="docutils literal notranslate"><span class="pre">screen</span></code> as well.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

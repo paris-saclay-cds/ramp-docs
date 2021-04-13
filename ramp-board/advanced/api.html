@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>RAMP API &mdash; RAMP 0.8.0.dev0 documentation</title>
@@ -87,12 +86,12 @@
               
             
             
-              <p><span class="caption-text">Getting Started</span></p>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP API</a><ul>
@@ -226,7 +225,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Addtional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -287,18 +286,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="ramp-api">
+  <div class="section" id="ramp-api">
 <h1>RAMP API<a class="headerlink" href="#ramp-api" title="Permalink to this headline">¶</a></h1>
 <p>This is the full API documentation of the different RAMP packages.</p>
-<section id="ramp-database">
+<div class="section" id="ramp-database">
 <h2>RAMP database<a class="headerlink" href="#ramp-database" title="Permalink to this headline">¶</a></h2>
-<section id="module-ramp_database.model">
+<div class="section" id="module-ramp_database.model">
 <span id="ramp-database-model-the-database-model"></span><h3><a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>: the database model<a class="headerlink" href="#module-ramp_database.model" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a> defines the database structure which is used for
 the RAMP events.</p>
 <p>The database schema is summarized in the figure below:</p>
 <a class="reference external image-reference" href="_static/img/schema_db.png"><img alt="_images/schema_db.png" src="_images/schema_db.png" /></a>
-<section id="general-tables">
+<div class="section" id="general-tables">
 <h4>General tables<a class="headerlink" href="#general-tables" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -317,8 +316,8 @@ the RAMP events.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="user-related-tables">
+</div>
+<div class="section" id="user-related-tables">
 <h4>User-related tables<a class="headerlink" href="#user-related-tables" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -334,8 +333,8 @@ the RAMP events.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="event-related-tables">
+</div>
+<div class="section" id="event-related-tables">
 <h4>Event-related tables<a class="headerlink" href="#event-related-tables" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -360,8 +359,8 @@ the RAMP events.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="submission-related-tables">
+</div>
+<div class="section" id="submission-related-tables">
 <h4>Submission-related tables<a class="headerlink" href="#submission-related-tables" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -395,8 +394,8 @@ the RAMP events.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="relationship-tables">
+</div>
+<div class="section" id="relationship-tables">
 <h4>Relationship tables<a class="headerlink" href="#relationship-tables" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -427,13 +426,13 @@ the RAMP events.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="module-ramp_database.tools">
+</div>
+</div>
+<div class="section" id="module-ramp_database.tools">
 <span id="ramp-database-tools-the-tools-to-communicate-with-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a>: the tools to communicate with the database<a class="headerlink" href="#module-ramp_database.tools" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_database.tools" title="ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code></a> provides some routine to get and set
 information from and in the database.</p>
-<section id="user-related-database-tools">
+<div class="section" id="user-related-database-tools">
 <h4>User-related database tools<a class="headerlink" href="#user-related-database-tools" title="Permalink to this headline">¶</a></h4>
 <p><strong>Functions to act on an entry in the database</strong></p>
 <table class="longtable docutils align-default">
@@ -522,8 +521,8 @@ information from and in the database.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="event-related-database-tools">
+</div>
+<div class="section" id="event-related-database-tools">
 <h4>Event-related database tools<a class="headerlink" href="#event-related-database-tools" title="Permalink to this headline">¶</a></h4>
 <p><strong>Functions to act on an entry in the database</strong></p>
 <table class="longtable docutils align-default">
@@ -618,8 +617,8 @@ information from and in the database.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="submission-related-database-tools">
+</div>
+<div class="section" id="submission-related-database-tools">
 <h4>Submission-related database tools<a class="headerlink" href="#submission-related-database-tools" title="Permalink to this headline">¶</a></h4>
 <p><strong>Functions to act on an entry in the database</strong></p>
 <table class="longtable docutils align-default">
@@ -729,8 +728,8 @@ information from and in the database.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="frontend-related-database-tools">
+</div>
+<div class="section" id="frontend-related-database-tools">
 <h4>Frontend-related database tools<a class="headerlink" href="#frontend-related-database-tools" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -758,9 +757,9 @@ information from and in the database.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="module-ramp_database.exceptions">
+</div>
+</div>
+<div class="section" id="module-ramp_database.exceptions">
 <span id="ramp-database-exceptions-type-of-errors-raise-by-the-database"></span><h3><a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a>: type of errors raise by the database<a class="headerlink" href="#module-ramp_database.exceptions" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_database.exceptions" title="ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code></a> module include all custom warnings and
 errors used in <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
@@ -793,8 +792,8 @@ errors used in <code class="docutils literal notranslate"><span class="pre">ramp
 </tr>
 </tbody>
 </table>
-</section>
-<section id="module-ramp_database.testing">
+</div>
+<div class="section" id="module-ramp_database.testing">
 <span id="ramp-database-testing-functionalities-to-test-database-model-and-tools"></span><h3><a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a>: functionalities to test database model and tools<a class="headerlink" href="#module-ramp_database.testing" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_database.testing" title="ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code></a> module create facility functions to test the
 tools and model of <code class="docutils literal notranslate"><span class="pre">ramp-database</span></code>.</p>
@@ -836,8 +835,8 @@ tools and model of <code class="docutils literal notranslate"><span class="pre">
 </tr>
 </tbody>
 </table>
-</section>
-<section id="module-ramp_database.utils">
+</div>
+<div class="section" id="module-ramp_database.utils">
 <span id="ramp-database-utils-setup-and-connect-ramp-database"></span><h3><a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a>: setup and connect RAMP database<a class="headerlink" href="#module-ramp_database.utils" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_database.utils" title="ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code></a> module provides tools to setup and connect to
 the RAMP database.</p>
@@ -861,15 +860,15 @@ the RAMP database.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="ramp-engine">
+</div>
+</div>
+<div class="section" id="ramp-engine">
 <h2>RAMP engine<a class="headerlink" href="#ramp-engine" title="Permalink to this headline">¶</a></h2>
 <p>The RAMP engine is made of a dispatcher to orchestrate the training and
 evaluation of submissions which are processed using workers. Since there is
 a dispatcher for each RAMP event, we provide a daemon which will start
 dispatcher for each open event.</p>
-<section id="ramp-dispatcher">
+<div class="section" id="ramp-dispatcher">
 <h3>RAMP Dispatcher<a class="headerlink" href="#ramp-dispatcher" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -885,8 +884,8 @@ dispatcher for each open event.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="ramp-workers">
+</div>
+<div class="section" id="ramp-workers">
 <h3>RAMP Workers<a class="headerlink" href="#ramp-workers" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -908,9 +907,9 @@ dispatcher for each open event.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="ramp-frontend">
+</div>
+</div>
+<div class="section" id="ramp-frontend">
 <h2>RAMP frontend<a class="headerlink" href="#ramp-frontend" title="Permalink to this headline">¶</a></h2>
 <p>The RAMP frontend is the development of the website. It uses extensively Flask.</p>
 <table class="longtable docutils align-default">
@@ -924,11 +923,11 @@ dispatcher for each open event.</p>
 </tr>
 </tbody>
 </table>
-<section id="module-ramp_frontend.views">
+<div class="section" id="module-ramp_frontend.views">
 <span id="ramp-frontend-views-views-used-on-the-frontend-to-interact-with-the-user"></span><h3><a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a>: views used on the frontend to interact with the user<a class="headerlink" href="#module-ramp_frontend.views" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_frontend.views" title="ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code></a> defines all operations a user can need to deal
 with the RAMP backend.</p>
-<section id="general-views">
+<div class="section" id="general-views">
 <h4>General views<a class="headerlink" href="#general-views" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -953,8 +952,8 @@ with the RAMP backend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="authentication-views">
+</div>
+<div class="section" id="authentication-views">
 <h4>Authentication views<a class="headerlink" href="#authentication-views" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -964,8 +963,8 @@ with the RAMP backend.</p>
 <tbody>
 </tbody>
 </table>
-</section>
-<section id="admin-views">
+</div>
+<div class="section" id="admin-views">
 <h4>Admin views<a class="headerlink" href="#admin-views" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -993,8 +992,8 @@ with the RAMP backend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="leaderboard-views">
+</div>
+<div class="section" id="leaderboard-views">
 <h4>Leaderboard views<a class="headerlink" href="#leaderboard-views" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1019,8 +1018,8 @@ with the RAMP backend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="submission-views">
+</div>
+<div class="section" id="submission-views">
 <h4>Submission views<a class="headerlink" href="#submission-views" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1060,8 +1059,8 @@ with the RAMP backend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="utilities">
+</div>
+<div class="section" id="utilities">
 <h4>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h4>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1083,9 +1082,9 @@ with the RAMP backend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="module-ramp_frontend.forms">
+</div>
+</div>
+<div class="section" id="module-ramp_frontend.forms">
 <span id="ramp-frontend-forms-forms-used-in-the-website"></span><h3><a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>: forms used in the website<a class="headerlink" href="#module-ramp_frontend.forms" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a> module defines the different forms used on the
 website.</p>
@@ -1130,8 +1129,8 @@ website.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="module-ramp_frontend.testing">
+</div>
+<div class="section" id="module-ramp_frontend.testing">
 <span id="ramp-frontend-testing-functionalities-to-test-the-frontend"></span><h3><a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a>: functionalities to test the frontend<a class="headerlink" href="#module-ramp_frontend.testing" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_frontend.testing" title="ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code></a> module contains all functions used to
 easily test the frontend.</p>
@@ -1152,8 +1151,8 @@ easily test the frontend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="module-ramp_frontend.utils">
+</div>
+<div class="section" id="module-ramp_frontend.utils">
 <span id="ramp-frontend-utils-utilities-to-ease-sending-email"></span><h3><a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a>: Utilities to ease sending email<a class="headerlink" href="#module-ramp_frontend.utils" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#module-ramp_frontend.utils" title="ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code></a> provides utilities to ease sending email.</p>
 <table class="longtable docutils align-default">
@@ -1170,14 +1169,14 @@ easily test the frontend.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="ramp-utils">
+</div>
+</div>
+<div class="section" id="ramp-utils">
 <h2>RAMP utils<a class="headerlink" href="#ramp-utils" title="Permalink to this headline">¶</a></h2>
 <p>The RAMP utils package is made of utilities used for managing configuration,
 deploying RAMP events, and other utilities shared between the different RAMP
 packages.</p>
-<section id="configuration-utilities">
+<div class="section" id="configuration-utilities">
 <h3>Configuration utilities<a class="headerlink" href="#configuration-utilities" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1205,8 +1204,8 @@ packages.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="datasets-utilities">
+</div>
+<div class="section" id="datasets-utilities">
 <h3>Datasets utilities<a class="headerlink" href="#datasets-utilities" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1230,8 +1229,8 @@ packages.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="deployment-utilities">
+</div>
+<div class="section" id="deployment-utilities">
 <h3>Deployment utilities<a class="headerlink" href="#deployment-utilities" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1244,8 +1243,8 @@ packages.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="ramp-shared-utilities">
+</div>
+<div class="section" id="ramp-shared-utilities">
 <h3>RAMP shared utilities<a class="headerlink" href="#ramp-shared-utilities" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1258,9 +1257,9 @@ packages.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
