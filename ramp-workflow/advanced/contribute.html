@@ -102,6 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-style">Code style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release-process">Release process</a></li>
 </ul>
 </li>
@@ -109,6 +110,10 @@
 <p class="caption"><span class="caption-text">Using RAMP kits</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Additional information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 </ul>
 
             
@@ -204,6 +209,15 @@ environment for ramp-workflow.</p>
 <li><p>Add your contributions and submit a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull request</a>
 to merge this into ramp-workflow.</p></li>
 </ol>
+<div class="section" id="code-style">
+<h2>Code style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h2>
+<p>This repo uses <code class="docutils literal notranslate"><span class="pre">flake8</span></code> for code style. It can be run on commits automatically
+by installing and activating <a class="reference external" href="https://pre-commit.com/">pre-commit</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pre-commit
+pre-commit install
+</pre></div>
+</div>
+</div>
 <div class="section" id="release-process">
 <h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
 <p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
