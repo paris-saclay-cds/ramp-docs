@@ -226,6 +226,12 @@ if the submission you are looking for is located in the <code class="docutils li
 </dd></dl>
 
 <dl class="std option">
+<dt id="cmdoption-ramp-test-data-label">
+<code class="sig-name descname"><span class="pre">--data-label</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;data_label&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-test-data-label" title="Permalink to this definition">¶</a></dt>
+<dd><p>A label specifying the data in case the same submissions are executed on multiple datasets. If specified, problem.get_train_data and problem.get_test_data should accept a data_label argument. Typically they can deal with multiple datasets containing the data within the directory specified by –ramp-data-dir (default: ./data), for example using subdirectories ./data/&lt;data_label&gt;/. It is also the subdirectory of submissions/&lt;submission&gt;/training_output where results are saved if –save-output is used.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt id="cmdoption-ramp-test-ramp-submission-dir">
 <code class="sig-name descname"><span class="pre">--ramp-submission-dir</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;ramp_submission_dir&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-test-ramp-submission-dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Directory where the submissions are stored. It is the directory (typically called “submissions” in the ramp-kit) that contains the individual submission subdirectories.</p>
