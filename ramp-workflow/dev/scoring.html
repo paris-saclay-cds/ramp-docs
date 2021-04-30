@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RAMP scoring &mdash; RAMP 0.5.0.dev0 documentation</title>
+  <title>RAMP execution &mdash; RAMP 0.5.0.dev0 documentation</title>
   
 
   
@@ -99,9 +99,12 @@
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP scoring</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#local-submissions">Local submissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ramp-event-submissions">RAMP event submissions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RAMP execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#training-and-scoring-a-submission">Training and scoring a submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-functional-data-flow">The functional data flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testing-manually">Testing manually</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
@@ -162,7 +165,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>RAMP scoring</li>
+      <li>RAMP execution</li>
     
     
 
@@ -174,113 +177,163 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ramp-scoring">
-<span id="scoring"></span><h1>RAMP scoring<a class="headerlink" href="#ramp-scoring" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="local-submissions">
-<h2>Local submissions<a class="headerlink" href="#local-submissions" title="Permalink to this headline">¶</a></h2>
-<p>When testing a submission locally (i.e. with <code class="docutils literal notranslate"><span class="pre">ramp_test_submission</span></code>) a number
-of scores will be calculated and printed to standard output. The scores will
-look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Testing Titanic survival classification
-Reading train and test files from ./data ...
+  <div class="section" id="ramp-execution">
+<span id="scoring"></span><h1>RAMP execution<a class="headerlink" href="#ramp-execution" title="Permalink to this headline">¶</a></h1>
+<p>RAMP implements a <strong>double cross-validation scheme</strong>: submissions are trained on each training fold, then tested on each validation fold and on the held out test set. This assures <strong>proper model evaluation</strong> when models are tuned using validation scores.</p>
+<div class="section" id="training-and-scoring-a-submission">
+<h2>Training and scoring a submission<a class="headerlink" href="#training-and-scoring-a-submission" title="Permalink to this headline">¶</a></h2>
+<p>When running the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> script locally, the starting kit submission is trained, tested, and scored. The output contains all the training, validation, and test scores and wall clock times for all <em>K</em> folds. At the end we provide two summaries: the classical mean scores over the <em>K</em> folds, and the scores achieved by ensembling all the <em>K</em> foldwise models, a technique called CV-bagging (we typically take the mean prediction of the <em>K</em> models on each test point)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>λ ramp-test
+Testing Titanic survival classification
+Reading train and test files from ./data/ ...
 Reading cv ...
-Training ./submissions/random_forest_20_5 ...
+Training submissions/starting_kit ...
+
 CV fold 0
-    train auc = 0.84
-    valid auc = 0.89
-    test auc = 0.83
+        score   auc   acc   nll      time
+        train  0.84  0.79  0.47  0.482708
+        valid  0.92  0.83  0.38  0.007979
+        test   0.86  0.84  0.43  0.005988
 CV fold 1
-    train auc = 0.85
-    valid auc = 0.86
-    test auc = 0.83
+        score   auc   acc   nll      time
+        train  0.85  0.82  0.46  0.009974
+        valid  0.86  0.78  0.46  0.003989
+        test   0.84  0.83  0.46  0.010971
 CV fold 2
-    train auc = 0.85
-    valid auc = 0.83
-    test auc = 0.82
+        score   auc   acc   nll      time
+        train  0.87  0.79  0.44  0.009975
+        valid  0.80  0.82  0.49  0.006979
+        test   0.86  0.84  0.44  0.004987
 CV fold 3
-    train auc = 0.84
-    valid auc = 0.91
-    test auc = 0.83
+        score   auc   acc   nll      time
+        train  0.85  0.81  0.46  0.011969
+        valid  0.87  0.81  0.43  0.004986
+        test   0.86  0.85  0.43  0.010972
 CV fold 4
-    train auc = 0.85
-    valid auc = 0.87
-    test auc = 0.83
+        score   auc   acc   nll      time
+        train  0.85  0.82  0.45  0.009975
+        valid  0.84  0.79  0.47  0.005984
+        test   0.84  0.82  0.45  0.006009
 CV fold 5
-    train auc = 0.84
-    valid auc = 0.89
-    test auc = 0.84
+        score   auc   acc   nll      time
+        train  0.84  0.80  0.46  0.013964
+        valid  0.88  0.78  0.42  0.005983
+        test   0.86  0.84  0.43  0.010006
 CV fold 6
-    train auc = 0.84
-    valid auc = 0.88
-    test auc = 0.84
+        score   auc   acc   nll      time
+        train  0.87  0.81  0.44  0.009999
+        valid  0.79  0.75  0.52  0.004964
+        test   0.84  0.83  0.45  0.005982
 CV fold 7
-    train auc = 0.85
-    valid auc = 0.86
-    test auc = 0.84
+        score   auc   acc   nll      time
+        train  0.84  0.79  0.47  0.010975
+        valid  0.90  0.83  0.42  0.008975
+        test   0.85  0.84  0.44  0.007978
 ----------------------------
 Mean CV scores
 ----------------------------
-    train auc = 0.85 ± 0.005
-    valid auc = 0.87 ± 0.023
-    test auc = 0.83 ± 0.006
+        score           auc          acc           nll        time
+        train  0.85 ± 0.011  0.8 ± 0.012  0.46 ± 0.012  0.1 ± 0.16
+        valid  0.86 ± 0.044  0.8 ± 0.028  0.45 ± 0.041   0.0 ± 0.0
+        test   0.85 ± 0.008  0.84 ± 0.01  0.44 ± 0.009   0.0 ± 0.0
 ----------------------------
 Bagged scores
 ----------------------------
-    score   auc
-    valid  0.875
-    test   0.834
+        score   auc   acc   nll
+        valid  0.84  0.79  0.47
+        test   0.86  0.85  0.44
 </pre></div>
 </div>
-<p>Locally, there should be a training dataset and a testing dataset, usually
-within a folder named <code class="docutils literal notranslate"><span class="pre">data/</span></code>. We will call these datasets the ‘public’
-training data and the ‘public’ test data. This is because, for a RAMP challenge,
-there will also be private training and test data (see <a class="reference internal" href="data.html#data"><span class="std std-ref">Preparing your data</span></a> for more).</p>
-<p>Eight-fold cross-validation (CV) is performed, whereby the public training data
-is split into ‘training’ and ‘validation’ subsets 8 times. The subsets are
-different each time. For each CV fold, the model is trained with
-the training data then used to predict targets for the training and validation
-subsets and the public testing data. The scores are computed for the training,
-validation and testing datasets, for each fold. The mean of these 8 scores are
-calculated and printed under <code class="docutils literal notranslate"><span class="pre">Mean</span> <span class="pre">CV</span> <span class="pre">scores</span></code>. In the example above, there is
-only one score metric; ‘auc’. If more than one score metric was defined in
-<code class="docutils literal notranslate"><span class="pre">problem.py</span></code> (see <a class="reference internal" href="problem.html#score-types"><span class="std std-ref">score types</span></a>), scores for all the score
-metrics will be printed.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Bagged</span> <span class="pre">scores</span></code> are calculated by combining the predictions of the 8 folds
-and using the combined prediction to calculate the score. For regression
-problems the combined prediction is the mean of the predictions and
-for classification problems, it is the mean probability of each class. For
-detection problems, the combined prediction calculation is more complex. See
-the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/blob/12512a3192bcc515c2da956a6a6704849cdadeee/rampwf/prediction_types/detection.py#L37">source code</a>
-for more details.</p>
-<p>For example, the Titanic challenge aims to predict whether or not each
-passenger survived. For each CV fold, different survival predictions are made
-for the test data. This is because for each CV fold, the model is different as
-it was trained using different data. The probality of each classification
-(survived or did not survive), computed from the 8 CV models, is averaged for
-every sample in the test dataset. The classification label is
-then computed using the new averaged probabilities. This new ‘combined
-prediction’ is used to calculate the ‘bagged’ score. The validation bagged
-score is calculated similarly, though there is a slight variation because the
-validation datasets differ between each CV fold. Validation
-samples may or may not overlap between CV folds. In cases where a validation
-sample was present in only one CV fold, there is only one prediction for that
-sample. The combined prediction for this sample will simply be that single
-prediction.</p>
-<p>Note that technically this is not what bagging means, but the name is used for
-historical reasons.</p>
+<p>When using a RAMP challenge (<a class="reference external" href="https://ramp.studio/">RAMP studio</a>), the bagged validation score is displayed on the public leaderboard, and the bagged test score is used privately to determine the final rankings.</p>
+<p>Other submissions can be trained and scored using the <code class="docutils literal notranslate"><span class="pre">--submission</span></code> switch, and the result of the training can be saved using the <code class="docutils literal notranslate"><span class="pre">--save-output</span></code> switch. See <a class="reference internal" href="command_line.html#command-line"><span class="std std-ref">RAMP-workflow commands</span></a> for all the command-line options.</p>
 </div>
-<div class="section" id="ramp-event-submissions">
-<h2>RAMP event submissions<a class="headerlink" href="#ramp-event-submissions" title="Permalink to this headline">¶</a></h2>
-<p>The above scores are also calculated when you make a submission to a RAMP
-event on <a class="reference external" href="https://ramp.studio/">RAMP studio</a>. However, only the mean cv validation score (i.e.,
-<code class="docutils literal notranslate"><span class="pre">valid</span>&#160; <span class="pre">0.825</span> <span class="pre">±</span> <span class="pre">0.0096</span></code> above) is shown on the public leaderboard. The
-mean cv test score is not shown as we wish to assess if the participants
-submissions generalise to the private test data. Providing them with the
-test score provides participants with a score to try and improve and may result
-in models that perform well on the test data because it is overfit for the test
-data.</p>
-<p>Typically, the test score is used to officially rank the participants and
-are made public at the end of a RAMP event.</p>
+<div class="section" id="the-functional-data-flow">
+<h2>The functional data flow<a class="headerlink" href="#the-functional-data-flow" title="Permalink to this headline">¶</a></h2>
+<p>This flowchart shows what happens when <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> is executed. You can see how the data, elements in <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>, and the submission interact. This is useful for those who would like to see what happens under the lid, and for those who would like to implement their own customized RAMP workflows.</p>
+<a class="reference internal image-reference" href="_images/functional_data_flow.png"><img alt="_images/functional_data_flow.png" src="_images/functional_data_flow.png" style="width: 700px;" /></a>
+<ol class="arabic simple">
+<li><p>The data is loaded by calling <code class="docutils literal notranslate"><span class="pre">problem.get_train_data</span></code> and <code class="docutils literal notranslate"><span class="pre">problem.get_test_data</span></code>.</p></li>
+<li><p>The training data is passed to <code class="docutils literal notranslate"><span class="pre">problem.get_cv</span></code> which yields the CV fold objects, typically <em>K</em> pairs of training indices and validation indices.</p></li>
+<li><p>The training data (<code class="docutils literal notranslate"><span class="pre">X_train</span></code> and <code class="docutils literal notranslate"><span class="pre">y_train</span></code>), and the training indices are passed to <code class="docutils literal notranslate"><span class="pre">problem.workflow.train_submission</span></code>. This function imports the submission files and calls the appropriate training functions (typically <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">transform</span></code>) implemented in the submission. It can also contain “glue” code: fixed data processing and transformation steps before, after, or between trained steps (implemented by the submission).</p></li>
+<li><p>The trained model is passed to <code class="docutils literal notranslate"><span class="pre">problem.workflow.test_submission</span></code> twice (per fold): once for computing the training and validation predictions (on <code class="docutils literal notranslate"><span class="pre">X_train</span></code>), and once for computing the test predictions (on <code class="docutils literal notranslate"><span class="pre">X_test</span></code>).</p></li>
+<li><p>Six <code class="docutils literal notranslate"><span class="pre">workflow.Predictions</span></code> objects are created (per fold), three on the ground truth and three on the predictions. The training and validation predictions are both created from <code class="docutils literal notranslate"><span class="pre">y_pred_train</span></code> and <code class="docutils literal notranslate"><span class="pre">y_train</span></code> in <code class="docutils literal notranslate"><span class="pre">workflow.Predictions.__init__</span></code> using the training and validation indices.</p></li>
+<li><p>The corresponding pairs of ground truth and predictions are passed to each <code class="docutils literal notranslate"><span class="pre">problem.score_types[i].score_function</span></code> which returns a scalar score.</p></li>
+</ol>
+<div class="section" id="testing-manually">
+<h3>Testing manually<a class="headerlink" href="#testing-manually" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it is useful to execute elements of RAMP manually, for example to obtain predictions or the trained model interactively in a notebook. The following sequence can be run on any RAMP, line by line. It does not use the cross validation so it can be used to debug the workflow once the
+following elements are defined in problem.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_train_data</span>
+<span class="n">get_test_data</span>
+<span class="n">Predictions</span>
+<span class="n">workflow</span>
+<span class="n">score_types</span>
+</pre></div>
+</div>
+<p>The sequence to execute (assuming you are in the same folder with <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rampwf.utils</span> <span class="kn">import</span> <span class="n">assert_read_problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">assert_read_problem</span><span class="p">()</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">get_train_data</span><span class="p">()</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">get_test_data</span><span class="p">()</span>
+
+<span class="n">trained_workflow</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">train_submission</span><span class="p">(</span>
+    <span class="s1">&#39;submissions/starting_kit&#39;</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">test_submission</span><span class="p">(</span>
+    <span class="n">trained_workflow</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+<span class="n">test_predictions</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_test</span><span class="p">)</span>
+<span class="n">test_ground_truth</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">score_type</span> <span class="ow">in</span> <span class="n">problem</span><span class="o">.</span><span class="n">score_types</span><span class="p">:</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score_type</span><span class="o">.</span><span class="n">score_function</span><span class="p">(</span>
+        <span class="n">test_ground_truth</span><span class="p">,</span> <span class="n">test_predictions</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">score_type</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On titanic, it should produce:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auc</span> <span class="o">=</span> <span class="mf">0.8628342245989303</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="mf">0.8539325842696629</span>
+<span class="n">nll</span> <span class="o">=</span> <span class="mf">0.43442182924613426</span>
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">problem.get_cv</span></code> is defined, the following sequence implements the full data flow (modulo formatting, saving, and modularizing, it is identical to <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rampwf.utils</span> <span class="kn">import</span> <span class="n">assert_read_problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">assert_read_problem</span><span class="p">()</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">get_train_data</span><span class="p">()</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">get_test_data</span><span class="p">()</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">get_cv</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fold_i</span><span class="p">,</span> <span class="p">(</span><span class="n">train_is</span><span class="p">,</span> <span class="n">valid_is</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cv</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;fold </span><span class="si">{</span><span class="n">fold_i</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+    <span class="n">trained_workflow</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">train_submission</span><span class="p">(</span>
+        <span class="s1">&#39;submissions/starting_kit&#39;</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">train_is</span><span class="p">)</span>
+    <span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">test_submission</span><span class="p">(</span>
+        <span class="n">trained_workflow</span><span class="p">,</span> <span class="n">X_train</span><span class="p">)</span>
+    <span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">test_submission</span><span class="p">(</span>
+        <span class="n">trained_workflow</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+    <span class="n">train_predictions</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span>
+        <span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_train</span><span class="p">,</span> <span class="n">fold_is</span><span class="o">=</span><span class="n">train_is</span><span class="p">)</span>
+    <span class="n">valid_predictions</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span>
+        <span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_train</span><span class="p">,</span> <span class="n">fold_is</span><span class="o">=</span><span class="n">valid_is</span><span class="p">)</span>
+    <span class="n">test_predictions</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_test</span><span class="p">)</span>
+    <span class="n">train_ground_truth</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span>
+        <span class="n">y_true</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">fold_is</span><span class="o">=</span><span class="n">train_is</span><span class="p">)</span>
+    <span class="n">valid_ground_truth</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span>
+        <span class="n">y_true</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span><span class="n">fold_is</span><span class="o">=</span><span class="n">valid_is</span><span class="p">)</span>
+    <span class="n">test_ground_truth</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">Predictions</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">score_type</span> <span class="ow">in</span> <span class="n">problem</span><span class="o">.</span><span class="n">score_types</span><span class="p">:</span>
+        <span class="n">train_score</span> <span class="o">=</span> <span class="n">score_type</span><span class="o">.</span><span class="n">score_function</span><span class="p">(</span>
+            <span class="n">train_ground_truth</span><span class="p">,</span> <span class="n">train_predictions</span><span class="p">)</span>
+        <span class="n">valid_score</span> <span class="o">=</span> <span class="n">score_type</span><span class="o">.</span><span class="n">score_function</span><span class="p">(</span>
+            <span class="n">valid_ground_truth</span><span class="p">,</span> <span class="n">valid_predictions</span><span class="p">)</span>
+        <span class="n">test_score</span> <span class="o">=</span> <span class="n">score_type</span><span class="o">.</span><span class="n">score_function</span><span class="p">(</span>
+            <span class="n">test_ground_truth</span><span class="p">,</span> <span class="n">test_predictions</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">train </span><span class="si">{</span><span class="n">score_type</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">train_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">valid </span><span class="si">{</span><span class="n">score_type</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">valid_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">test </span><span class="si">{</span><span class="n">score_type</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
