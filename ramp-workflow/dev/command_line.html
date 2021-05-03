@@ -309,9 +309,16 @@ if the submission you are looking for is located in the <code class="docutils li
 </dd></dl>
 
 <dl class="std option">
+<dt id="cmdoption-ramp-show-leaderboard-data-label">
+<code class="sig-name descname"><span class="pre">--data-label</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;data_label&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-data-label" title="Permalink to this definition">¶</a></dt>
+<dd><p>A label specifying the data in case the same submissions are executed on multiple datasets. If specified, it is the subdirectory of submissions/&lt;submission&gt;/training_output where results are searched for to be summarized.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-metric">
 <code class="sig-name descname"><span class="pre">--metric</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;metric&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-metric" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of the metric to report</p>
+<dd><p>A list of the metric to report. Example:</p>
+<p>–metric [‘rmse’]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>[]</p>
@@ -322,7 +329,9 @@ if the submission you are looking for is located in the <code class="docutils li
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-step">
 <code class="sig-name descname"><span class="pre">--step</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;step&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-step" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of the processing to report. Choices are {“train” , “valid”, “test”}</p>
+<dd><p>A list of the processing to report. Choices are
+{“train” , “valid”, “test”}. Example:</p>
+<p>–step [‘valid’,’test’]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>[]</p>
@@ -333,7 +342,10 @@ if the submission you are looking for is located in the <code class="docutils li
 <dl class="std option">
 <dt id="cmdoption-ramp-show-leaderboard-sort-by">
 <code class="sig-name descname"><span class="pre">--sort-by</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-show-leaderboard-sort-by" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give the metric, step, and stat to use for sorting.</p>
+<dd><p>Give the metric, step, and stat to use for sorting.
+Use tuples, for example:</p>
+<p>–mean –sort-by (‘rmse’,’test’,’mean’)</p>
+<p>–bagged –sort-by “(‘test rmse’)”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>[]</p>
