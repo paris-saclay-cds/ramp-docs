@@ -115,6 +115,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-add-submission">add-submission</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-add-user">add-user</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-approve-user">approve-user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ramp-database-compute-contributivity">compute-contributivity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-delete-event">delete-event</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-delete-event-team">delete-event-team</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramp-database-delete-predictions">delete-predictions</a></li>
@@ -699,6 +700,37 @@ kit and data)</p>
 <dt id="cmdoption-ramp-database-approve-user-login">
 <code class="sig-name descname"><span class="pre">--login</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;login&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-database-approve-user-login" title="Permalink to this definition">¶</a></dt>
 <dd><p>User’s login to be approved</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ramp-database-compute-contributivity">
+<h4>compute-contributivity<a class="headerlink" href="#ramp-database-compute-contributivity" title="Permalink to this headline">¶</a></h4>
+<p>Blend submissions, compute combined score and contributivities.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ramp-database compute-contributivity <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-ramp-database-compute-contributivity-config">
+<code class="sig-name descname"><span class="pre">--config</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;config&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-database-compute-contributivity-config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration file YAML format containing the database information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>config.yml</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-ramp-database-compute-contributivity-config-event">
+<code class="sig-name descname"><span class="pre">--config-event</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;config_event&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-database-compute-contributivity-config-event" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Required</strong> The event config file name.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-ramp-database-compute-contributivity-min-improvement">
+<code class="sig-name descname"><span class="pre">--min-improvement</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;min_improvement&gt;</span></code><a class="headerlink" href="#cmdoption-ramp-database-compute-contributivity-min-improvement" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum score improvement to continue building the ensemble</p>
 </dd></dl>
 
 </div>
