@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.model`.Event
+=======================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: Event
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

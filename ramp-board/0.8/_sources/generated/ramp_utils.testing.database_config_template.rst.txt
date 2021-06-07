@@ -1,0 +1,10 @@
+﻿:mod:`ramp_utils.testing`.database_config_template
+===============================================================
+
+.. currentmodule:: ramp_utils.testing
+
+.. autofunction:: database_config_template
+
+.. raw:: html
+
+    <div style='clear:both'></div>

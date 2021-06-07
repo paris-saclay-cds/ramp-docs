@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.CreditForm
+============================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: CreditForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

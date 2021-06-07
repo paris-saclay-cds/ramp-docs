@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.testing`.add_users
+===================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: add_users
+
+.. raw:: html
+
+    <div style='clear:both'></div>

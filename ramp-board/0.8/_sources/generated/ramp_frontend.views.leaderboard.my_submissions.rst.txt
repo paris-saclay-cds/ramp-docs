@@ -1,0 +1,10 @@
+﻿:mod:`ramp_frontend.views.leaderboard`.my_submissions
+==================================================================
+
+.. currentmodule:: ramp_frontend.views.leaderboard
+
+.. autofunction:: my_submissions
+
+.. raw:: html
+
+    <div style='clear:both'></div>

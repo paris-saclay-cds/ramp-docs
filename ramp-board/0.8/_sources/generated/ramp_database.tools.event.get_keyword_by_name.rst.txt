@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.event`.get_keyword_by_name
+=================================================================
+
+.. currentmodule:: ramp_database.tools.event
+
+.. autofunction:: get_keyword_by_name
+
+.. raw:: html
+
+    <div style='clear:both'></div>

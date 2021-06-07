@@ -1,0 +1,14 @@
+﻿:mod:`ramp_utils.datasets`.OSFRemoteMetaData
+===================================================
+
+.. currentmodule:: ramp_utils.datasets
+
+.. autoclass:: OSFRemoteMetaData
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

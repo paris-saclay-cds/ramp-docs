@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.SubmitForm
+============================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: SubmitForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

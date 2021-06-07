@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.testing`.create_test_db
+========================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: create_test_db
+
+.. raw:: html
+
+    <div style='clear:both'></div>

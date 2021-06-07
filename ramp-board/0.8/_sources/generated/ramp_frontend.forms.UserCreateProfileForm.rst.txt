@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.UserCreateProfileForm
+=======================================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: UserCreateProfileForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>
