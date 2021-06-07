@@ -141,7 +141,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#version-0-8-ongoing">Version 0.8 (ongoing)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-8">Version 0.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id16">Changelog</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code></a></li>
@@ -339,21 +339,38 @@ subsequent SSH error.
 </div>
 </div>
 </div>
-<div class="section" id="version-0-8-ongoing">
-<span id="changes-0-8"></span><h2>Version 0.8 (ongoing)<a class="headerlink" href="#version-0-8-ongoing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-0-8">
+<span id="changes-0-8"></span><h2>Version 0.8<a class="headerlink" href="#version-0-8" title="Permalink to this headline">¶</a></h2>
+<p><em>June 8, 2021</em></p>
 <div class="section" id="id16">
 <h3>Changelog<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Support for Python 3.6 was dropped and all <code class="docutils literal notranslate"><span class="pre">ramp-*</span></code> packages now require
+Python 3.7+ (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/532">#532</a>)</p></li>
+</ul>
 <div class="section" id="id17">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Add possibility to export the leaderboards (private and public) as .csv
 file using command line (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/507">#507</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>).</p></li>
-<li><p>adds a CLI subcommand <code class="docutils literal notranslate"><span class="pre">compute_contributivity</span></code> to compute contributivity
+<li><p>Add a CLI subcommand <code class="docutils literal notranslate"><span class="pre">compute_contributivity</span></code> to compute contributivity
 (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/517">#517</a>)</p></li>
+<li><p>Remove predictions from the database (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/513">#513</a>)</p></li>
 </ul>
 </div>
 <div class="section" id="id18">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-engine</span></code><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Fix error in the name of the submission state (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/469">#469</a>)</p></li>
+<li><p>Catch ssh errors in the AWS Worker (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/470">#470</a>)</p></li>
+<li><p>Many reliability improvements for the AWS Worker
+(<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/472">#472</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/481">#481</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/480">#480</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/484">#484</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/473">#473</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/491">#491</a>,</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/494">#494</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/495">#495</a>, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/506">#506</a>)</p>
+</div></blockquote>
+</li>
+<li><p>Add DaskWorker (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/476">#476</a>)</p></li>
+</ul>
 </div>
 <div class="section" id="id19">
 <h4><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
@@ -362,6 +379,10 @@ file using command line (<a class="reference external" href="https://github.com/
 track credit for submissions (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/517">#517</a>)</p></li>
 <li><p>Add button to delete user account under the <code class="docutils literal notranslate"><span class="pre">/update_profile</span></code> endpoint.
 (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/527">#527</a>)</p></li>
+<li><p>Fix Bokeh plot in the admin dashboard (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/477">#477</a>)</p></li>
+<li><p>Add customization mechanism for the sign up instructions and for a privacy page
+(<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/478">#478</a>)</p></li>
+<li><p>Add UI to delete accounts (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/526">#526</a>)</p></li>
 </ul>
 </div>
 <div class="section" id="id20">
