@@ -485,6 +485,18 @@ example, this was implemented in the Titanic challenge using:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">_read_data()</span></code> is not strictly required and is acting as a helper
 function in the code above.</p>
 </li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file becomes too long and you would like to refactor
+it, you can add an <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder in the <code class="docutils literal notranslate"><span class="pre">ramp_kit_dir</span></code> and
+have modules there that you can import from. The way this works is that
+running <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> adds the <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>
+if such a folder exists. For instance if you have a <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> module
+in the <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_imports</span><span class="o">/</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Then you can do <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">utils</span></code> in <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>.</p>
+</li>
 </ol>
 </div>
 
