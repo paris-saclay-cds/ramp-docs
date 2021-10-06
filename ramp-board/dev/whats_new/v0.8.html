@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 0.8 &mdash; RAMP 0.9.0.dev0 documentation</title>
+  <title>Version 0.8.1 &mdash; RAMP 0.9.0.dev0 documentation</title>
   
 
   
@@ -144,7 +144,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Version 0.8</li>
+      <li>Version 0.8.1</li>
     
     
 
@@ -156,17 +156,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="version-0-8">
-<span id="changes-0-8"></span><h1>Version 0.8<a class="headerlink" href="#version-0-8" title="Permalink to this headline">¶</a></h1>
-<p><em>June 8, 2021</em></p>
+  <div class="section" id="version-0-8-1">
+<span id="changes-0-8"></span><h1>Version 0.8.1<a class="headerlink" href="#version-0-8-1" title="Permalink to this headline">¶</a></h1>
+<p><em>October 6, 2021</em></p>
 <div class="section" id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ramp-database">
+<h3><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code><a class="headerlink" href="#ramp-database" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Don’t pre-select all users by default on the approval page <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/536">#536</a></p></li>
+</ul>
+</div>
+<div class="section" id="ramp-frontend">
+<h3><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#ramp-frontend" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The list of users to approve are sorted by newest first <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/537">#537</a></p></li>
+<li><p>Add a /manage_users admin page with a list of all users, and a search input <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/538">#538</a></p></li>
+<li><p>Improve button colors on the approval page <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/539">#539</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="version-0-8">
+<h1>Version 0.8<a class="headerlink" href="#version-0-8" title="Permalink to this headline">¶</a></h1>
+<p><em>June 8, 2021</em></p>
+<div class="section" id="id1">
+<h2>Changelog<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Support for Python 3.6 was dropped and all <code class="docutils literal notranslate"><span class="pre">ramp-*</span></code> packages now require
 Python 3.7+ (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/532">#532</a>)</p></li>
 </ul>
-<div class="section" id="ramp-database">
-<h3><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code><a class="headerlink" href="#ramp-database" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">ramp-database</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Add possibility to export the leaderboards (private and public) as .csv
 file using command line (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/507">#507</a> by <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>).</p></li>
@@ -189,8 +210,8 @@ file using command line (<a class="reference external" href="https://github.com/
 <li><p>Add DaskWorker (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/476">#476</a>)</p></li>
 </ul>
 </div>
-<div class="section" id="ramp-frontend">
-<h3><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#ramp-frontend" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3><code class="docutils literal notranslate"><span class="pre">ramp-frontend</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">TRACK_CREDIT</span></code> global configuration option (with default to False) to
 track credit for submissions (<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/pull/517">#517</a>)</p></li>
