@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Notes regarding the RAMP workers &mdash; RAMP 0.8.0 documentation</title>
+  <title>5. Notes regarding the RAMP workers &mdash; RAMP 0.8.1 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.8.0
+                0.8.1
               </div>
             
           
@@ -101,8 +101,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5. Notes regarding the RAMP workers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">5.1. Running submissions in a Conda environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">5.2. Running submissions on Amazon Web Services (AWS)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#launching-aws-instance">5.2.1. Launching AWS instance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#prepare-the-instance">5.2.2. Prepare the instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-aws-image">5.2.1. Prepare AWS image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-aws-pipeline">5.2.2. Prepare AWS Pipeline</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#event-configuration">5.2.3. Event configuration</a></li>
 </ul>
 </li>
@@ -247,8 +247,30 @@ directory and use the following to install the environment:</p>
 <h2><span class="section-number">5.2. </span>Running submissions on Amazon Web Services (AWS)<a class="headerlink" href="#running-submissions-on-amazon-web-services-aws" title="Permalink to this headline">¶</a></h2>
 <p>The AWS worker will train and evaluate the submissions on an AWS instance,
 which can be useful if the server itself has not much resources or if you need
-specific resources (e.g. GPU’s).</p>
-<p>Summary of steps:</p>
+specific resources (e.g. GPU’s). To this end you need to prepare an image based
+on which RAMP can launch an instance for each submission.</p>
+<p>You can do so:</p>
+<p>1. you can either create an AWS EC2 instance manually, install everything and
+load the data and make an image from that instance (see</p>
+<blockquote>
+<div><p><a class="reference internal" href="#prepare-aws-image"><span class="std std-ref">Prepare AWS image</span></a>), or</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>make a pipeline with a recipe to create an image</p></li>
+</ol>
+<blockquote>
+<div><p>(see <a class="reference internal" href="#prepare-aws-pipeline"><span class="std std-ref">Prepare AWS Pipeline</span></a>).</p>
+</div></blockquote>
+<p>The latter option has an advantage if you forsee that the image will be updated
+during the course of the running challenge (e.g. participants demand installing
+additional Python packages). The first option will require altering the image
+manually while the latter will update the image automatically by rerunning
+the pipeline (RAMP will always select the newest version of the
+image ‘ami_image_name’ (base name of the image) set in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file of
+the event.</p>
+<div class="section" id="prepare-aws-image">
+<span id="id1"></span><h3><span class="section-number">5.2.1. </span>Prepare AWS image<a class="headerlink" href="#prepare-aws-image" title="Permalink to this headline">¶</a></h3>
+<p>Please follow the summary steps:</p>
 <ol class="arabic simple">
 <li><p>Launch AWS instance and connect to it.</p></li>
 <li><p>Prepare the instance for running submissions.</p></li>
@@ -256,7 +278,7 @@ specific resources (e.g. GPU’s).</p>
 <li><p>Update the event <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file on the RAMP server.</p></li>
 </ol>
 <div class="section" id="launching-aws-instance">
-<span id="launch-aws"></span><h3><span class="section-number">5.2.1. </span>Launching AWS instance<a class="headerlink" href="#launching-aws-instance" title="Permalink to this headline">¶</a></h3>
+<span id="launch-aws"></span><h4><span class="section-number">5.2.1.1. </span>Launching AWS instance<a class="headerlink" href="#launching-aws-instance" title="Permalink to this headline">¶</a></h4>
 <p>Follow <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">AWS getting started</a>
 to launch an Amazon EC2 Linux instance. Amazon can create a new key-pair
 for your instance, which you can download. You need to store this in a
@@ -276,7 +298,7 @@ be found by clicking on your ‘Instances’ tab in your EC2 dashboard.
 Full connection details can be found in the <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">AWS guide</a>.</p>
 </div>
 <div class="section" id="prepare-the-instance">
-<span id="prepare-instance"></span><h3><span class="section-number">5.2.2. </span>Prepare the instance<a class="headerlink" href="#prepare-the-instance" title="Permalink to this headline">¶</a></h3>
+<span id="prepare-instance"></span><h4><span class="section-number">5.2.1.2. </span>Prepare the instance<a class="headerlink" href="#prepare-the-instance" title="Permalink to this headline">¶</a></h4>
 <p>To prepare the instance you need to download the starting kit, data and all
 required packages to run submissions. This can be saved as an AMI (image) and
 will then be used to launch instances to run submissions.</p>
@@ -339,6 +361,186 @@ the last command may differ:</p>
 Actions -&gt; Image -&gt; Create image. See <a class="reference external" href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/tkv-create-ami-from-instance.html">Create an AMI from an Amazon EC2
 instance</a>
 for more details.</p>
+</div>
+</div>
+<div class="section" id="prepare-aws-pipeline">
+<span id="id2"></span><h3><span class="section-number">5.2.2. </span>Prepare AWS Pipeline<a class="headerlink" href="#prepare-aws-pipeline" title="Permalink to this headline">¶</a></h3>
+<p>Reference: <a class="reference external" href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/how-image-builder-works.html">AWS guidelines</a></p>
+<p>To prepare the AMI Image AWS Pipeline log in into your AWS account.</p>
+<p>Follow the three steps:</p>
+<ol class="arabic simple">
+<li><p>create a components</p></li>
+<li><p>create an image recipe</p></li>
+<li><p>create a pipeline</p></li>
+</ol>
+<p>Ad. 1 To create a component search for image pipelines and navigate to the
+<code class="docutils literal notranslate"><span class="pre">Components</span></code> tab on the menu bar on the left hand side. Click a button ‘Create
+component’. Then select:</p>
+<ul>
+<li><p>‘Build’ as component type</p></li>
+<li><p>type the name of the component</p></li>
+<li><p>component version (e.g. 1.0.0)</p></li>
+<li><p>Define document content. Here is the template of what you might want to use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>constants:
+  - Home:
+    type: string
+    value: /home/ubuntu
+  - Challenge:
+    type: string
+    value: $CHALLENGE_NAME
+  - OSF_username:
+    type: string
+    value: $USERNAME
+  - OSF_password:
+    type: string
+    value: $PASSWORD
+phases:
+  - name: build
+    steps:
+      - name: install_conda
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+              bash ./miniconda.sh -b -p {{ Home }}/miniconda
+              export PATH={{ Home }}/miniconda/bin:$PATH
+              conda init
+              conda update --yes --quiet conda
+              conda install --quiet python==3.8 pip
+
+      - name: install_challenge
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              export PATH={{ Home }}/miniconda/bin:$PATH
+              git clone https://github.com/ramp-kits/{{ Challenge }}.git {{ Home }}/{{ Challenge }}
+              # next step is important if you want to use GPUs
+              sudo apt install --yes nvidia-driver-440
+              sudo apt install --yes nvidia-utils-440  # you might want to use differnt version
+              conda env update --name base --file {{ Home }}/{{ Challenge }}/environment.yml
+              pip install -r {{ Home }}/{{ Challenge }}/requirements.txt
+              pip install -r {{ Home }}/{{ Challenge }}/extra_libraries.txt
+              conda install -c anaconda cudatoolkit
+      - name: download_data
+        action: ExecuteBash
+        timeoutSeconds: 7200
+        inputs:
+          commands:
+            - |
+              export PATH={{ Home }}/miniconda/bin:$PATH
+              cd {{ Home }}/{{ Challenge }}
+              # Download private data from osf
+              cd {{ Home }}/{{ Challenge }}
+              python download_data.py --private --username {{ OSF_username }} --password {{ OSF_password }}
+              # Make sure everything is owned by
+              chown -R ubuntu {{ Home }}
+              echo &quot;Installing done!&quot;
+      - name: add_conda_to_path
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              # Always run .bashrc for bash even when it is not interactive
+              sed -e &#39;/# If not running interactively,/,+5d&#39; -i {{ Home }}/.bashrc
+              # Run conda init to allow using conda in the bash
+              sudo -u ubuntu bash -c &#39;export PATH={{ Home }}/miniconda/bin:$PATH &amp;&amp; conda init&#39;
+              echo &quot;Added conda in PATH for user ubuntu&quot;
+  - name: test
+    steps:
+      - name: test_ramp_install
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              echo &quot;Test ramp install&quot;
+              echo &quot;User: &#39;$USER&#39;&quot;
+              cd {{ Home }}/{{ Challenge }}
+              sudo -u ubuntu BASH_ENV={{ Home }}/.bashrc bash -c &#39;conda info&#39;
+              # Run a ramp-test for the starting kit to make sure everything is running properly
+              sudo -u ubuntu BASH_ENV={{ Home }}/.bashrc bash -c &#39;ramp-test --submission sample --quick-test&#39;
+              echo &quot;test end&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+<p>where you should exchange ‘$CHALLENGE_NAME’ for the name of the challenge you
+wish to use (here we are pointing to repositories stored on the ramp-kits
+github repository), and ‘$USERNAME’ and ‘$PASSWORD’ for your
+credentials on OSF where you stored the data for the challenge. Of course this
+is just a suggestion. Feel free to make your own, custom file.</p>
+<p>Note: If you prefer using S3 from AWS to store and load your data you can
+follow the instructions on how to do that here:
+<a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html">AWS configure envvars docs</a></p>
+<p>You will need to create a new IAM user with the rights to access S1 and then
+exchange the lines for download in your .yml file with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="n">key_received_on_creating_a_user</span>
+<span class="n">export</span> <span class="n">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="n">key_received_on_creating_a_user</span>
+<span class="n">export</span> <span class="n">AWS_DEFAULT_REGION</span><span class="o">=</span><span class="n">the_zone_you_use</span>  <span class="c1"># eg eu-west-1</span>
+<span class="n">aws</span> <span class="n">S3</span> <span class="n">cp</span> <span class="o">--</span><span class="n">recursive</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">your_bucket_name_on_S3</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Once you have the component ready we progress to Image recipe:</p>
+<p>Ad 2. Select the tab ‘Image recipes’ and then click the button ‘Create image
+recipe’. Fill in the name, version and optionally the description for this
+recipe. Then select:</p>
+<ul class="simple">
+<li><p>Select managed Images</p></li>
+<li><p>Ubuntu (you might prefer to choose different operating system, but keep
+in mind that the default user may differ. For ubuntu it is ‘ubuntu’ for Linux
+it is ‘ec2-user’. You will need to know your default user when writing the
+<code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file for your event and/or to ssh to your instance)</p></li>
+<li><p>quick start (Amazon-managed)</p></li>
+<li><p>Ubuntu Server 20 LTS x86</p></li>
+<li><p>Use latest available OS version</p></li>
+<li><p>working directory path: ‘/tmp’</p></li>
+<li><p>if you have a large dataset consider increasing the memory, eg to 16 GiB</p></li>
+</ul>
+<p>Next, choose the component. From the drop down list select ‘Owned by me’ and
+select the component you created in the previous step.</p>
+<p>Scroll down and click the button ‘Create recipe’.</p>
+<p>Ad 3. Select ‘Image pipelines’ from the left-hand side menu bar. Click the
+button ‘Create image pipeline’. Next:</p>
+<ul class="simple">
+<li><p>Choose the name for your pipeline and optionally the description</p></li>
+<li><p>Enable enhanced metadata collection</p></li>
+<li><p>Build schedule: Manual</p></li>
+<li><p>click ‘Next’</p></li>
+<li><p>select ‘Use existing recipe’ and choose your recipe from the drop down menu</p></li>
+<li><p>click ‘Next’</p></li>
+<li><p>Create infrastructure configuration using service defaults</p></li>
+<li><p>click ‘Next’</p></li>
+<li><p>click ‘Next’</p></li>
+<li><p>review your pipeline and press ‘Create pipeline’</p></li>
+</ul>
+<p>Congratulations! You have just created a pipeline for your ramp event. Let’s
+now run it making sure that everything works as expected.</p>
+<p>To create an image select your pipeline and from ‘Actions’ select ‘Run
+pipeline’. You can also select ‘View details’ to follow creation of the
+pipeline. Relax, it will take a while.</p>
+<p>In case there is a failure when running your pipeline
+you can search for logs on CloudWatch to view more precisely what has happened.</p>
+<p>Once your pipeline is successfully created you can search for ‘EC2’. There, in
+the menu on your left-hand side you will find ‘AMIs’ tab. Click on it.</p>
+<p>You should be able to find all your available images, also the one just
+created. Note that if you run the same pipeline next time the new
+AMI will appear with the same name but of different version. Ramp always
+searches for the newest version of the image (as long as you specify the
+correct base name in the config.yml file).</p>
+<p>To make sure that everything works as expected it is advised that you create an
+instance from that image and connect to it through ssh.
+Check if all the expected files are there and that you can run the ramp-test
+without issues. Also, if you wish to be able to use GPU make sure that your
+python code recognizes them, you can aslo use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span> <span class="o">-</span><span class="n">l</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>To make sure that your nvidia driver is correctly installed</p>
 </div>
 <div class="section" id="event-configuration">
 <h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
