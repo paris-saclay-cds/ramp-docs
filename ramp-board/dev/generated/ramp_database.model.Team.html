@@ -184,7 +184,7 @@
 <h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.Team<a class="headerlink" href="#ramp-database-model-team" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ramp_database.model.Team">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ramp_database.model.</span></code><code class="sig-name descname"><span class="pre">Team</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initiator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Team" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ramp_database.model.</span></code><code class="sig-name descname"><span class="pre">Team</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_individual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Team" title="Permalink to this definition">¶</a></dt>
 <dd><p>Team table.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -193,9 +193,7 @@
 </dd>
 <dt><strong>admin</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.User</span></code></a></span></dt><dd><p>The admin user of the team.</p>
 </dd>
-<dt><strong>initiator</strong><span class="classifier">None or <a class="reference internal" href="#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a>, default is None</span></dt><dd><p>The team initiating a merging.</p>
-</dd>
-<dt><strong>acceptor</strong><span class="classifier">None or <a class="reference internal" href="#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a>, default is None</span></dt><dd><p>The team accepting a merging.</p>
+<dt><strong>is_individual</strong><span class="classifier">bool</span></dt><dd><p>This team is an individual team.</p>
 </dd>
 </dl>
 </dd>
@@ -209,14 +207,6 @@
 </dd>
 <dt><strong>admin</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.User.html#ramp_database.model.User" title="ramp_database.model.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.User</span></code></a></span></dt><dd><p>The admin user instance.</p>
 </dd>
-<dt><strong>initiator_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the team asking for merging.</p>
-</dd>
-<dt><strong>initiator</strong><span class="classifier"><a class="reference internal" href="#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a></span></dt><dd><p>The team instance asking for merging.</p>
-</dd>
-<dt><strong>acceptor_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the team accepting the merging.</p>
-</dd>
-<dt><strong>acceptor</strong><span class="classifier"><a class="reference internal" href="#ramp_database.model.Team" title="ramp_database.model.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Team</span></code></a></span></dt><dd><p>The team instance accepting the merging.</p>
-</dd>
 <dt><strong>team_events</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.EventTeam.html#ramp_database.model.EventTeam" title="ramp_database.model.EventTeam"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.EventTeam</span></code></a></span></dt><dd><p>A back-reference to the events to which the team is enroll.</p>
 </dd>
 </dl>
@@ -224,7 +214,7 @@
 </dl>
 <dl class="py method">
 <dt id="ramp_database.model.Team.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initiator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Team.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_individual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.Team.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple constructor that allows initialization from kwargs.</p>
 <p>Sets attributes on the constructed instance using the names and
 values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
