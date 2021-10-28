@@ -410,14 +410,9 @@ illustrating it.</p>
 (e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.5.0&quot;</span></code>).</p></li>
 <li><p>Create a branch for this version (e.g.,
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;.X</span></code>).</p></li>
-</ol>
-<p>4*. Push the new branch into the upstream remote ramp-board repository.
-5*. Create a GitHub release by clicking ‘Draft a new release’ <a href="#id1"><span class="problematic" id="id2">`</span></a>here</p>
-<blockquote>
-<div><p>&lt;<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">https://github.com/paris-saclay-cds/ramp-board/releases</a>&gt;`_. Copy the
-release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p>
-</div></blockquote>
-<ol class="arabic simple" start="6">
+<li><p>Push the new branch into the upstream remote ramp-board repository.</p></li>
+<li><p>Create a GitHub release by clicking ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. Copy the
+release notes from <a class="reference external" href="https://paris-saclay-cds.github.io/ramp-docs/ramp-board/dev/whats_new.html">whats_new</a>.</p></li>
 <li><p>Change the symlink in the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs">ramp-docs</a> repository such that
 stable points to the latest release version, i.e, 0.&lt;version number&gt;. To do
 this, clone the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">ramp-docs/ramp-board/</span></code>
@@ -425,13 +420,9 @@ then run <code class="docutils literal notranslate"><span class="pre">unlink</sp
 <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">0.&lt;version</span> <span class="pre">number&gt;</span> <span class="pre">stable</span></code>. To check that
 this was performed correctly, ensure that <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-docs/blob/master/ramp-board/stable">ramp-board/stable</a>
 has the new version number.</p></li>
-</ol>
-<dl class="simple">
-<dt>7*. <code class="docutils literal notranslate"><span class="pre">cd</span></code> back into the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> code repository and ensure you are in the</dt><dd><p>release branch (e.g., branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>). Remove unnecessary files
-with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p>
-</dd>
-</dl>
-<ol class="arabic simple" start="8">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> back into the <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code> code repository and ensure you are in the
+release branch (e.g., branch <code class="docutils literal notranslate"><span class="pre">0.5.X</span></code>). Remove unnecessary files
+with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-dist</span></code> then push on PyPI with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload-pypi</span></code>.</p></li>
 <li><p>Switch to <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on
 upstream.</p></li>
 <li><p>Create a GitHub release by clicking on ‘Draft a new release’ <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/releases">here</a>. ‘Tag version’
