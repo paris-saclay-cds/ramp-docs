@@ -356,7 +356,7 @@ to add your class to <a class="reference external" href="https://github.com/pari
 <li><p>Specify a cross-validation scheme
 Specify a way to split the ‘train’ data into training and validation sets.
 This should be done by defining a <code class="docutils literal notranslate"><span class="pre">get_cv()</span></code> function that takes
-the feature and target data as parameters and returns indicies that can
+the feature and target data as parameters and returns indices that can
 be used to split the data. If you are using a function with a random
 element, e.g., <code class="docutils literal notranslate"><span class="pre">StratifiedShuffleSplit()</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html#sklearn.model_selection.StratifiedShuffleSplit.split">from scikit-learn</a>,
 it is important to set the random seed. This ensures that the train and
