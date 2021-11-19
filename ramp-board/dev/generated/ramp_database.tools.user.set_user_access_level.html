@@ -70,7 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
@@ -106,6 +106,18 @@
 <code class="sig-prename descclassname"><span class="pre">ramp_database.tools.user.</span></code><code class="sig-name descname"><span class="pre">set_user_access_level</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'user'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.tools.user.set_user_access_level" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the access level of a user.</p>
 <p>In addition, it will also set the user as authenticated.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>session</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.Session</span></code></span></dt><dd><p>The session to directly perform the operation on the database.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the user.</p>
+</dd>
+<dt><strong>access_level</strong><span class="classifier">{“asked”, “user”, admin}, default=”user”</span></dt><dd><p>User’s access level</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>

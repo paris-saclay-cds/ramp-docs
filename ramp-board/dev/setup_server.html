@@ -70,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -220,7 +220,7 @@ install directly from <code class="docutils literal notranslate"><span class="pr
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ gunicorn -w 8 --bind 0.0.0.0:8080 --access-logfile ./frontend.log &#39;ramp_frontend.wsgi:make_app(&quot;config.yml&quot;)&#39;
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> is the path to the configuration fle created in the
+<p>where <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> is the path to the configuration file created in the
 <code class="docutils literal notranslate"><span class="pre">ramp_deployment</span></code> directory. To have more information about the Gunicorn
 options, refer to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ gunicorn -h

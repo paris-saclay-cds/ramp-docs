@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Addtional Information</span></p>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
@@ -340,7 +340,7 @@ phases:
               git clone https://github.com/ramp-kits/{{ Challenge }}.git {{ Home }}/{{ Challenge }}
               # next step is important if you want to use GPUs
               sudo apt install --yes nvidia-driver-440
-              sudo apt install --yes nvidia-utils-440  # you might want to use differnt version
+              sudo apt install --yes nvidia-utils-440  # you might want to use different version
               conda env update --name base --file {{ Home }}/{{ Challenge }}/environment.yml
               pip install -r {{ Home }}/{{ Challenge }}/requirements.txt
               pip install -r {{ Home }}/{{ Challenge }}/extra_libraries.txt
@@ -456,7 +456,7 @@ correct base name in the config.yml file).</p>
 instance from that image and connect to it through ssh.
 Check if all the expected files are there and that you can run the ramp-test
 without issues. Also, if you wish to be able to use GPU make sure that your
-python code recognizes them, you can aslo use the command:</p>
+python code recognizes them, you can also use the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span> <span class="o">-</span><span class="n">l</span> <span class="mi">3</span>
 </pre></div>
 </div>
@@ -543,7 +543,7 @@ simultaneously. For AWS workers, this means the maximum number of
 instances that can be run at one time. This should fall within your
 AWS instance limit.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">n_threads</span></code>: The number of threads that each worker can use. This would
-depend on the AWS instance type you have choosen.</p></li>
+depend on the AWS instance type you have chosen.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">time_between_collection</span></code>: How long, in seconds, the worker should wait
 before re-checking if the submission is ready for collection. The default is
 1 second. For AWS workers the check for collection will be done through SSH.
@@ -606,7 +606,7 @@ workers specified in the event configuration. For instance, on a machine
 having 16 physical CPUs, you can start 16 RAMP workers, and 32
 dask.distributed workers.</p>
 <p>This is necessary as some dask.distributed workers will be used for running
-the submission, while others manage data and state sychronization.</p>
+the submission, while others manage data and state synchronization.</p>
 </div>
 </div>
 <div class="section" id="daskworker-setup-with-a-remote-cluster">
