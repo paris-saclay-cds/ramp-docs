@@ -578,12 +578,12 @@ distributed cluster which can be either remote or local.</p>
 for more information.</p>
 </li>
 <li><p>Specify the worker in the event configuration as follows,</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worker</span><span class="p">:</span>
-  <span class="nt">worker_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
-  <span class="nt">conda_env</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ramp-iris</span>
-  <span class="nt">dask_scheduler</span><span class="p">:</span> <span class="s">&quot;tcp://127.0.0.1:8786&quot;</span>   <span class="c1"># or another URL to the dask scheduler</span>
-  <span class="nt">n_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>  <span class="c1"># (number of RAMP workers launched in parallel. Must be smaller</span>
-                <span class="c1">#  than the number of dask.distributed workers)</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worker</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">worker_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dask</span><span class="w"></span>
+<span class="w">  </span><span class="nt">conda_env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ramp-iris</span><span class="w"></span>
+<span class="w">  </span><span class="nt">dask_scheduler</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;tcp://127.0.0.1:8786&quot;</span><span class="w">   </span><span class="c1"># or another URL to the dask scheduler</span><span class="w"></span>
+<span class="w">  </span><span class="nt">n_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w">  </span><span class="c1"># (number of RAMP workers launched in parallel. Must be smaller</span><span class="w"></span>
+<span class="w">                </span><span class="c1">#  than the number of dask.distributed workers)</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
