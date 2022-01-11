@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.MultiCheckboxField
+====================================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: MultiCheckboxField
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

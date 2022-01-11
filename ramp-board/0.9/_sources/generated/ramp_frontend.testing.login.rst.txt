@@ -1,0 +1,10 @@
+﻿:mod:`ramp_frontend.testing`.login
+===============================================
+
+.. currentmodule:: ramp_frontend.testing
+
+.. autofunction:: login
+
+.. raw:: html
+
+    <div style='clear:both'></div>

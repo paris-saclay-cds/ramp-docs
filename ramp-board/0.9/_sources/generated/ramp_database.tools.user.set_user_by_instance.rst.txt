@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.user`.set_user_by_instance
+=================================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: set_user_by_instance
+
+.. raw:: html
+
+    <div style='clear:both'></div>

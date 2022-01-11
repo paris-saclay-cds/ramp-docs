@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.frontend`.is_user_signed_up
+==================================================================
+
+.. currentmodule:: ramp_database.tools.frontend
+
+.. autofunction:: is_user_signed_up
+
+.. raw:: html
+
+    <div style='clear:both'></div>

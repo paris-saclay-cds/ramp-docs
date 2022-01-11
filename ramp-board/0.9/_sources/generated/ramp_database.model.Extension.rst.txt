@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.model`.Extension
+===========================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: Extension
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

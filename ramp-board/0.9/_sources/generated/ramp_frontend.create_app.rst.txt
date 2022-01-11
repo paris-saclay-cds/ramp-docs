@@ -1,0 +1,10 @@
+﻿:mod:`ramp_frontend`.create_app
+============================================
+
+.. currentmodule:: ramp_frontend
+
+.. autofunction:: create_app
+
+.. raw:: html
+
+    <div style='clear:both'></div>
