@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.event`.get_event_admin
+=============================================================
+
+.. currentmodule:: ramp_database.tools.event
+
+.. autofunction:: get_event_admin
+
+.. raw:: html
+
+    <div style='clear:both'></div>

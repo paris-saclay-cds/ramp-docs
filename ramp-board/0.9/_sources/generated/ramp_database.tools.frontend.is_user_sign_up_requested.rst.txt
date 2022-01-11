@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.frontend`.is_user_sign_up_requested
+==========================================================================
+
+.. currentmodule:: ramp_database.tools.frontend
+
+.. autofunction:: is_user_sign_up_requested
+
+.. raw:: html
+
+    <div style='clear:both'></div>

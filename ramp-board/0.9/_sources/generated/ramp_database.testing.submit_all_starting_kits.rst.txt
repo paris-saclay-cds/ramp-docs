@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.testing`.submit_all_starting_kits
+==================================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: submit_all_starting_kits
+
+.. raw:: html
+
+    <div style='clear:both'></div>

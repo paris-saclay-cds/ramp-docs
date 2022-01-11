@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.event`.delete_submission_similarity
+==========================================================================
+
+.. currentmodule:: ramp_database.tools.event
+
+.. autofunction:: delete_submission_similarity
+
+.. raw:: html
+
+    <div style='clear:both'></div>

@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.testing`.setup_toy_db
+======================================================
+
+.. currentmodule:: ramp_database.testing
+
+.. autofunction:: setup_toy_db
+
+.. raw:: html
+
+    <div style='clear:both'></div>

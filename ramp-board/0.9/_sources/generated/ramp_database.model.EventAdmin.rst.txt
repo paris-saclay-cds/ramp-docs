@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.model`.EventAdmin
+============================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: EventAdmin
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

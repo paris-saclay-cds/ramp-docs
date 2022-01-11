@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Personalize your RAMP instance &mdash; RAMP 0.9.0 documentation</title><link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/js/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Set up a new RAMP event" href="create_ramp_event.html" />
+    <link rel="prev" title="1. Set up your own server to run RAMP" href="setup_server.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RAMP
+          </a>
+              <div class="version">
+                0.9.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_server.html">1. Set up your own server to run RAMP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Personalize your RAMP instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#front-page">2.1. Front page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#privacy-policy-page">2.2. Privacy Policy page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sign-up-and-login-pages">2.3. Sign up and login pages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workers.html">5. Notes regarding the RAMP workers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">6. Interactions with the RAMP website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_challenge.html">7. Useful tips using RAMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-maintenance.html">8. Server maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">RAMP API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="user_guide.html">User Guide</a> &raquo;</li>
+      <li><span class="section-number">2. </span>Personalize your RAMP instance</li>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="personalize-your-ramp-instance">
+<span id="personnalize-instance"></span><h1><span class="section-number">2. </span>Personalize your RAMP instance<a class="headerlink" href="#personalize-your-ramp-instance" title="Permalink to this headline">¶</a></h1>
+<p>It is possible to personalize your RAMP front page.</p>
+<div class="section" id="front-page">
+<h2><span class="section-number">2.1. </span>Front page<a class="headerlink" href="#front-page" title="Permalink to this headline">¶</a></h2>
+<p>You might be interested in displaying some images (logos) in the <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code>
+section in the very bottom of your RAMP webpage.</p>
+<p>To do so, add all the images you wish to have displayed to the following
+directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~ $ ramp-board/ramp-frontend/ramp_frontend/static/img/powered_by
+</pre></div>
+</div>
+<p>Your images must have one of the following extensions:</p>
+<ul class="simple">
+<li><p>.png</p></li>
+<li><p>.jpg (.jpeg)</p></li>
+<li><p>.gif</p></li>
+<li><p>.svg</p></li>
+</ul>
+<p>When you reload your RAMP page the new <code class="docutils literal notranslate"><span class="pre">Powered</span> <span class="pre">by</span></code> section should appear.</p>
+</div>
+<div class="section" id="privacy-policy-page">
+<h2><span class="section-number">2.2. </span>Privacy Policy page<a class="headerlink" href="#privacy-policy-page" title="Permalink to this headline">¶</a></h2>
+<p>You can add an optional Privacy Policy page, setting the following in the main
+<code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flask</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">privacy_policy_page</span><span class="p">:</span> <span class="s2">&quot;&lt;path.html&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal notranslate"><span class="pre">privacy_policy_page</span></code> can be either a path to an HTML file, or
+directly the HTML contents of that page. See an example in
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/tree/master/ramp-frontend/ramp_frontend/templates/privacy_policy_template.html">privacy_policy_template.html</a>.</p>
+<p>This will enable the <code class="docutils literal notranslate"><span class="pre">/privacy_policy</span></code> endpoint, and will add it to the footer
+menu.</p>
+</div>
+<div class="section" id="sign-up-and-login-pages">
+<h2><span class="section-number">2.3. </span>Sign up and login pages<a class="headerlink" href="#sign-up-and-login-pages" title="Permalink to this headline">¶</a></h2>
+<p>You can add personalized messages to the Sign Up and Login pages, by adding the
+following to the main <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flask</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">login_instructions</span><span class="p">:</span> <span class="s2">&quot;instructions A&quot;</span>
+    <span class="n">sign_up_instructions</span><span class="p">:</span> <span class="s2">&quot;instructions A&quot;</span>
+    <span class="n">sign_up_ask_social_media</span><span class="p">:</span> <span class="kc">True</span>    <span class="c1"># ask for social media accounts (optional)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">login_instructions</span></code> and <code class="docutils literal notranslate"><span class="pre">sign_up_instructions</span></code> can be either a path to an HTML
+file, or directly the HTML contents.</p>
+<p>By including HTML code with JavaScript, these field can also be used to customize the
+Sign Up and Login forms.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="setup_server.html" class="btn btn-neutral float-left" title="1. Set up your own server to run RAMP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="create_ramp_event.html" class="btn btn-neutral float-right" title="3. Set up a new RAMP event" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015 - 2019, Paris-Saclay Center for Data Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

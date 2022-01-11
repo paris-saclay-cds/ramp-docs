@@ -1,0 +1,14 @@
+﻿:mod:`ramp_engine.base`.BaseWorker
+=========================================
+
+.. currentmodule:: ramp_engine.base
+
+.. autoclass:: BaseWorker
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

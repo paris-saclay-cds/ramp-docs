@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramp_frontend.forms.MultiCheckboxField &mdash; RAMP 0.9.0 documentation</title><link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_frontend.forms.ImportForm" href="ramp_frontend.forms.ImportForm.html" />
+    <link rel="prev" title="ramp_frontend.forms.EventUpdateProfileForm" href="ramp_frontend.forms.EventUpdateProfileForm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> RAMP
+          </a>
+              <div class="version">
+                0.9.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ramp_frontend.create_app.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend</span></code>.create_app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.views"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.views</span></code>: views used on the frontend to interact with the user</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>: forms used in the website</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.LoginForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.LoginForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserUpdateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UserCreateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UserCreateProfileForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CodeForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CodeForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.SubmitForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.SubmitForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.UploadForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.UploadForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.EventUpdateProfileForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.EventUpdateProfileForm</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.ImportForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.ImportForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.CreditForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.CreditForm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ramp_frontend.forms.AskForEventForm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.AskForEventForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.testing</span></code>: functionalities to test the frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_frontend.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.utils</span></code>: Utilities to ease sending email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code>.MultiCheckboxField</li>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ramp-frontend-forms-multicheckboxfield">
+<h1><a class="reference internal" href="../api.html#module-ramp_frontend.forms" title="ramp_frontend.forms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_frontend.forms</span></code></a>.MultiCheckboxField<a class="headerlink" href="#ramp-frontend-forms-multicheckboxfield" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ramp_frontend.forms.MultiCheckboxField">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ramp_frontend.forms.</span></code><code class="sig-name descname"><span class="pre">MultiCheckboxField</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField" title="Permalink to this definition">¶</a></dt>
+<dd><p>A form containing multiple checkboxes.</p>
+<dl class="py method">
+<dt id="ramp_frontend.forms.MultiCheckboxField.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">label=None</span></em>, <em class="sig-param"><span class="pre">validators=None</span></em>, <em class="sig-param"><span class="pre">coerce=&lt;class</span> <span class="pre">'str'&gt;</span></em>, <em class="sig-param"><span class="pre">choices=None</span></em>, <em class="sig-param"><span class="pre">validate_choice=True</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_frontend.forms.MultiCheckboxField.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> – The label of the field.</p></li>
+<li><p><strong>validators</strong> – A sequence of validators to call when <code class="docutils literal notranslate"><span class="pre">validate</span></code> is called.</p></li>
+<li><p><strong>filters</strong> – A sequence of filters which are run on input data by <code class="docutils literal notranslate"><span class="pre">process</span></code>.</p></li>
+<li><p><strong>description</strong> – A description for the field, typically used for help text.</p></li>
+<li><p><strong>id</strong> – An id to use for the field. A reasonable default is set by the form,
+and you shouldn’t need to set this manually.</p></li>
+<li><p><strong>default</strong> – The default value to assign to the field, if no form or object
+input is provided. May be a callable.</p></li>
+<li><p><strong>widget</strong> – If provided, overrides the widget used to render the field.</p></li>
+<li><p><strong>render_kw</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – If provided, a dictionary which provides default keywords that
+will be given to the widget at render time.</p></li>
+<li><p><strong>name</strong> – The HTML name of this field. The default value is the Python
+attribute name.</p></li>
+<li><p><strong>_form</strong> – The form holding this field. It is passed by the form itself during
+construction. You should never pass this value yourself.</p></li>
+<li><p><strong>_prefix</strong> – The prefix to prepend to the form name of this field, passed by
+the enclosing form during construction.</p></li>
+<li><p><strong>_translations</strong> – A translations object providing message translations. Usually
+passed by the enclosing form during construction. See
+<span class="xref std std-doc">I18n docs</span> for information on message translations.</p></li>
+<li><p><strong>_meta</strong> – If provided, this is the ‘meta’ instance from the form. You usually
+don’t pass this yourself.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">_form</span></code> isn’t provided, an <code class="xref py py-class docutils literal notranslate"><span class="pre">UnboundField</span></code> will be
+returned instead. Call its <code class="xref py py-func docutils literal notranslate"><span class="pre">bind</span></code> method with a form instance and
+a name to construct the field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ramp_frontend.forms.EventUpdateProfileForm.html" class="btn btn-neutral float-left" title="ramp_frontend.forms.EventUpdateProfileForm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ramp_frontend.forms.ImportForm.html" class="btn btn-neutral float-right" title="ramp_frontend.forms.ImportForm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015 - 2019, Paris-Saclay Center for Data Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
