@@ -53,11 +53,14 @@
 <li class="toctree-l2"><a class="reference internal" href="create_ramp_event.html">3. Set up a new RAMP event</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_new_challenge.html">4. Create New Challenge</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5. Notes regarding the RAMP workers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">5.1. Running submissions in a Conda environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-submissions-in-a-conda-environment">5.1. Running submissions in a Conda environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#event-configuration">5.1.1. Event configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#running-submissions-on-amazon-web-services-aws">5.2. Running submissions on Amazon Web Services (AWS)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-aws-image">5.2.1. Prepare AWS image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-aws-pipeline">5.2.2. Prepare AWS Pipeline</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#event-configuration">5.2.3. Event configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">5.2.3. Event configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#running-submissions-with-dask">5.3. Running submissions with Dask</a><ul>
@@ -161,6 +164,67 @@ directory and use the following to install the environment:</p>
 <p>You can update an existing environment with the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/ramp_deployment $ ramp setup update-conda-env --event-config events/iris_test/config.yml
 </pre></div>
+</div>
+<div class="section" id="event-configuration">
+<h3><span class="section-number">5.1.1. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Create an event config.yml (see <a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>) and update the
+‘worker’ section, which should look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
+    <span class="n">problem_name</span><span class="p">:</span> <span class="n">iris</span>
+    <span class="n">event_name</span><span class="p">:</span> <span class="n">iris_ramp_test</span>
+    <span class="n">event_title</span><span class="p">:</span> <span class="s2">&quot;Iris classification challenge&quot;</span>
+    <span class="n">event_is_public</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">worker</span><span class="p">:</span>
+    <span class="n">worker_type</span><span class="p">:</span> <span class="n">conda</span>
+    <span class="n">conda_env</span><span class="p">:</span> <span class="n">ramp</span><span class="o">-</span><span class="n">iris</span>
+    <span class="n">kit_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">kits</span><span class="o">/</span><span class="n">iris</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">ramp</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">data</span>
+    <span class="n">submissions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">submissions</span>
+    <span class="n">logs_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">logs</span>
+    <span class="n">predictions_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ramp</span><span class="o">/</span><span class="n">ramp_deployment</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">iris</span><span class="o">/</span><span class="n">predictions</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="mi">14400</span>
+<span class="n">dispatcher</span><span class="p">:</span>
+    <span class="n">hunger_policy</span><span class="p">:</span> <span class="n">sleep</span>
+    <span class="n">n_workers</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">n_threads</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">time_between_collection</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Worker configuration</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda_env</span></code>: the name of the conda environment to use. If not specified,
+the base environment will be used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kit_dir</span></code>: path to the directory of the RAMP kit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_dir</span></code>: path to the directory of the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submissions_dir</span></code>: path to the directory containing the submissions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logs_dir</span></code>: path to the directory where the log of the submission
+will be stored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predictions_dir</span></code>: path to the directory where the predictions of the
+submission will be stored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: timeout after a given number of seconds when running the worker.
+If not provided, a default of 7200 is used.</p></li>
+</ul>
+<p id="conda-dispatcher"><strong>dispatcher configuration</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">hunger_policy</span></code>: Policy to apply in case that there is no anymore workers
+to be processed. One of <code class="docutils literal notranslate"><span class="pre">None</span></code>, ‘sleep’ or ‘exit’, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">None</span></code>: the dispatcher will work without interruption;</p></li>
+<li><p>if ‘sleep’: the dispatcher will sleep for 5 seconds before to check
+for new submission;</p></li>
+<li><p>if ‘exit’: the dispatcher will stop after collecting the results of
+the last submissions.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_workers</span></code>: Maximum number of workers that can run submissions
+simultaneously.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_threads</span></code>: The number of threads that each worker can use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_between_collection</span></code>: How long, in seconds, the worker should wait
+before re-checking if the submission is ready for collection. The default is
+1 second.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="running-submissions-on-amazon-web-services-aws">
@@ -462,8 +526,8 @@ python code recognizes them, you can also use the command:</p>
 </div>
 <p>To make sure that your nvidia driver is correctly installed</p>
 </div>
-<div class="section" id="event-configuration">
-<h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3><span class="section-number">5.2.3. </span>Event configuration<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Create an event config.yml (see <a class="reference internal" href="create_ramp_event.html#deploy-ramp-event"><span class="std std-ref">Deploy a specific RAMP event</span></a>) and update the
 ‘worker’ section, which should look something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ramp</span><span class="p">:</span>
