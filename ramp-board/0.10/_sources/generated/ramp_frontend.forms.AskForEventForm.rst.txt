@@ -1,0 +1,14 @@
+﻿:mod:`ramp_frontend.forms`.AskForEventForm
+=================================================
+
+.. currentmodule:: ramp_frontend.forms
+
+.. autoclass:: AskForEventForm
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

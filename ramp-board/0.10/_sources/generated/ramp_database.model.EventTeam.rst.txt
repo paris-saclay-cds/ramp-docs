@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.model`.EventTeam
+===========================================
+
+.. currentmodule:: ramp_database.model
+
+.. autoclass:: EventTeam
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

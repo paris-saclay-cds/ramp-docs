@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramp_database.model.WorkflowElement &mdash; RAMP 0.10.0 documentation</title><link rel="stylesheet" href="../_static/css/ramp.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ramp_database.model.WorkflowElementType" href="ramp_database.model.WorkflowElementType.html" />
+    <link rel="prev" title="ramp_database.model.SubmissionFileTypeExtension" href="ramp_database.model.SubmissionFileTypeExtension.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> RAMP
+          </a>
+              <div class="version">
+                0.10.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Develop and contribute</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">RAMP API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#ramp-database">RAMP database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#module-ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>: the database model</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api.html#general-tables">General tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#user-related-tables">User-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#event-related-tables">Event-related tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#submission-related-tables">Submission-related tables</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../api.html#relationship-tables">Relationship tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.tools</span></code>: the tools to communicate with the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.exceptions</span></code>: type of errors raise by the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.testing</span></code>: functionalities to test database model and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#module-ramp_database.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.utils</span></code>: setup and connect RAMP database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-engine">RAMP engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-frontend">RAMP frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#ramp-utils">RAMP utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">RAMP Command-Line Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Additional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">Release history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About us</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RAMP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">RAMP API</a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code>.WorkflowElement</li>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ramp-database-model-workflowelement">
+<h1><a class="reference internal" href="../api.html#module-ramp_database.model" title="ramp_database.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramp_database.model</span></code></a>.WorkflowElement<a class="headerlink" href="#ramp-database-model-workflowelement" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ramp_database.model.WorkflowElement">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ramp_database.model.</span></code><code class="sig-name descname"><span class="pre">WorkflowElement</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_in_workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>WorkflowElement table.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>workflow</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Workflow.html#ramp_database.model.Workflow" title="ramp_database.model.Workflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Workflow</span></code></a></span></dt><dd><p>A workflow instance.</p>
+</dd>
+<dt><strong>workflow_element_type</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType" title="ramp_database.model.WorkflowElementType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElementType</span></code></a></span></dt><dd><p>A workflow element type instance.</p>
+</dd>
+<dt><strong>name_in_workflow</strong><span class="classifier">None or str, default is None</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The ID of the table row.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the workflow element.</p>
+</dd>
+<dt><strong>workflow_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the associated workflow.</p>
+</dd>
+<dt><strong>workflow</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.Workflow.html#ramp_database.model.Workflow" title="ramp_database.model.Workflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.Workflow</span></code></a></span></dt><dd><p>The workflow instance.</p>
+</dd>
+<dt><strong>workflow_element_type_id</strong><span class="classifier">int</span></dt><dd><p>The ID of the associated workflow element type.</p>
+</dd>
+<dt><strong>workflow_element_type</strong><span class="classifier"><a class="reference internal" href="ramp_database.model.WorkflowElementType.html#ramp_database.model.WorkflowElementType" title="ramp_database.model.WorkflowElementType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.WorkflowElementType</span></code></a></span></dt><dd><p>The workflow element type instance.</p>
+</dd>
+<dt><strong>submission_files</strong><span class="classifier">list of <a class="reference internal" href="ramp_database.model.SubmissionFile.html#ramp_database.model.SubmissionFile" title="ramp_database.model.SubmissionFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ramp_database.model.SubmissionFile</span></code></a></span></dt><dd><p>A back-reference to the submission file associated with the workflow
+element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="ramp_database.model.WorkflowElement.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_in_workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramp_database.model.WorkflowElement.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple constructor that allows initialization from kwargs.</p>
+<p>Sets attributes on the constructed instance using the names and
+values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
+<p>Only keys that are present as
+attributes of the instance’s class are allowed. These could be,
+for example, any mapped columns or relationships.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div style='clear:both'></div></div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ramp_database.model.SubmissionFileTypeExtension.html" class="btn btn-neutral float-left" title="ramp_database.model.SubmissionFileTypeExtension" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ramp_database.model.WorkflowElementType.html" class="btn btn-neutral float-right" title="ramp_database.model.WorkflowElementType" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015 - 2019, Paris-Saclay Center for Data Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿:mod:`ramp_engine.aws`.AWSWorker
+=======================================
+
+.. currentmodule:: ramp_engine.aws
+
+.. autoclass:: AWSWorker
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

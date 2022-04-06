@@ -1,0 +1,14 @@
+﻿:mod:`ramp_database.exceptions`.DuplicateSubmissionError
+===============================================================
+
+.. currentmodule:: ramp_database.exceptions
+
+.. autoclass:: DuplicateSubmissionError
+
+   
+   .. automethod:: __init__
+   
+
+.. raw:: html
+
+    <div style='clear:both'></div>

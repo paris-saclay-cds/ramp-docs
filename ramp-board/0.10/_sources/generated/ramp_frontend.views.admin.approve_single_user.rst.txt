@@ -1,0 +1,10 @@
+﻿:mod:`ramp_frontend.views.admin`.approve_single_user
+=================================================================
+
+.. currentmodule:: ramp_frontend.views.admin
+
+.. autofunction:: approve_single_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>

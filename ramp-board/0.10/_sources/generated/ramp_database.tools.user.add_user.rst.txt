@@ -1,0 +1,10 @@
+﻿:mod:`ramp_database.tools.user`.add_user
+=====================================================
+
+.. currentmodule:: ramp_database.tools.user
+
+.. autofunction:: add_user
+
+.. raw:: html
+
+    <div style='clear:both'></div>
