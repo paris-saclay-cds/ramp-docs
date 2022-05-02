@@ -628,7 +628,11 @@ for more details.</p></li>
 console, ‘Instances’ tab on the left, under ‘availability zone’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ami_image_name</span></code>: name you gave to the image you prepared (see
 <a class="reference internal" href="#prepare-instance"><span class="std std-ref">Prepare the instance</span></a>). This can be found in the EC2 console, under
-‘Images’ -&gt; ‘AMI’ tab.</p></li>
+‘Images’ -&gt; ‘AMI’ tab. Note: you don’t have to put the entire image name
+and if you indicate the generic name you chose, it will automatically take
+the latest version of the image created running the pipeline (e.g.
+‘challenge-iris’ will point to ‘challenge-iris 2022-04-19T17-19-18.405Z’
+if it’s the latest one)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ami_user_name</span></code>: user name you used to ssh into your instance.
 Commonly ‘ec2-user’ or ‘ubuntu’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">instance_type</span></code>: found in the EC2 console, ‘Instances’ tab, ‘Description’
