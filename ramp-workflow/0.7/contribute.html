@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing &mdash; RAMP 0.7.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=dc072ff8"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/js/copybutton.js?v=26522df0"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using RAMP starting-kits" href="using_kits.html" />
+    <link rel="prev" title="RAMP-workflow commands" href="command_line.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RAMP
+          </a>
+              <div class="version">
+                0.7.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">What can RAMP offer you?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP workflow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problem.html">The problem.py file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-style">Code style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-ramp-board">Testing ramp-board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-process">Release process</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Additional information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing">
+<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">¶</a></h1>
+<p>You are welcome to contribute to <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">ramp-workflow</a>, particularly if there
+are <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/prediction_types">Prediction types</a>,
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/workflows">workflows</a>
+or <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/score_types">score metrics</a>
+that you have written for your challenge which you think may be useful for
+other challenges.</p>
+<p>To contribute:</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">Fork</a>
+the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">ramp-workflow</a> repository.</p></li>
+<li><p>Clone the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">ramp-workflow</a> repository then <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/paris-saclay-cds/ramp-workflow.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>ramp-workflow
+</pre></div>
+</div>
+</li>
+<li><p>Install requirements:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Alternatively you may wish to install the required packages in a specific
+environment for ramp-workflow.</p>
+<ol class="arabic" start="4">
+<li><p>Install ramp-worflow in editable mode:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Add your contributions and submit a <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull request</a>
+to merge this into ramp-workflow.</p></li>
+</ol>
+<section id="code-style">
+<h2>Code style<a class="headerlink" href="#code-style" title="Permalink to this heading">¶</a></h2>
+<p>This repo uses <code class="docutils literal notranslate"><span class="pre">flake8</span></code> for code style. It can be run on commits automatically
+by installing and activating <a class="reference external" href="https://pre-commit.com/">pre-commit</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="testing-ramp-board">
+<h2>Testing ramp-board<a class="headerlink" href="#testing-ramp-board" title="Permalink to this heading">¶</a></h2>
+<p>Since <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a> depends on ramp-workflow, any time that there is a PR in ramp-workflow, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a> should also be tested using the following sequence:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Under <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/actions/workflows/main.yml">ramp-board GitHub Actions</a> in the <code class="docutils literal notranslate"><span class="pre">main</span></code> workflow select “Run Workflow” and in the dropdown menu paste the a pip installable URL to the version of ramp-workflow from your PR. For instance it would look as follows,:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">your</span> <span class="n">fork</span><span class="o">&gt;/</span><span class="n">ramp</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/&lt;</span><span class="n">your</span> <span class="n">branch</span><span class="o">&gt;.</span><span class="n">zip</span>
+</pre></div>
+</div>
+</li>
+<li><p>If the tests are green, the PR’d branch of ramp-workflow can be accepted.</p></li>
+<li><p>If it is not, <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a> should be fixed:</p>
+<ol class="arabic simple">
+<li><p>Start a new branch in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a>, preferably of the same name as the PR’d branch of ramp-workflow, on top of <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/rampwf_test">rampwf_test</a>.</p></li>
+<li><p>Fix the error on the new branch, make sure that the tests are green when pulling from ramp-workflow from the PR’d branch in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/rampwf_test/environment.yml">environment.yml</a> and <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/rampwf_test/ci_tools/environment_iris_kit.yml">environment_iris_kit.yml</a>.</p></li>
+<li><p>Accept the PR’d branch on ramp-workflow and update pypi.</p></li>
+<li><p>Modify <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/rampwf_test/environment.yml">environment.yml</a> and <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board/blob/rampwf_test/ci_tools/environment_iris_kit.yml">environment_iris_kit.yml</a> to pip install ramp-workflow from pypi and check again that the test are green.</p></li>
+<li><p>Accept the PR on <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-board">ramp-board</a>.</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="release-process">
+<h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this heading">¶</a></h2>
+<p>The following explain the main steps to release <code class="docutils literal notranslate"><span class="pre">ramp-board</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">release</span></code>. It will remove the <code class="docutils literal notranslate"><span class="pre">dev0</span></code> tag.</p></li>
+<li><p>Commit the change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;bumpversion</span> <span class="pre">0.1.0&quot;</span></code>.</p></li>
+<li><p>Create a branch for this version <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">0.1.X</span></code>.</p></li>
+<li><p>Push the new branch into the upstream repository.</p></li>
+<li><p>You can create a GitHub release.</p></li>
+<li><p>Change the symlink in the <code class="docutils literal notranslate"><span class="pre">ramp-docs</span></code> repository such that stable point on
+0.1.X.</p></li>
+<li><p>Push on PyPI by executing the following:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">twine</span> <span class="pre">upload</span> <span class="pre">dist/*</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">master</span></code>, run <code class="docutils literal notranslate"><span class="pre">bumpversion</span> <span class="pre">minor</span></code>, commit and push on upstream.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="command_line.html" class="btn btn-neutral float-left" title="RAMP-workflow commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="using_kits.html" class="btn btn-neutral float-right" title="Using RAMP starting-kits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015 - 2022, Paris-Saclay Center for Data Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

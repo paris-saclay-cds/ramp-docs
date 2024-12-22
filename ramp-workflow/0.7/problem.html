@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The problem.py file &mdash; RAMP 0.7.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=dc072ff8"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/js/copybutton.js?v=26522df0"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RAMP execution" href="scoring.html" />
+    <link rel="prev" title="Preparing your data" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RAMP
+          </a>
+              <div class="version">
+                0.7.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">What can RAMP offer you?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP workflow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The problem.py file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">RAMP execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Additional information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RAMP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The problem.py file</li>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-problem-py-file">
+<span id="problem"></span><h1>The problem.py file<a class="headerlink" href="#the-problem-py-file" title="Permalink to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file uses building blocks from the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a>
+library. These building blocks allow the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file to be relatively
+simple because the complexity is hidden by the implementation of the building
+blocks in RAMP workflow. Titanic survival classification challenge
+will be used as an example when discussing each aspect of the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>
+file. It is worth taking a look at the <a class="reference external" href="https://github.com/ramp-kits/titanic/blob/master/problem.py">whole file</a> for reference.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file begins by importing any libraries required. For
+example, the required libraries for the Titanic challenge were:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">rampwf</span> <span class="k">as</span> <span class="nn">rw</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
+</pre></div>
+</div>
+</li>
+<li><p>Provide a title:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">problem_title</span> <span class="o">=</span> <span class="s1">&#39;Titanic survival classification&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Select a prediction type
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/prediction_types">Prediction types</a>
+are classes used internally to store predictions and calculate scores. There
+are different prediction classes to be used with different types of
+challenges. This is implemented using functions, each of which returns a
+unique prediction class. The functions currently available are detailed
+below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make_regression()</span></code> - used for regression type challenges. Predictions
+can be 1-dimensional or 2-dimensional for multi-target regression. For
+multi-target regression a list of ‘target names’ needs to be provided
+to the parameter <code class="docutils literal notranslate"><span class="pre">label_names</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_multiclass()</span></code> - used for classification type challenges.
+Predictions are expected to be 2-dimensional (n samples * n classes) and
+may be labels or probabilities of each class. A list of label names needs
+to be provided to the parameter <code class="docutils literal notranslate"><span class="pre">label_names</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make_combined()</span></code> - used for challenges where greater than one type of
+prediction is made. For example, the <a class="reference external" href="https://github.com/ramp-kits/drug_spectra">drug spectra</a>
+challenge comprises of a classification task to predict the type of
+molecule and a regression task to predict the concentration of the molecule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_clustering()</span></code> - used for clustering challenges. Prediction should
+be 2-dimensional (n samples * 2), where one column identifies the samples
+and the second column identifies the cluster it belongs to. This prediction
+class was used for the <a class="reference external" href="https://github.com/ramp-kits/HEP_tracking">High-energy physics tracking</a>
+challenge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_detection()</span></code> - a unique class specifically designed for the
+<a class="reference external" href="https://github.com/ramp-kits/mars_craters">Mars crater detection</a>
+challenge. A unique algorithm is implemented for combining predictions
+from different models. See the <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/blob/master/rampwf/prediction_types/detection.py">source code</a>
+for more information.</p></li>
+</ul>
+<p>Select the appropriate prediction class for your challenge and state this
+in the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file. If the appropriate prediction class does not
+exist in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a>, you can define your own prediction class within
+the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file. If it is not too specific, we would also encourage
+you to add your class to <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a> so others can use it in future.
+See <a class="reference internal" href="contribute.html#contributing"><span class="std std-ref">Contributing</span></a>.</p>
+<p>For example, the Titanic survival classification
+challenge aimed to predict whether or not each passenger survived. Survival
+is indicated by 0 (did not survive) or 1 (survived). Since this is a
+classification task the prediction function <code class="docutils literal notranslate"><span class="pre">make_multiclass()</span></code> is used.
+Note that by convention label names are stored as a variable
+<code class="docutils literal notranslate"><span class="pre">_prediction_label_names</span></code>. The relevant parts of the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file
+are shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_prediction_label_names</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">Predictions</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">prediction_types</span><span class="o">.</span><span class="n">make_multiclass</span><span class="p">(</span>
+<span class="n">label_names</span><span class="o">=</span><span class="n">_prediction_label_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Select a workflow
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/workflows">Workflows</a>
+implement the steps of the machine learning problem. Each workflow
+is a class with a <code class="docutils literal notranslate"><span class="pre">train_submission()</span></code> and a <code class="docutils literal notranslate"><span class="pre">test_submission()</span></code>
+function, which defines the workflow to implement during training and
+testing time. An attribute called <code class="docutils literal notranslate"><span class="pre">workflow_element_names</span></code> is also
+required. This attribute is a list of the file names that
+<code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> expects for each submission. This class is
+implemented by RAMP workflow internals to train and test each submission of a
+challenge.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Estimator()</span></code> - a versatile, commonly used workflow that will work for
+any <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> estimator or
+pipeline (where the last step is an estimator). It imports a file
+named <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code> from the submission directory (e.g.
+<code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">estimator.py</span></code> file should define a
+function named <code class="docutils literal notranslate"><span class="pre">get_estimator()</span></code>, which returns a scikit-learn
+estimator or pipeline with a final estimator. The <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code>
+methods of the estimator/pipeline are then performed on the training
+and test data respectively.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EstimatorExternalData()</span></code> - similar to the workflow above, except it
+allows an external data file, named``external_data.csv``, to be used in the
+workflow.</p></li>
+</ul>
+<p>There are also more specific workflows, for example for timeseries or image
+data. Some of specific workflows were designed for one specific challenge but
+can be re-used for similar challenges. The first four workflows below are used
+as building blocks for the more specific workflows that follow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Regressor()</span></code> - this workflow is for simple regression problems. It will
+import the file named <code class="docutils literal notranslate"><span class="pre">regressor.py</span></code> from the submission directory
+(e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">regressor.py</span></code> file should
+define a class named <code class="docutils literal notranslate"><span class="pre">Regressor</span></code> that has a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and a <code class="docutils literal notranslate"><span class="pre">predict()</span></code>
+method. This workflow will run <code class="docutils literal notranslate"><span class="pre">fit()</span></code> on the training data then at
+testing time, run <code class="docutils literal notranslate"><span class="pre">predict()</span></code> on the testing data, using the trained
+model. If you are using a scikit-learn function, you can simply call the
+<code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict()</span></code> methods of the model you are using.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Classifier()</span></code> - this workflow is for simple classification problems. It
+will import the file named <code class="docutils literal notranslate"><span class="pre">classifier.py</span></code> from the submission directory
+(e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">classifier.py</span></code> file should
+define a class named <code class="docutils literal notranslate"><span class="pre">Classifier</span></code> that has a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">predict_proba()</span></code> method. This workflow will run <code class="docutils literal notranslate"><span class="pre">fit()</span></code> on the
+training data and at testing time, run <code class="docutils literal notranslate"><span class="pre">predict_proba()</span></code> on the test
+data, using the trained model. If you are using a scikit-learn function,
+you can simply call the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_proba()</span></code> methods of the
+model you are using.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> - this workflow is designed for preprocessing data,
+for example converting non-numeric features into numeric, normalising data
+and creating new features using existing features. It will import the file
+named <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> from the submission directory
+(e.g. <code class="docutils literal notranslate"><span class="pre">submissions/starting_kit/</span></code>). This <code class="docutils literal notranslate"><span class="pre">feature_extractor.py</span></code> file
+should define a class named <code class="docutils literal notranslate"><span class="pre">FeatureExtractor</span></code> with a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">transform()</span></code> method. This workflow will run <code class="docutils literal notranslate"><span class="pre">fit()</span></code> on the features
+and target of the data and run <code class="docutils literal notranslate"><span class="pre">transform()</span></code> on the features of training
+data. Note that <code class="docutils literal notranslate"><span class="pre">fit()</span></code> takes both the features and target of the data as
+input to enable feature engineering strategies such as target encoding
+during training time. The output of this workflow is the preprocessed
+features of the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_extractor_regressor()</span></code> - this workflow combines the
+<code class="docutils literal notranslate"><span class="pre">FeatureExtrator()</span></code> and <code class="docutils literal notranslate"><span class="pre">Regressor()</span></code> workflows such that data is first
+preprocessed with <code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> and then <code class="docutils literal notranslate"><span class="pre">Regressor()</span></code>
+performs model training and prediction. Note that the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method of
+<code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> is only performed on training data but not test
+data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_extractor_classifier()</span></code> - this workflow combines the
+<code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> and <code class="docutils literal notranslate"><span class="pre">Classifier()</span></code> workflows such that data is
+first preprocessed with <code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> and then <code class="docutils literal notranslate"><span class="pre">Classifier()</span></code>
+performs model training and prediciton. As above the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method of
+<code class="docutils literal notranslate"><span class="pre">FeatureExtractor()</span></code> is only performed on training data but not test
+data.</p></li>
+</ul>
+<p>Workflows for specific data challenges:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImageClassifier()</span></code> - this workflow is for image classification
+tasks, particularly for cases when the dataset cannot be stored in memory.
+This workflow will import two files from the submissions folder;
+<code class="docutils literal notranslate"><span class="pre">image_preprocessor.py</span></code> and <code class="docutils literal notranslate"><span class="pre">batch_classifier.py</span></code>.
+<code class="docutils literal notranslate"><span class="pre">image_preprocessor.py</span></code> should define a function called <code class="docutils literal notranslate"><span class="pre">transform()</span></code>
+which preprocesses images. It should take an image as input and output an
+image. Optionally, this file can also define a function called
+<code class="docutils literal notranslate"><span class="pre">transform_test()</span></code>, which is only used to preprocess images at test time.
+If this is not defined, <code class="docutils literal notranslate"><span class="pre">transform()</span></code> will be used at train and test time.
+<code class="docutils literal notranslate"><span class="pre">batch_classifier.py</span></code> should define a class called <code class="docutils literal notranslate"><span class="pre">BatchClassifier</span></code>
+with the methods <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_prob()</span></code>. <code class="docutils literal notranslate"><span class="pre">fit()</span></code> should fit
+a model to batches of images (you can define batch size). For an example
+you can take a look at the <a class="reference external" href="https://github.com/ramp-kits/MNIST">MNIST</a>
+or <a class="reference external" href="&lt;https://github.com/ramp-kits/pollenating_insects&gt;`_">Pollenating insects</a> challenges.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimplifiedImageClassifier()</span></code> - this is a simplified version of the
+above workflow where there is no image preprocessing step and instead of
+training and test batches of images, <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_proba()</span></code> is
+performed on one image at a time. For an example, take a look at the
+<a class="reference external" href="https://github.com/ramp-kits/MNIST_simplified">MNIST simplified</a>
+and <a class="reference external" href="&lt;https://github.com/ramp-kits/pollenating_insects&gt;`_">Pollenating insects</a> challenges.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ObjectDetector()</span></code> - this workflow is used for image object detection
+tasks. It workflow imports one, <code class="docutils literal notranslate"><span class="pre">object_detector.py</span></code>, from the
+submissions folder, which should define a class, <code class="docutils literal notranslate"><span class="pre">ObjectDetector</span></code>, with
+<code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">predict()</span></code> methods. It was used in the <a class="reference external" href="https://github.com/ramp-kits/mars_craters">Mars craters</a> challenge and the <a class="reference external" href="https://github.com/ramp-kits/astrophd_tutorial">Astronomy</a> tutorial.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusterer()</span></code> - this workflow was used for the <a class="reference external" href="https://github.com/ramp-kits/HEP_tracking">High-energy physics
+tracking</a> challenge which
+aimed to cluster particle hits. This workflow
+imports the file named <code class="docutils literal notranslate"><span class="pre">clusterer.py</span></code> from the submissions directory.
+This file should define a class called  <code class="docutils literal notranslate"><span class="pre">Clusterer</span></code> with <code class="docutils literal notranslate"><span class="pre">fit()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">predict_single_event()</span></code> methods. <code class="docutils literal notranslate"><span class="pre">fit()</span></code> takes the
+features and the cluster ID of each sample as arguments to train the
+clustering model. At testing time, the each sample is sent to
+<code class="docutils literal notranslate"><span class="pre">predict_single_event()</span></code> separately and the predicted cluster assignments
+are joined with the sample ID (the first column of the features data) and
+returned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElNino()</span></code> - this workflow was used for the <a class="reference external" href="https://github.com/ramp-kits/el_nino">El Nino</a> challenge which used temperature
+data over time to predict future temperatures. The workflow consists of
+the <code class="docutils literal notranslate"><span class="pre">TimeSeriesFeatureExtractor()</span></code> then <code class="docutils literal notranslate"><span class="pre">Regressor()</span></code> workflows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GridFeatureExtractorClassifier()</span></code> - this workflow was used in the
+<a class="reference external" href="https://github.com/ramp-kits/california_rainfall">California rainfall</a>
+challenge. It consists of the <code class="docutils literal notranslate"><span class="pre">GridFeatureExtractor()</span></code> then
+<code class="docutils literal notranslate"><span class="pre">Classifier()</span></code> workflows. This workflow is similar to
+<code class="docutils literal notranslate"><span class="pre">feature_extractor_classifier()</span></code> except that <code class="docutils literal notranslate"><span class="pre">GridFeatureExtractor()</span></code>
+takes as input 3 dimensional spatial grid data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DrugSpectra()</span></code> - this workflow was used for the <a class="reference external" href="https://github.com/ramp-kits/drug_spectra">Drug spectra</a> challenge. It implements
+both the <code class="docutils literal notranslate"><span class="pre">feature_extractor_regressor()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">feature_extractor_classifier()</span></code> workflows to perform a classification
+task and a regression task on the same dataset. The submissions directory
+requires 4 files named; <code class="docutils literal notranslate"><span class="pre">feature_extractor_clf.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">classifier.py</span></code>, <code class="docutils literal notranslate"><span class="pre">feature_extractor_reg.py</span></code> and <code class="docutils literal notranslate"><span class="pre">regressor.py</span></code>.</p></li>
+</ul>
+<blockquote>
+<div><p>If the appropriate workflow class does not exist in <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a>, you
+can define your own workflow class within the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file. If it is
+not too specific,We would also encourage you to add your class to
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a> so others can use it in future. See <a class="reference internal" href="contribute.html#contributing"><span class="std std-ref">Contributing</span></a>.</p>
+<p>The Titanic challenge employed the <code class="docutils literal notranslate"><span class="pre">feature_extractor_classifier()</span></code>
+workflow. This can be specified simply with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">workflows</span><span class="o">.</span><span class="n">FeatureExtractorClassifier</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic" id="score-types" start="5">
+<li><p>Select score types
+Score types are metrics used to assess each submission. A large
+number of different <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow/tree/master/rampwf/score_types">score metrics are available</a>.
+To use one or more existing score metrics, simply provide a list of the
+class names of the score you wish to use and assign this to a variable
+called <code class="docutils literal notranslate"><span class="pre">score_types</span></code>. For example, the Titanic challenge used 3
+different score metrics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">score_types</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">ROCAUC</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;auc&#39;</span><span class="p">),</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">Accuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;acc&#39;</span><span class="p">),</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">NegativeLogLikelihood</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;nll&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>If you select more than one score, all the score metrics will be calculated
+when you enter a submission to RAMP. You can select one score metric to be
+used as the official score, used to rank participants, or calculate a
+weighted combined score from the various score metrics. For example, the
+<a class="reference external" href="https://github.com/ramp-kits/drug_spectra">Drug spectra</a>
+challenge used a weighted combination of <code class="docutils literal notranslate"><span class="pre">ClassificationError</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MARE</span></code> (Mean Absolute Relative Error):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">score_type_1</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">ClassificationError</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;err&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">score_type_2</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">MARE</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mare&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">score_types</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># The official score combines the two scores with weights 2/3 and 1/3.</span>
+    <span class="n">rw</span><span class="o">.</span><span class="n">score_types</span><span class="o">.</span><span class="n">Combined</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;combined&#39;</span><span class="p">,</span> <span class="n">score_types</span><span class="o">=</span><span class="p">[</span><span class="n">score_type_1</span><span class="p">,</span> <span class="n">score_type_2</span><span class="p">],</span>
+        <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">2.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">],</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>Note that the actual implementation was more complex as this challenge
+consisted of both a classification and regression task. For the purposes of
+this example, the extra complexity was ignored.</p>
+<p>Again if the appropriate score metric class does not exist in
+<a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a>, you can define your own score metric class within the
+<code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file. If it is not too specific, we would also encourage you
+to add your class to <a class="reference external" href="https://github.com/paris-saclay-cds/ramp-workflow">RAMP workflow</a> so others can use it in future. See
+<a class="reference internal" href="contribute.html#contributing"><span class="std std-ref">Contributing</span></a>.</p>
+</div></blockquote>
+<ol class="arabic" id="cross-validation" start="6">
+<li><p>Specify a cross-validation scheme
+Specify a way to split the ‘train’ data into training and validation sets.
+This should be done by defining a <code class="docutils literal notranslate"><span class="pre">get_cv()</span></code> function that takes
+the feature and target data as parameters and returns indices that can
+be used to split the data. If you are using a function with a random
+element, e.g., <code class="docutils literal notranslate"><span class="pre">StratifiedShuffleSplit()</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html#sklearn.model_selection.StratifiedShuffleSplit.split">from scikit-learn</a>,
+it is important to set the random seed. This ensures that the train and
+valuidation data will be the same for all participants.</p>
+<p>For example, the Titanic challenge used <code class="docutils literal notranslate"><span class="pre">StratifiedShuffleSplit()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cv</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">cv</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">57</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" id="in-out" start="7">
+<li><p>Provide the I/O methods
+The <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file needs to define a <code class="docutils literal notranslate"><span class="pre">get_train_data()</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">get_test_data()</span></code> function that reads in the training and test data. These
+functions will be used to ‘get data’ both locally and on the RAMP sever. For
+example, this was implemented in the Titanic challenge using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_target_column_name</span> <span class="o">=</span> <span class="s1">&#39;Survived&#39;</span>
+<span class="n">_ignore_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">f_name</span><span class="p">))</span>
+    <span class="n">y_array</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">_target_column_name</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">X_df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">_target_column_name</span><span class="p">]</span> <span class="o">+</span> <span class="n">_ignore_column_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_df</span><span class="p">,</span> <span class="n">y_array</span>
+
+
+<span class="k">def</span> <span class="nf">get_train_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="n">f_name</span> <span class="o">=</span> <span class="s1">&#39;train.csv&#39;</span>
+    <span class="k">return</span> <span class="n">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_test_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="n">f_name</span> <span class="o">=</span> <span class="s1">&#39;test.csv&#39;</span>
+    <span class="k">return</span> <span class="n">_read_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">_read_data()</span></code> is not strictly required and is acting as a helper
+function in the code above.</p>
+</li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">problem.py</span></code> file becomes too long and you would like to refactor
+it, you can add an <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder in the <code class="docutils literal notranslate"><span class="pre">ramp_kit_dir</span></code> and
+have modules there that you can import from. The way this works is that
+running <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> adds the <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>
+if such a folder exists. For instance if you have a <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> module
+in the <code class="docutils literal notranslate"><span class="pre">external_imports</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_imports</span><span class="o">/</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Then you can do <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">utils</span></code> in <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>.</p>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data.html" class="btn btn-neutral float-left" title="Preparing your data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scoring.html" class="btn btn-neutral float-right" title="RAMP execution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2015 - 2022, Paris-Saclay Center for Data Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
