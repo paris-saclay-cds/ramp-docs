@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAMP execution &mdash; RAMP 0.6.0.dev0 documentation</title><link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>RAMP execution &mdash; RAMP 0.8.0.dev0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
       <link rel="stylesheet" href="_static/basic.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/js/copybutton.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2f7c002e"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/js/copybutton.js?v=26522df0"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,24 +28,28 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RAMP
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RAMP
           </a>
               <div class="version">
-                0.6.0.dev0
+                0.8.0.dev0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">What can RAMP offer you?</span></p>
+              <p class="caption" role="heading"><span class="caption-text">What can RAMP offer you?</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Using RAMP workflow</span></p>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP workflow</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Preparing your data</a></li>
@@ -59,11 +65,11 @@
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Using RAMP kits</span></p>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP kits</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Additional information</span></p>
+<p class="caption" role="heading"><span class="caption-text">Additional information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 </ul>
@@ -81,8 +87,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>RAMP execution</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RAMP execution</li>
 
   </ul>
   <hr/>
@@ -90,11 +96,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="ramp-execution">
-<span id="scoring"></span><h1>RAMP execution<a class="headerlink" href="#ramp-execution" title="Permalink to this headline">¶</a></h1>
+  <section id="ramp-execution">
+<span id="scoring"></span><h1>RAMP execution<a class="headerlink" href="#ramp-execution" title="Permalink to this heading">¶</a></h1>
 <p>RAMP implements a <strong>double cross-validation scheme</strong>: submissions are trained on each training fold, then tested on each validation fold and on the held out test set. This assures <strong>proper model evaluation</strong> when models are tuned using validation scores.</p>
-<div class="section" id="training-and-scoring-a-submission">
-<h2>Training and scoring a submission<a class="headerlink" href="#training-and-scoring-a-submission" title="Permalink to this headline">¶</a></h2>
+<section id="training-and-scoring-a-submission">
+<h2>Training and scoring a submission<a class="headerlink" href="#training-and-scoring-a-submission" title="Permalink to this heading">¶</a></h2>
 <p>When running the <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> script locally, the starting kit submission is trained, tested, and scored. The output contains all the training, validation, and test scores and wall clock times for all <em>K</em> folds. At the end we provide two summaries: the classical mean scores over the <em>K</em> folds, and the scores achieved by ensembling all the <em>K</em> foldwise models, a technique called CV-bagging (we typically take the mean prediction of the <em>K</em> models on each test point)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>λ ramp-test
 Testing Titanic survival classification
@@ -159,9 +165,9 @@ Bagged scores
 </div>
 <p>When using a RAMP challenge (<a class="reference external" href="https://ramp.studio/">RAMP studio</a>), the bagged validation score is displayed on the public leaderboard, and the bagged test score is used privately to determine the final rankings.</p>
 <p>Other submissions can be trained and scored using the <code class="docutils literal notranslate"><span class="pre">--submission</span></code> switch, and the result of the training can be saved using the <code class="docutils literal notranslate"><span class="pre">--save-output</span></code> switch. See <a class="reference internal" href="command_line.html#command-line"><span class="std std-ref">RAMP-workflow commands</span></a> for all the command-line options.</p>
-</div>
-<div class="section" id="the-functional-data-flow">
-<h2>The functional data flow<a class="headerlink" href="#the-functional-data-flow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-functional-data-flow">
+<h2>The functional data flow<a class="headerlink" href="#the-functional-data-flow" title="Permalink to this heading">¶</a></h2>
 <p>This flowchart shows what happens when <code class="docutils literal notranslate"><span class="pre">ramp-test</span></code> is executed. You can see how the data, elements in <code class="docutils literal notranslate"><span class="pre">problem.py</span></code>, and the submission interact. This is useful for those who would like to see what happens under the lid, and for those who would like to implement their own customized RAMP workflows.</p>
 <a class="reference internal image-reference" href="_images/functional_data_flow.png"><img alt="_images/functional_data_flow.png" src="_images/functional_data_flow.png" style="width: 700px;" /></a>
 <ol class="arabic simple">
@@ -172,8 +178,8 @@ Bagged scores
 <li><p>Six <code class="docutils literal notranslate"><span class="pre">workflow.Predictions</span></code> objects are created (per fold), three on the ground truth and three on the predictions. The training and validation predictions are both created from <code class="docutils literal notranslate"><span class="pre">y_pred_train</span></code> and <code class="docutils literal notranslate"><span class="pre">y_train</span></code> in <code class="docutils literal notranslate"><span class="pre">workflow.Predictions.__init__</span></code> using the training and validation indices.</p></li>
 <li><p>The corresponding pairs of ground truth and predictions are passed to each <code class="docutils literal notranslate"><span class="pre">problem.score_types[i].score_function</span></code> which returns a scalar score.</p></li>
 </ol>
-<div class="section" id="testing-manually">
-<h3>Testing manually<a class="headerlink" href="#testing-manually" title="Permalink to this headline">¶</a></h3>
+<section id="testing-manually">
+<h3>Testing manually<a class="headerlink" href="#testing-manually" title="Permalink to this heading">¶</a></h3>
 <p>Sometimes it is useful to execute elements of RAMP manually, for example to obtain predictions or the trained model interactively in a notebook. The following sequence can be run on any RAMP, line by line. It does not use the cross validation so it can be used to debug the workflow once the
 following elements are defined in problem.py:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_train_data</span>
@@ -246,9 +252,9 @@ following elements are defined in problem.py:</p>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">test </span><span class="si">{</span><span class="n">score_type</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -261,7 +267,7 @@ following elements are defined in problem.py:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2019, Paris-Saclay Center for Data Science.</p>
+    <p>&#169; Copyright 2015 - 2022, Paris-Saclay Center for Data Science.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

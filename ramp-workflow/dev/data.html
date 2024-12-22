@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preparing your data &mdash; RAMP 0.6.0.dev0 documentation</title><link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Preparing your data &mdash; RAMP 0.8.0.dev0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/ramp.css" type="text/css" />
       <link rel="stylesheet" href="_static/basic.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/js/copybutton.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2f7c002e"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/js/copybutton.js?v=26522df0"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,24 +28,28 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RAMP
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RAMP
           </a>
               <div class="version">
-                0.6.0.dev0
+                0.8.0.dev0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">What can RAMP offer you?</span></p>
+              <p class="caption" role="heading"><span class="caption-text">What can RAMP offer you?</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="who_are_you.html">Who are you</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Using RAMP workflow</span></p>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP workflow</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Build your own RAMP challenge</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Preparing your data</a><ul>
@@ -58,11 +64,11 @@
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">RAMP-workflow commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Using RAMP kits</span></p>
+<p class="caption" role="heading"><span class="caption-text">Using RAMP kits</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="using_kits.html">Using RAMP starting-kits</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Additional information</span></p>
+<p class="caption" role="heading"><span class="caption-text">Additional information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whats_new.html">Release history</a></li>
 </ul>
@@ -80,8 +86,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Preparing your data</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Preparing your data</li>
 
   </ul>
   <hr/>
@@ -89,8 +95,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="preparing-your-data">
-<span id="data"></span><h1>Preparing your data<a class="headerlink" href="#preparing-your-data" title="Permalink to this headline">¶</a></h1>
+  <section id="preparing-your-data">
+<span id="data"></span><h1>Preparing your data<a class="headerlink" href="#preparing-your-data" title="Permalink to this heading">¶</a></h1>
 <p>The data for your RAMP challenge should consist of:</p>
 <ul class="simple">
 <li><p><strong>Private test data</strong> - this data is stored on the RAMP server and is used to
@@ -111,8 +117,8 @@ both a public test and train dataset and naming these the same as the private
 test and train dataset.
 See <a class="reference internal" href="#prepare-ramp-data"><span class="std std-ref">RAMP data</span></a> for an example.</p></li>
 </ul>
-<div class="section" id="ramp-data">
-<span id="prepare-ramp-data"></span><h2>RAMP data<a class="headerlink" href="#ramp-data" title="Permalink to this headline">¶</a></h2>
+<section id="ramp-data">
+<span id="prepare-ramp-data"></span><h2>RAMP data<a class="headerlink" href="#ramp-data" title="Permalink to this heading">¶</a></h2>
 <p>A data directory is required to deploy your challenge on a RAMP sever.
 Strictly speaking, it is not required if you simply wish to use RAMP workflow
 locally. The data directory should be separate from the starting kit directory
@@ -138,8 +144,8 @@ datasets, after running <code class="docutils literal notranslate"><span class="
 in the <a class="reference external" href="https://github.com/ramp-data">ramp-data</a> organisation on GitHub. This
 is always a private repository and all data, public and private, can be kept
 here, if size permits.</p>
-<div class="section" id="the-prepare-data-script">
-<span id="prepare-data-script"></span><h3>The prepare_data script<a class="headerlink" href="#the-prepare-data-script" title="Permalink to this headline">¶</a></h3>
+<section id="the-prepare-data-script">
+<span id="prepare-data-script"></span><h3>The prepare_data script<a class="headerlink" href="#the-prepare-data-script" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">prepare_data.py</span></code> script should perform any data cleaning steps required
 on the raw data and split the data into appropriate subsets as detailed above.
 It is a good way to document all the data cleaning steps and enables you to
@@ -200,9 +206,9 @@ on a RAMP server, when deploying an event.</p>
 RAMP server, though it is good practice to include the other files.</p>
 <p>See <a class="reference internal" href="workflow.html#directory-structure"><span class="std std-ref">Overall directory structure</span></a> for the structure of the data directory
 relative to the starting kit directory.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -215,7 +221,7 @@ relative to the starting kit directory.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2019, Paris-Saclay Center for Data Science.</p>
+    <p>&#169; Copyright 2015 - 2022, Paris-Saclay Center for Data Science.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
